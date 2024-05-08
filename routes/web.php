@@ -9,12 +9,20 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/' , function(){
-    return view('home');
+    return view('admin.index');
 });
+Route::get('/' , function(){
+    return view('admin.pages.staff.update_staff');
+});
+// Route::get('/',function(){
+//     return view('home');
+// });
 
-Route::middleware('admin')->group(function(){
-    Route::get('/admin/login',[AdminController::class,'login'])->name('AdminLogin');
-});
+
+// Route::middleware('admin')->group(function(){
+//     Route::get('/admin/login',[AdminController::class,'login'])->name('AdminLogin');
+// });
+
 
 // Auth::routes();
 

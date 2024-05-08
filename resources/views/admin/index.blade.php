@@ -1,0 +1,242 @@
+@extends('layouts.adminlayout')
+@section('title','Home')
+@section('content')
+
+<div class="session grid">
+    <div class="nav flex_col">
+        <a href="/index.html" target="_self">
+            <h1 class="nav_text">Bravis</h1>
+            <div class="flex_row">
+                <i class="fa-solid fa-house"></i>
+                <p class="nav_text">Dashboard</p>
+            </div>
+        </a>    
+        <a href="/pages/product/index.html" target="_self">
+            <div class="flex_row">
+                <i class="fa-solid fa-bag-shopping"></i>
+                <p class="nav_text">Product</p>
+            </div>
+        </a>
+        <a href="/pages/customer/index.html" target="_self">
+            <div class="flex_row">
+                <i class="fa-solid fa-users"></i>
+                <p class="nav_text">Customer</p>
+            </div>
+        </a>
+        <a href="/pages/order/index.html" target="_self">
+            <div class="flex_row">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <p class="nav_text">Order</p>
+            </div>
+        </a>
+        <a href="/pages/staff/index.html" target="_self">
+            <div class="flex_row">
+                <i class="fa-solid fa-user"></i>
+                <p class="nav_text">Staff</p>
+            </div>
+        </a>
+        <a href="/pages/supplier/index.html" target="_self">
+            <div class="flex_row">
+                <i class="fa-solid fa-user"></i>
+                <p class="nav_text">Supplier</p>
+            </div>
+        </a>
+
+    </div>
+    <div class="header flex_row">
+        <div class="flex_row icons">
+            <img src="/image/icon/bell.svg" alt="">
+            <img src="/image/icon/msg.svg" alt="">
+        </div>
+        <div class="user_profile">
+        </div>     
+    </div>
+    <!-- user Profile Info -->
+    <div class="user_profile_info">
+           <a href=""><i class="fa-solid fa-gear"></i>Edit Profile</a><br>
+           <a href="/account/login/index.html"><i class="fa-solid fa-arrow-right-from-bracket"></i>Log out</a>
+    </div>
+    <div class="main">
+        <div class="session1 grid">
+            <div class="total_earnings">
+                <p>Total Earnings</p>
+                <p>K 45900000</p>
+            </div>
+            <div class="total_expenses">
+                <p>Total Expenses</p>
+                <p>K 1520000</p>
+            </div>
+            <div class="clients">
+                <p>Clients</p>
+                <p>8925</p>
+            </div>
+            <div class="page_visitors">
+                <p>Page Visitors</p>
+                <p>135000</p>
+            </div>
+        </div>
+        <div class="session2 flex_row">
+            <div class=" date flex_row">
+                <div class="today">
+                    Today
+                </div>
+                <div>Week</div>
+                <div>Month</div>
+                <div>Year</div>
+            </div>
+            <div class="filter flex_row">
+                    
+                <input type="date" name="" id="">
+                <div>
+                    <i class="fa-solid fa-filter"></i>
+                </div>
+            </div>
+        </div>
+        <div class="session3 grid">
+            <div class="total_order flex_row">
+                <img src="/image/icon/Total Order.svg" alt="">
+                <div>
+                    <p>Total Order</p>
+                    <p>500</p>
+                </div>
+            </div>
+            <div class="order_pending flex_row">
+                <img src="/image/icon/Pending.svg" alt="">
+                <div>
+                    <p>Order_pending</p>
+                    <p>125</p>
+                </div>
+            </div>
+            <div class="order_processing flex_row">
+                <img src="/image/icon/Processing.svg" alt="">
+                <div>
+                    <p>Order Processing</p>
+                    <p>65</p>
+                </div>
+            </div>
+            <div class="order_delivered flex_row">
+                <img src="/image/icon/Delivered.svg" alt="">
+                <div>
+                    <p>Order Delivered</p>
+                    <p>310</p>
+                </div>
+            </div>
+        </div>
+        <div class="session4 grid">
+            <div class="flex_col">
+                <div class="flex_row">
+                    <p>Top selling products</p>
+                    <div>
+                        <button>Men</button>
+                        <button>Women</button>
+                    </div>
+                </div>
+                <div id="piechart" style="width: 100% !important;height:300px;"></div>
+            </div>
+            <div class="flex_col">
+                <div class="flex_row">
+                    <p>Sale Statics</p>
+                </div>
+                <canvas id="myChart" style="width: 100% !important;height: 300px;"></canvas>
+                
+            </div>
+        </div>
+        <div class="session5">
+            <p>Recent Transitions</p>
+            <div class="filter_entry flex_row">
+                <div>
+                    Show
+                    <select name="" id="select_entry">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                    </select>
+                    entries
+                </div>
+                <div>
+                    <label for="">Search:</label>
+                    <input type="text" id="select_input">
+                </div>
+            </div>
+            <div style="overflow-x: auto;">
+                <table class="transition_table">
+                    <tr>
+                        <th class="first_title">ID</th>
+                        <th>Product</th>
+                        <th>Customer Name</th>
+                        <th>Price</th>
+                        <th>Payment Info</th>
+                        <th class="last_title">Status</th>
+                    </tr>
+                    <tr>
+                        <td>#Order111</td>
+                        <td>
+                            <div class="flex_row">
+                                <div class="product_img"></div>
+                                <p>Polo Shirt</p>
+                            </div>
+                        </td>
+                        <td>Mg Myo</td>
+                        <td>25,450MMK</td>
+                        <td>Credit Card</td>
+                        <td>
+                            <div class="status status_complete">Complete</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>#Order111</td>
+                        <td>
+                            <div class="flex_row">
+                                <div class="product_img"></div>
+                                <p>Polo Shirt</p>
+                            </div>
+                        </td>
+                        <td>Mg Myo</td>
+                        <td>25,450MMK</td>
+                        <td>Credit Card</td>
+                        <td>
+                            <div class="status status_pending">Pending</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>#Order111</td>
+                        <td>
+                            <div class="flex_row">
+                                <div class="product_img"></div>
+                                <p>Polo Shirt</p>
+                            </div>
+                        </td>
+                        <td>Mg Myo</td>
+                        <td>25,450MMK</td>
+                        <td>Credit Card</td>
+                        <td>
+                            <div class="status status_cancelled">Cancelled</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="6" class="last_row_left">
+                            <div class="page_info">
+                                Showing 1-3 of 30
+                            </div>
+                        </td>
+                        <!-- <td colspan="4" class="last_row_right">
+                            <div class="pagination">
+                                <a href="#">&laquo;</a>
+                                <a class="active" href="#">1</a>
+                                <a href="#">&raquo;</a>
+                            </div>
+                        </td> -->
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- script -->
+<script src="/js/user_profile_info_popup.js"></script>
+<script type="text/javascript" src="/js/pie_chart.js"></script>
+<script src="/js/bar_chart.js"></script>
+@endsection
