@@ -1,7 +1,7 @@
 @extends('layouts.adminlayout')
 @section('title','Home')
 @section('content')
-
+{{-- {{dd($stafflist)}} --}}
     <div class="session grid">
         <div class="nav flex_col">
             <a href="/index.html" target="_self">
@@ -29,7 +29,7 @@
                     <p class="nav_text">Order</p>
                 </div>
             </a>
-            <a href="/pages/staff/index.html" target="_self">
+            <a href="{{url('/admin/list')}}" target="_self">
                 <div class="flex_row">
                     <i class="fa-solid fa-user"></i>
                     <p class="nav_text">Staff</p>
@@ -82,15 +82,18 @@
                             <th class="last_title">Action</th>
                         </tr>
                         <tr>
-                            <td>Staff1</td>
-                            <td>staff001@gmail.com</td>
-                            <td>09-123-456-789</td>
-                            <td>Admin</td>
+                            @foreach ($stafflist as $value)
+                            
+                            <td>{{$value->name}}</td>
+                            <td>{{$value->email}}</td>
+                            <td>{{$value->phone}}</td>
+                            <td>{{$value->role}}</td>
                             <td>
-                                <a href="/pages/staff/update_staff.html"><i class="fa-solid fa-pen-to-square"></i></a>
+                                <a href="{{url('/admin/listedit/'.$value->id)}}"><i class="fa-solid fa-pen-to-square"></i></a>
                                 <i class="fa-regular fa-trash-can"></i>
                             </td>
                         </tr>
+                        
                         <tr>
                             <td>Staff1</td>
                             <td>staff001@gmail.com</td>
@@ -111,6 +114,7 @@
                                 <i class="fa-regular fa-trash-can"></i>
                             </td>
                         </tr>
+                        @endforeach
                         <tr>
                             <td colspan="2" class="last_row_left">
                                 <div class="page_info">

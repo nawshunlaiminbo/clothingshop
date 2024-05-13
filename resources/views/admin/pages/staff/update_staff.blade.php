@@ -60,18 +60,23 @@
             <p>Add your staff necessary information here</p>
             <div class="update_staff_form">
                 <div class="grid">
+                    <form action="{{route('ListEdit')}}"method="POST" enctype="multipart/form-data">
+                    @csrf
                     <div>Name</div>
-                    <input type="text" placeholder="Ye Yint Oo">
+                    <input type="text" value="" placeholder="Name">
                     <div>Email</div>
-                    <input type="email" placeholder="yeyint00@gmail.com">
+                    <input type="email" placeholder="Email">
                     <div>Password</div>
                     <input type="password">
                     <div>Phone Number</div>
-                    <input type="text" placeholder="09-XXXXXX">
+                    <input type="text" placeholder="Phone Number">
                     <div>Staff Role</div>
-                    <input type="text" placeholder="Admin">
-                    <button>Cancel</button>
+                    <input type="text" placeholder="">
+                    <button >Cancel</button>
                     <button>Update</button>
+
+                </form>
+
                 </div>
             </div>
         </div>

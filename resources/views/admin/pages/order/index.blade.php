@@ -29,7 +29,7 @@
                 <p class="nav_text">Order</p>
             </div>
         </a>
-        <a href="/pages/staff/index.html" target="_self">
+        <a href="{{url('/admin/list')}}" target="_self">
             <div class="flex_row">
                 <i class="fa-solid fa-user"></i>
                 <p class="nav_text">Staff</p>
