@@ -4,7 +4,7 @@
 
 <div class="session grid">
     <div class="nav flex_col">
-        <a href="/index.html" target="_self">
+        <a href="{{url('/admin/dashboard')}}" target="_self">
             <h1 class="nav_text">Bravis</h1>
             <div class="flex_row">
                 <i class="fa-solid fa-house"></i>
@@ -29,7 +29,7 @@
                 <p class="nav_text">Order</p>
             </div>
         </a>
-        <a href="/pages/staff/index.html" target="_self">
+        <a href="{{url('/admin/list')}}" target="_self">
             <div class="flex_row">
                 <i class="fa-solid fa-user"></i>
                 <p class="nav_text">Staff</p>
