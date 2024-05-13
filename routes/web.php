@@ -27,8 +27,8 @@ Route::middleware('admin')->group(function(){
     Route::post('/admin/login/process',[LoginController::class,'login'])->name('adminloginprocess');
     Route::get('/admin/dashboard',[AdminController::class, 'dashboard'])->name('AdminDashboard');
     Route::get('/admin/list',[AdminController::class,'list'])->name('adminlist');
-    Route::get('/admin/register/',[AdminController::class,'register'])->name('adminRegister');
-    Route::post('/admin/register/process',[AdminController::class,'process'])->name('adminRegisterProcess');
+    Route::post('/admin/register',[AdminController::class,'register'])->name('register');
+    // Route::post('/admin/register/process',[AdminController::class,'process'])->name('adminRegisterProcess');
     Route::get('/admin/listedit/{id}',[AdminController::class,'listedit'])->name('ListEdit');
 });
 

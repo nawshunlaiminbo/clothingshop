@@ -16,6 +16,7 @@ class AdminCheck
      */
     public function handle(Request $request, Closure $next): Response
     {
+        // dd(auth('admin')->user());
         if(Auth::check())
         {
 

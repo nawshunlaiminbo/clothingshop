@@ -14,6 +14,12 @@ class AdminController extends Controller
     public function dashboard(){
       return view('admin.index');
     }
+    public function register(){
+      $role = DB::table('roles')
+      ->select('id','name')->where('status','=','Active')->get();
+      // dd($role ,);
+      return view('admin.pages.staff.add_staff',compact('role'));
+    }
     public function list(){
       $stafflist = DB::table('admins')
       ->join('roles','roles.id','=','admins.role_id')
@@ -31,7 +37,5 @@ class AdminController extends Controller
       return view('admin.pages.staff.update_staff',compact('role','staffdata'));
       
     }
-    public function register(){
-      
-    }
+  
 }

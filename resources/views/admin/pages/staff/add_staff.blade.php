@@ -62,18 +62,23 @@
             <p>Add your staff necessary information here</p>
             <div class="add_staff_form">
                 <div class="grid">
+
+                        <form action="{{ route('register') }}" method="POST" class="grid">
+                        @csrf
+                    <input type="hidden" name="id">
                     <div>Name</div>
-                    <input type="text" placeholder="Staff Name">
+                    <input type="text"  placeholder="Staff Name" value="">
                     <div>Email</div>
-                    <input type="email">
+                    <input type="email" value="">
                     <div>Password</div>
-                    <input type="password">
+                    <input type="password" value="">
                     <div>Phone Number</div>
-                    <input type="text" placeholder="Example : 09-XXXXXX">
+                    <input type="text" value="" placeholder="Phone Number">
                     <div>Staff Role</div>
-                    <input type="text" placeholder="Admin">
+                    <input type="text" value="" placeholder="">
                     <button >Cancel</button> 
-                    <button>Add</button>
+                    <button type="submit" name="register">Add</button>
+                </form>
                      {{-- <a href="{{route('/admin/register/')}}">Add</a> --}}
                 </div>
             </div>

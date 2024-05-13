@@ -60,7 +60,7 @@
         <div class="main">
             <div class="session1 flex_row">
                 <h3>All Staffs</h3>
-                <a href="/pages/staff/add_staff.html">+ Add Staff</a>
+                <a href="{{route('register')}}">+ Add Staff</a>
             </div>
             <div class="session2">
                 <div class="grid">
