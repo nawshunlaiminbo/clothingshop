@@ -63,19 +63,22 @@
             <div class="add_staff_form">
                 <div class="grid">
 
-                        <form action="{{ route('register') }}" method="POST" class="grid">
+                        <form action="{{ route('adminRegisterProcess') }}" method="POST" class="grid">
                         @csrf
                     <input type="hidden" name="id">
                     <div>Name</div>
-                    <input type="text"  placeholder="Staff Name" value="">
+                    <input type="text"  name ="name" placeholder="Staff Name" value="">
                     <div>Email</div>
-                    <input type="email" value="">
+                    <input type="email" value="" name="email">
                     <div>Password</div>
-                    <input type="password" value="">
+                    <input type="password" value="" name="password">
                     <div>Phone Number</div>
-                    <input type="text" value="" placeholder="Phone Number">
-                    <div>Staff Role</div>
-                    <input type="text" value="" placeholder="">
+                    <input type="text" value="" placeholder="Phone Number" name="phone">
+                    <div>Address</div>
+                    <input type="text" value="" placeholder="" name="address">
+                    <div>Staff Position</div>
+                    <input type="text" value="" placeholder="" name="role_id">
+                  
                     <button >Cancel</button> 
                     <button type="submit" name="register">Add</button>
                 </form>

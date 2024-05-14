@@ -7,4 +7,7 @@ use Illuminate\Http\Request;
 class CustomerController extends Controller
 {
     //
+    public function login(){
+        return view ('customer.account.login.index');
+    }
 }
