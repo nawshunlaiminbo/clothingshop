@@ -41,7 +41,7 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
-    public function login(Request $request){
+    public function loginprocess(Request $request){
         // dd($request);
         $validateData = $request->validate([
             'email'=>'required',
@@ -65,11 +65,34 @@ class LoginController extends Controller
                     return redirect()->route('AdminLogin')->with('Error','You don\'t have an Admin Access');
                 }
             }
+            else{
+                Auth::logout();
+                return redirect()->route('AdminLogin')->with('Error','Wrong Email and Password');
+            }
+        }
+        if($input['usertype']=='customer'){
+          
+            if(auth('customer')->attempt(($userdata))){
+                $user = auth('customer')->user();
+                if($user->status == "Active"){
+                    return redirect()->route('CustomerHome');
+                }
+                else{
+                    Auth::logout();
+                    return redirect()->route('CustomerLogin')->with('error','You don\'t have Customer Account Access!');
+                }
+            }
+            else{
+                Auth::logout();
+                return redirect()->route('CustomerLogin')->with('error','Wrong email and password.');
+            }
         }
         else{
-            Auth::logout();
-            return redirect()->route('AdminLogin')->with('Error','Wrong Email and Password');
+            
+            return redirect('CustomerLogin')->with('error','You don\'t have Account Access!');
         }
+    }
+
         
      }
-}
+

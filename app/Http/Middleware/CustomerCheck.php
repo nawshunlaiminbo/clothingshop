@@ -4,6 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Symfony\Component\HttpFoundation\Response;
 
 class CustomerCheck
@@ -15,6 +16,15 @@ class CustomerCheck
      */
     public function handle(Request $request, Closure $next): Response
     {
+        if(Auth::check())
+        {
+
+            if (auth('customer')->user()->usertype == 'customer')
+            {
+                return redirect()-> route('CustomerHome');
+                return $next($request);
+            }
+        }
         return $next($request);
     }
 }

@@ -5,11 +5,12 @@
     <div class="container">
         <h1>Create Account</h1>
         <div class="flex_row">
-            <form action="">
-                <label for="name">Full Name</label>
-               
+            <form action="{{route('CustomerRegisterProcess')}}" method="POST" enctype="multipart/form-data">
+                @csrf
+                <input type="hidden" name="id">
+                <label for="name">First Name</label>
                 <div class="flex_row">
-                    <input type="text" id="fname" placeholder="First Name" required name="fullname">
+                    <input type="text" id="fname" placeholder="First Name" required name="firstname">
                     <input type="text" id="lname" placeholder="Last Name" required name="lastname">
                 </div>
                 <br>
@@ -30,10 +31,10 @@
                     <label></label>
                     <input type="text" placeholder="State/Region"><input type="text" placeholder="Zip Code (Eg. 1111)">
                 </div> --}}
-                <br>
+                <label for="image">Image</label>
+                <input type="file" name="image"><br>
                 <div class="sign_up flex_row">
-                    <a href="../login/index.html" class="button2">Sign Up</a>
-                </div>
+                    <button type="submit" name="register">Sign Up</button>
     
             </form>
         </div>
