@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="{{asset('css/customer/account/login.css')}}">
     <link rel="stylesheet" href="{{asset('css/customer/account/signup.css')}}">
     <link rel="stylesheet" href="{{asset('css/customer/componenet/add_to_card.css')}}">
-    <link rel="stylesheet" href="{{asset('css/customer/component/card_slder.css')}}">
+    <link rel="stylesheet" href="{{asset('css/customer/component/card_slider.css')}}">
     <link rel="stylesheet" href="{{asset('css/customer/global/style.css')}}">
     <link rel="stylesheet" href="{{asset('css/customer/pages/about/about.css')}}">
     <link rel="stylesheet" href="{{asset('css/customer/pages/category/men/men_tee_detail.css')}}">

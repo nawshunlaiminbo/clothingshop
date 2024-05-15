@@ -17,7 +17,7 @@
                 <p class="nav_text">Product</p>
             </div>
         </a>
-        <a href="/pages/customer/index.html" target="_self">
+        <a href="{{url('/customer/list')}}" target="_self">
             <div class="flex_row">
                 <i class="fa-solid fa-users"></i>
                 <p class="nav_text">Customer</p>
@@ -75,33 +75,17 @@
                 <p>135000</p>
             </div>
         </div>
-        <div class="session2 flex_row">
-            <div class=" date flex_row">
-                <div class="today">
-                    Today
-                </div>
-                <div>Week</div>
-                <div>Month</div>
-                <div>Year</div>
-            </div>
-            <div class="filter flex_row">
-                    
-                <input type="date" name="" id="">
-                <div>
-                    <i class="fa-solid fa-filter"></i>
-                </div>
-            </div>
-        </div>
-        <div class="session3 grid">
-            <div class="total_order flex_row">
-                <img src="/image/icon/Total Order.svg" alt="">
+       
+        <div class="dashboard-session2 grid">
+            <div class="total_order flex_row" style="margin: 20px;">
+                <img src="{{ asset("/image/admin/icon/Total Order.svg") }}" alt="">
                 <div>
                     <p>Total Order</p>
                     <p>500</p>
                 </div>
             </div>
             <div class="order_pending flex_row">
-                <img src="/image/icon/Pending.svg" alt="">
+                <img src="{{("/image/admin/icon/Pending.svg")}}" alt="">
                 <div>
                     <p>Order_pending</p>
                     <p>125</p>
@@ -122,7 +106,7 @@
                 </div>
             </div>
         </div>
-        <div class="session4 grid">
+        <div class="session3 grid">
             <div class="flex_col">
                 <div class="flex_row">
                     <p>Top selling products</p>
@@ -141,7 +125,7 @@
                 
             </div>
         </div>
-        <div class="session5">
+        <div class="session4">
             <p>Recent Transitions</p>
             <div class="filter_entry flex_row">
                 <div>

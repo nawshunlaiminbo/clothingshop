@@ -4,7 +4,7 @@
 {{-- {{dd($stafflist)}} --}}
     <div class="session grid">
         <div class="nav flex_col">
-            <a href="/index.html" target="_self">
+            <a href="{{url('/admin/dashboard/')}}" target="_self">
                 <h1 class="nav_text">Bravis</h1>
                 <div class="flex_row">
                     <i class="fa-solid fa-house"></i>
@@ -17,7 +17,7 @@
                     <p class="nav_text">Product</p>
                 </div>
             </a>
-            <a href="/pages/customer/index.html" target="_self">
+            <a href="{{url('/customer/list')}}" target="_self">
                 <div class="flex_row">
                     <i class="fa-solid fa-users"></i>
                     <p class="nav_text">Customer</p>
@@ -60,7 +60,7 @@
         <div class="main">
             <div class="session1 flex_row">
                 <h3>All Staffs</h3>
-                <a href="{{route('register')}}">+ Add Staff</a>
+                <a href="{{route('adminregister')}}">+ Add Staff</a>
             </div>
             <div class="session2">
                 <div class="grid">

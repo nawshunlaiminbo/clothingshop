@@ -60,18 +60,26 @@
             <p>Add your staff necessary information here</p>
             <div class="update_staff_form">
                 <div class="grid">
-                    <form action="{{route('ListEdit')}}"method="POST" enctype="multipart/form-data">
+                    <form action="{{route('ListEdit',$staffdata->id)}}"method="POST" enctype="multipart/form-data">
                     @csrf
                     <div>Name</div>
-                    <input type="text" value="" placeholder="Name">
+                    <input type="text" value="{{$staffdata->name}}" placeholder="Name">
                     <div>Email</div>
-                    <input type="email" placeholder="Email">
+                    <input type="email"value="{{$staffdata->email}}" placeholder="Email">
                     <div>Password</div>
-                    <input type="password">
+                    <input type="password" value="{{$staffdata->password}}">
                     <div>Phone Number</div>
-                    <input type="text" placeholder="Phone Number">
-                    <div>Staff Role</div>
-                    <input type="text" placeholder="">
+                    <input type="text" placeholder="Phone Number" value="{{$staffdata->phone}}">
+                    <div>
+                        <select name="role">
+                            <option value="roleid" selected>Select Role Name...</option>
+                            @foreach($role as $value)
+                            <option value="{{$value->id}}" >{{$value->name}}<option>
+                            @endforeach
+                        </select>
+            
+                    </div>        
+            
                     <button >Cancel</button>
                     <button>Update</button>
 

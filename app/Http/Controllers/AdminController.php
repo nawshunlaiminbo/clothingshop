@@ -29,17 +29,21 @@ class AdminController extends Controller
     //   'phone'=>['required','min:9','max:11']
     //  ]);
     //  $roleid  = $request->role;
+    // dd($request->image);
      $uuid = Str::uuid()->toString();
-    //  $request->image->move(public_path('image/admin'));
+     $image= $uuid.'.'.$request->image->extension();
+     $request->image->move(public_path('image/admin'));
+     
      $admin = new Admin();
+     $admin->uuid = $uuid;
      $admin->name = $request->name;
      $admin->email = $request->email;
      $admin->address = $request->address;
      $admin->password = bcrypt($request->password);
      $admin->phone = $request->phone;
      $admin->status = 'Active';
-    //  $admin->uuid = $uuid.'.'.$request->image->extension();
-    $admin->uuid= 'nullable';
+     $admin->image = $image;
+    // $admin->uuid= 'nullable';
     // 
     $admin->role_id = $request->role_id;
      $admin->save();
@@ -65,6 +69,9 @@ class AdminController extends Controller
       ->select('id','name')->where('status','=','Active')->get();
       $staffdata = Admin::find($id);
       return view('admin.pages.staff.update_staff',compact('role','staffdata'));
+      
+    }
+    public function updateprocess(){
       
     }
   

@@ -5,6 +5,8 @@
     text-align: center;
 }
 .main .session1 div{
+    height: 100px;
+    padding-top: 20px;
     border-radius: 20px;
     color: var(--secondary-color);
 }
@@ -27,7 +29,7 @@
 .main .session1 .page_visitors{
     background-color: var(--box-lightgreen-color);
 }
-.main .session2{
+/* .main .session2{
     padding: 20px 0px;
     justify-content: space-between;
 }
@@ -35,8 +37,8 @@
     justify-content: space-evenly;
     border-radius: 6px;
     background-color: var(--secondary-color);
-}
-.date{
+} */
+/* .date{
     border: 2px solid var(--box-blue-color);
 }
 .main .session2 .date div{
@@ -44,8 +46,8 @@
 }
 .today{
     background-color: var(--box-blue-color);
-}
-.filter{
+} */
+/* .filter{
     gap: 0px;
     background-color: var(--background-color) !important;
 }
@@ -64,46 +66,46 @@
 }
 .filter div i{
     padding: 0px 10px;
-}
-.session3{
+} */
+.dashboard-session2{
     /* padding: 20px 0px; */
-    grid-template-columns: repeat(4,1fr);
+    grid-template-columns: repeat(2,1fr);
     gap: 10px;
 }
-.session3 div{
+.dashboard-session2 div{
     background-color: var(--secondary-color);
     border-radius: 10px;
-    align-items: start;
+    align-items: center;
 }
-.session3 .flex_row >img{
-    padding-left: 20px;
-    padding-top: 10px;
+.dashboard-session2 .flex_row >img{
+    padding: 20px;
+
 }
-.session3 .flex_row div>p:first-child{
+.session2 .flex_row div>p:first-child{
     font-size: 14px;
 }
-.session3 .flex_row div>p:last-child{
+.dashboard-session2 .flex_row div>p:last-child{
     font-size: 20px;
     font-weight: bold;
 }
-.session4{
+.session3{
     margin: 20px 0px;
     gap: 10px;
 }
-.session4 .flex_col{
+.session3 .flex_col{
     background-color: var(--secondary-color);
     color: var(--secondary-color);
     font-weight: bold;
     border-radius: 10px;
 }
-.session4 .flex_col .flex_row{
+.session3 .flex_col .flex_row{
     justify-content: space-between;
     background-color: var(--box-blue-color);
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
     padding: 0px 20px;
 }
-.session4 .flex_col .flex_row div > button {
+.session3 .flex_col .flex_row div > button {
     background-color: var(--box-skyblue-color);
     border-radius: 10px;
     border: none;
@@ -114,47 +116,47 @@
     border-bottom-right-radius: 10px;
     border-bottom-left-radius: 10px;
 }
-.session5{
+.session4{
     border-radius: 10px;
     padding: 20px;
     background-color: var(--secondary-color);
 }
-.session5 > p{
+.session4 > p{
     font-weight: bold;
 }
-.session5 .filter_entry{
+.session4 .filter_entry{
     justify-content: space-between;
 }
-.session5 .filter_entry div >#select_entry{
+.session4 .filter_entry div >#select_entry{
     border: 1px solid var(--primary-color);
     padding: 5px 10px;
     margin: 0px 10px;
 }
-.session5 .filter_entry div >#select_input{
+.session4 .filter_entry div >#select_input{
     padding: 5px 10px;
 }
-.session5 table th{
+.session4 table th{
     color: var(--text-title-gray-color);
 }
-.session5 table th,.session5 table tr{
+.session4 table th,.session5 table tr{
     background-color: var(--secondary-color);
     border-bottom: 1px solid var(--border-gray-color);
 }
-.session5 table tr:last-child{
+.session4 table tr:last-child{
     border-bottom: none;
 }
-.session5 .transition_table .flex_row{
+.session4 .transition_table .flex_row{
     align-items: center;
 }
 
 @media (max-width:1440px) and (min-width:768px){
-    .session2 {
+    /* .session2 {
         flex-direction: column;
-    }
-    .session3{
+    } */
+    .session2{
         grid-template-columns: repeat(2,1fr);
     }
-    .session4{
+    .session3{
         grid-template-columns: 1fr;
         gap: 30px;
     }
@@ -163,22 +165,22 @@
     .main .session1{
         grid-template-columns: 1fr;
     }
-    .session2 {
+    /* .session2 {
         flex-direction: column;
-    }
-    .session2 .date{
+    } */
+    /* .session2 .date{
         display: none;
-    }
-    .session3{
+    } */
+    .session2{
         grid-template-columns: 1fr;
     }
-    .session4{
+    .session3{
         display: none;
     }
-    .session5{
+    .session4{
         margin: 10px 0px;
     }
-    .session5 .filter_entry{
+    .session4 .filter_entry{
         flex-direction: column;
     }
 }

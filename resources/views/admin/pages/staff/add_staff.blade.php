@@ -63,7 +63,7 @@
             <div class="add_staff_form">
                 <div class="grid">
 
-                        <form action="{{ route('adminRegisterProcess') }}" method="POST" class="grid">
+                        <form action="{{ route('adminRegisterProcess') }}" method="POST" class="grid" enctype="multipart/form-data" >
                         @csrf
                     <input type="hidden" name="id">
                     <div>Name</div>
@@ -76,9 +76,16 @@
                     <input type="text" value="" placeholder="Phone Number" name="phone">
                     <div>Address</div>
                     <input type="text" value="" placeholder="" name="address">
-                    <div>Staff Position</div>
-                    <input type="text" value="" placeholder="" name="role_id">
-                  
+                    <div>
+                        <select name="role">
+                            <option value="roleid" selected>Select Role Name...</option>
+                           @foreach($role as $value)
+                            <option value="{{$value->id}}">{{$value->name}}</option>
+                           @endforeach
+                        </select>
+                    </div>     
+                    <label for="image">Image</label>
+                    <input type="file" class="" name="image" id="image">   
                     <button >Cancel</button> 
                     <button type="submit" name="register">Add</button>
                 </form>

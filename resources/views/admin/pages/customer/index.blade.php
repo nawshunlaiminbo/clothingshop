@@ -4,7 +4,7 @@
 
 <div class="session grid">
         <div class="nav flex_col">
-            <a href="/index.html" target="_self">
+            <a href="{{url('/admin/dashboard')}}" target="_self">
                 <h1 class="nav_text">Bravis</h1>
                 <div class="flex_row">
                     <i class="fa-solid fa-house"></i>
@@ -17,7 +17,7 @@
                     <p class="nav_text">Product</p>
                 </div>
             </a>
-            <a href="/pages/customer/index.html" target="_self">
+            <a href="{{url('/customer/list')}}" target="_self">
                 <div class="flex_row">
                     <i class="fa-solid fa-users"></i>
                     <p class="nav_text">Customer</p>
@@ -73,22 +73,28 @@
                     <table>
                         <tr>
                             <th class="first_title">ID</th>
-                            <th>Customer's Name</th>
+                            <th>Customer's First Name</th>
+                            <th>Customer's Last Name</th>
                             <th>Email</th>
                             <th>Phone Number</th>
                             <th class="last_title">Action</th>
                         </tr>
                         <tr>
-                            <td>Staff001</td>
-                            <td>Staff1</td>
-                            <td>staff001@gmail.com</td>
-                            <td>09-123-456-789</td>
+                            {{-- {{dd($customerlist)}}; --}}
+                            @foreach ($customerdata as $value)
+                            
+                            <td>{{$value->id}}</td>
+                            <td>{{$value->firstname}}</td>
+                            <td>{{$value->lastname}}</td>
+                            <td>{{$value->email}}</td>
+                            <td>{{$value->phone}}</td>
                             <td>
-                                <a href="/pages/customer/edit_customer.html"><i class="fa-solid fa-pen-to-square"></i></a>
+                                <a href="{{url('/customer/listedit/'.$value->id)}}"><i class="fa-solid fa-pen-to-square"></i></a>
                                 <i class="fa-regular fa-trash-can"></i>
                             </td>
                         </tr>
                         <tr>
+                            @endforeach
                             <td>Staff001</td>
                             <td>Staff1</td>
                             <td>staff001@gmail.com</td>

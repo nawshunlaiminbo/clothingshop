@@ -1,10 +1,16 @@
 @extends('layouts.adminlayout')
 @section('title','Home')
-@section('content')
 
+@php
+   $updatestatus = false;
+   if(isset($customerdata)) {
+    $updatestatus = true;
+   }
+@endphp
+@section('content')
 <div class="session grid">
     <div class="nav flex_col">
-        <a href="/index.html" target="_self">
+        <a href="{{url('/admin/dashboard')}}" target="_self">
             <h1 class="nav_text">Bravis</h1>
             <div class="flex_row">
                 <i class="fa-solid fa-house"></i>
@@ -17,7 +23,7 @@
                 <p class="nav_text">Product</p>
             </div>
         </a>
-        <a href="/pages/customer/index.html" target="_self">
+        <a href="{{url('/customer/list')}}" target="_self">
             <div class="flex_row">
                 <i class="fa-solid fa-users"></i>
                 <p class="nav_text">Customer</p>
@@ -62,16 +68,26 @@
         <p>Edit your customer necessary information here</p>
         <div class="update_customer_form">
             <div class="grid">
-                <div>Name</div>
-                <input type="text" placeholder="Ye Yint Oo">
+            <form action="{{$updatestatus == true? route('CustomerRegisterUpdateProcess') : route('CustomerRegisterProcess')}}" method="POST">
+                @csrf
+                @if($updatestatus == true)
+                @method('PATCH')
+                @endif
+                <input type="hidden" name="id" value="{{$updatestatus = true? $customerdata->id: ''}}">
+                <h1>{{$updatestatus == true ? 'Customer Edit Form' : 'Create Account'}}</h1>
+                <div>First Name</div>
+                <input type="text" placeholder="First Name" name="fname" value="{{$updatestatus == true? $customerdata->firstname: ''}}">
+                <div>Last Name</div>
+                <input type="text" placeholder="Last Name" name="lname" value="{{$updatestatus == true? $customerdata->lastname: ''}}">
                 <div>Email</div>
-                <input type="email" placeholder="yeyint00@gmail.com">
+                <input type="email" placeholder="" name="email" value="{{$updatestatus == true? $customerdata->email: ''}}">
                 <div>Password</div>
-                <input type="password">
+                <input type="password" name="password" value="{{$updatestatus == true? $customerdata->password: ''}}">
                 <div>Phone Number</div>
-                <input type="text" placeholder="09-XXXXXX">
+                <input type="text" placeholder="" name="phone" value="{{$updatestatus == true? $customerdata->phone: ''}}">
                 <button>Cancel</button>
-                <button>Update</button>
+                <button type="submit" class="btn" name="login">{{$updatestatus == true? 'Update': 'Register'}}</button>
+            </form>
             </div>
         </div>
     </div>
