@@ -42,79 +42,82 @@
                 </div>
             </a>
         </div>
-        <div class="header flex_row">
-            <div class="flex_row icons">
-                <img src="/image/icon/bell.svg" alt="">
-                <img src="/image/icon/msg.svg" alt="">
-            </div>
-            <div class="user_profile">
-            </div>
-            
-        </div>
-        <!-- user Profile Info -->
-        <div class="user_profile_info">
-            <a href=""><i class="fa-solid fa-gear"></i>Edit Profile</a><br>
-            <a href="/account/login/index.html"><i class="fa-solid fa-arrow-right-from-bracket"></i>Log out</a>
-     </div>
 
-        <div class="main">
-            <div class="session1 flex_row">
-                <h3>All Staffs</h3>
-                <a href="{{route('register')}}">+ Add Staff</a>
-            </div>
-            <div class="session2">
-                <div class="grid">
-                    <input type="text" placeholder="Search By Name/ Email/ Phone number">
-                    <select name="" id="">
-                        <option value="">Admin</option>
-                    </select>
-                    <button>Search</button>
+        <div class="main-container">
+            <div class="col-con">
+                <div class="header flex_row">
+                    <div class="flex_row icons">
+                        <img src="/image/icon/bell.svg" alt="">
+                        <img src="/image/icon/msg.svg" alt="">
+                    </div>
+                    <div class="user_profile">
+                    </div>
+                    
                 </div>
             </div>
-            <div class="session3">
-                <div style="overflow-x: auto;">
-                    <table>
-                        <tr>
-                            <th class="first_title">Name</th>
-                            <th>Email</th>
-                            <th>Phone Number</th>
-                            <th>Role</th>
-                            <th class="last_title">Action</th>
-                        </tr>
-                        <tr>
-                            @foreach ($stafflist as $value)
+            <div class="main-col">
+                <div class="session_1 flex_row">
+                    <h3>All Staffs</h3>
+                    <a href="{{route('register')}}">+ Add Staff</a>
+                </div>
+                <div class="session2">
+                    <div class="grid">
+                        <input type="text" placeholder="Search By Name/ Email/ Phone number">
+                        <select name="" id="">
+                            <option value="">Admin</option>
+                        </select>
+                        <button>Search</button>
+                    </div>
+                </div>
+                <div class="session3">
+                    <div style="overflow-x: auto;">
+                        <table>
+                            <tr>
+                                <th class="first_title">Name</th>
+                                <th>Email</th>
+                                <th>Phone Number</th>
+                                <th>Role</th>
+                                <th class="last_title">Action</th>
+                            </tr>
+                            <tr>
+                                @foreach ($stafflist as $value)
+                                
+                                <td>{{$value->name}}</td>
+                                <td>{{$value->email}}</td>
+                                <td>{{$value->phone}}</td>
+                                <td>{{$value->role}}</td>
+                                <td>
+                                    <a href="{{url('/admin/listedit/'.$value->id)}}"><i class="fa-solid fa-pen-to-square"></i></a>
+                                    <i class="fa-regular fa-trash-can"></i>
+                                </td>
+                            </tr>
                             
-                            <td>{{$value->name}}</td>
-                            <td>{{$value->email}}</td>
-                            <td>{{$value->phone}}</td>
-                            <td>{{$value->role}}</td>
-                            <td>
-                                <a href="{{url('/admin/listedit/'.$value->id)}}"><i class="fa-solid fa-pen-to-square"></i></a>
-                                <i class="fa-regular fa-trash-can"></i>
-                            </td>
-                        </tr>
-                        
-                        
-                        
-                        @endforeach
-                        <tr>
-                            <td colspan="2" class="last_row_left">
-                                <div class="page_info">
-                                    Showing 1-3 of 30
-                                </div>
-                            </td>
-                            <td colspan="3" class="last_row_right">
-                                <div class="pagination">
-                                    <a href="#">&laquo;</a>
-                                    <a class="active" href="#">1</a>
-                                    <a href="#">&raquo;</a>
-                                </div>
-                            </td>
-                        </tr>
-                    </table>
+                            
+                            
+                            @endforeach
+                            <tr>
+                                <td colspan="2" class="last_row_left">
+                                    <div class="page_info">
+                                        Showing 1-3 of 30
+                                    </div>
+                                </td>
+                                <td colspan="3" class="last_row_right">
+                                    <div class="pagination">
+                                        <a href="#">&laquo;</a>
+                                        <a class="active" href="#">1</a>
+                                        <a href="#">&raquo;</a>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
+
+        
+      
+
     </div>
 
 

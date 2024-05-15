@@ -1,18 +1,30 @@
-.session1{
-    justify-content: space-between;
+
+
+.main-col{
+    /* border: 1px solid red; */
+    padding-top: 5px;
 }
-.session1 >a{
+
+.session_1{    
+    /* justify-content: space-between; */
+    background-color: var(--secondary-color);
+    display: grid;
+    grid-template-columns: 90% 10%;
+    align-items: center;
+    height: 70px;
+    padding-left: 15px;
+    border-radius: 10px;
+}
+
+.session_1 >a{
     background-color: var(--box-blue-color);
     color: var(--secondary-color);
     padding:10px;
     border-radius: 6px;
+    float: right;
+    width: 80%;
 }
-.session2{
-    padding: 30px 15px;
-    border-radius: 10px;
-    margin: 10px 0px;
-    background-color: var(--secondary-color);
-}
+
 .session2 .grid{
     grid-template-columns: repeat(3,1fr);
     gap: 10px;
@@ -31,7 +43,42 @@
     background-color: var(--box-blue-color);
 }
 
+@media (max-width:1550px) and (min-width:1300px){
+    .session_1{
+    display: grid;
+    grid-template-columns: 85% 150px;
+  }
+  
+}
+
+@media (max-width:1300px) and (min-width:1000px){
+    .session_1{
+        display: grid;
+        grid-template-columns: 80% 150px;
+      }
+   
+}
+
+@media (max-width:1000px) and (min-width:767px){
+    .session_1{
+        display: grid;
+        grid-template-columns: 75% 150px;
+      }
+   
+
+      
+}
+
+
+
 @media (max-width:767px) and (min-width:320px){
+
+    .session_1{
+        display: grid;
+        grid-template-columns: 1fr 120px;
+        font-size: 11px;
+      }
+   
     .session2 .grid{
         grid-template-columns: 1fr;
     }
@@ -39,4 +86,7 @@
         font-size: 14px;
         
     }
+
+   
 }
+
