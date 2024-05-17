@@ -64,6 +64,7 @@
                 <h3>
                    Basic Information
                 </h3>
+                <form action="" method="">
                 <div class="edit_product_grid grid">
                     <div>Product Title/Name</div>
                     <input type="text" placeholder="Polo Brown">
@@ -102,7 +103,7 @@
                     <button class="buttons">Cancel</button>
                     <button class="buttons">Add Product</button>
                 </div>
-                   
+            </form>
             </div>
         </div>
     </div>

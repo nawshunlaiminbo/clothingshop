@@ -1,5 +1,5 @@
 @extends('layouts.adminlayout')
-@section('title','Home')
+@section('title','Dashboard')
 @section('content')
 
 <div class="session grid">
@@ -15,6 +15,12 @@
             <div class="flex_row">
                 <i class="fa-solid fa-bag-shopping"></i>
                 <p class="nav_text">Product</p>
+            </div>
+        </a>
+        <a href="{{url('/category/list')}}" target="_self">
+            <div class="flex_row">
+                <i class="fa-solid fa-bag-shopping"></i>
+                <p class="nav_text">Category</p>
             </div>
         </a>
         <a href="{{url('/customer/list')}}" target="_self">
@@ -44,9 +50,8 @@
 
     </div>
     <div class="header flex_row">
-        <div class="flex_row icons">
-            <img src="/image/icon/bell.svg" alt="">
-            <img src="/image/icon/msg.svg" alt="">
+        <div class="flex_row name">
+            <h3>Shun Shun</h3>
         </div>
         <div class="user_profile">
         </div>     
@@ -123,95 +128,6 @@
                 </div>
                 <canvas id="myChart" style="width: 100% !important;height: 300px;"></canvas>
                 
-            </div>
-        </div>
-        <div class="session4">
-            <p>Recent Transitions</p>
-            <div class="filter_entry flex_row">
-                <div>
-                    Show
-                    <select name="" id="select_entry">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                    </select>
-                    entries
-                </div>
-                <div>
-                    <label for="">Search:</label>
-                    <input type="text" id="select_input">
-                </div>
-            </div>
-            <div style="overflow-x: auto;">
-                <table class="transition_table">
-                    <tr>
-                        <th class="first_title">ID</th>
-                        <th>Product</th>
-                        <th>Customer Name</th>
-                        <th>Price</th>
-                        <th>Payment Info</th>
-                        <th class="last_title">Status</th>
-                    </tr>
-                    <tr>
-                        <td>#Order111</td>
-                        <td>
-                            <div class="flex_row">
-                                <div class="product_img"></div>
-                                <p>Polo Shirt</p>
-                            </div>
-                        </td>
-                        <td>Mg Myo</td>
-                        <td>25,450MMK</td>
-                        <td>Credit Card</td>
-                        <td>
-                            <div class="status status_complete">Complete</div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>#Order111</td>
-                        <td>
-                            <div class="flex_row">
-                                <div class="product_img"></div>
-                                <p>Polo Shirt</p>
-                            </div>
-                        </td>
-                        <td>Mg Myo</td>
-                        <td>25,450MMK</td>
-                        <td>Credit Card</td>
-                        <td>
-                            <div class="status status_pending">Pending</div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>#Order111</td>
-                        <td>
-                            <div class="flex_row">
-                                <div class="product_img"></div>
-                                <p>Polo Shirt</p>
-                            </div>
-                        </td>
-                        <td>Mg Myo</td>
-                        <td>25,450MMK</td>
-                        <td>Credit Card</td>
-                        <td>
-                            <div class="status status_cancelled">Cancelled</div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="6" class="last_row_left">
-                            <div class="page_info">
-                                Showing 1-3 of 30
-                            </div>
-                        </td>
-                        <!-- <td colspan="4" class="last_row_right">
-                            <div class="pagination">
-                                <a href="#">&laquo;</a>
-                                <a class="active" href="#">1</a>
-                                <a href="#">&raquo;</a>
-                            </div>
-                        </td> -->
-                    </tr>
-                </table>
             </div>
         </div>
     </div>

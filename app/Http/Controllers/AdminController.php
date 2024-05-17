@@ -13,6 +13,7 @@ class AdminController extends Controller
         return view('admin.account.login.index');
     }
     public function dashboard(){
+      // dd("reach");
       return view('admin.index');
     }
     public function register(){
@@ -71,8 +72,26 @@ class AdminController extends Controller
       return view('admin.pages.staff.update_staff',compact('role','staffdata'));
       
     }
-    public function updateprocess(){
-      
+    public function updateprocess(Request $request){
+      // $stafflist = Admin::all();
+      $staffdata = Admin::find($request->id);
+      $uuid = Str::uuid()->toString();
+      $staffdata->name = $request->name;
+     
+      $staffdata->email = $request->email;
+      $staffdata->address = $request->address;
+      $staffdata->password = bcrypt($request->password);
+      $staffdata->phone = $request->phone;
+      $staffdata->uuid = $uuid;
+      // $staffdata->status = 'Active';
+      $staffdata->update();
+      return redirect()->route('adminlist')->with('success', 'Record updated successfully');
     }
-  
+  // public function destroy($id){
+  //   $stafflist = Admin::find($id);
+  //   $stafflist->status = 'Inactive';
+  //   $stafflist->update();
+
+  //   return redirect()->route('adminlist')->with('Success','Record deleted successfully');
+  // }
 }

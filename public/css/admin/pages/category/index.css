@@ -1,0 +1,92 @@
+
+
+.main-col{
+    /* border: 1px solid red; */
+    padding-top: 5px;
+}
+
+.session_1{    
+    /* justify-content: space-between; */
+    background-color: var(--secondary-color);
+    display: grid;
+    grid-template-columns: 90% 10%;
+    align-items: center;
+    height: 70px;
+    padding-left: 15px;
+    border-radius: 10px;
+}
+
+.session_1 >a{
+    background-color: var(--box-blue-color);
+    color: var(--secondary-color);
+    padding:10px;
+    border-radius: 6px;
+    float: right;
+    width: 80%;
+}
+
+.session2 .grid{
+    grid-template-columns: repeat(3,1fr);
+    gap: 10px;
+}
+.session2 .grid input,.session2 .grid select{
+    border-radius: 6px;
+    height: 30px;
+    color: var(--text-gray-color);
+    border: 1px solid rgba(0, 0, 0, 0.11);
+}
+.session2 .grid >button{
+    padding: 10px 30px;
+    border-radius: 6px;
+    border: none;
+    color: var(--secondary-color);
+    background-color: var(--box-blue-color);
+}
+
+@media (max-width:1550px) and (min-width:1300px){
+    .session_1{
+    display: grid;
+    grid-template-columns: 85% 150px;
+  }
+  
+}
+
+@media (max-width:1300px) and (min-width:1000px){
+    .session_1{
+        display: grid;
+        grid-template-columns: 80% 150px;
+      }
+   
+}
+
+@media (max-width:1000px) and (min-width:767px){
+    .session_1{
+        display: grid;
+        grid-template-columns: 75% 150px;
+      }
+   
+
+      
+}
+
+
+
+@media (max-width:767px) and (min-width:320px){
+
+    .session_1{
+        display: grid;
+        grid-template-columns: 1fr 120px;
+        font-size: 11px;
+      }
+   
+    .session2 .grid{
+        grid-template-columns: 1fr;
+    }
+    .session3 div table{
+        font-size: 14px;
+        
+    }
+
+   
+}
+

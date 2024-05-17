@@ -17,6 +17,12 @@
                     <p class="nav_text">Product</p>
                 </div>
             </a>
+            <a href="{{url('/category/list')}}" target="_self">
+                <div class="flex_row">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <p class="nav_text">Category</p>
+                </div>
+            </a>
             <a href="{{url('/customer/list')}}" target="_self">
                 <div class="flex_row">
                     <i class="fa-solid fa-users"></i>
@@ -57,8 +63,8 @@
             </div>
             <div class="main-col">
                 <div class="session_1 flex_row">
-                    <h3>All Staffs</h3>
-                    <a href="{{route('register')}}">+ Add Staff</a>
+                    <h3>Category</h3>
+                    <a href="">+ Add Category</a>
                 </div>
                 <div class="session2">
                     <div class="grid">
@@ -73,13 +79,11 @@
                     <div style="overflow-x: auto;">
                         <table>
                             <tr>
-                                <th class="first_title">Name</th>
-                                <th>Email</th>
-                                <th>Phone Number</th>
-                                <th>Role</th>
+                                <th class="first_title">Category Name</th>
+                                <th>Admin Name</th>
                                 <th class="last_title">Action</th>
                             </tr>
-                            <tr>
+                            {{-- <tr>
                                 @foreach ($stafflist as $value)
                                 
                                 <td>{{$value->name}}</td>
@@ -91,7 +95,7 @@
                                     <a href="{{url('/admin/deleteprocess/'.$value->id)}}"><i class="fa-regular fa-trash-can"></i></a>
                                 </td>
                             </tr>
-                            
+                             --}}
                             
                             
                             @endforeach

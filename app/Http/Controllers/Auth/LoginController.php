@@ -30,7 +30,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    // protected $redirectTo = '/home';
 
     /**
      * Create a new controller instance.
@@ -53,10 +53,15 @@ class LoginController extends Controller
         $validateData['password'] = bcrypt($validateData['password']);
         $input = $request->all();
         $userdata = array('email'=>$input['email'],'password'=>$input['password']);
-        // dd($userdata);
+        // dd($validateData['password']);
         if($input['usertype']=='admin'){
+        
+        // dd($userdata);
             if(auth('admin')->attempt($userdata)){
+                // dd("reach");
                 $user = auth('admin')->user();
+                // dd($user);
+                // return redirect()->route('AdminDashboard');
                 if($user->status == 'Active'){
                     return redirect()->route('AdminDashboard');
                 }

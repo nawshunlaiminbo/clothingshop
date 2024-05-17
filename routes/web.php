@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CustomerController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -32,6 +33,9 @@ Route::middleware('admin')->group(function(){
     Route::post('/admin/register/process',[AdminController::class,'registerprocess'])->name('adminRegisterProcess');
     Route::get('/admin/listedit/{id}',[AdminController::class,'listedit'])->name('ListEdit');
     Route::patch('/admin/register/update/process',[AdminController::class,'updateprocess'])->name('AdminRegisterUpdateProcess');
+    Route::get('/admin/deleteprocess/{id}', [AdminController::class, 'destroy'])->name('AdminDestroy');
+
+
 });
 Route::get('/customer/login',[CustomerController::class,'login'])->name('CustomerLogin');
 Route::post('/customer/login/process',[LoginController::class,'loginprocess'])->name('CustomerLoginProcess');
@@ -43,6 +47,14 @@ Route::get('/customer/register',[CustomerController::class,'register'])->name('r
 Route::post('/customer/register/process',[CustomerController::class,'registerprocess'])->name('CustomerRegisterProcess');
 Route::get('/customer/listedit/{id}',[CustomerController::class,'listedit'])->name('CustomerListEdit');
 Route::patch('/customer/register/update/process',[CustomerController::class,'updateprocess'])->name('CustomerRegisterUpdateProcess');
+Route::get('customer/deleteprocess/{id}', [CustomerController::class, 'destroy'])->name('CustomerDestroy');
+
+});
+
+Route::middleware('category')->group(function(){
+    Route::get('/category/list',[CategoryController::class,'list'])->name('CategoryList');
+    Route::get('/category/register',[CategoryController::class,'register'])->name('CategoryRegister');
+    Route::post('/category/register/process',[CategoryController::class,'registerprocess'])->name('CategoryRegisterProcess');
 });
 // Auth::routes();
 

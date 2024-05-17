@@ -16,15 +16,21 @@ class CustomerCheck
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if(Auth::check())
-        {
-
-            if (auth('customer')->user()->usertype == 'customer')
+        if(auth('customer')->check()){
+            if(auth('customer')->check())
             {
-                return redirect()-> route('CustomerHome');
-                return $next($request);
+
+                    return $next($request);
+
+            }
+            else
+            {
+                return redirect('/customer/login')->with('error','You don\'t have Customer Access!');
             }
         }
-        return $next($request);
+    
+        return redirect('/customer/login')->with('error','You don\'t have Customer Access!');
+
+    
     }
 }

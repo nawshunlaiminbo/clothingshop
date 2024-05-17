@@ -17,7 +17,13 @@
                     <p class="nav_text">Product</p>
                 </div>
             </a>
-            <a href="/pages/customer/index.html" target="_self">
+            <a href="{{url('/category/list')}}" target="_self">
+                <div class="flex_row">
+                    <i class="fa-solid fa-users"></i>
+                    <p class="nav_text">Category</p>
+                </div>
+            </a>
+            <a href="{{url('/customer/list')}}" target="_self">
                 <div class="flex_row">
                     <i class="fa-solid fa-users"></i>
                     <p class="nav_text">Customer</p>
@@ -58,58 +64,22 @@
         </div>
 
         <div class="main">
-            <h4><b>Add Staff</b></h4>
-            <p>Add your staff necessary information here</p>
-            {{-- <div class="add_staff_form"> --}}
-                {{-- <div class="grid"> --}}
+            <h4><b>Add Category</b></h4>
+            <p>Add your category necessary information here</p>
+            <div class="add_category_form">
+                <div class="grid">
 
-             <form action="{{ route('adminRegisterProcess') }}" method="POST" class="grid" enctype="multipart/form-data" >
-                <div class="group-title">
-                            
+                        <form action="" method="POST" class="grid" enctype="multipart/form-data" >
                         @csrf
                     <input type="hidden" name="id">
-                </div>
-                <div class="group-col">
-                    <div>Name</div>
-                    <input type="text"  name ="name" placeholder="Staff Name" value="">
-                </div>
-                <div class="group-col">
-                    <div>Email</div>
-                    <input type="email" value="" name="email">
-                </div>
-                <div class="group-col">
-                    <div>Password</div>
-                    <input type="password" value="" name="password">
-                </div>
-                <div class="group-col">
-                    <div>Phone Number</div>
-                    <input type="text" value="" placeholder="Phone Number" name="phone">
-                </div>
-                <div class="group-col">
-                    <div>Address</div>
-                    <input type="text" value="" placeholder="" name="address">
-                </div>
-                <div class="group-col">
-                        <select name="role">
-                            <option value="roleid" selected>Select Role Name...</option>
-                           @foreach($role as $value)
-                            <option value="{{$value->id}}">{{$value->name}}</option>
-                           @endforeach
-                        </select>
-                </div>     
-                <div class="group-col">
-                    <label for="image">Image</label>
-                    <input type="file" class="" name="image" id="image"> 
-                </div>  
-                <div class="group-submit">
-                    <button class="can-btn">Cancel</button> 
-                    <button type="submit" class="btn" name="register">Add</button>
-                </div>
+                    <div>Category Name</div>
+                    <input type="text"  name ="name" placeholder="Category Name" value=""> 
+                    <button >Cancel</button> 
+                    <button type="submit" name="register">Add</button>
                 </form>
-            </div>  
                      {{-- <a href="{{route('/admin/register/')}}">Add</a> --}}
-                
-            
+                </div>
+            </div>
         </div>
     </div>
 

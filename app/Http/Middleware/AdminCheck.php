@@ -17,22 +17,21 @@ class AdminCheck
     public function handle(Request $request, Closure $next): Response
     {
         
-    if(auth('admin')->user()){
-        if(auth('admin')->user()->role_id === 1 || auth('admin')->user()->role_id === 2 )
-        {
+        if(auth('admin')->check()){
+            if(auth('admin')->check())
+            {
 
-                return $next($request);
+                    return $next($request);
 
+            }
+            else
+            {
+                return redirect('/admin/login')->with('error','You don\'t have Admin Access!');
+            }
         }
-        else
-        {
-            return redirect('/admin/login')->with('error','You don\'t have Admin Access!');
-        }
-    }
-    else
-    {
+    
         return redirect('/admin/login')->with('error','You don\'t have Admin Access!');
 
-}
-}
+    
+    }
 }   

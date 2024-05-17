@@ -29,7 +29,7 @@
                     <p class="nav_text">Order</p>
                 </div>
             </a>
-            <a href="/pages/staff/index.html" target="_self">
+            <a href="{{url('/admin/list')}}" target="_self">
                 <div class="flex_row">
                     <i class="fa-solid fa-user"></i>
                     <p class="nav_text">Staff</p>
@@ -61,7 +61,10 @@
             <h3>All Customers</h3>
             <div class="session1">
                 <div class="grid">
-                    <input type="text" placeholder="Search">
+                    <div class="search-box">
+                        <input type="text" placeholder="Search">
+                    </div>
+                    
                     <div class="flex_row">
                         <button class="search_button">Search</button>
                         <button class="reset_button">Reset</button>
@@ -79,9 +82,10 @@
                             <th>Phone Number</th>
                             <th class="last_title">Action</th>
                         </tr>
+                        @foreach ($customerlist as $value)
                         <tr>
                             {{-- {{dd($customerlist)}}; --}}
-                            @foreach ($customerdata as $value)
+                            
                             
                             <td>{{$value->id}}</td>
                             <td>{{$value->firstname}}</td>
@@ -90,60 +94,12 @@
                             <td>{{$value->phone}}</td>
                             <td>
                                 <a href="{{url('/customer/listedit/'.$value->id)}}"><i class="fa-solid fa-pen-to-square"></i></a>
-                                <i class="fa-regular fa-trash-can"></i>
+                               <a href="{{url('/customer/deleteprocess/'.$value->id)}}"> <i class="fa-regular fa-trash-can"></i></a>
                             </td>
                         </tr>
-                        <tr>
-                            @endforeach
-                            <td>Staff001</td>
-                            <td>Staff1</td>
-                            <td>staff001@gmail.com</td>
-                            <td>09-123-456-789</td>
-                            <td>
-                                <a href="/pages/customer/edit_customer.html"><i class="fa-solid fa-pen-to-square"></i></a>
-                                <i class="fa-regular fa-trash-can"></i>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Staff001</td>
-                            <td>Staff1</td>
-                            <td>staff001@gmail.com</td>
-                            <td>09-123-456-789</td>
-                            <td>
-                                <a href="/pages/customer/edit_customer.html"><i class="fa-solid fa-pen-to-square"></i></a>
-                                <i class="fa-regular fa-trash-can"></i>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Staff001</td>
-                            <td>Staff1</td>
-                            <td>staff001@gmail.com</td>
-                            <td>09-123-456-789</td>
-                            <td>
-                                <a href="/pages/customer/edit_customer.html"><i class="fa-solid fa-pen-to-square"></i></a>
-                                <i class="fa-regular fa-trash-can"></i>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Staff001</td>
-                            <td>Staff1</td>
-                            <td>staff001@gmail.com</td>
-                            <td>09-123-456-789</td>
-                            <td>
-                                <a href="/pages/customer/edit_customer.html"><i class="fa-solid fa-pen-to-square"></i></a>
-                                <i class="fa-regular fa-trash-can"></i>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Staff001</td>
-                            <td>Staff1</td>
-                            <td>staff001@gmail.com</td>
-                            <td>09-123-456-789</td>
-                            <td>
-                                <a href="/pages/customer/edit_customer.html"><i class="fa-solid fa-pen-to-square"></i></a>
-                                <i class="fa-regular fa-trash-can"></i>
-                            </td>
-                        </tr>
+                        @endforeach
+                         
+                       
                         <tr>
                             <td colspan="2" class="last_row_left">
                                 <div class="page_info">

@@ -64,32 +64,63 @@
  </div>
 
     <div class="main">
-        <h4><b>Edit Customer</b></h4>
-        <p>Edit your customer necessary information here</p>
-        <div class="update_customer_form">
-            <div class="grid">
-            <form action="{{$updatestatus == true? route('CustomerRegisterUpdateProcess') : route('CustomerRegisterProcess')}}" method="POST">
-                @csrf
-                @if($updatestatus == true)
-                @method('PATCH')
-                @endif
-                <input type="hidden" name="id" value="{{$updatestatus = true? $customerdata->id: ''}}">
-                <h1>{{$updatestatus == true ? 'Customer Edit Form' : 'Create Account'}}</h1>
-                <div>First Name</div>
-                <input type="text" placeholder="First Name" name="fname" value="{{$updatestatus == true? $customerdata->firstname: ''}}">
-                <div>Last Name</div>
-                <input type="text" placeholder="Last Name" name="lname" value="{{$updatestatus == true? $customerdata->lastname: ''}}">
-                <div>Email</div>
-                <input type="email" placeholder="" name="email" value="{{$updatestatus == true? $customerdata->email: ''}}">
-                <div>Password</div>
-                <input type="password" name="password" value="{{$updatestatus == true? $customerdata->password: ''}}">
-                <div>Phone Number</div>
-                <input type="text" placeholder="" name="phone" value="{{$updatestatus == true? $customerdata->phone: ''}}">
-                <button>Cancel</button>
-                <button type="submit" class="btn" name="login">{{$updatestatus == true? 'Update': 'Register'}}</button>
-            </form>
+        <h4 class="main-title1"><b>Edit Customer</b></h4>
+        <p class="main-title2">Edit your customer necessary information here</p>
+          
+            <form action="{{$updatestatus == true? route('CustomerRegisterUpdateProcess') : route('CustomerRegisterProcess')}}" method="POST" class="update_customer_form">
+                <div class="group-title">
+                    @csrf
+                    @if($updatestatus == true)
+                    @method('PATCH')
+                    @endif
+                    <input type="hidden" name="id" value="{{$updatestatus = true? $customerdata->id: ''}}">
+                    <h1>{{$updatestatus == true ? 'Customer Edit Form' : 'Create Account'}}</h1>
+                </div>
+               
+                {{-- <div class="grid-col"> --}}
+                   
+                    
+                <div class="group-col">
+                    <div>First Name</div>
+                    <input type="text" placeholder="First Name" name="fname" value="{{$updatestatus == true? $customerdata->firstname: ''}}">
+                </div>
+                <div class="group-col">
+                    <div>Last Name</div>
+                    <input type="text" placeholder="Last Name" name="lname" value="{{$updatestatus == true? $customerdata->lastname: ''}}">
+                </div>
+
+                <div class="group-col">
+                    <div>Email</div>
+                    <input type="email" placeholder="" name="email" value="{{$updatestatus == true? $customerdata->email: ''}}">
+                </div>
+               
+                <div class="group-col">
+                    <div>Password</div>
+                    <input type="password" name="password" value="{{$updatestatus == true? $customerdata->password: ''}}">
+                </div>
+               
+                <div class="group-col">
+                    <div>Phone Number</div>
+                    <input type="text" placeholder="" name="phone" value="{{$updatestatus == true? $customerdata->phone: ''}}">
+                </div>
+
+                <div class="group-col">
+                    <div>Address</div>
+                    <input type="text" placeholder="" name="address" value="{{$updatestatus == true? $customerdata->address: ''}}">
+                </div>
+
+                <div class="group-col">
+                    <div>Profile Photo</div>
+                    <input type="file" placeholder="" name="image" value="{{$updatestatus == true? $customerdata->image: ''}}">
+                </div>
+
+                <div class="group-submit">
+                    <button class="can-btn">Cancel</button>
+                    <button type="submit" class="btn" name="login">{{$updatestatus == true? 'Update': 'Register'}}</button>
+                </div>
             </div>
-        </div>
+            </form>
+           
     </div>
 </div>
 

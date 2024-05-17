@@ -1,19 +1,37 @@
 .session1{
+    border:3px solid orange;
     padding: 30px 15px;
     border-radius: 10px;
     margin: 10px 0px;
     background-color: var(--secondary-color);
 }
 .session1 .grid{
+  
     gap: 20px;
+    border:1px solid red;
+    display: flex;
+    justify-content: space-between;
+}
+.session1 .grid .search-box{
+    display: flex;
+    justify-content: flex-start;
+    width:30%;
 }
 .session1 .grid input{
+    padding:10px;
     border-radius: 6px;
     width: 100%;
     height: 30px;
+    align-self: center;
     color: var(--text-gray-color);
     background-color: #dfeafd81;
     border: 1px solid var(--border-gray-color);
+}
+.session1 .flex_row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width:30%;
 }
 .session1 .grid .flex_row >button{
     padding: 10px 30px; 
@@ -25,6 +43,7 @@
 }
 .session1 .grid .flex_row >button:last-child{
     background-color: var(--text-title-gray-color);    
+    
 }
 
 @media (max-width:767px) and (min-width:320px){

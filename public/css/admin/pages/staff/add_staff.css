@@ -24,3 +24,71 @@
     border: none;
     box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
 }
+
+.update_customer_form{
+    background-color: var(--secondary-color);
+    border-radius: 20px;
+    padding: 50px;
+}
+.main {
+    border: 1px solid blue;
+}
+.main-title1{
+    line-height: 2;
+    margin-left: 5px;
+}
+.main-title2{
+    margin-left: 5px;
+    line-height:2;
+    margin-bottom: 10px;
+}
+.group-title{
+    margin-bottom: 20px;
+}
+
+.group-col{
+    display: grid;
+    grid-template-columns: 35% 60%;
+    gap: 20px;
+    height: 70px;
+}
+.group-col input{
+    height: 50px;
+    padding: 10px;
+    border-radius: 6px;
+    
+    transition: gray 0.3s, box-shadow 0.3s;
+}
+
+.group-submit{
+    /* display: grid;
+    grid-template-columns: 48% 48%;
+    gap: 20px;
+     */
+     display:flex;
+     justify-content: space-between;
+     gap:10px;
+     padding-left: 30px;
+     padding-right:30px;
+}
+
+.group-submit .btn{
+    background-color: #3B76EF;
+    border: 1px solid #3B76EF;
+    width:45%;
+    height: 40px;
+    border-radius: 20px;
+}
+
+.group-submit .can-btn{
+    background-color: #858689;
+    border: 1px solid #858689;
+    width:45%;
+    height: 40px;
+    border-radius: 20px;
+}
+
+
+
+
+
