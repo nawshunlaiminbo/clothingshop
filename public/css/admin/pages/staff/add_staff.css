@@ -1,4 +1,11 @@
-.add_staff_form{
+/* .main h4{
+    padding: 20px;
+
+}
+.main p{
+    padding:20px;
+}
+.update_staff_form{
     background-color: var(--secondary-color);
     border-radius: 20px;
     padding: 50px;
@@ -25,7 +32,7 @@
     box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
 }
 
-.update_customer_form{
+.update_staff_form{
     background-color: var(--secondary-color);
     border-radius: 20px;
     padding: 50px;
@@ -65,14 +72,14 @@
     grid-template-columns: 48% 48%;
     gap: 20px;
      */
-     display:flex;
+     /* display:flex;
      justify-content: space-between;
      gap:10px;
      padding-left: 30px;
      padding-right:30px;
-}
+} */
 
-.group-submit .btn{
+/* .group-submit .btn{
     background-color: #3B76EF;
     border: 1px solid #3B76EF;
     width:45%;
@@ -86,9 +93,127 @@
     width:45%;
     height: 40px;
     border-radius: 20px;
+} */
+
+
+
+/*new css */
+.main h4{
+    padding: 20px;
+
+}
+.main p{
+    padding:20px;
+}
+.add_staff_form{
+    background-color: var(--secondary-color);
+    border-radius: 20px;
+    padding: 50px;
 }
 
+/* .add_staff_form .grid {
+    justify-content: center;
+    gap: 30px;
+}
 
+.add_staff_form .grid >input {
+    height: 30px;
+    border:1px solid var(--border-gray-color);
+    border-radius: 6px;
+    background-color: #dfeafd81;
+}
+.add_staff_form .grid button{
+    background-color: var(--box-blue-color);
+    color: var(--secondary-color);
+    font-weight: bold;
+    height: 30px;
+    border-radius: 6px;
+    border: none;
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+} */
 
+.group-col{
+    display: grid;
+    grid-template-columns: 35% 60%;
+    gap: 20px;
+    height: 70px;
+}
+.group-col input{
+    height: 50px;
+    padding: 10px;
+    border-radius: 6px; 
+    background-color: #dfeafd81;
+    transition: gray 0.3s, box-shadow 0.3s;
+}
+.group-col textarea{
+    height: 60px;
+    padding: 10px;
+    border-radius: 6px; 
+    border:1px solid #000000;
+    background-color: #dfeafd81;
+    transition: gray 0.3s, box-shadow 0.3s;
+}
+.group-col-role{
+    display: grid;
+    grid-template-columns: 35% 60%;
+    gap: 20px;
+    height: 50px;
+}
+.group-col-role option{
+    height: 20px;
+    padding: 10px;
+    border-radius: 10px; 
+    background-color: #dfeafd81;
+    transition: gray 0.3s, box-shadow 0.3s;
+}
+.group-col-photo {
+    display: grid;
+    grid-template-columns: 35% 60%;
+    gap: 20px;
+    height: 70px;
+}
+.group-col-photo input{
+    height: 50px;
+    padding: 10px;
+    border: 1px solid  #000000;
+    border-radius: 6px;
+    background-color: #dfeafd81;
+    transition: gray 0.3s, box-shadow 0.3s;
+}
+.group-submit{
+    /* display: grid;
+    grid-template-columns: 48% 48%;
+    gap: 20px;
+     */
+     display:flex;
+     justify-content: space-between;
+     gap:10px;
+     padding-left: 30px;
+     padding-right:30px;
+}
 
+.group-submit .btn{
+    background-color: var(--box-blue-color);
+    color: var(--secondary-color);
+    font-weight: bold;
+    height: 30px;
+    border-radius: 6px;
+    border: none;
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+}
 
+.group-submit .can-btn{
+    background-color: #858689;
+    border: 1px solid #858689;
+    width:45%;
+    height: 40px;
+    border-radius: 20px;
+
+    background-color: #858689;
+    color: var(--secondary-color);
+    font-weight: bold;
+    height: 30px;
+    border-radius: 6px;
+    border: none;
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+}

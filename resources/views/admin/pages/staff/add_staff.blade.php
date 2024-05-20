@@ -17,7 +17,13 @@
                     <p class="nav_text">Product</p>
                 </div>
             </a>
-            <a href="/pages/customer/index.html" target="_self">
+            <a href="{{url('/category/list')}}" target="_self">
+                <div class="flex_row">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <p class="nav_text">Category</p>
+                </div>
+            </a>
+            <a href="{{url('/customer/list')}}" target="_self">
                 <div class="flex_row">
                     <i class="fa-solid fa-users"></i>
                     <p class="nav_text">Customer</p>
@@ -35,7 +41,7 @@
                     <p class="nav_text">Staff</p>
                 </div>
             </a>
-            <a href="/pages/supplier/index.html" target="_self">
+            <a href="{{url('/supplier/list')}}" target="_self">
                 <div class="flex_row">
                     <i class="fa-solid fa-user"></i>
                     <p class="nav_text">Supplier</p>
@@ -63,10 +69,10 @@
             {{-- <div class="add_staff_form"> --}}
                 {{-- <div class="grid"> --}}
 
-             <form action="{{ route('adminRegisterProcess') }}" method="POST" class="grid" enctype="multipart/form-data" >
+             <form action="{{ route('adminRegisterProcess') }}" method="POST" class="add_staff_form" enctype="multipart/form-data" >
                 <div class="group-title">
                             
-                        @csrf
+                    @csrf
                     <input type="hidden" name="id">
                 </div>
                 <div class="group-col">
@@ -75,11 +81,11 @@
                 </div>
                 <div class="group-col">
                     <div>Email</div>
-                    <input type="email" value="" name="email">
+                    <input type="email" value="" name="email" placeholder="Email">
                 </div>
                 <div class="group-col">
                     <div>Password</div>
-                    <input type="password" value="" name="password">
+                    <input type="password" value="" name="password" placeholder="Password">
                 </div>
                 <div class="group-col">
                     <div>Phone Number</div>
@@ -87,9 +93,10 @@
                 </div>
                 <div class="group-col">
                     <div>Address</div>
-                    <input type="text" value="" placeholder="" name="address">
+                    <textarea placeholder="Address"></textarea>
                 </div>
-                <div class="group-col">
+                <div class="group-col-role">
+                    <label for="role">Staff Position:</label>
                         <select name="role">
                             <option value="roleid" selected>Select Role Name...</option>
                            @foreach($role as $value)
@@ -97,9 +104,9 @@
                            @endforeach
                         </select>
                 </div>     
-                <div class="group-col">
-                    <label for="image">Image</label>
-                    <input type="file" class="" name="image" id="image"> 
+                <div class="group-col-photo">
+                    <label for="image">Profile Photo</label>
+                    <input type="file" class="image" name="image" id="image"> 
                 </div>  
                 <div class="group-submit">
                     <button class="can-btn">Cancel</button> 

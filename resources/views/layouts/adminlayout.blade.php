@@ -39,5 +39,6 @@
 
         </footer>
     </section>
+    <script src="{{asset('js/admin/user_profile_info_popup.js')}}"></script>
 </body>
 </html>

@@ -1,7 +1,7 @@
 @extends('layouts.adminlayout')
 @section('title','Home')
 @section('content')
-{{-- {{dd($stafflist)}} --}}
+{{-- {{dd($categorylist)}} --}}
     <div class="session grid">
         <div class="nav flex_col">
             <a href="{{url('/admin/dashboard/')}}" target="_self">
@@ -64,7 +64,7 @@
             <div class="main-col">
                 <div class="session_1 flex_row">
                     <h3>Category</h3>
-                    <a href="">+ Add Category</a>
+                    <a href="{{route('CategoryRegister')}}">+ Add Category</a>
                 </div>
                 <div class="session2">
                     <div class="grid">
@@ -83,19 +83,17 @@
                                 <th>Admin Name</th>
                                 <th class="last_title">Action</th>
                             </tr>
-                            {{-- <tr>
-                                @foreach ($stafflist as $value)
+                            <tr>
+                                @foreach ($categorylist as $value)
                                 
                                 <td>{{$value->name}}</td>
-                                <td>{{$value->email}}</td>
-                                <td>{{$value->phone}}</td>
-                                <td>{{$value->role}}</td>
+                                <td>{{$value->adminname}}</td>
+                                {{-- <td>{{$value->role}}</td> --}}
                                 <td>
-                                    <a href="{{url('/admin/listedit/'.$value->id)}}"><i class="fa-solid fa-pen-to-square"></i></a>
-                                    <a href="{{url('/admin/deleteprocess/'.$value->id)}}"><i class="fa-regular fa-trash-can"></i></a>
+                                    <a href="{{url('/category/listedit/'.$value->id)}}"><i class="fa-solid fa-pen-to-square"></i></a>
+                                    <a href="{{url('/category/deleteprocess/'.$value->id)}}"><i class="fa-regular fa-trash-can"></i></a>
                                 </td>
                             </tr>
-                             --}}
                             
                             
                             @endforeach

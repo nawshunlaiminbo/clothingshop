@@ -10,7 +10,7 @@
 @section('content')
 <div class="session grid">
     <div class="nav flex_col">
-        <a href="{{url('/admin/dashboard')}}" target="_self">
+        <a href="{{url('/admin/dashboard')}}"l target="_self">
             <h1 class="nav_text">Bravis</h1>
             <div class="flex_row">
                 <i class="fa-solid fa-house"></i>

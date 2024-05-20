@@ -41,7 +41,7 @@
                 <p class="nav_text">Staff</p>
             </div>
         </a>
-        <a href="/pages/supplier/index.html" target="_self">
+        <a href="{{url('/supplier/list')}}" target="_self">
             <div class="flex_row">
                 <i class="fa-solid fa-user"></i>
                 <p class="nav_text">Supplier</p>

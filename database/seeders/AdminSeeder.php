@@ -16,11 +16,11 @@ class AdminSeeder extends Seeder
     public function run(): void
     {
         $uuid = Str::uuid()->toString();
-        DB::table('admins')->insert([
+        DB::table('admins')->insert([[
             'name'=>'ShunShun',
             'email'=>'shunshun@gmail.com',
             'address'=>'North Dagon',
-            'password'=>'123456',
+            'password'=>bcrypt('123456'),
             'phone'=>'09772578155',
             'role_id'=>1,
             'uuid'=>$uuid,
@@ -28,6 +28,20 @@ class AdminSeeder extends Seeder
             'created_at'=>Carbon::now(),
             'updated_at'=>Carbon::now(),
     
+        ],
+        [
+            'name'=>'MinBo',
+            'email'=>'minbo@gmail.com',
+            'address'=>'North Okkalapa',
+            'password'=>bcrypt('123456'),
+            'phone'=>'09772578155',
+            'role_id'=>2,
+            'uuid'=>$uuid,
+            'status'=>'Active',
+            'created_at'=>Carbon::now(),
+            'updated_at'=>Carbon::now(),
+        ]
     ]);
     }
+    
 }

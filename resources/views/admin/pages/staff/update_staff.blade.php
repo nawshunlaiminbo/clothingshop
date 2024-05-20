@@ -10,7 +10,7 @@ if(isset($staffdata)){
 @section('content')
     <div class="session grid">
         <div class="nav flex_col">
-            <a href="/index.html" target="_self">
+            <a href="{{url('/admin/dashboard/')}}" target="_self">
                 <h1 class="nav_text">Bravis</h1>
                 <div class="flex_row">
                     <i class="fa-solid fa-house"></i>
@@ -23,7 +23,13 @@ if(isset($staffdata)){
                     <p class="nav_text">Product</p>
                 </div>
             </a>
-            <a href="/pages/customer/index.html" target="_self">
+            <a href="{{url('/category/list')}}" target="_self">
+                <div class="flex_row">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <p class="nav_text">Category</p>
+                </div>
+            </a>
+            <a href="{{url('/customer/list/')}}" target="_self">
                 <div class="flex_row">
                     <i class="fa-solid fa-users"></i>
                     <p class="nav_text">Customer</p>
@@ -35,13 +41,13 @@ if(isset($staffdata)){
                     <p class="nav_text">Order</p>
                 </div>
             </a>
-            <a href="" target="_self">
+            <a href="{{url('/admin/list/')}}" target="_self">
                 <div class="flex_row">
                     <i class="fa-solid fa-user"></i>
                     <p class="nav_text">Staff</p>
                 </div>
             </a>
-            <a href="/pages/supplier/index.html" target="_self">
+            <a href="{{url('/supplier/list')}}" target="_self">
                 <div class="flex_row">
                     <i class="fa-solid fa-user"></i>
                     <p class="nav_text">Supplier</p>
@@ -73,7 +79,7 @@ if(isset($staffdata)){
                     @method('PATCH')
                     @endif 
                     <input type="hidden" name="id" value="{{$updatestatus = true? $staffdata->id: ''}}">
-                    <h1>{{$updatestatus == true ? 'Staff Edit Form' : 'Create Account'}}</h1>
+                    {{-- <h1>{{$updatestatus == true ? 'Staff Edit Form' : 'Create Account'}}</h1> --}}
                  </div>
 
                  <div class="group-col">
@@ -82,7 +88,7 @@ if(isset($staffdata)){
                 </div>
                 <div class="group-col">
                     <div>Email</div>
-                    <input type="email" name="email" value="{{$updatestatus == true?$staffdata->email: ''}}" placeholder="Email">
+                    <input type="email" name="email" value="{{$updatestatus == true? $staffdata->email: ''}}" placeholder="Email">
                 </div>
                 <div class="group-col">
                     <div>Password</div>
@@ -114,11 +120,11 @@ if(isset($staffdata)){
                     <button class="can-btn" >Cancel</button>
                     <button type="submit" class="btn" name="login">{{$updatestatus == true? 'Update': 'Register'}}</button>
                 </div>
-                </form>
+             </form>
 
                 </div>
         </div>
-    </div>
+   
 
 
         <!-- script -->

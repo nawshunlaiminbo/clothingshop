@@ -17,6 +17,12 @@
                     <p class="nav_text">Product</p>
                 </div>
             </a>
+            <a href="{{url('/category/list')}}" target="_self">
+                <div class="flex_row">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <p class="nav_text">Category</p>
+                </div>
+            </a>
             <a href="{{url('/customer/list')}}" target="_self">
                 <div class="flex_row">
                     <i class="fa-solid fa-users"></i>
@@ -76,8 +82,7 @@
                     <table>
                         <tr>
                             <th class="first_title">ID</th>
-                            <th>Customer's First Name</th>
-                            <th>Customer's Last Name</th>
+                            <th>Customer's Name</th>
                             <th>Email</th>
                             <th>Phone Number</th>
                             <th class="last_title">Action</th>
@@ -88,8 +93,8 @@
                             
                             
                             <td>{{$value->id}}</td>
-                            <td>{{$value->firstname}}</td>
-                            <td>{{$value->lastname}}</td>
+                            <td>{{$value->firstname}} {{$value->lastname}}</td>
+                    
                             <td>{{$value->email}}</td>
                             <td>{{$value->phone}}</td>
                             <td>

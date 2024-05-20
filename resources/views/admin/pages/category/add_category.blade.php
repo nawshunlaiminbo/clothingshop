@@ -66,20 +66,22 @@
         <div class="main">
             <h4><b>Add Category</b></h4>
             <p>Add your category necessary information here</p>
-            <div class="add_category_form">
-                <div class="grid">
 
-                        <form action="" method="POST" class="grid" enctype="multipart/form-data" >
-                        @csrf
+                <form action="{{route('CategoryRegisterProcess')}}" method="POST" class="add_category_form" enctype="multipart/form-data" >
+                    @csrf
                     <input type="hidden" name="id">
-                    <div>Category Name</div>
-                    <input type="text"  name ="name" placeholder="Category Name" value=""> 
-                    <button >Cancel</button> 
-                    <button type="submit" name="register">Add</button>
+                    {{-- <input type="hidden" name="admin_id"> --}}
+                    <div class="group-col">
+                        <div>Category Name</div>
+                        <input type="text"  name ="name" placeholder="Category Name" value="">
+                    </div>
+                    <div class="group-submit">
+                        <button class="can-btn">Cancel</button> 
+                        <button type="submit" class="btn" name="register">Add</button>
+                    </div>
                 </form>
                      {{-- <a href="{{route('/admin/register/')}}">Add</a> --}}
-                </div>
-            </div>
+                
         </div>
     </div>
 

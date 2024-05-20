@@ -87,11 +87,11 @@ class AdminController extends Controller
       $staffdata->update();
       return redirect()->route('adminlist')->with('success', 'Record updated successfully');
     }
-  // public function destroy($id){
-  //   $stafflist = Admin::find($id);
-  //   $stafflist->status = 'Inactive';
-  //   $stafflist->update();
+  public function destroy($id){
+    $stafflist = Admin::find($id);
+    $stafflist->status = 'Inactive';
+    $stafflist->update();
 
-  //   return redirect()->route('adminlist')->with('Success','Record deleted successfully');
-  // }
+    return redirect()->route('adminlist')->with('Success','Record deleted successfully');
+  }
 }

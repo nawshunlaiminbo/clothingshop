@@ -7,6 +7,7 @@ use App\Http\Controllers\CustomerController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\SupplierController;
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -23,8 +24,10 @@ Route::get('/' , function(){
 //     return view('home');
 // });
 
+
 Route::get('/admin/login',[AdminController::class,'login'])->name('AdminLogin');
 Route::post('/admin/login/process',[LoginController::class,'loginprocess'])->name('adminloginprocess');
+
 Route::middleware('admin')->group(function(){
 
     Route::get('/admin/dashboard',[AdminController::class, 'dashboard'])->name('AdminDashboard');
@@ -34,7 +37,24 @@ Route::middleware('admin')->group(function(){
     Route::get('/admin/listedit/{id}',[AdminController::class,'listedit'])->name('ListEdit');
     Route::patch('/admin/register/update/process',[AdminController::class,'updateprocess'])->name('AdminRegisterUpdateProcess');
     Route::get('/admin/deleteprocess/{id}', [AdminController::class, 'destroy'])->name('AdminDestroy');
+    Route::get('/admin/logout',[LoginController::class,'Adminlogout'])->name('AdminLogout');
+    //Category Start
+    Route::get('/category/register',[CategoryController::class,'register'])->name('CategoryRegister');
+    Route::post('/category/register/process',[CategoryController::class,'registerprocess'])->name('CategoryRegisterProcess');
+    Route::get('/category/list',[CategoryController::class,'categorylist'])->name('CategoryList');
+    Route::get('/category/listedit/{id}',[CategoryController::class,'listedit'])->name('CategoryListEdit');
+    Route::patch('/category/register/update/process',[CategoryController::class,'updateprocess'])->name('CategoryRegisterUpdateProcess');
+    Route::get('/category/deleteprocess/{id}', [CategoryController::class, 'destroy'])->name('CategoryDestroy');
+    //Category End
 
+      //Supplier Start
+      Route::get('/supplier/register',[SupplierController::class,'register'])->name('SupplierRegister');
+      Route::post('/supplier/register/process',[SupplierController::class,'registerprocess'])->name('SupplierRegisterProcess');
+      Route::get('/supplier/list',[SupplierController::class,'list'])->name('SupplierList');
+      Route::get('/supplier/listedit/{id}',[SupplierController::class,'listedit'])->name('SupplierListEdit');
+      Route::patch('/supplier/register/update/process',[SupplierController::class,'updateprocess'])->name('SupplierRegisterUpdateProcess');
+      Route::get('/supplier/deleteprocess/{id}', [SupplierController::class, 'destroy'])->name('SupplierDestroy');
+      //Supplier End
 
 });
 Route::get('/customer/login',[CustomerController::class,'login'])->name('CustomerLogin');
@@ -47,15 +67,10 @@ Route::get('/customer/register',[CustomerController::class,'register'])->name('r
 Route::post('/customer/register/process',[CustomerController::class,'registerprocess'])->name('CustomerRegisterProcess');
 Route::get('/customer/listedit/{id}',[CustomerController::class,'listedit'])->name('CustomerListEdit');
 Route::patch('/customer/register/update/process',[CustomerController::class,'updateprocess'])->name('CustomerRegisterUpdateProcess');
-Route::get('customer/deleteprocess/{id}', [CustomerController::class, 'destroy'])->name('CustomerDestroy');
+Route::get('/customer/deleteprocess/{id}', [CustomerController::class, 'destroy'])->name('CustomerDestroy');
 
 });
 
-Route::middleware('category')->group(function(){
-    Route::get('/category/list',[CategoryController::class,'list'])->name('CategoryList');
-    Route::get('/category/register',[CategoryController::class,'register'])->name('CategoryRegister');
-    Route::post('/category/register/process',[CategoryController::class,'registerprocess'])->name('CategoryRegisterProcess');
-});
 // Auth::routes();
 
 // Route::get('/home', [HomeController::class, 'index'])->name('home');

@@ -3,14 +3,15 @@
 
 @php
 $updatestatus = false;
-if(isset($staffdata)){
+if(isset($categorydata)){
     $updatestatus = true;
 }
 @endphp
+{{-- {{dd($categorydata)}}; --}}
 @section('content')
     <div class="session grid">
         <div class="nav flex_col">
-            <a href="/index.html" target="_self">
+            <a href="{{url('/admin/dashboard')}}" target="_self">
                 <h1 class="nav_text">Bravis</h1>
                 <div class="flex_row">
                     <i class="fa-solid fa-house"></i>
@@ -72,24 +73,26 @@ if(isset($staffdata)){
             <h4><b>Update Category</b></h4>
             <p>Update your category necessary information here</p>
             
-                <div class="grid">
-                    <form action="{{$updatestatus == true? route('AdminRegisterUpdateProcess'):route('ListEdit',$staffdata->id)}}"method="POST" enctype="multipart/form-data" class="update_category_form">
-                        <div class="grid">
-                    @csrf
-                    @if($updatestatus == true)
-                    @method('PATCH')
-                    @endif 
-                    <input type="hidden" name="id" value="{{$updatestatus = true? $staffdata->id: ''}}">
-                    <div>Category Name</div>
-                    <input type="text" name="name" value="{{$updatestatus == true? $staffdata->name: ''}}" placeholder="Category Name">
-                        
-            
-                    <button >Cancel</button>
-                    <button>{{$updatestatus == true? 'Update': 'Register'}}</button>
+               
+            <form action="{{$updatestatus == true? route('CategoryRegisterUpdateProcess'):route('CategoryListEdit',$categorydata->id)}}"method="POST" enctype="multipart/form-data" class="update_category_form">
+                    <div class="group-title">
+                        @csrf
+                        @if($updatestatus == true)
+                        @method('PATCH')
+                        @endif 
+                        <input type="hidden" name="id" value="{{$updatestatus = true? $categorydata->id: ''}}">
+                    </div>
+                    <div class="group-col">
+                        <div>Category Name</div>
+                     <input type="text" name="name" value="{{$updatestatus == true? $categorydata->name: ''}}" placeholder="Category Name">
+                    </div>
+            <div class="group-submit">
+                    <button class="can-btn">Cancel</button>
+                    <button type="submit" class="btn" name="login">{{$updatestatus == true? 'Update': 'Add'}}</button>
+            </div>
+             </form>
 
-                </form>
-
-                </div>
+               
         </div>
     </div>
 
