@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 // use Illuminate\Support\Facades\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 
@@ -97,7 +98,15 @@ class LoginController extends Controller
             return redirect('CustomerLogin')->with('error','You don\'t have Account Access!');
         }
     }
-
-        
+        public function AdminLogout(){
+            Auth::logout();
+            Session::flush();
+            return redirect()->route('AdminLogin');
+        }
+        public function CustomerLogout(){
+            Auth::logout();
+            Session::flush();
+            return redirect()->route('CustomerLogin');
+        }
      }
 

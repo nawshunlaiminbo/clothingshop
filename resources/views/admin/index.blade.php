@@ -11,7 +11,7 @@
                 <p class="nav_text">Dashboard</p>
             </div>
         </a>    
-        <a href="/pages/product/index.html" target="_self">
+        <a href="{{url('/product/list')}}" target="_self">
             <div class="flex_row">
                 <i class="fa-solid fa-bag-shopping"></i>
                 <p class="nav_text">Product</p>
@@ -26,7 +26,7 @@
         <a href="{{url('/customer/list')}}" target="_self">
             <div class="flex_row">
                 <i class="fa-solid fa-users"></i>
-                <p class="nav_text">Customer</p>
+                <p class="nav_text">CustomerList</p>
             </div>
         </a>
         <a href="/pages/order/index.html" target="_self">
@@ -58,8 +58,8 @@
     </div>
     <!-- user Profile Info -->
     <div class="user_profile_info">
-           <a href=""><i class="fa-solid fa-gear"></i>Edit Profile</a><br>
-           <a href="/account/login/index.html"><i class="fa-solid fa-arrow-right-from-bracket"></i>Log out</a>
+           <a href="{{url('/admin/listedit/'.auth('admin')->user()->id)}}"><i class="fa-solid fa-gear"></i>Edit Profile</a><br>
+           <a href="{{url('/admin/logout')}}"><i class="fa-solid fa-arrow-right-from-bracket"></i>Log out</a>
     </div>
     <div class="main">
         <div class="session1 grid">

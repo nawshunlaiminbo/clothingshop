@@ -7,6 +7,7 @@ use App\Http\Controllers\CustomerController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SupplierController;
 
 // Route::get('/', function () {
@@ -55,6 +56,15 @@ Route::middleware('admin')->group(function(){
       Route::patch('/supplier/register/update/process',[SupplierController::class,'updateprocess'])->name('SupplierRegisterUpdateProcess');
       Route::get('/supplier/deleteprocess/{id}', [SupplierController::class, 'destroy'])->name('SupplierDestroy');
       //Supplier End
+
+      //Product Start
+      Route::get('/product/register',[ProductController::class,'register'])->name('ProductRegister');
+      Route::post('/product/register/process',[ProductController::class,'registerprocess'])->name('ProductRegisterProcess');
+      Route::get('/product/list',[ProductController::class,'list'])->name('ProductList');
+      Route::get('/product/listedit/{id}',[ProductController::class,'listedit'])->name('ProductListEdit');
+      Route::patch('/product/register/update/process',[ProductController::class,'updateprocess'])->name('ProductRegisterUpdateProcess');
+      Route::get('/product/deleteprocess/{id}', [ProductController::class, 'destroy'])->name('ProductDestroy');
+      //Product End
 
 });
 Route::get('/customer/login',[CustomerController::class,'login'])->name('CustomerLogin');

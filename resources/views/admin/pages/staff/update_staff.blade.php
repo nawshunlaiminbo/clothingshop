@@ -64,8 +64,8 @@ if(isset($staffdata)){
         </div>
         <!-- user Profile Info -->
         <div class="user_profile_info">
-            <a href=""><i class="fa-solid fa-gear"></i>Edit Profile</a><br>
-            <a href="/account/login/index.html"><i class="fa-solid fa-arrow-right-from-bracket"></i>Log out</a>
+            <a href="{{url('/admin/listedit/'.auth('admin')->user()->id)}}"><i class="fa-solid fa-gear"><i class="fa-solid fa-gear"></i>Edit Profile</a><br>
+            <a href="{{url('/admin/logout')}}"><i class="fa-solid fa-arrow-right-from-bracket"></i>Log out</a>
         </div>
 
         <div class="main">
@@ -73,14 +73,14 @@ if(isset($staffdata)){
             <p>Add your staff necessary information here</p>
             
              <form action="{{$updatestatus == true? route('AdminRegisterUpdateProcess'):route('ListEdit',$staffdata->id)}}"method="POST" enctype="multipart/form-data" class="update_staff_form">
-                 <div class="group-title">
+                 {{-- <div class="group-title"> --}}
                     @csrf
                     @if($updatestatus == true)
                     @method('PATCH')
                     @endif 
                     <input type="hidden" name="id" value="{{$updatestatus = true? $staffdata->id: ''}}">
                     {{-- <h1>{{$updatestatus == true ? 'Staff Edit Form' : 'Create Account'}}</h1> --}}
-                 </div>
+                 {{-- </div> --}}
 
                  <div class="group-col">
                     <div>Name</div>

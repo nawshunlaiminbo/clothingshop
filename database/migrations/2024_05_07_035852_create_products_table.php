@@ -17,10 +17,8 @@ return new class extends Migration
             $table->foreignId('category_id')->constrained();
             $table->foreignId('admin_id')->constrained();
             $table->float('price');
-            $table->foreignId('size_id')->constrained();
-            $table->integer('stock');
             $table->string('gender');
-            $table->string('description');
+            $table->text('description');
             $table->string('colorimage');
             $table->string('uuid');
             $table->string('status');
