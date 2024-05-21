@@ -50,8 +50,8 @@
         </div>
         <div class="header flex_row">
             <div class="flex_row icons">
-                <img src="/image/icon/bell.svg" alt="">
-                <img src="/image/icon/msg.svg" alt="">
+                <i class="fa-regular fa-bell" style="font-size:25px"></i><br>
+            <i class="fa-regular fa-message" style="font-size:25px"></i>
             </div>
             <div class="user_profile">
             </div>
@@ -93,7 +93,7 @@
                 </div>
                 <div class="group-col">
                     <div>Address</div>
-                    <textarea placeholder="Address"></textarea>
+                    <textarea placeholder="Address" name="address"></textarea>
                 </div>
                 <div class="group-col-role">
                     <label for="role">Staff Position:</label>

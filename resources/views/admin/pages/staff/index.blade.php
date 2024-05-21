@@ -11,19 +11,19 @@
                     <p class="nav_text">Dashboard</p>
                 </div>
             </a>    
-            <a href="/pages/product/index.html" target="_self">
+            <a href="{{url('/product/list/')}}" target="_self">
                 <div class="flex_row">
                     <i class="fa-solid fa-bag-shopping"></i>
                     <p class="nav_text">Product</p>
                 </div>
             </a>
-            <a href="{{url('/category/list')}}" target="_self">
+            <a href="{{url('/category/list/')}}" target="_self">
                 <div class="flex_row">
                     <i class="fa-solid fa-bag-shopping"></i>
                     <p class="nav_text">Category</p>
                 </div>
             </a>
-            <a href="{{url('/customer/list')}}" target="_self">
+            <a href="{{url('/customer/list/')}}" target="_self">
                 <div class="flex_row">
                     <i class="fa-solid fa-users"></i>
                     <p class="nav_text">Customer</p>
@@ -35,13 +35,13 @@
                     <p class="nav_text">Order</p>
                 </div>
             </a>
-            <a href="{{url('/admin/list')}}" target="_self">
+            <a href="{{url('/admin/list/')}}" target="_self">
                 <div class="flex_row">
                     <i class="fa-solid fa-user"></i>
                     <p class="nav_text">Staff</p>
                 </div>
             </a>
-            <a href="{{url('/supplier/list')}}" target="_self">
+            <a href="{{url('/supplier/list/')}}" target="_self">
                 <div class="flex_row">
                     <i class="fa-solid fa-user"></i>
                     <p class="nav_text">Supplier</p>
@@ -53,10 +53,11 @@
             <div class="col-con">
                 <div class="header flex_row">
                     <div class="flex_row icons">
-                        <img src="/image/icon/bell.svg" alt="">
-                        <img src="/image/icon/msg.svg" alt="">
+                        <i class="fa-regular fa-bell" style="font-size:25px"></i><br>
+                        <i class="fa-regular fa-message" style="font-size:25px"></i>
                     </div>
                     <div class="user_profile">
+                        
                     </div>
                     
                 </div>

@@ -51,9 +51,12 @@
     </div>
     <div class="header flex_row">
         <div class="flex_row name">
-            <h3>Shun Shun</h3>
+            <i class="fa-regular fa-bell" style="font-size:25px"></i><br>
+            <i class="fa-regular fa-message" style="font-size:25px"></i>
         </div>
         <div class="user_profile">
+                <img src="{{asset('image/admin/'.auth('admin')->user()->image)}}" alt="userphoto">
+
         </div>     
     </div>
     <!-- user Profile Info -->

@@ -31,24 +31,26 @@ class AdminController extends Controller
     //  ]);
     //  $roleid  = $request->role;
     // dd($request->image);
+   
      $uuid = Str::uuid()->toString();
      $image= $uuid.'.'.$request->image->extension();
      $request->image->move(public_path('image/admin'));
-     
+     $role_id = $this->getRoleId();
      $admin = new Admin();
      $admin->uuid = $uuid;
      $admin->name = $request->name;
      $admin->email = $request->email;
      $admin->address = $request->address;
+    //  $admin->role_id = auth('admin')->user()->role_id;
+     $admin->role_id = $request->role_id;
      $admin->password = bcrypt($request->password);
      $admin->phone = $request->phone;
      $admin->status = 'Active';
      $admin->image = $image;
     // $admin->uuid= 'nullable';
-    // 
-    $admin->role_id = $request->role_id;
+    $admin->role_id = $role_id;
      $admin->save();
-     return $admin;
+     return redirect()->route('adminlist');
 
 
      
@@ -65,7 +67,6 @@ class AdminController extends Controller
       return view('admin.pages.staff.index',compact('stafflist'));
     }
     public function listedit($id){
-      // dd($id);
       $role = DB::table('roles')
       ->select('id','name')->where('status','=','Active')->get();
       $staffdata = Admin::find($id);
@@ -77,7 +78,6 @@ class AdminController extends Controller
       $staffdata = Admin::find($request->id);
       $uuid = Str::uuid()->toString();
       $staffdata->name = $request->name;
-     
       $staffdata->email = $request->email;
       $staffdata->address = $request->address;
       $staffdata->password = bcrypt($request->password);
@@ -93,5 +93,8 @@ class AdminController extends Controller
     $stafflist->update();
 
     return redirect()->route('adminlist')->with('Success','Record deleted successfully');
+  }
+  private function getRoleId(){
+    return 2;
   }
 }

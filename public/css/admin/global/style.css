@@ -123,12 +123,17 @@ justify-content: left;
     height: 30px;
 }
 
-.header .user_profile{
+/* .header .user_profile{
     width: 40px;
     height: 40px;
     border-radius: 50%;
     background-color: var(--text-gray-color);
 
+} */
+.user_profile img{
+    width:50px;
+    height:45px;
+    border-radius: 50%;
 }
 .user_profile_info{
     display: none;
