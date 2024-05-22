@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AdminCustomerController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CustomerController;
@@ -66,21 +67,29 @@ Route::middleware('admin')->group(function(){
       Route::get('/product/deleteprocess/{id}', [ProductController::class, 'destroy'])->name('ProductDestroy');
       //Product End
 
+      //Customer List Start
+      Route::get('/admin/customer/list',[AdminCustomerController::class,'list'])->name('CustomerList');
+    //   Route::get('/admin/customer/listedit/{id}',[AdminCustomerController::class,'listedit'])->name('CustomerListEdit');
+      Route::get('/admin/customer/deleteprocess/{id}', [AdminCustomerController::class, 'destroy'])->name('AdminCustomerDestroy');
+      //Customer List End
+
 });
+//Customer Start
+Route::get('/customer/register',[CustomerController::class,'register'])->name('register');
+Route::post('/customer/register/process',[CustomerController::class,'registerprocess'])->name('CustomerRegisterProcess');
 Route::get('/customer/login',[CustomerController::class,'login'])->name('CustomerLogin');
 Route::post('/customer/login/process',[LoginController::class,'loginprocess'])->name('CustomerLoginProcess');
 Route::get('/',[CustomerController::class,'home'])->name('CustomerHome');
 
 Route::middleware('customer')->group(function(){
-Route::get('/customer/list',[CustomerController::class,'list'])->name('CustomerList');
-Route::get('/customer/register',[CustomerController::class,'register'])->name('register');
-Route::post('/customer/register/process',[CustomerController::class,'registerprocess'])->name('CustomerRegisterProcess');
-Route::get('/customer/listedit/{id}',[CustomerController::class,'listedit'])->name('CustomerListEdit');
+// Route::get('/customer/list',[CustomerController::class,'list'])->name('CustomerList')
+
+// Route::get('/customer/listedit/{id}',[CustomerController::class,'listedit'])->name('CustomerListEdit');
 Route::patch('/customer/register/update/process',[CustomerController::class,'updateprocess'])->name('CustomerRegisterUpdateProcess');
 Route::get('/customer/deleteprocess/{id}', [CustomerController::class, 'destroy'])->name('CustomerDestroy');
 
 });
-
+//Customer End
 // Auth::routes();
 
 // Route::get('/home', [HomeController::class, 'index'])->name('home');

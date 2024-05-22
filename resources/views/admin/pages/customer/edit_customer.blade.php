@@ -17,13 +17,13 @@
                 <p class="nav_text">Dashboard</p>
             </div>
         </a>    
-        <a href="/pages/product/index.html" target="_self">
+        <a href="{{url('/product/list')}}" target="_self">
             <div class="flex_row">
                 <i class="fa-solid fa-bag-shopping"></i>
                 <p class="nav_text">Product</p>
             </div>
         </a>
-        <a href="{{url('/customer/list')}}" target="_self">
+        <a href="{{url('/admin/customer/list')}}" target="_self">
             <div class="flex_row">
                 <i class="fa-solid fa-users"></i>
                 <p class="nav_text">Customer</p>
@@ -35,13 +35,13 @@
                 <p class="nav_text">Order</p>
             </div>
         </a>
-        <a href="/pages/staff/index.html" target="_self">
+        <a href="{{url('/admin/list')}}" target="_self">
             <div class="flex_row">
                 <i class="fa-solid fa-user"></i>
                 <p class="nav_text">Staff</p>
             </div>
         </a>
-        <a href="/pages/supplier/index.html" target="_self">
+        <a href="{{url('/supplier/list')}}" target="_self">
             <div class="flex_row">
                 <i class="fa-solid fa-user"></i>
                 <p class="nav_text">Supplier</p>
@@ -82,31 +82,31 @@
                     
                 <div class="group-col">
                     <div>First Name</div>
-                    <input type="text" placeholder="First Name" name="fname" value="{{$updatestatus == true? $customerdata->firstname: ''}}">
+                    <input type="text" placeholder="First Name" name="fname" value="{{$updatestatus == true? 'disabled': ''}}">
                 </div>
                 <div class="group-col">
                     <div>Last Name</div>
-                    <input type="text" placeholder="Last Name" name="lname" value="{{$updatestatus == true? $customerdata->lastname: ''}}">
+                    <input type="text" placeholder="Last Name" name="lname" value="{{$updatestatus == true? 'disabled': ''}}">
                 </div>
 
                 <div class="group-col">
                     <div>Email</div>
-                    <input type="email" placeholder="" name="email" value="{{$updatestatus == true? $customerdata->email: ''}}">
+                    <input type="email" placeholder="" name="email" value="{{$updatestatus == true? 'disabled': ''}}">
                 </div>
                
                 <div class="group-col">
                     <div>Password</div>
-                    <input type="password" name="password" value="{{$updatestatus == true? $customerdata->password: ''}}">
+                    <input type="password" name="password" value="{{$updatestatus == true? 'disabled': ''}}">
                 </div>
                
                 <div class="group-col">
                     <div>Phone Number</div>
-                    <input type="text" placeholder="" name="phone" value="{{$updatestatus == true? $customerdata->phone: ''}}">
+                    <input type="text" placeholder="" name="phone" value="{{$updatestatus == true? 'disabled': ''}}">
                 </div>
 
                 <div class="group-col">
                     <div>Address</div>
-                    <input type="text" placeholder="" name="address" value="{{$updatestatus == true? $customerdata->address: ''}}">
+                    <input type="text" placeholder="" name="address" value="{{$updatestatus == true? 'disabled': ''}}">
                 </div>
 
                 <div class="group-col">

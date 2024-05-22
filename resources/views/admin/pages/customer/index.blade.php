@@ -23,7 +23,7 @@
                     <p class="nav_text">Category</p>
                 </div>
             </a>
-            <a href="{{url('/customer/list')}}" target="_self">
+            <a href="{{url('/admin/customer/list')}}" target="_self">
                 <div class="flex_row">
                     <i class="fa-solid fa-users"></i>
                     <p class="nav_text">Customer</p>
@@ -98,8 +98,8 @@
                             <td>{{$value->email}}</td>
                             <td>{{$value->phone}}</td>
                             <td>
-                                <a href="{{url('/customer/listedit/'.$value->id)}}"><i class="fa-solid fa-pen-to-square"></i></a>
-                               <a href="{{url('/customer/deleteprocess/'.$value->id)}}"> <i class="fa-regular fa-trash-can"></i></a>
+                                {{-- <a href="{{url('/admin/customer/listedit/'.$value->id)}}"><i class="fa-solid fa-pen-to-square"></i></a> --}}
+                               <a href="{{url('/admin/customer/deleteprocess/'.$value->id)}}"> <i class="fa-regular fa-trash-can"></i></a>
                             </td>
                         </tr>
                         @endforeach

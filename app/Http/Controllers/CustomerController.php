@@ -31,6 +31,8 @@ class CustomerController extends Controller
         $customer->lastname = $request->lastname;
         $customer->email = $request->email;
         $customer->address = $request->address;
+        $customer->state = $request->state;
+        $customer->zipcode = $request->zipcode;
         $customer->date_of_birth = $request->date_of_birth;
         $customer->phone = $request->phone;
         $customer->password = bcrypt($request->password);
@@ -42,57 +44,60 @@ class CustomerController extends Controller
         return view('customer.account.login.index');
     
     }
-    public function list(){
-        $customerlist = DB::table('customers')->where('status','=','Active')->get();
-        // dd($customerlist);
-        return view('admin.pages.customer.index',compact('customerlist'));
-    }
-    public function listedit($id){
-        $customerdata= Customer::find($id);
-        // dd($customerdata);
-        return view('admin.pages.customer.edit_customer',compact('customerdata'));
-    }
-    public function updateprocess(Request $request){
-        // dd("reach here");
-        // $request->validate([
-        //     'fname' => 'required',
-        //     'lname'=>'required',
-        //     'email' => 'required',
-        //     'password'=>'required',
-        //     'phone'=>'required',
-        // ]);
-        // dd(bcrypt($request->password));
-        $customerlist = Customer::all();
-        $customerdata = Customer::find($request->id);
-        // dd($request->all());
-        $customerdata->firstname =$request->fname;
-        $customerdata->lastname =$request->lname;
-        $customerdata->email =$request->email;
-        $customerdata->password =bcrypt($request->password);
-        $customerdata->phone =$request->phone;
-        $customerdata->address = $request->address;
-        if ($request->hasFile('image')) {
-            if ($customerdata->image) {
-                Storage::delete($customerdata->image);
-            }
-            $path = $request->file('image')->store(public_path('image/admin'));
-            $customerdata->image = $path;
-        }
-        $customerdata->update();
-        
-        return view ('admin.pages.customer.index',compact('customerlist'))->with('success', 'Updated successfully.');
-    
-    }
-    public function destroy($id)
-    {
 
-        $customerlist = Customer::find($id);
-        $customerlist->status = 'Inactive';
-        $customerlist->update();
-    //  DB::table('customers')->where('id',$id)->delete();
-    //  return view('admin.pages.customer.index',compact('customerlist'));
-        return redirect()->route('CustomerList')->with('success', 'Record deleted successfully');
+
+
+    //newcustomer
+
+    public function index()
+    {
+        //
     }
+
+    /**
+     * Show the form for creating a new resource.
+     */
+    public function create()
+    {
+        //
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     */
+    public function store(Request $request)
+    {
+        //
+    }
+
+    /**
+     * Display the specified resource.
+     */
+    public function show(string $id)
+    {
+        //
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     */
+    public function edit(string $id)
+    {
+        //
+    }
+
+    /**
+     * Update the specified resource in storage.
+     */
+    public function update(Request $request, string $id)
+    {
+        //
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     */
+    
 }
     
 
