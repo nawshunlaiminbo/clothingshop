@@ -61,7 +61,9 @@ if(isset($categorydata)){
                 <i class="fa-regular fa-message" style="font-size:25px"></i>
             </div>
             <div class="user_profile">
-            </div>    
+                <img src="{{asset('image/admin/piano.jpg')}}" alt="userphoto">
+
+        </div> 
         </div>
         <!-- user Profile Info -->
         <div class="user_profile_info">
