@@ -11,7 +11,7 @@
                     <p class="nav_text">Dashboard</p>
                 </div>
             </a>    
-            <a href="/pages/product/index.html" target="_self">
+            <a href="{{url('/product/list')}}" target="_self">
                 <div class="flex_row">
                     <i class="fa-solid fa-bag-shopping"></i>
                     <p class="nav_text">Product</p>
@@ -23,7 +23,7 @@
                     <p class="nav_text">Category</p>
                 </div>
             </a>
-            <a href="{{url('/customer/list')}}" target="_self">
+            <a href="{{url('/admin/customer/list')}}" target="_self">
                 <div class="flex_row">
                     <i class="fa-solid fa-users"></i>
                     <p class="nav_text">Customer</p>
@@ -41,7 +41,7 @@
                     <p class="nav_text">Staff</p>
                 </div>
             </a>
-            <a href="/pages/supplier/index.html" target="_self">
+            <a href="{{url('/supplier/list')}}" target="_self">
                 <div class="flex_row">
                     <i class="fa-solid fa-user"></i>
                     <p class="nav_text">Supplier</p>
@@ -74,27 +74,34 @@
                     <a href="{{route('CategoryRegister')}}">+ Add Category</a>
                 </div>
                 <div class="session2">
+                    <form action="{{route('CategoryFilter')}}" method="GET">
+                        @csrf
                     <div class="grid">
-                        <input type="text" placeholder="Search By Name/ Email/ Phone number">
-                        <select name="" id="">
-                            <option value="">Admin</option>
+                        {{-- <input type="text" placeholder="Search By Name" name="name"> --}}
+                        <label for="category">Category</label>
+                        <select name="category" id="category">
+                        
+                             @foreach($categorylist as $value)
+                             <option value="{{$value->id}}">{{$value->name}}</option>
+                             @endforeach
                         </select>
-                        <button>Search</button>
+                        <button type="submit">Search</button>
                     </div>
+                </form>
                 </div>
                 <div class="session3">
                     <div style="overflow-x: auto;">
                         <table>
                             <tr>
                                 <th class="first_title">Category Name</th>
-                                <th>Admin Name</th>
+                                {{-- <th>Admin Name</th> --}}
                                 <th class="last_title">Action</th>
                             </tr>
                             <tr>
                                 @foreach ($categorylist as $value)
                                 
                                 <td>{{$value->name}}</td>
-                                <td>{{$value->adminname}}</td>
+                                {{-- <td>{{$value->adminname}}</td> --}}
                                 {{-- <td>{{$value->role}}</td> --}}
                                 <td>
                                     <a href="{{url('/category/listedit/'.$value->id)}}"><i class="fa-solid fa-pen-to-square"></i></a>
@@ -104,7 +111,7 @@
                             
                             
                             @endforeach
-                            <tr>
+                            {{-- <tr>
                                 <td colspan="2" class="last_row_left">
                                     <div class="page_info">
                                         Showing 1-3 of 30
@@ -117,9 +124,13 @@
                                         <a href="#">&raquo;</a>
                                     </div>
                                 </td>
-                            </tr>
+                            </tr> --}}
                         </table>
                     </div>
+                </div>
+
+                <div class="Pagination">
+                    {{$categorylist->links('pagination::bootstrap-4')}}
                 </div>
             </div>
         </div>

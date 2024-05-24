@@ -18,7 +18,7 @@ if(isset($supplierdata)){
                     <p class="nav_text">Dashboard</p>
                 </div>
             </a>    
-            <a href="/pages/product/index.html" target="_self">
+            <a href="{{'/product/list'}}" target="_self">
                 <div class="flex_row">
                     <i class="fa-solid fa-bag-shopping"></i>
                     <p class="nav_text">Product</p>

@@ -9,7 +9,8 @@ use Illuminate\Support\Facades\DB;
 class AdminCustomerController extends Controller
 {
     public function list(){
-        $customerlist = DB::table('customers')->where('status','=','Active')->get();
+        $customerlist = DB::table('customers')->where('status','=','Active')
+        ->paginate(2);
         // dd($customerlist);
         return view('admin.pages.customer.index',compact('customerlist'));
     }

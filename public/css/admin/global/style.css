@@ -212,26 +212,6 @@ td .sizes{
     font-weight: normal;
     color: var(--secondary-color);
 }
-.pagination {
-    display: inline-block;
-}
-  
-.pagination a {
-    color: var(--text-gray-color);
-    float: left;
-    padding: 8px 16px;
-    text-decoration: none;
-}
-  
-.pagination a.active {
-    background-color: var(--box-blue-color);
-    color: white;
-}
-  
-.pagination a:hover:not(.active) {
-    background-color: #ddd;
-}
-
 
 .main-container{
     display: block;
@@ -244,6 +224,48 @@ td .sizes{
 ::-webkit-scrollbar {
     width: 0;
     height: 0;
+}
+
+/* pagination */
+.Pagination{
+    padding-top: 10px;
+    display:flex;
+    justify-content: right;
+}
+.Pagination ul
+ {
+    display: flex;
+    gap: 10px;
+    font-size: 16px;
+    list-style-type: none;
+    text-decoration: none;
+ }
+ .Pagination li {
+    padding:10px 15px;
+    box-shadow: 0 1px 5px 0 rgba(82, 38, 38, 0.19);
+    border-radius: 10px;
+    background-color:none;
+    border: 1px solid var(--login_publish_color);
+    color: #8D8E91;
+ }
+
+ .Pagination .active {
+    background-color: #5184F1; /* Change background color for active page */
+    color: #FFFFFF; /* Ensure text color contrasts with red background */
+}
+
+.Pagination li:not(.active) {
+    color: #8D8E91; /* Change the text color for non-active pages */
+    text-decoration: none; /* Remove any text decoration */
+}
+
+.Pagination li a {
+    color: inherit; /* Inherit the text color from li */
+    text-decoration: none; /* Remove underline from links */
+}
+
+.Pagination li:not(.active) a:hover {
+    text-decoration: underline; /* Optional: underline on hover for better UX */
 }
 
 @media (max-width:1500px) and (min-width:1268px) {

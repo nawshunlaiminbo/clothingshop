@@ -18,7 +18,7 @@ if(isset($categorydata)){
                     <p class="nav_text">Dashboard</p>
                 </div>
             </a>    
-            <a href="/pages/product/index.html" target="_self">
+            <a href="{{url('/product/list')}}" target="_self">
                 <div class="flex_row">
                     <i class="fa-solid fa-bag-shopping"></i>
                     <p class="nav_text">Product</p>
@@ -30,7 +30,7 @@ if(isset($categorydata)){
                     <p class="nav_text">Category</p>
                 </div>
             </a>
-            <a href="{{url('/customer/list')}}" target="_self">
+            <a href="{{url('/admin/customer/list')}}" target="_self">
                 <div class="flex_row">
                     <i class="fa-solid fa-users"></i>
                     <p class="nav_text">Customer</p>
@@ -42,7 +42,7 @@ if(isset($categorydata)){
                     <p class="nav_text">Order</p>
                 </div>
             </a>
-            <a href="" target="_self">
+            <a href="{{url('/admin/list')}}" target="_self">
                 <div class="flex_row">
                     <i class="fa-solid fa-user"></i>
                     <p class="nav_text">Staff</p>

@@ -80,6 +80,9 @@
                 <div class="group-col">
                     <div>Name</div>
                     <input type="text"  name ="name" placeholder="Staff Name" value="">
+                    @error('name')
+                        <span class="text-danger">{{$mesage}}</span>
+                    @enderror
                 </div>
                 <div class="group-col">
                     <div>Email</div>

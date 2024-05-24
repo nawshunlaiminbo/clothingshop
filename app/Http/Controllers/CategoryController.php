@@ -33,7 +33,7 @@ class CategoryController extends Controller
         ->join('admins','admins.id','=','categories.admin_id')
         ->where('categories.status','=','Active')
         ->select('categories.*','admins.name as adminname')
-        ->get();
+        ->paginate('2');
         return view('admin.pages.category.index',compact('categorylist'));
     }
     public function listedit($id){
@@ -55,5 +55,24 @@ class CategoryController extends Controller
         $categorylist->status = 'Inactive';
         $categorylist->update();
         return redirect()->route('CategoryList');
+    }
+    public function filter(Request $request){
+
+        $categoryname = 'categories.name';
+            
+        $data = [];
+            if($request->category != null){
+            $data[] = [$categoryname,'LIKE','%'.$request->category.'%'];
+   }
+    // dd($data);
+
+    $categorylist = DB::table('categories')
+    ->join('admins','admins.id','=','categories.admin_id')
+    ->where('categories.status','=','Active')
+    ->select('categories.*','admins.name as adminname')
+    ->paginate('2');
+       
+        // dd($categorylist);
+        return view('admin.pages.category.index',compact('categorylist'));
     }
 }

@@ -16,7 +16,7 @@ class SupplierController extends Controller
         $supplierlist = DB::table('suppliers')
         ->where('suppliers.status','=','Active')
         ->select('suppliers.*')
-        ->get();
+        ->paginate(2);
         return view('admin.pages.supplier.index',compact('supplierlist'));
     }
 

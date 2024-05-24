@@ -16,8 +16,13 @@ class ProductController extends Controller
         ->join('admins','admins.id','=','products.admin_id')
         ->where('products.status','=','Active')
         ->select('products.*','categories.name as category_name','suppliers.brand_name as brand')
+        ->paginate(3);
+        // $products = Product::paginate(10);
+        $categories = DB::table('categories')
+        ->where('status','=','Active')
+        ->select('id','name')
         ->get();
-        return view('admin.pages.product.index',compact('productlist'));
+        return view('admin.pages.product.index',compact('productlist','categories'));
     }
    
     public function register(){
@@ -96,5 +101,54 @@ class ProductController extends Controller
         $productlist->update();
         return redirect()->route('ProductList');
   }
-    }
+  public function filter(Request $request){
+// dd($request->all());
+    // $suppliers = DB::table('suppliers')
+    // ->where('status','=','Active')
+    // ->select('id','name','brand_name')
+    // ->get();
+    $categories = DB::table('categories')
+    ->where('status','=','Active')
+    ->select('id','name')
+    ->get();
+    $productname = 'products.name';
+    $productprice = 'products.price';
+    $productcategory = 'products.category_id';
 
+    $data = [];
+    if($request->name != null){
+        // $name = $productname;
+        // $data = $request->name;
+        $data[] = [$productname,'LIKE','%'.$request->name.'%'];
+    }
+    if($request->min_price != null){
+        $data[]= [$productprice,'>=',$request->min_price];
+    }
+    if($request->max_price != null){
+        $data[]= [$productprice,'<=',$request->max_price];
+    }
+    if($request->max_price && $request->min_price)
+    {
+        $data[] = [$productprice, '>=', $request->min_price];
+        $data[] = [$productprice, '<=', $request->max_price];
+    }
+    if($request->category){
+        $data[] = [$productcategory,'=',$request->category];
+    }
+    // dd($data);
+        $productlist = DB::table('products')
+        ->join('categories','categories.id','=','products.category_id')
+        ->join('suppliers','suppliers.id','=','products.supplier_id')
+        ->join('admins','admins.id','=','products.admin_id')
+        ->where($data)
+        ->where('products.status','=','Active')
+        ->select('products.*','categories.name as category_name','suppliers.brand_name as brand')
+        ->orderBy('products.id','desc')
+        ->paginate(3);
+        // dd($productlist);
+        // return redirect()->route('ProductList',compact('categories','productlist'));
+        return view('admin.pages.product.index',compact('productlist','categories'));
+
+  }
+
+  }

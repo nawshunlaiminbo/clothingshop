@@ -5,6 +5,7 @@ use App\Http\Controllers\AdminCustomerController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\CustomerProductController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
@@ -47,6 +48,7 @@ Route::middleware('admin')->group(function(){
     Route::get('/category/listedit/{id}',[CategoryController::class,'listedit'])->name('CategoryListEdit');
     Route::patch('/category/register/update/process',[CategoryController::class,'updateprocess'])->name('CategoryRegisterUpdateProcess');
     Route::get('/category/deleteprocess/{id}', [CategoryController::class, 'destroy'])->name('CategoryDestroy');
+    Route::get('/category/filter',[CategoryController::class,'filter'])->name('CategoryFilter');
     //Category End
 
       //Supplier Start
@@ -65,6 +67,7 @@ Route::middleware('admin')->group(function(){
       Route::get('/product/listedit/{id}',[ProductController::class,'listedit'])->name('ProductListEdit');
       Route::patch('/product/register/update/process',[ProductController::class,'updateprocess'])->name('ProductRegisterUpdateProcess');
       Route::get('/product/deleteprocess/{id}', [ProductController::class, 'destroy'])->name('ProductDestroy');
+      Route::get('/product/filter',[ProductController::class,'filter'])->name('ProductFilter');
       //Product End
 
       //Customer List Start
@@ -88,6 +91,10 @@ Route::middleware('customer')->group(function(){
 Route::patch('/customer/register/update/process',[CustomerController::class,'updateprocess'])->name('CustomerRegisterUpdateProcess');
 Route::get('/customer/deleteprocess/{id}', [CustomerController::class, 'destroy'])->name('CustomerDestroy');
 
+//Customer Page Product Start
+Route::get('/cutomer/product/data',[CustomerProductController::class,'showdata'])->name('CustomerProductData');
+
+//Customer Page Product End
 });
 //Customer End
 // Auth::routes();

@@ -11,17 +11,21 @@
                 <div class="link">
                     <a href="">FAQ</a>|
                     <a href="">orders and returns</a>|
-                    <a href="account/login/index.html">Sign In</a>
+                    <a href="{{url('/customer/login')}}">Sign In</a>
                 </div>
             </div>
             <div class="nav_bar flex_row">
                 <div class="logo">
                     Bravis
                 </div>
+
                 <div class="menu flex_row">
+                    <div class="contact">
+                        <a href="" >Home</a>
+                    </div>
                     <div class="women drop_down">
-                        <a href="" >Women</a>
-                        <div class="women_drop_down_content">
+                        <a href="{{url('/cutomer/product/data')}}" >Women</a>
+                        {{-- <div class="women_drop_down_content">
                             <h3>Women Clothing</h3>
                             <div class="women_clothing_list flex_row">
                                 <div class="flex_col">
@@ -32,11 +36,11 @@
                                     <a href="pages/category/women/skirt.html">Women's Skirts</a>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
                     <div class="men drop_down">
                         <a href="" >Men</a>
-                        <div class="men_drop_down_content">
+                        {{-- <div class="men_drop_down_content">
                             <h3>Men Clothing</h3>
                             <div class="men_clothing_list flex_row">
                                 <div class="flex_col">
@@ -46,13 +50,11 @@
                                     <a href="pages/category/men/pant.html">Men’s Pants</a>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
-                    <div class="contact">
-                        <a href="/pages/contact/index.html" >Contact</a>
-                    </div>
+                   
                     <div class="about_us">
-                        <a href="pages/about/index.html" >About Us</a>
+                        <a href="" >Accessories</a>
                     </div>
                 </div>
                 <div class="extra_icon flex_row">

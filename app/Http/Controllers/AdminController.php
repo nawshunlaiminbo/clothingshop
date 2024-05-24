@@ -22,13 +22,13 @@ class AdminController extends Controller
       return view('admin.pages.staff.add_staff',compact('role'));
     }
     public function registerprocess(Request $request){
-    //  $incomingFields = $request->validate([
-    //   'name'=>['required','min:3', 'max:20'],
-    //   'email'=>['required','email'],
-    //   'address'=>['required','address'],
-    //   'password'=>['required','min:6','max:50'],
-    //   'phone'=>['required','min:9','max:11']
-    //  ]);
+     $validateData = $request->validate([
+      'name'=>['required','min:3', 'max:20'],
+      'email'=>['required','email'],
+      'address'=>['required','address'],
+      'password'=>['required','min:6','max:50'],
+      'phone'=>['required','min:9','max:11']
+     ]);
     //  $roleid  = $request->role;
     // dd($request->image);
    
@@ -38,13 +38,13 @@ class AdminController extends Controller
      $role_id = $this->getRoleId();
      $admin = new Admin();
      $admin->uuid = $uuid;
-     $admin->name = $request->name;
-     $admin->email = $request->email;
-     $admin->address = $request->address;
+     $admin->name = $validateData['name'];
+     $admin->email = $validateData['email'];
+     $admin->address = $validateData['address'];
     //  $admin->role_id = auth('admin')->user()->role_id;
-     $admin->role_id = $request->role_id;
-     $admin->password = bcrypt($request->password);
-     $admin->phone = $request->phone;
+    //  $admin->role_id = $request->role_id;
+     $admin->password = $validateData[bcrypt('password')];
+     $admin->phone = $validateData['phone'];
      $admin->status = 'Active';
      $admin->image = $image;
     // $admin->uuid= 'nullable';

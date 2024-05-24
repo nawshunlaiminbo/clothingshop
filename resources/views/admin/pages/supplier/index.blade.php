@@ -11,7 +11,7 @@
                     <p class="nav_text">Dashboard</p>
                 </div>
             </a>    
-            <a href="/pages/product/index.html" target="_self">
+            <a href="{{'/product/list'}}" target="_self">
                 <div class="flex_row">
                     <i class="fa-solid fa-bag-shopping"></i>
                     <p class="nav_text">Product</p>
@@ -98,7 +98,7 @@
                         </tr>
 
                         @endforeach
-                        <tr>
+                        {{-- <tr>
                             <td colspan="2" class="last_row_left">
                                 <div class="page_info">
                                     Showing 1-3 of 30
@@ -111,9 +111,13 @@
                                     <a href="#">&raquo;</a>
                                 </div>
                             </td>
-                        </tr>
+                        </tr> --}}
                     </table>
                 </div>
+            </div>
+
+            <div class="Pagination">
+                {{$supplierlist->links('pagination::bootstrap-4')}}
             </div>
         </div>
     </div>

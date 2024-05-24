@@ -2,7 +2,6 @@
 @section('title','Home')
 @section('content')
 
-
     <div class="session grid">
         <div class="nav flex_col">
             <a href="{{url('/admin/dashboard')}}" target="_self">
@@ -24,7 +23,7 @@
                     <p class="nav_text">Category</p>
                 </div>
             </a>
-            <a href="{{url('/customer/list')}}" target="_self">
+            <a href="{{url('/admin/customer/list')}}" target="_self">
                 <div class="flex_row">
                     <i class="fa-solid fa-users"></i>
                     <p class="nav_text">CustomerList</p>
@@ -72,17 +71,26 @@
                 <a href="{{route('ProductRegister')}}">+ Add Product</a>
             </div>
             <div class="session2">
+                <form action="{{route('ProductFilter')}}" method="GET" >
+                @csrf
                 <div class="grid">
-                    <input type="text" placeholder="Search">
-                    <select name="category" id="">
-                        <option value="">Category</option>
+                    <input type="text" placeholder="Search By Product Name" name="name">
+                   
+                    <label for="category">Category</label>
+                    <select name="category" id="category">
+                    
+                         @foreach($categories as $value)
+                         <option value="{{$value->id}}">{{$value->name}}</option>
+                         @endforeach
                     </select>
-                    <input type="text" placeholder="Price">
+                    <input type="text" name="min_price" placeholder="Min Price">
+                    <input type="text" name="max_price" placeholder="Max Price">
                     <div class="buttons flex_row">
-                        <button class="filter_button">Filter</button>
-                        <button class="reset_button">Reset</button>
+                        <button class="filter_button" type="submit">Filter</button>
+                        <button class="reset_button" type="reset">Reset</button>
                     </div>
                 </div>
+            </form>
             </div>
             <div class="session3">
                 <div style="overflow-x: auto;">
@@ -124,29 +132,14 @@
                         @endforeach
     
                         <!-- last -->
-                        <tr>
-                            <td colspan="2" class="last_row_left">
-                                <div class="page_info">
-                                    Showing 1-7 of 50
-                                </div>
-                            </td>
-                            <td colspan="3" class="last_row_right">
-                                <div class="pagination">
-                                    <a href="#">&laquo;</a>
-                                    <a class="active" href="#">1</a>
-                                    <a href="#">2</a>
-                                    <a href="#">3</a>
-                                    <a href="#">4</a>
-                                    <a href="#">5</a>
-                                    <a href="#">6</a>
-                                    <a href="#">7</a>
-                                    <a href="#">&raquo;</a>
-                                </div>
-                            </td>
-                        </tr>
+                       
                     </table>
                 </div>
 
+               
+            </div>
+            <div class="Pagination">
+                {{$productlist->links('pagination::bootstrap-4')}}
             </div>
         </div>
     </div>

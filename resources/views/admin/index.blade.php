@@ -55,8 +55,8 @@
             <i class="fa-regular fa-message" style="font-size:25px"></i>
         </div>
         <div class="user_profile">
-                <img src="{{asset('image/admin/'.auth('admin')->user()->image)}}" alt="userphoto">
-
+                {{-- <img src="{{asset('image/admin/'.auth('admin')->user()->image)}}" alt="userphoto"> --}}
+                <img src="{{asset('image/admin/piano.jpg')}}" alt="userphoto">
         </div>     
     </div>
     <!-- user Profile Info -->
