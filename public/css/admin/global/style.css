@@ -38,102 +38,106 @@ i,button{
 }
 .grid{
     display: grid;
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: 12% 78%;
 }
-
-.status{
-    display: inline-block;
-    border-radius: 10px;
-    padding: 5px 10px;
-    font-size: 10px;
-    color: var(--secondary-color);
-}
-.status_complete{
-    border: 1px solid var(--box-lightgreen-color);
-    background-color: var(--box-lightgreen-color);
-}
-.status_cancelled{
-    border: 1px solid var(--box-red-color);
-    background-color: var(--box-red-color);
-}
-.status_pending{
-    border: 1px solid var(--box-yellow-color);
-    background-color: var(--box-yellow-color);
-}
-
 
 /*  */
-.session{
-    position: sticky;
+.main-wrapper{
+ display: block;
+ height: 97.8vh;
+
+}
+::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+.admin-session{
     display: grid;
-    grid-template-columns: 10% 85%;
-    margin: 20px 30px;
-    gap: 20px;
-    height:80vh;
+    grid-template-columns: 10% 90%;
+    height:98%;
+    /* border: 2px solid red; */
     
 }
-.nav{
-    grid-row: span 2;
+
+.nav-col{
     background-color: var(--secondary-color);
     border-radius: 20px;
-    padding-top: 20px;
     text-align: center;
-    padding-left: 20px;
-    line-height: 50px;
-    height:97vh;
+    height:96.5vh;
 
 }
-.nav h1{
-    color: var(--text-blue-color);
-}
-.nav .flex_row:hover{
-    color: var(--text-blue-color);
-}
-
-.flex_row{
-    display: flex;
-    flex-direction: row;
-    align-items: baseline;
-    gap: 20px;
-    height: 50px;
-}
-
-.flex_row i{
-    width: 10%;
-}
-.flex_col{
-    display: flex;
-    flex-direction: column;  
-
-}
-
-.nav_text{
-justify-content: left;
-}
-.header{
-    padding: 10px 30px;
-    justify-content: space-between;
+.nav_row{
+    display:grid;
+    grid-template-columns: 15% 80%;
+    /* border: 1px solid green; */
     align-items: center;
-    border-radius: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    gap: 10px;
+   
+}
+
+.nav-title{
+    display: flex;
+    justify-content: left;
+   
+   }
+
+   .main-container{
+    display: block;
+    position: sticky;
+    height: 97vh;
+    overflow: scroll;
+    overflow-y: scroll;
+    width: 99%;
+    padding-left:5px;
+}
+
+::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
+.col-con{
+    display: block;
     position: relative;
-    background-color: var(--secondary-color);   
-}
-.header .icons > img{
-    width: 30px;
-    height: 30px;
+    height: 70px;
+    background-color: var(--secondary-color);
+    border-radius:10px ;
+    width: 100%;
 }
 
-/* .header .user_profile{
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-color: var(--text-gray-color);
+.header-col {
+    display: grid;
+    grid-template-columns: 70% 30%;
+    /* border: 1px solid red; */
+    justify-content: center;
+    height: 100%;
+   
+}
 
-} */
-.user_profile img{
-    width:50px;
-    height:45px;
-    border-radius: 50%;
+.flex_row {
+    display: flex; /* Enables Flexbox */
+    align-items: center; /* Centers items vertically */  
+    gap: 10px; /* Adds some space between the icon and the text */
+    padding: 10px; /* Optional: Adds padding to the container */
+  
+
+}
+
+.user_profile{
+    display: flex;
+    justify-content: right;
+    padding-right: 30px;
+    align-items: center;
+    gap: 20px;
+}
+.img-col{
+ width: 50px;
+ height: 50px;
+ overflow: hidden;
+ border-radius: 50%;
+
 }
 .user_profile_info{
     display: none;
@@ -150,199 +154,91 @@ justify-content: left;
 .user_profile_info>a:hover{
     color: var(--box-blue-color);
 }
-.product_img{
-    width: 40px;
-    height: 40px;
-    line-height: 20px;
-    margin: 5px 0px;
-    background-color: var(--text-gray-color);
-}
-/* table */
-table{
-    font-weight: bold;
-    text-align: center;
-    border-collapse: collapse;
-    width: 100%;
 
-}
-tr .first_title{
-    border-top-left-radius: 10px;
-    overflow-x: scroll;
-}
-tr .last_title{
-    border-top-right-radius: 10px;
-}
-th{
-    background-color: var(--box-blue-color);
-    height: 50px;
-    color: var(--secondary-color);
-}
-tr{
-    height: 45px;
-    font-weight: normal;
-    color: var(--text-title-gray-color);
-}
-tr:nth-child(even){
-    background-color: var(--secondary-color);
-}
-tr:nth-child(odd){
-    background-color: var(--table-bg-skyblue-color);
-}
-tr .last_row_left{
-    text-align: left;
-    border-bottom-left-radius: 10px;
-}
-tr .last_row_right{
-    text-align: right;
-    border-bottom-right-radius: 10px;
+.main-wapper{
+    border: 2px solid rgb(255, 0, 238);
 }
 
-.item_flex_row{
-    justify-content: center;
-    align-items: center;
-}
-td .sizes{
-    justify-content: center;
-}
-.box_green{
-    background-color: var(--box-lightgreen-color);
-    padding: 5px 10px;
-    border-radius: 10px;
-    font-size: 12px;
-    font-weight: normal;
-    color: var(--secondary-color);
-}
+@media (max-width:1500px) and (min-width:1300px) {
 
-.main-container{
-    display: block;
-    position: sticky;
-    height: 97vh;
-    overflow: scroll;
-    overflow-y: scroll;
-}
-
-::-webkit-scrollbar {
-    width: 0;
-    height: 0;
-}
-
-/* pagination */
-.Pagination{
-    padding-top: 10px;
-    display:flex;
-    justify-content: right;
-}
-.Pagination ul
- {
-    display: flex;
-    gap: 10px;
-    font-size: 16px;
-    list-style-type: none;
-    text-decoration: none;
- }
- .Pagination li {
-    padding:10px 15px;
-    box-shadow: 0 1px 5px 0 rgba(82, 38, 38, 0.19);
-    border-radius: 10px;
-    background-color:none;
-    border: 1px solid var(--login_publish_color);
-    color: #8D8E91;
- }
-
- .Pagination .active {
-    background-color: #5184F1; /* Change background color for active page */
-    color: #FFFFFF; /* Ensure text color contrasts with red background */
-}
-
-.Pagination li:not(.active) {
-    color: #8D8E91; /* Change the text color for non-active pages */
-    text-decoration: none; /* Remove any text decoration */
-}
-
-.Pagination li a {
-    color: inherit; /* Inherit the text color from li */
-    text-decoration: none; /* Remove underline from links */
-}
-
-.Pagination li:not(.active) a:hover {
-    text-decoration: underline; /* Optional: underline on hover for better UX */
-}
-
-@media (max-width:1500px) and (min-width:1268px) {
-
-    .nav{
-        border-radius: 6px;
-        padding: 10px;
-    }
-
-}
-
-@media (min-width:1200px) and (max-width:1400px){
-  
-    .session{
-        display: grid;
-        grid-template-columns: 15% 80%;
-    }
-}
-
-@media (min-width:1000px) and (max-width:1200px){
-    .session{
-        display: grid;
-        grid-template-columns: 15% 80%;
-    }
-
-}
-
-
-@media (max-width:1000px) and (min-width:768px) {
    
-    .session{
-        display: grid;
-        grid-template-columns: 5% 93%;
-    }
-    .nav_text{
-        display: none;
-    }
-    .nav{
-        border-radius: 6px;
-        padding: 10px;
-    }
-    .nav a div > i{
-        padding: 10px 0px;
-    }
+
 }
-@media (max-width:767px) and (min-width:520px) {
+
+@media (max-width:1300px) and (min-width:1200px) {
+
+   
+
+}
+
+@media (max-width:1200px) and (min-width:1100px) {
+
+    .admin-session{
+        display: grid;
+        grid-template-columns: 15% 85%;
+     
+    }
+  
     
-    .session{
+}
+
+@media (max-width:1100px) and (min-width:1000px) {
+
+    .admin-session{
+        display: grid;
+        grid-template-columns: 20% 80%;
+        font-size: 10px;
+    }
+
+    .nav_text{
+       font-size: 10px;
+    }
+    
+}
+
+@media (max-width:1000px) and (min-width:800px) {
+
+    .admin-session{
         display: grid;
         grid-template-columns: 7% 90%;
     }
+    
+    .nav-col{
+      padding-top: 30px;
+      height:95.5vh;
+    }
     .nav_text{
+        font-size: 10px;
+     }
+     
+    .nav_row{
+        height: 70px;
+    }
+    .nav-title{
         display: none;
     }
-    .nav{
-        border-radius: 6px;
-        padding: 10px;
+
+    .flex_col  i{
+
+        width: 10%;
     }
-    .nav a div > i{
-        padding:10px 0px;
-    }
+    
 }
 
-@media (max-width:520px) and (min-width:320px) {
-    
-    .session{
+@media (max-width:800px)  {
+    .admin-session{
         display: grid;
-        grid-template-columns: 40px 90%;
+        grid-template-columns: 7% 90%;
     }
+
     .nav_text{
+        font-size: 7px;
+     }
+     
+    .nav_row{
+        height: 70px;
+    }
+    .nav-title{
         display: none;
-    }
-    .nav{
-        border-radius: 6px;
-        padding: 10px;
-    }
-    .nav a div > i{
-        padding:10px 0px;
     }
 }
