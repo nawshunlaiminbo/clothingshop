@@ -13,7 +13,9 @@
     {{-- <link rel="stylesheet" href="{{asset('css/admin/component/add_to_card.css')}}">
     <link rel="stylesheet" href="{{asset('css/admin/component/card_slider.css')}}"> --}} 
     <link rel="stylesheet" href="{{asset('css/admin/global/style.css')}}">
+    <link rel="stylesheet" href="{{asset('css/admin/global/register.css')}}">
     <link rel="stylesheet" href="{{asset('css/admin/pages/staff/staff.css')}}">
+    {{-- <link rel="stylesheet" href="{{asset('css/admin/pages/product/add_product.css')}}"> --}}
    {{-- <link rel="stylesheet" href="{{asset('css/admin/pages/customer/customer.css')}}"> --}}
     {{-- <link rel="stylesheet" href="{{asset('css/admin/pages/customer/edit_customer.css')}}">
     <link rel="stylesheet" href="{{asset('css/admin/pages/order/order.css')}}"> 

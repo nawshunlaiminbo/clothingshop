@@ -1,0 +1,120 @@
+/*  For Cat Register */
+.form-col{
+    position: relative;
+    /* border: 1px solid red; */
+    width: 99.5%;
+    height: auto;
+    padding-bottom: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.group-col{
+    display: grid;
+    grid-template-columns: 20% 76.5%;
+    gap: 20px;
+    height: auto;
+    padding-bottom: 20px;
+}
+
+.form-input input{
+    width: 100%;
+    background-color: #F7FAFF;
+    padding: 10px; /* Padding inside the input */
+    margin: 8px 0; /* Margin outside the input */
+    display: inline-block; /* Default display */
+    border: 1px solid #ccc; /* Light gray border */
+    border-radius: 4px; /* Rounded corners */
+    box-sizing: border-box;
+    outline: none;
+    height: 40px;
+    
+}
+
+.group-submit{
+    display: grid;
+    grid-template-columns: 50% 50%;
+  
+}
+.can-btn{
+    width: 95%;
+    background-color: #999999;
+    color: #fff;
+    border: none;
+    height: 30px;
+    border-radius: 6px;
+}
+.sub-btn{
+    width: 95%;
+    background-color:#3B76EF;
+    color: #fff;
+    border: none;
+    height: 30px;
+    border-radius: 6px;
+}
+
+.error {
+    color: red;
+    font-size: 14px;
+}
+@media (max-width:1440px) and (min-width:1200px){
+    .group-col{
+        display: grid;
+        grid-template-columns: 20% 75%;
+       
+    }
+}
+
+@media (max-width:1200px) and (min-width:1000px){
+    .group-col{
+        display: grid;
+        grid-template-columns: 20% 73%;
+       
+    }
+    .group-submit{
+        display: grid;
+        grid-template-columns: 49% 49%;
+      
+    }
+}
+
+@media (max-width:1000px) and (min-width:800px){
+    .group-col{
+        display: grid;
+        grid-template-columns: 20% 73%;
+       
+    }
+    .group-submit{
+        display: grid;
+        grid-template-columns: 49% 49%;
+      
+    }
+}
+
+@media (max-width:800px) and (min-width:600px){
+    .group-col{
+        display: grid;
+        grid-template-columns: 20% 73%;
+       
+    }
+    .group-submit{
+        display: grid;
+        grid-template-columns: 49% 49%;
+      
+    }
+}
+
+
+@media (max-width:600px) and (min-width:320px){
+    .group-col{
+        display: grid;
+        grid-template-columns: 94%;
+       
+    }
+    .group-submit{
+        display: grid;
+        grid-template-columns: 48% 48%;
+      
+    }
+}

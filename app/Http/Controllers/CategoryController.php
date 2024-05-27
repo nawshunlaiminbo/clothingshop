@@ -17,6 +17,12 @@ class CategoryController extends Controller
         return view('admin.pages.category.add_category',compact('role'));
     }
     public function registerprocess(Request $request){
+        
+        $request->validate([
+            'name' => 'required|string|max:255|unique:categories,name',
+        ], [
+            'name.required' => 'The name field is required.',
+        ]);
         $category = new Category();
         $uuid = Str::uuid()->toString();
         $category->name = $request->name;
