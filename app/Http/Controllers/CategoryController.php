@@ -39,7 +39,7 @@ class CategoryController extends Controller
         ->join('admins','admins.id','=','categories.admin_id')
         ->where('categories.status','=','Active')
         ->select('categories.*','admins.name as adminname')
-        ->paginate('2');
+        ->paginate('10');
         return view('admin.pages.category.index',compact('categorylist'));
     }
     public function listedit($id){
@@ -76,7 +76,7 @@ class CategoryController extends Controller
     ->join('admins','admins.id','=','categories.admin_id')
     ->where('categories.status','=','Active')
     ->select('categories.*','admins.name as adminname')
-    ->paginate('2');
+    ->paginate('10');
        
         // dd($categorylist);
         return view('admin.pages.category.index',compact('categorylist'));

@@ -105,11 +105,7 @@
     
                 </div>
                 <div class="form-col">
-                    @if (session('success'))
-                        <div class="success">
-                            {{ session('success') }}
-                        </div>
-                     @endif
+                  
                     <form action="{{route('CategoryRegisterProcess')}}" method="POST" class="add_category_form" enctype="multipart/form-data" >
                         @csrf
                         <input type="hidden" name="id">
