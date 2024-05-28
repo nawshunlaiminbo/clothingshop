@@ -16,7 +16,7 @@ class SupplierController extends Controller
         $supplierlist = DB::table('suppliers')
         ->where('suppliers.status','=','Active')
         ->select('suppliers.*')
-        ->paginate(2);
+        ->paginate(5);
         return view('admin.pages.supplier.index',compact('supplierlist'));
     }
 
@@ -29,6 +29,19 @@ class SupplierController extends Controller
     
     public function registerprocess(Request $request)
     {
+
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'brand_name' => 'required|string|max:255',
+        ], [
+            'name.required' => 'The name field is required.',
+            'name.string' => 'The name must be a string.',
+            'name.max' => 'The name may not be greater than 255 characters.',
+            'brand_name.required' => 'The brand name field is required.',
+            'brand_name.string' => 'The brand name must be a string.',
+            'brand_name.max' => 'The brand name may not be greater than 255 characters.',
+        ]);
+
         $supplier = new Supplier();
         $uuid = Str::uuid()->toString();
         $supplier->name = $request->name;
