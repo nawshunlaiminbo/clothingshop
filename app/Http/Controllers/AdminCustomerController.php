@@ -53,4 +53,45 @@ class AdminCustomerController extends Controller
     //  return view('admin.pages.customer.index',compact('customerlist'));
         return redirect()->route('CustomerList')->with('success', 'Record deleted successfully');
     }
+
+public function filter(Request $request){
+    $columns = [
+      'customers.firstname'=> 'Customer Firstname',
+      'customers.lastname' =>'Customer Lastname',
+      'customers.email' => 'Email',
+      'customers.address' => 'Address',
+      'customers.phone' => 'Phone Number'
+  ];
+
+  $query = Customer::query()->where('customers.status', 'Active');
+
+  if (!empty($request->search)) {
+      $searchInput = $request->search;
+      
+      $query->where(function ($subQuery) use ($columns, $searchInput) {
+          foreach ($columns as $column => $label) {
+              $subQuery->orWhere($column, 'LIKE', '%' . $searchInput . '%');
+          }
+      });
+  }
+
+//   if (!empty($request->role) && $request->role != 'role') {
+//       $query->where('role_id', '=', $request->role);
+//   }
+// $customerlist = DB::table('customers')->where('status','=','Active')
+// ->paginate(2);
+
+  $customerlist =$query
+  ->where('customers.status','=','Active')
+  ->select('customers.*')
+  ->orderBy('customers.id','desc');
+//   ->paginate(2);
+
+  $customerlist = DB::table('customers')->where('status','=','Active')
+  ->paginate(2);
+
+        
+  return view('admin.pages.customer.index', compact('customerlist'));
+  }
 }
+

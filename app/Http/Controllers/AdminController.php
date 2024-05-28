@@ -58,13 +58,17 @@ class AdminController extends Controller
       // return view('admin.pages.staff.add_staff',compact('role'));
     }
     public function list(){
+      $roles = DB::table('roles')
+      ->select('id', 'name')
+      ->where('status', '=', 'Active')
+      ->get();
       $stafflist = DB::table('admins')
       ->join('roles','roles.id','=','admins.role_id')
       ->where('admins.status','=','Active')
       ->select('admins.*','roles.name as role')
-      ->get();
+      ->paginate(2);
       // dd($stafflist);
-      return view('admin.pages.staff.index',compact('stafflist'));
+      return view('admin.pages.staff.index',compact('stafflist','roles'));
     }
     public function listedit($id){
       $role = DB::table('roles')
@@ -96,5 +100,48 @@ class AdminController extends Controller
   }
   private function getRoleId(){
     return 2;
+  }
+  public function filter(Request $request){
+    $columns = [
+      'admins.name' => 'Staff Name',
+      'admins.email' => 'Email',
+      'admins.address' => 'Address',
+      'admins.phone' => 'Phone Number'
+  ];
+
+  $query = Admin::query()->where('admins.status', 'Active');
+
+  if (!empty($request->search)) {
+      $searchInput = $request->search;
+      
+      $query->where(function ($subQuery) use ($columns, $searchInput) {
+          foreach ($columns as $column => $label) {
+              $subQuery->orWhere($column, 'LIKE', '%' . $searchInput . '%');
+          }
+      });
+  }
+
+  if (!empty($request->role) && $request->role != 'role') {
+      $query->where('role_id', '=', $request->role);
+  }
+
+  // $stafflist = $query->join('roles', 'roles.id', '=', 'admins.role_id')
+  //                     ->select('admins.*', 'roles.name as rolename')
+  //                     ->orderBy('admins.id', 'desc')
+  //                     ->paginate(3);
+
+  $stafflist =$query
+  ->join('roles','roles.id','=','admins.role_id')
+  ->where('admins.status','=','Active')
+  ->select('admins.*','roles.name as role')
+  ->orderBy('admins.id','desc')
+  ->paginate(2);
+
+  $roles = DB::table('roles')
+              ->select('id', 'name')
+              ->where('status', '=', 'Active')
+              ->get();
+        
+  return view('admin.pages.staff.index', compact('stafflist','roles'));
   }
 }

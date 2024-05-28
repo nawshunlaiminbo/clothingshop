@@ -148,29 +148,16 @@
                             
                             
                             @endforeach
-                            <tr>
-                                <td colspan="2" class="last_row_left">
-                                    <div class="page_info">
-                                        Showing 1-3 of 30
-                                    </div>
-                                </td>
-                                <td colspan="3" class="last_row_right">
-                                    <div class="pagination">
-                                        <a href="#">&laquo;</a>
-                                        <a class="active" href="#">1</a>
-                                        <a href="#">&raquo;</a>
-                                    </div>
-                                </td>
-                            </tr>
+                           
                         </table>
                     </div>
                 </div>
+                <div class="Pagination">
+                    {{$stafflist->links('pagination::bootstrap-4')}}
+                </div>
             </div>
+       
         </div>
-
-        
-      
-
     </div>
 
 

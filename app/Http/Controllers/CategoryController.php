@@ -64,19 +64,19 @@ class CategoryController extends Controller
     }
     public function filter(Request $request){
 
-        $categoryname = 'categories.name';
+        $category = 'categories.id';
             
         $data = [];
-            if($request->category != null){
-            $data[] = [$categoryname,'LIKE','%'.$request->category.'%'];
+            if($request->category){
+            $data[] = [$category,'=',$request->category];
    }
     // dd($data);
 
     $categorylist = DB::table('categories')
-    ->join('admins','admins.id','=','categories.admin_id')
+    ->where($data)
     ->where('categories.status','=','Active')
-    ->select('categories.*','admins.name as adminname')
-    ->paginate('10');
+    ->select('categories.*')
+    ->paginate('2');
        
         // dd($categorylist);
         return view('admin.pages.category.index',compact('categorylist'));

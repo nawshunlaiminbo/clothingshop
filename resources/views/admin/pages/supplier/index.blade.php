@@ -112,13 +112,19 @@
                             <a href="{{url('/supplier/register')}}">+ Add Supplier</a>
                         </div>
                         <div class="session2">
+                            <form action="{{route('SupplierFilter')}}" method="GET">
+                                @csrf
                             <div class="grid">
-                                <input type="text" placeholder="Search By Name/ Email/ Phone number">
-                                <select name="" id="">
-                                    <option value="">Admin</option>
+                                <input type="text" placeholder="Search By Supplier Name" name="name">
+                                <select name="brand_name" >
+                                    <option value="brand_name">Search By Brand Name..</option>
+                                    @foreach($brandlist as $value)
+                                    <option value="{{$value->brandname}}">{{$value->brandname}}</option>
+                                    @endforeach
                                 </select>
-                                <button>Search</button>
+                                <button type="submit">Search</button>
                             </div>
+                            </form>
                         </div>
                     </div>
                   

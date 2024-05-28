@@ -13,11 +13,17 @@ class SupplierController extends Controller
    
     public function list()
     {
+        $brandlist = DB::table('suppliers')
+        ->where('suppliers.status','=','Active')
+        ->select('suppliers.brand_name as brandname')
+        ->get();
+    
+
         $supplierlist = DB::table('suppliers')
         ->where('suppliers.status','=','Active')
         ->select('suppliers.*')
         ->paginate(5);
-        return view('admin.pages.supplier.index',compact('supplierlist'));
+        return view('admin.pages.supplier.index',compact('supplierlist', 'brandlist'));
     }
 
   
@@ -80,5 +86,43 @@ class SupplierController extends Controller
         $supplierlist->update();
     
         return redirect()->route('SupplierList');
+    }
+
+    public function filter(Request $request){
+
+        
+    //   $admin = DB::table('admins')
+    //   ->where('admins.status','=','Active')
+    //   ->select('admins.name','admins.id')
+    //   ->get();
+
+        $suppliername = 'suppliers.name';
+        $brandname = 'suppliers.brand_name';
+        // dd($request->name);
+        $data = [];
+        if($request->name != null){
+            $data[] = [$suppliername,'LIKE','%'.$request->name.'%'];
+        }
+        elseif($request->brand_name !=null){
+            $data[] = [$brandname,'=',$request->brand_name];
+        }
+        // dd($data);
+        $supplierlist = DB::table('suppliers')
+        // ->join('admins','admins.id','=','suppliers.id')
+        ->where('suppliers.status','=','Active')
+        ->where($data)
+        ->select('suppliers.*')
+        ->paginate(3);
+        $brandlist = DB::table('suppliers')
+        ->where('suppliers.status','=','Active')
+        ->select('suppliers.brand_name as brandname')
+        ->get();
+        // $supplierlist = DB::table('suppliers')
+        // ->where('suppliers.status','=','Active')
+        // ->select('suppliers.*')
+        // ->paginate(5);
+        
+        return view('admin.pages.supplier.index',compact('supplierlist','brandlist'));
+        // return redirect()->route('SupplierList');
     }
 }

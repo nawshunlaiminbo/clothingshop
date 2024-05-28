@@ -1,5 +1,5 @@
 @extends('layouts.adminlayout')
-@section('title','Category')
+@section('title','Product')
 @section('content')
     <div class="section1">
         <!-- navi -->
@@ -11,7 +11,7 @@
                 <div class="link">
                     <a href="">FAQ</a>|
                     <a href="">orders and returns</a>|
-                    <a href="/account/login/index.html">Sign In</a>
+                    <a href="{{url('/customer/login')}}">Sign In</a>
                 </div>
             </div>
             <div class="nav_bar flex_row">
@@ -21,7 +21,7 @@
                 <div class="menu flex_row">
                     <div class="women drop_down">
                         <a href="" >Women</a>
-                        <div class="women_drop_down_content">
+                        {{-- <div class="women_drop_down_content">
                             <h3>Women Clothing</h3>
                             <div class="women_clothing_list flex_row">
                                 <div class="flex_col">
@@ -32,11 +32,11 @@
                                     <a href="../women/skirt.html">Women's Skirts</a>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
                     <div class="men drop_down">
                         <a href="" >Men</a>
-                        <div class="men_drop_down_content">
+                        {{-- <div class="men_drop_down_content">
                             <h3>Men Clothing</h3>
                             <div class="men_clothing_list flex_row">
                                 <div class="flex_col">
@@ -46,7 +46,7 @@
                                     <a href="../men/pant.html">Men’s Pants</a>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
                     <div class="contact">
                         <a href="../../contact/index.html" >Contact</a>

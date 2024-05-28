@@ -76,9 +76,8 @@
                 <div class="grid">
                     <input type="text" placeholder="Search By Product Name" name="name">
                    
-                    <label for="category">Category</label>
                     <select name="category" id="category">
-                    
+                        <option value="category">Category</option>
                          @foreach($categories as $value)
                          <option value="{{$value->id}}">{{$value->name}}</option>
                          @endforeach

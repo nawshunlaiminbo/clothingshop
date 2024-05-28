@@ -41,7 +41,7 @@
                     <p class="nav_text">Staff</p>
                 </div>
             </a>
-            <a href="/pages/supplier/index.html" target="_self">
+            <a href="{{url('/supplier/list')}}" target="_self">
                 <div class="flex_row">
                     <i class="fa-solid fa-user"></i>
                     <p class="nav_text">Supplier</p>
@@ -68,16 +68,16 @@
         <div class="main">
             <h3>All Customers</h3>
             <div class="session1">
-                <div class="grid">
+                <form action="{{route('AdminCustomerFilter')}}" method="GET" class="grid">
                     <div class="search-box">
-                        <input type="text" placeholder="Search">
+                        <input type="text" placeholder="Search By ID/Name/Email/Phone Number" name="search">
                     </div>
                     
                     <div class="flex_row">
-                        <button class="search_button">Search</button>
-                        <button class="reset_button">Reset</button>
+                        <button class="search_button" type="submit">Search</button>
+                        <button class="reset_button" type="submit">Reset</button>
                     </div>
-                </div>
+                </form>
             </div>
             <div class="session3">
                 <div style="overflow-x: auto;">

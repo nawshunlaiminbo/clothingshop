@@ -1,7 +1,6 @@
 @extends('layouts.adminlayout')
-@section('title','Category')
+@section('title','Products')
 @section('content')
-
     <div class="section1">
         <!-- navi -->
         <div class="navigation flex_col">
@@ -22,7 +21,7 @@
                 <div class="menu flex_row">
                     <div class="women drop_down">
                         <a href="" >Women</a>
-                        <div class="women_drop_down_content">
+                        {{-- <div class="women_drop_down_content">
                             <h3>Women Clothing</h3>
                             <div class="women_clothing_list flex_row">
                                 <div class="flex_col">
@@ -33,11 +32,11 @@
                                     <a href="../women/skirt.html">Women's Skirts</a>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
                     <div class="men drop_down">
                         <a href="" >Men</a>
-                        <div class="men_drop_down_content">
+                        {{-- <div class="men_drop_down_content">
                             <h3>Men Clothing</h3>
                             <div class="men_clothing_list flex_row">
                                 <div class="flex_col">
@@ -47,7 +46,7 @@
                                     <a href="../men/pant.html">Men’s Pants</a>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
                     <div class="contact">
                         <a href="../../contact/index.html" >Contact</a>
@@ -86,101 +85,91 @@
             <h1>Cart</h1>
             <i class="fa-regular fa-circle-xmark close_button"></i>
         </div>
-        <hr> 
-        <div class="tee1_pick flex_row">
-            <div class="img">
-                <img src="/images/09_2_1_3_1000_1000 1.png" alt="">
-            </div>
-            <div class="pick_detail">
-                <p>Men’s Neck Solid Color Short Sleeve Tee</p>
-                <p>12500MMK</p>
-                <div class="flex_row">
-                    <div class="add_or_remove_quantity grid">
-                        <div class="minus">-</div>
-                        <div class="number">1</div>
-                        <div class="plus">+</div>
-                    </div>
-                    <div class="remove_button">
-                        Remove
-                    </div>
-                </div>
-            </div>
-        </div> 
-        <a href="../../checkout/index.html" class="button2 checkout_button">Check out</a>  
+        <hr>    
     </div>
-    <div class="section2 flex_row">
-        <div class="img">
-            <img src="/images/09_2_1_3_1000_1000 1.png" alt="">
+    <div class="intro_session flex_row">
+        Men's Tees
+    </div>
+    <div class="filter">
+        <div class="link">
+            <a href="/index.html">Home</a>
+            {{-- <a href="../men/tee.html">Tees</a> --}}
         </div>
-        <div class="text">
-            <p class="title">Men’s Neck Solid Color Short Sleeve Tee</p>
-            <p class="price">12500MMK</p>
-            <p>Size: </p>
-            <div class="size_button">
-                <button class="S_button">S</button>
-                <button class="M_button">M</button>
-                <button class="L_button">L</button>
-                <button class="XL_button">XL</button>
+        <div class="flex_row">
+            <div class="search">
+                <input type="text" class="input" placeholder="Search..." name="search">
+                <i class="fa-solid fa-magnifying-glass"></i>
             </div>
-            <p>Color:</p>
-            <div class="color_sample"></div>
-            <div class="review flex_row">
-                <div class="flex_row">
-                    <img src="/assets/icons/Star border.svg" alt="" style="width: 30px; height: 30px;">
-                    <img src="/assets/icons/Star border.svg" alt="" style="width: 30px; height: 30px;">
-                    <img src="/assets/icons/Star border.svg" alt="" style="width: 30px; height: 30px;">
-                    <img src="/assets/icons/Star border.svg" alt="" style="width: 30px; height: 30px;">
-                    <img src="/assets/icons/Star border.svg" alt="" style="width: 30px; height: 30px;">
-                </div>
+            <div class="sort_by flex_row">
                 <div>
-                    <p class="reviewNumber">( 0 review )</p>
+                    <span>Sort By:</span>
+                    <select name="" id="" class="input">
+                    <option value="low_to_high_price">Price, Low Price to High</option>
+                    <option value="high_to_low_price">Price, High Price to Low</option>
+                </select>
+                </div>
+                <!-- <img src=".././images/icons/icons8-sort-down-30.png" alt=""> -->
+                <div class="icon flex_row">
+                    <img src="/assets/icons/icons8-health-data-30.png" alt="">
+                    <i class="fa-solid fa-list-ul"></i>
                 </div>
             </div>
-            <p>
-                Tee is a stylish and comfortable choice for both men and women. It's perfect for adding a standout element to any outfit and addition to your wardrobe. Made from premium breathable cotton - suitable for tropical weather, making it a comfortable option for all-day wear.
-            </p>
-            <div class="flex_row add_to_cart">
-                <button class="button2 pick_item">Add to cart</button>
-                <img src="/images/delivery-truck_2769339.png" alt="" style="width: 40px; height: 40px;">
-                <p class="free_deli">Free delivery on orders over 5lakhs.</p>
-            </div>
+            
+
         </div>
     </div>
-    <div class="recommend">
-        <h1>You may also like</h1>
-        <div class="recommend_list grid">
-            <a href="">
-                <div>
-                    <img src="/images/HIRO THE BEAR _FASHION ICON_ TEE - 957 (White, S) 1.png" alt="">
-                <p>The Bear "Fashion Icon" Tee</p>
-                <p>25000MMK</p> 
-                </div>
-            </a>
-            <a href="">
-                <div>
-                    <div>
-                        <img src="/images/ezgif 2.png" alt="">
-                            <p>Men’s Oxford Shirt</p>
-                            <p>45000MMK</p>
-                    </div>
-                </div>
-            </a>
-            <a href="">
-                <div>
-                    <img src="/images/26040791_fpx 1.png" alt="">
-                    <p>Men’s Black Bomber Jacket</p>
-                    <p>40000MMK</p>
-                </div>
-            </a>
-            <a href="">
-                <div>
-                    <img src="/images/ezgif 8.png" alt="">
-                    <p>Men's Straight Jean  Pants</p>
-                    <p>57000MMK</p>    
-                </div>
-            </a>
+    <div class="men_tee_list grid">
+        @foreach($product as $products)
+        <a href="{{url('/customer/product/details',$products->id)}}">
+            <div>
+            <img src="image/customer/product/{{$products->colorimage}}" alt="">
+            {{-- <img src="{{asset('image/admin/products_info/'.$productlist->colorimage)}}" alt="photo of {{$productlist->name}}" width="35px" height="35px"> --}}
+            <p>{{$products->name}}</p>
+            <p>{{$products->price}}</p>    
+            </div>
+        </a>
+        @endforeach
+        {{-- <div>
+            <img src="/images/indoor-cropped-image-muscular-young-man-red-t-shirt-jeans 1.png" alt="">
+            <p>V-neck Tee </p>
+            <p>17500MMK</p>
+            
         </div>
+        <div>
+            <img src="/images/teenage-boy-white-tee-basic-youth-apparel-shoot 1.png" alt="">
+            <p> White Core Tee </p>
+            <p>20000MMK</p>
+            
+        </div>
+        <div>
+            <img src="/images/HIRO THE BEAR _FASHION ICON_ TEE - 957 (White, S) 1.png" alt="">
+            <p>The Bear "Fashion Icon" Tee</p>
+            <p>25000MMK</p>  
+        </div>
+        <div>
+            <img src="/images/25455801_fpx 1.png" alt="">
+            <div>
+                <p>Men's Striped Crew neck T-Shirt</p>
+                <p>25000MMK</p>
+            </div>
+        </div>
+        <div>
+            <img src="/images/ezgif 5.png" alt="">
+            <p>Men’s Lighthouse Graphic T-Shirt</p>
+            <p>27000MMK</p>
+        </div>
+        <div>
+            <img src="/images/Core Polo 135 (1) 1.png" alt="">
+            <p>Blue Polo Shirt </p>
+            <p>37000MMK</p>
+        </div>
+        <div>
+            <img src="/images/man-wearing-blank-shirt 2.png" alt="">
+            <p>Black Polo Shirt  (New Arrival)</p>
+            <p>45000MMK</p>
+        </div> --}}
     </div>
+
     <div class="footer grid">
         <div class="flex_col">
             <h3>Product</h3>
@@ -193,10 +182,6 @@
         <div class="flex_col">
             <h3>Customer Support</h3>
             <ul>
-                <li>FAQ</li>
-                <li>Shipping</li>
-                <li>Track Order</li>
-                <li>Return & Exchange</li>
                 <li><a href="../../contact/index.html">Contact</a></li>
             </ul>
         </div>
@@ -204,23 +189,19 @@
             <h3>Company</h3>
             <ul>
                 <li>About Us</li>
-                <li>Privacy Policy</li>
-                <li>Terms & Condition</li>
             </ul>
         </div>
-        <div class="flex_col">
+        {{-- <div class="flex_col">
             <h3>Get Your Latest Update !</h3>
             <ul>
                 <li>Subscribe to get our latest news  about special discount</li>
                 <li><input type="email" placeholder="Enter your email"></li>
                 <li><button class="button1">Subscribe</button></li>
             </ul>
-        </div>
+        </div> --}}
     </div>
     <!-- script -->
-    <script src="/js/pick_item.js"></script>
     <script src="/js/add_to_card.js"></script>
-    <script src="/js/pick_size.js"></script>
     <script src="/js/hamburger_menu.js"></script>
 
-    @endsection
+@endsection

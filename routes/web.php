@@ -32,7 +32,7 @@ Route::get('/admin/login',[AdminController::class,'login'])->name('AdminLogin');
 Route::post('/admin/login/process',[LoginController::class,'loginprocess'])->name('adminloginprocess');
 
 Route::middleware('admin')->group(function(){
-
+ 
     Route::get('/admin/dashboard',[AdminController::class, 'dashboard'])->name('AdminDashboard');
     Route::get('/admin/list',[AdminController::class,'list'])->name('adminlist');
     Route::get('/admin/register',[AdminController::class,'register'])->name('adminregister');
@@ -41,6 +41,7 @@ Route::middleware('admin')->group(function(){
     Route::patch('/admin/register/update/process',[AdminController::class,'updateprocess'])->name('AdminRegisterUpdateProcess');
     Route::get('/admin/deleteprocess/{id}', [AdminController::class, 'destroy'])->name('AdminDestroy');
     Route::get('/admin/logout',[LoginController::class,'Adminlogout'])->name('AdminLogout');
+    Route::get('/admin/filter',[AdminController::class,'filter'])->name('AdminFilter');
     //Category Start
     Route::get('/category/register',[CategoryController::class,'register'])->name('CategoryRegister');
     Route::post('/category/register/process',[CategoryController::class,'registerprocess'])->name('CategoryRegisterProcess');
@@ -58,6 +59,7 @@ Route::middleware('admin')->group(function(){
       Route::get('/supplier/listedit/{id}',[SupplierController::class,'listedit'])->name('SupplierListEdit');
       Route::patch('/supplier/register/update/process',[SupplierController::class,'updateprocess'])->name('SupplierRegisterUpdateProcess');
       Route::get('/supplier/deleteprocess/{id}', [SupplierController::class, 'destroy'])->name('SupplierDestroy');
+      Route::get('/supplier/filter',[SupplierController::class,'filter'])->name('SupplierFilter');
       //Supplier End
 
       //Product Start
@@ -74,6 +76,7 @@ Route::middleware('admin')->group(function(){
       Route::get('/admin/customer/list',[AdminCustomerController::class,'list'])->name('CustomerList');
     //   Route::get('/admin/customer/listedit/{id}',[AdminCustomerController::class,'listedit'])->name('CustomerListEdit');
       Route::get('/admin/customer/deleteprocess/{id}', [AdminCustomerController::class, 'destroy'])->name('AdminCustomerDestroy');
+      Route::get('/admin/customer/filter',[AdminCustomerController::class,'filter'])->name('AdminCustomerFilter');
       //Customer List End
 
 });
@@ -92,8 +95,8 @@ Route::patch('/customer/register/update/process',[CustomerController::class,'upd
 Route::get('/customer/deleteprocess/{id}', [CustomerController::class, 'destroy'])->name('CustomerDestroy');
 
 //Customer Page Product Start
-Route::get('/cutomer/product/data',[CustomerProductController::class,'showdata'])->name('CustomerProductData');
-
+Route::get('/cutomer/product/list',[CustomerProductController::class,'showlist'])->name('CustomerProductList');
+Route::get('/customer/product/details/{id}',[CustomerProductController::class,'detail'])->name('CustomerProductDetail');
 //Customer Page Product End
 });
 //Customer End
