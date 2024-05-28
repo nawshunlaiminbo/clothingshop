@@ -115,9 +115,9 @@
                         {{-- <input type="text" placeholder="Search By Name" name="name"> --}}
                         <label for="category">Category</label>
                         <select name="category" id="category">
-                        
-                             @foreach($categorylist as $value)
-                             <option value="{{$value->id}}">{{$value->name}}</option>
+                            <option value="category">Search By category name</option>
+                             @foreach($categories as $value)
+                             <option value="{{$value->categoryid}}">{{$value->categoryname}}</option>
                              @endforeach
                         </select>
                         <button type="submit">Search</button>

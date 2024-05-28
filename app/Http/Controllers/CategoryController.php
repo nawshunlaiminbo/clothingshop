@@ -35,12 +35,17 @@ class CategoryController extends Controller
     
     public function categorylist(){
         // dd("reach");
+        $categories = DB::table('categories')
+        ->where('categories.status','=','Active')
+        ->select('categories.id as categoryid','categories.name as categoryname')
+        ->get();
+
         $categorylist = DB::table('categories')
         ->join('admins','admins.id','=','categories.admin_id')
         ->where('categories.status','=','Active')
         ->select('categories.*','admins.name as adminname')
         ->paginate('10');
-        return view('admin.pages.category.index',compact('categorylist'));
+        return view('admin.pages.category.index',compact('categorylist','categories'));
     }
     public function listedit($id){
         $categorydata = Category::find($id);
@@ -77,8 +82,13 @@ class CategoryController extends Controller
     ->where('categories.status','=','Active')
     ->select('categories.*')
     ->paginate('2');
-       
+    
+    $categories = DB::table('categories')
+    ->where('categories.status','=','Active')
+    ->select('categories.id as categoryid','categories.name as categoryname')
+    ->get();
+    
         // dd($categorylist);
-        return view('admin.pages.category.index',compact('categorylist'));
+        return view('admin.pages.category.index',compact('categorylist','categories'));
     }
 }

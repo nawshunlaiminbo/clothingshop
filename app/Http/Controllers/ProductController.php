@@ -167,7 +167,7 @@ class ProductController extends Controller
     if($request->category){
         $data[] = [$productcategory,'=',$request->category];
     }
-    dd($data);
+    // dd($data);
         $productlist = DB::table('products')
         ->join('categories','categories.id','=','products.category_id')
         ->join('suppliers','suppliers.id','=','products.supplier_id')
@@ -177,7 +177,7 @@ class ProductController extends Controller
         ->select('products.*','categories.name as category_name','suppliers.brand_name as brand')
         ->orderBy('products.id','desc')
         ->paginate(3);
-        // dd($productlist);
+        dd($productlist);
         // return redirect()->route('ProductList',compact('categories','productlist'));
         return view('admin.pages.product.index',compact('productlist','categories'));
 
