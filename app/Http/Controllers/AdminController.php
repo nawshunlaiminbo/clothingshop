@@ -22,15 +22,29 @@ class AdminController extends Controller
       return view('admin.pages.staff.add_staff',compact('role'));
     }
     public function registerprocess(Request $request){
-     $validateData = $request->validate([
-      'name'=>['required','min:3', 'max:20'],
-      'email'=>['required','email'],
-      'address'=>['required','address'],
-      'password'=>['required','min:6','max:50'],
-      'phone'=>['required','min:9','max:11']
-     ]);
-    //  $roleid  = $request->role;
-    // dd($request->image);
+   
+     $request->validate([
+      'name' => 'required|string|max:255',
+      'email' => 'required|max:255',
+      'address'=>'requried',
+      'password'=>'requried|regex:/[a-z]/[A-Z]/[0-9]/|max:255',
+      'phone'=>'requried|regex:/^([0-9\s\-\+\(\)]*)$/|min:10',
+      'role'=>'required',
+  ], [
+      'name.required' => 'The name field is required.',
+      'name.string' => 'The name must be a string.',
+      'name.max' => 'The name may not be greater than 255 characters.',
+      'email.required' => 'Email field is required.',
+      'email.max' => 'Email may not be greater than 255 characters.',
+      'address.required' => 'Address field is required.',
+      'password.required' => 'Password field is required.',
+      'password.regex'=> 'The password must contain at least one uppercase letter, one lowercase letter, and one digit.',
+      'password.max' => 'Password may not be greater than 255 characters.',
+      'phone.required' => 'Phone Number is required.',
+      'phone.regex' => 'Phone Number format is invalid',
+      'phone.min' => 'Phone Number must be at least 10',
+      'role.required'=>'Position is required.',
+  ]);
    
      $uuid = Str::uuid()->toString();
      $image= $uuid.'.'.$request->image->extension();
@@ -38,13 +52,13 @@ class AdminController extends Controller
      $role_id = $this->getRoleId();
      $admin = new Admin();
      $admin->uuid = $uuid;
-     $admin->name = $validateData['name'];
-     $admin->email = $validateData['email'];
-     $admin->address = $validateData['address'];
+     $admin->name = $request->name;
+     $admin->email = $request->email;
+     $admin->address =$request->address;
     //  $admin->role_id = auth('admin')->user()->role_id;
     //  $admin->role_id = $request->role_id;
-     $admin->password = $validateData[bcrypt('password')];
-     $admin->phone = $validateData['phone'];
+     $admin->password = $request->bcrypt('password');
+     $admin->phone =$request->phone;
      $admin->status = 'Active';
      $admin->image = $image;
     // $admin->uuid= 'nullable';
@@ -78,6 +92,7 @@ class AdminController extends Controller
       
     }
     public function updateprocess(Request $request){
+      
       // $stafflist = Admin::all();
       $staffdata = Admin::find($request->id);
       $uuid = Str::uuid()->toString();
@@ -110,7 +125,6 @@ class AdminController extends Controller
   ];
 
   $query = Admin::query()->where('admins.status', 'Active');
-
   if (!empty($request->search)) {
       $searchInput = $request->search;
       
@@ -121,7 +135,7 @@ class AdminController extends Controller
       });
   }
 
-  if (!empty($request->role) && $request->role != 'role') {
+  elseif (!empty($request->role) && $request->role != 'role') {
       $query->where('role_id', '=', $request->role);
   }
 
@@ -141,7 +155,6 @@ class AdminController extends Controller
               ->select('id', 'name')
               ->where('status', '=', 'Active')
               ->get();
-        
   return view('admin.pages.staff.index', compact('stafflist','roles'));
   }
 }

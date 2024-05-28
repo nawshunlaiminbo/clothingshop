@@ -41,7 +41,7 @@ Route::middleware('admin')->group(function(){
     Route::patch('/admin/register/update/process',[AdminController::class,'updateprocess'])->name('AdminRegisterUpdateProcess');
     Route::get('/admin/deleteprocess/{id}', [AdminController::class, 'destroy'])->name('AdminDestroy');
     Route::get('/admin/logout',[LoginController::class,'Adminlogout'])->name('AdminLogout');
-    Route::get('/admin/filter',[AdminController::class,'filter'])->name('AdminFilter');
+    Route::post('/admin/filter',[AdminController::class,'filter'])->name('AdminFilter');
     //Category Start
     Route::get('/category/register',[CategoryController::class,'register'])->name('CategoryRegister');
     Route::post('/category/register/process',[CategoryController::class,'registerprocess'])->name('CategoryRegisterProcess');
@@ -59,7 +59,7 @@ Route::middleware('admin')->group(function(){
       Route::get('/supplier/listedit/{id}',[SupplierController::class,'listedit'])->name('SupplierListEdit');
       Route::patch('/supplier/register/update/process',[SupplierController::class,'updateprocess'])->name('SupplierRegisterUpdateProcess');
       Route::get('/supplier/deleteprocess/{id}', [SupplierController::class, 'destroy'])->name('SupplierDestroy');
-      Route::get('/supplier/filter',[SupplierController::class,'filter'])->name('SupplierFilter');
+      Route::post('/supplier/filter',[SupplierController::class,'filter'])->name('SupplierFilter');
       //Supplier End
 
       //Product Start

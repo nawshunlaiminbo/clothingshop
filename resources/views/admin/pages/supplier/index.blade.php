@@ -112,7 +112,7 @@
                             <a href="{{url('/supplier/register')}}">+ Add Supplier</a>
                         </div>
                         <div class="session2">
-                            <form action="{{route('SupplierFilter')}}" method="GET">
+                            <form action="{{route('SupplierFilter')}}" method="post">
                                 @csrf
                             <div class="grid">
                                 <input type="text" placeholder="Search By Supplier Name" name="name">

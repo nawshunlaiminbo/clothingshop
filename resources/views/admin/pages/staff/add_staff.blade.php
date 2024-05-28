@@ -81,24 +81,36 @@
                     <div>Name</div>
                     <input type="text"  name ="name" placeholder="Staff Name" value="">
                     @error('name')
-                        <span class="text-danger">{{$mesage}}</span>
+                        <span class="text-danger">{{$message}}</span>
                     @enderror
                 </div>
                 <div class="group-col">
                     <div>Email</div>
                     <input type="email" value="" name="email" placeholder="Email">
+                    @error('email')
+                    <span class="text-danger">{{$message}}</span>
+                @enderror
                 </div>
                 <div class="group-col">
                     <div>Password</div>
                     <input type="password" value="" name="password" placeholder="Password">
+                    @error('password')
+                    <span class="text-danger">{{$message}}</span>
+                @enderror
                 </div>
                 <div class="group-col">
                     <div>Phone Number</div>
                     <input type="text" value="" placeholder="Phone Number" name="phone">
+                    @error('phone')
+                    <span class="text-danger">{{$message}}</span>
+                @enderror
                 </div>
                 <div class="group-col">
                     <div>Address</div>
                     <textarea placeholder="Address" name="address"></textarea>
+                    @error('address')
+                    <span class="text-danger">{{$message}}</span>
+                @enderror
                 </div>
                 <div class="group-col-role">
                     <label for="role">Staff Position:</label>
@@ -108,6 +120,9 @@
                             <option value="{{$value->id}}">{{$value->name}}</option>
                            @endforeach
                         </select>
+                        @error('role')
+                        <span class="text-danger">{{$message}}</span>
+                    @enderror
                 </div>     
                 <div class="group-col-photo">
                     <label for="image">Profile Photo</label>

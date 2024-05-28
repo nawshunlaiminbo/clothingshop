@@ -112,13 +112,19 @@
                         <a href="{{route('adminregister')}}">+ Add Staff</a>
                     </div>
                     <div class="session2">
+                        <form action="{{route('AdminFilter')}}" method="post">
+                            @csrf
                         <div class="grid">
-                            <input type="text" placeholder="Search By Name/ Email/ Phone number">
-                            <select name="" id="">
-                                <option value="">Admin</option>
+                            <input type="text" placeholder="Search By Name/ Email/ Phone number" name="search">
+                            <select name="role" id="">
+                                <option value="role">Search By Position..</option>
+                                @foreach($roles as $role)
+                                <option value="{{$role->id}}">{{$role->name}}</option>
+                                @endforeach
                             </select>
-                            <button>Search</button>
+                            <button type="submit">Search</button>
                         </div>
+                        </form>
                     </div>
                 </div>
               
