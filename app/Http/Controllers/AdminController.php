@@ -26,10 +26,11 @@ class AdminController extends Controller
      $request->validate([
       'name' => 'required|string|max:255',
       'email' => 'required|max:255',
-      'address'=>'requried',
-      'password'=>'requried|regex:/[a-z]/[A-Z]/[0-9]/|max:255',
-      'phone'=>'requried|regex:/^([0-9\s\-\+\(\)]*)$/|min:10',
+      'address'=>'required',
+      'password'=>'required|regex:/[a-z]/[A-Z]/[0-9]/|max:255',
+      'phone'=>'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:10',
       'role'=>'required',
+      'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
   ], [
       'name.required' => 'The name field is required.',
       'name.string' => 'The name must be a string.',
@@ -44,6 +45,9 @@ class AdminController extends Controller
       'phone.regex' => 'Phone Number format is invalid',
       'phone.min' => 'Phone Number must be at least 10',
       'role.required'=>'Position is required.',
+      'image.image' => 'The file must be an image.',
+      'image.mimes' => 'The image must be a file of type: jpeg, png, jpg, gif, svg.',
+      'image.max' => 'The image size must not exceed 500 KB.',
   ]);
    
      $uuid = Str::uuid()->toString();

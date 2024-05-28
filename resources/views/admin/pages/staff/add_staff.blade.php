@@ -127,6 +127,9 @@
                 <div class="group-col-photo">
                     <label for="image">Profile Photo</label>
                     <input type="file" class="image" name="image" id="image"> 
+                    @error('image')
+                    <span class="text-danger">{{$message}}</span>
+                @enderror
                 </div>  
                 <div class="group-submit">
                     <button class="can-btn">Cancel</button> 
