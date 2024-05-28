@@ -69,6 +69,7 @@
             <h3>All Customers</h3>
             <div class="session1">
                 <form action="{{route('AdminCustomerFilter')}}" method="GET" class="grid">
+                    @csrf
                     <div class="search-box">
                         <input type="text" placeholder="Search By ID/Name/Email/Phone Number" name="search">
                     </div>

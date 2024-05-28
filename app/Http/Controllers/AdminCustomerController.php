@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\DB;
 class AdminCustomerController extends Controller
 {
     public function list(){
+        
         $customerlist = DB::table('customers')->where('status','=','Active')
         ->paginate(2);
         // dd($customerlist);
@@ -67,7 +68,7 @@ public function filter(Request $request){
 
   if (!empty($request->search)) {
       $searchInput = $request->search;
-      
+    //   dd($searchInput);
       $query->where(function ($subQuery) use ($columns, $searchInput) {
           foreach ($columns as $column => $label) {
               $subQuery->orWhere($column, 'LIKE', '%' . $searchInput . '%');
@@ -75,23 +76,17 @@ public function filter(Request $request){
       });
   }
 
-//   if (!empty($request->role) && $request->role != 'role') {
-//       $query->where('role_id', '=', $request->role);
-//   }
-// $customerlist = DB::table('customers')->where('status','=','Active')
-// ->paginate(2);
-
-  $customerlist =$query
+  $customers =$query
   ->where('customers.status','=','Active')
   ->select('customers.*')
-  ->orderBy('customers.id','desc');
+  ->orderBy('customers.id','desc')
+  ->get();
 //   ->paginate(2);
 
   $customerlist = DB::table('customers')->where('status','=','Active')
   ->paginate(2);
-
         
-  return view('admin.pages.customer.index', compact('customerlist'));
+  return view('admin.pages.customer.index', compact('customerlist','customers'));
   }
 }
 

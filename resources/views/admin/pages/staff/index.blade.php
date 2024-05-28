@@ -38,7 +38,7 @@
                 </div>
               
             </a>
-            <a href="{{url('/customer/list/')}}" target="_self">
+            <a href="{{url('/admin/customer/list/')}}" target="_self">
                 <div class="nav_row">
                     <div class="nav-icon">
                         <i class="fa-solid fa-users"></i>
@@ -116,7 +116,7 @@
                             @csrf
                         <div class="grid">
                             <input type="text" placeholder="Search By Name/ Email/ Phone number" name="search">
-                            <select name="role" id="">
+                            <select name="role">
                                 <option value="role">Search By Position..</option>
                                 @foreach($roles as $role)
                                 <option value="{{$role->id}}">{{$role->name}}</option>
