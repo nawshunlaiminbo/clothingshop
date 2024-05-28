@@ -86,7 +86,7 @@
                     <input type="text" name="max_price" placeholder="Max Price">
                     <div class="buttons flex_row">
                         <button class="filter_button" type="submit">Filter</button>
-                        <button class="reset_button" type="reset">Reset</button>
+                        <button class="reset_button" >Reset</button>
                     </div>
                 </div>
             </form>

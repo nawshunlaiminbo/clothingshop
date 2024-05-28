@@ -37,7 +37,39 @@ class ProductController extends Controller
         return view('admin.pages.product.add_product',compact('suppliers','categories'));
     }
     public function registerprocess(Request $request){
-        //$request->s
+
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'description' => 'required|string|min:10|max:500',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'brand'=>'required|string',
+            'category'=>'required',
+            'price'=>'required',
+            'gender'=>'required',
+            's'=>'required',
+            'm'=>'required',
+            'l'=>'required',
+        ], [
+            'name.required' => 'The name field is required.',
+            'name.string' => 'The name must be a string.',
+            'name.max' => 'The name may not be greater than 255 characters.',
+            'description.required' => 'Description field is required.',
+            'description.string' => 'Description must be a string.',
+            'descrption.min' => 'Description may not be less than 10 characters.',
+            'description.max' => 'Description may not be greater than 500 characters.',
+            'image.required'=> 'Image is required.',
+            'image.image' => 'The file must be an image.',
+            'image.mimes' => 'The image must be a file of type: jpeg, png, jpg, gif, svg.',
+            'image.max' => 'The image size must not exceed 500 KB.',
+            'brand.required' => 'Brand field is required.',
+            'brand.string'=>'Brand must be string',
+            'category.required' => 'Category field is required',
+            'price.required'=> 'Price field is required.',
+            'gender.required' => 'Gender field is required.',
+            's.required' => 'Small size field is required.',
+            'm.required' => 'Medium size field is required.',
+            'l.required' => 'Large size field is required.',
+        ]);
         $uuid = Str::uuid()->toString();
         $image= $uuid.'.'.$request->image->extension();
         $request->image->move(public_path('image/admin/products_info'),$image);
@@ -135,7 +167,7 @@ class ProductController extends Controller
     if($request->category){
         $data[] = [$productcategory,'=',$request->category];
     }
-    // dd($data);
+    dd($data);
         $productlist = DB::table('products')
         ->join('categories','categories.id','=','products.category_id')
         ->join('suppliers','suppliers.id','=','products.supplier_id')

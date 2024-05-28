@@ -76,11 +76,17 @@
              <div class="add_product_grid grid">
                     <div>Product Title/Name</div>
                     <input type="text" placeholder="Product Title/Name" name="name">
+                    @error('name')
+                    <span class="text-danger">{{$message}}</span>
+                @enderror
             </div>
 
             <div class="add_product_grid grid">
                         <div>Product Description</div>
                         <textarea placeholder="Product Description" name="description"></textarea>
+                        @error('description')
+                    <span class="text-danger">{{$message}}</span>
+                @enderror
             </div>
             <div class="add_product_grid grid">
             <div>Product image</div>
@@ -94,6 +100,9 @@
                         <option value="{{$supplier->id}}">{{$supplier->brand_name}}</option>
                         @endforeach
                      </select>
+                     @error('brand')
+                    <span class="text-danger">{{$message}}</span>
+                @enderror
             </div> 
             <div class="add_product_grid grid">
                     <label for="category">Category</label>
@@ -103,6 +112,9 @@
                                 <option value="{{$category->id}}">{{$category->name}}</option>
                              @endforeach
                         </select>
+                        @error('category')
+                    <span class="text-danger">{{$message}}</span>
+                @enderror
              </div> 
 
             <div class="add_product_grid grid">
@@ -113,11 +125,16 @@
                             <option value="Female" selected>Female</option>
                             <option value="Unisex" selected>Unisex</option>
                         </select>
+                        @error('gender')
+                    <span class="text-danger">{{$message}}</span>
+                @enderror
             </div> 
             <div class="add_product_grid grid">
                 <div>Product Price</div>
                     <input type="number" name="price" placeholder="MMK">
-             
+                    @error('price')
+                    <span class="text-danger">{{$message}}</span>
+                @enderror
             </div>
 
             <div class="add_product_grid grid">
@@ -126,15 +143,25 @@
                    <div>
                     <label><b>S</b></label>
                     <input type="number" name="s">
+                    @error('s')
+                    <span class="text-danger">{{$message}}</span>
+                @enderror
                    </div>
                    <div>
                     <label><b>M</b></label>
                     <input type="number" name="m">
+                    @error('m')
+                    <span class="text-danger">{{$message}}</span>
+                @enderror
                    </div>
                    <div>
                     <label><b>L</b></label>
                     <input type="number" name="l">
+                    @error('l')
+                    <span class="text-danger">{{$message}}</span>
+                @enderror
                    </div>
+
                 </div>
             </div>
             <div class="add_product_grid grid">
