@@ -30,7 +30,7 @@ if(isset($supplierdata)){
                     <p class="nav_text">Category</p>
                 </div>
             </a>
-            <a href="{{url('/customer/list')}}" target="_self">
+            <a href="{{url('/admin/customer/list')}}" target="_self">
                 <div class="flex_row">
                     <i class="fa-solid fa-users"></i>
                     <p class="nav_text">Customer</p>
@@ -85,10 +85,16 @@ if(isset($supplierdata)){
                 <div class="group-col">
                     <div>Supplier Name</div>
                     <input type="text" name="name" value="{{$updatestatus == true? $supplierdata->name: ''}}" placeholder="Supplier Name">
+                    @error('name')
+                    <span class="text-danger">{{$message}}</span>
+                @enderror
                 </div>
                 <div class="group-col">
                     <div>Brand</div>
                     <input type="text" name="brand_name" value="{{$updatestatus == true? $supplierdata->brand_name: ''}}" placeholder="Brand Name">
+                    @error('brand_name')
+                    <span class="text-danger">{{$message}}</span>
+                @enderror
                 </div>
                 <div class="group-submit">
                     <button class="can-btn" >Cancel</button>

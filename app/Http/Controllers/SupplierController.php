@@ -69,6 +69,18 @@ class SupplierController extends Controller
    
     public function updateprocess(Request $request)
     {
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'brand_name' => 'required|string|max:255',
+        ], [
+            'name.required' => 'The name field is required.',
+            'name.string' => 'The name must be a string.',
+            'name.max' => 'The name may not be greater than 255 characters.',
+            'brand_name.required' => 'The brand name field is required.',
+            'brand_name.string' => 'The brand name must be a string.',
+            'brand_name.max' => 'The brand name may not be greater than 255 characters.',
+        ]);
+        
         $supplierdata = Supplier::find($request->id);
         $uuid = Str::uuid()->toString();
         $supplierdata->name = $request->name;
