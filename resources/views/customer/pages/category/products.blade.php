@@ -19,8 +19,11 @@
                     Bravis
                 </div>
                 <div class="menu flex_row">
+                    <div class="contact">
+                        <a href="{{url('/customer/homepage')}}" >Home</a>
+                    </div>
                     <div class="women drop_down">
-                        <a href="" >Women</a>
+                        <a href="{{url('/customer/product/women')}}" >Women</a>
                         {{-- <div class="women_drop_down_content">
                             <h3>Women Clothing</h3>
                             <div class="women_clothing_list flex_row">
@@ -35,7 +38,7 @@
                         </div> --}}
                     </div>
                     <div class="men drop_down">
-                        <a href="" >Men</a>
+                        <a href="{{url('/customer/product/men')}}" >Men</a>
                         {{-- <div class="men_drop_down_content">
                             <h3>Men Clothing</h3>
                             <div class="men_clothing_list flex_row">
@@ -48,11 +51,9 @@
                             </div>
                         </div> --}}
                     </div>
-                    <div class="contact">
-                        <a href="../../contact/index.html" >Contact</a>
-                    </div>
+                    
                     <div class="about_us">
-                        <a href="../../about/index.html" >About Us</a>
+                        <a href="" >Accessories</a>
                     </div>
                 </div>
                 <div class="extra_icon flex_row">
@@ -64,21 +65,21 @@
                 </div>
             </div>
         </div>
-        <div class="navi_ph flex_row">
+        {{-- <div class="navi_ph flex_row">
             <div class="logo">
                 Bravis
             </div>
             <i class="fa-solid fa-bars hamburger_menu open_menu"></i>
             <i class="fa-solid fa-xmark close_menu"></i>
-        </div>
-        <div class="overflow_menu">
+        </div> --}}
+        {{-- <div class="overflow_menu">
             <div class="menu_link flex_col">
-                <a href="">Women</a>
+                <a href="{{url('/customer/hompage')}}">Home</a>
+                <a href="{{}}">Women</a>
                 <a href="">Men</a>
-                <a href="/pages/contact/index.html">Contact</a>
-                <a href="/pages/about/index.html">About</a>
+                <a href="">Accessories</a>
             </div>
-        </div>
+        </div> --}}
     </div>
     <div class="shopping_cart_box">
         <div class="flex_row">
@@ -88,7 +89,7 @@
         <hr>    
     </div>
     <div class="intro_session flex_row">
-        Men's Tees
+       All Products
     </div>
     <div class="filter">
         <div class="link">
@@ -122,7 +123,8 @@
         @foreach($product as $products)
         <a href="{{url('/customer/product/details',$products->id)}}">
             <div>
-            <img src="image/customer/product/{{$products->colorimage}}" alt="">
+    
+            <img src="{{asset('image/admin/products_info/'.$products->colorimage)}}" alt="photo of {{$products->name}}" width="35px" height="35px">
             {{-- <img src="{{asset('image/admin/products_info/'.$productlist->colorimage)}}" alt="photo of {{$productlist->name}}" width="35px" height="35px"> --}}
             <p>{{$products->name}}</p>
             <p>{{$products->price}}</p>    

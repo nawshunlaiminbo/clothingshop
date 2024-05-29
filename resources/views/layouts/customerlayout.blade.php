@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="{{asset('css/customer/pages/category/category_sort.css')}}">
     <link rel="stylesheet" href="{{asset('css/customer/pages/checkout/checkout.css')}}">
     <link rel="stylesheet" href="{{asset('css/customer/pages/contact/contact.css')}}">
-    <link rel="stylesheet" href="{{asset('css/customer/pages/success/thank_you_shopping.css')}}"> --}}
+    <link rel="stylesheet" href="{{asset('css/customer/pages/success/thank_you_shopping.css')}}">
     <link rel="stylesheet" href="{{asset('css/customer/index.css')}}">
     <title>@yield('title')</title>
 </head>
@@ -33,7 +33,6 @@
         </header>
         <main>
             <div class="content">
-                <h1>Customer Content</h1>
                 @yield('content')
             </div>
         </main>

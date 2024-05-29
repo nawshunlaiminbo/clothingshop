@@ -19,7 +19,7 @@
             </div>
         </div>
         <div class="image">
-            <img src="/images/Background-image.png" alt="">
+            <img src="/image/customer/Background-image.png" alt="">
         </div>
     </div>
 @endsection

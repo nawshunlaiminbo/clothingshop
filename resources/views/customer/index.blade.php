@@ -85,7 +85,7 @@
         <!-- body -->
         <div class="body flex_row">
             <div class="image">
-                <img src="images/man-black-sweater-black-bucket-hat-youth-apparel-shoot.png" alt="">
+                <img src="/image/customer/man-black-sweater-black-bucket-hat-youth-apparel-shoot.png" alt="">
             </div>
             <div class="text">
                 <h1>
@@ -106,7 +106,7 @@
     <div class="section2">
         <div class="fast_icons_list flex_row">
             <div class="fast_icons flex_row">
-                <img src="assets/icons/credit-card_4021708 (1).png" alt="">
+                <img src="/image/customer/credit-card_4021708 (1).png" alt="">
                 <div>
                     <p>
                         Flexible Payment
@@ -115,14 +115,14 @@
                 </div>
             </div>
             <div class="fast_icons flex_row">
-                <img src="images/delivery-truck_2769339.png" alt="">
+                <img src="/image/customer/delivery-truck_2769339.png" alt="">
                 <div>
                     <p>Delivery</p>
                     <p>Free Delivery over 5lakhs</p>
                 </div>
             </div>
             <div class="fast_icons flex_row">
-                <img src="assets/icons/headphones_1250595.png" alt="">
+                <img src="/image/customer/headphones_1250595.png" alt="">
                 <div>
                     <p>Customer Service</p>
                     <p>24/7 Active</p>
@@ -236,13 +236,13 @@
             <p>@bravisSLNY</p>
             <div class="image flex_row">
                 <div>
-                    <img src="images/iam_os-9wM5SCjhsOM-unsplash (1) 1.png" alt="">
+                    <img src="/image/customer/iam_os-9wM5SCjhsOM-unsplash (1) 1.png" alt="">
                 </div>
                 <div>
-                    <img src="images/trendy-fashionable-couple-posing (1).jpg" alt="">
+                    <img src="/image/customer/trendy-fashionable-couple-posing (1).jpg" alt="">
                 </div>
                 <div>
-                    <img src="images/portrait-stylish-lady-sunglasses-wide-brimmed-hat-cool-young-woman-black-jacket-pants-poses-smiles-isolated-background 1.png" alt="">
+                    <img src="/image/customer/portrait-stylish-lady-sunglasses-wide-brimmed-hat-cool-young-woman-black-jacket-pants-poses-smiles-isolated-background 1.png" alt="">
                 </div>  
             </div>
             <button class="button1">Follow Us</button>

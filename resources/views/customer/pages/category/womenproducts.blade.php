@@ -19,8 +19,11 @@
                     Bravis
                 </div>
                 <div class="menu flex_row">
+                    <div class="contact">
+                        <a href="{{url('/customer/homepage')}}" >Home</a>
+                    </div>
                     <div class="women drop_down">
-                        <a href="" >Women</a>
+                        <a href="{{url('/customer/product/women')}}" >Women</a>
                         {{-- <div class="women_drop_down_content">
                             <h3>Women Clothing</h3>
                             <div class="women_clothing_list flex_row">
@@ -35,7 +38,7 @@
                         </div> --}}
                     </div>
                     <div class="men drop_down">
-                        <a href="" >Men</a>
+                        <a href="{{url('/customer/product/men')}}" >Men</a>
                         {{-- <div class="men_drop_down_content">
                             <h3>Men Clothing</h3>
                             <div class="men_clothing_list flex_row">
@@ -49,10 +52,7 @@
                         </div> --}}
                     </div>
                     <div class="contact">
-                        <a href="../../contact/index.html" >Contact</a>
-                    </div>
-                    <div class="about_us">
-                        <a href="../../about/index.html" >About Us</a>
+                        <a href="" >Accessories</a>
                     </div>
                 </div>
                 <div class="extra_icon flex_row">
