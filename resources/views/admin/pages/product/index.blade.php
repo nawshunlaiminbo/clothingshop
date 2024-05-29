@@ -84,11 +84,12 @@
                     </select>
                     <input type="text" name="min_price" placeholder="Min Price">
                     <input type="text" name="max_price" placeholder="Max Price">
+                </div>
                     <div class="buttons flex_row">
                         <button class="filter_button" type="submit">Filter</button>
-                        <button class="reset_button" >Reset</button>
+                        <button class="reset_button"><a href="{{route('ProductList')}}">Reset</a></button>
                     </div>
-                </div>
+                
             </form>
             </div>
             <div class="session3">

@@ -182,40 +182,37 @@ class ProductController extends Controller
 
     $data = [];
     if($request->name != null){
-        // dd("reach name");
-        // $name = $productname;
-        // $data = $request->name;
         $data[] = [$productname,'LIKE','%'.$request->name.'%'];
     }
-    if($request->min_price != null){
-        dd("reach min");
+    elseif($request->min_price != null){
+        // dd("reach min");
         $data[]= [$productprice,'>=',$request->min_price];
     }
-    if($request->max_price != null){
-        dd("reach max");
+    elseif($request->max_price != null){
+        // dd("reach max");
         $data[]= [$productprice,'<=',$request->max_price];
     }
-    if($request->max_price != null && $request->min_price !=null)
+    elseif($request->max_price != null && $request->min_price !=null)
     {
-        dd("reach max and min");
+        // dd("reach max and min");
         $data[] = [$productprice, '>=', $request->min_price];
         $data[] = [$productprice, '<=', $request->max_price];
     }
-    if($request->category != null){
-        dd("reach Category");
+    elseif($request->category != null){
+        // dd("reach Category");
         $data[] = [$productcategory,'=',$request->category];
     }
     // dd($data);
-    dd("reach Free");
         $productlist = DB::table('products')
         ->join('categories','categories.id','=','products.category_id')
         ->join('suppliers','suppliers.id','=','products.supplier_id')
         ->join('admins','admins.id','=','products.admin_id')
-        ->where($data)
         ->where('products.status','=','Active')
+        ->where($data)
         ->select('products.*','categories.name as category_name','suppliers.brand_name as brand')
         ->orderBy('products.id','desc')
         ->paginate(3);
+      
         // dd($productlist);
         // return redirect()->route('ProductList',compact('categories','productlist'));
         return view('admin.pages.product.index',compact('productlist','categories'));

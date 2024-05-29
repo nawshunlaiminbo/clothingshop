@@ -78,21 +78,22 @@ class CategoryController extends Controller
         $category = 'categories.id';
             
         $data = [];
-            if($request->category){
+            if($request->category !=null){
             $data[] = [$category,'=',$request->category];
    }
     // dd($data);
-
+    $categories = DB::table('categories')
+    ->where('categories.status','=','Active')
+    ->select('categories.id as categoryid','categories.name as categoryname')
+    ->get();
+    
     $categorylist = DB::table('categories')
     ->where($data)
     ->where('categories.status','=','Active')
     ->select('categories.*')
     ->paginate('2');
     
-    $categories = DB::table('categories')
-    ->where('categories.status','=','Active')
-    ->select('categories.id as categoryid','categories.name as categoryname')
-    ->get();
+  
     
         // dd($categorylist);
         return view('admin.pages.category.index',compact('categorylist','categories'));

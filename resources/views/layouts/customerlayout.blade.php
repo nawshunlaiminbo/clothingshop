@@ -37,7 +37,9 @@
             </div>
         </main>
         <footer>
-
+            <div class="footer">
+                @yield('footer')
+            </div>
         </footer>
     </section>
 </body>

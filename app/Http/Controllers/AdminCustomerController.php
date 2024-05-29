@@ -59,34 +59,32 @@ public function filter(Request $request){
     $columns = [
       'customers.firstname'=> 'Customer Firstname',
       'customers.lastname' =>'Customer Lastname',
+    //   'customers.name'=>'Customer Name',
       'customers.email' => 'Email',
       'customers.address' => 'Address',
       'customers.phone' => 'Phone Number'
   ];
 
-  $query = Customer::query()->where('customers.status', 'Active');
+  $query = Customer::query()->where('customers.status','=', 'Active');
 
   if (!empty($request->search)) {
       $searchInput = $request->search;
     //   dd($searchInput);
       $query->where(function ($subQuery) use ($columns, $searchInput) {
-          foreach ($columns as $column => $label) {
+          foreach (array_keys($columns)as $column) {
               $subQuery->orWhere($column, 'LIKE', '%' . $searchInput . '%');
           }
       });
   }
 
-  $customers =$query
+  $customerlist =$query
   ->where('customers.status','=','Active')
   ->select('customers.*')
   ->orderBy('customers.id','desc')
-  ->get();
-//   ->paginate(2);
-
-  $customerlist = DB::table('customers')->where('status','=','Active')
+//   ->get();
   ->paginate(2);
         
-  return view('admin.pages.customer.index', compact('customerlist','customers'));
+  return view('admin.pages.customer.index', compact('customerlist'));
   }
 }
 

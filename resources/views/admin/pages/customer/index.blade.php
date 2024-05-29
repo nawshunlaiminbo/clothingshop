@@ -68,17 +68,19 @@
         <div class="main">
             <h3>All Customers</h3>
             <div class="session1">
-                <form action="{{route('AdminCustomerFilter')}}" method="GET" class="grid">
+                <form action="{{route('AdminCustomerFilter')}}" method="GET" >
                     @csrf
+                    <div class="grid">
                     <div class="search-box">
                         <input type="text" placeholder="Search By ID/Name/Email/Phone Number" name="search">
                     </div>
-                    
+                    </div>
                     <div class="flex_row">
                         <button class="search_button" type="submit">Search</button>
                         <button class="reset_button" type="submit">Reset</button>
                     </div>
                 </form>
+            </div>
             </div>
             <div class="session3">
                 <div style="overflow-x: auto;">

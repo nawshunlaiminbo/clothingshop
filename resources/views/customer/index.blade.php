@@ -248,6 +248,7 @@
             <button class="button1">Follow Us</button>
         </div>
     </div>
+    
     <div class="footer grid">
         <div class="flex_col">
             <h3><a href="{{url('/customer/homepage')}}">Home</a></h3>

@@ -1,5 +1,5 @@
 @extends('layouts.customerlayout')
-@section('title','WomenProducts')
+@section('title','Products')
 @section('content')
     <div class="section1">
         <!-- navi -->
@@ -11,7 +11,7 @@
                 <div class="link">
                     <a href="">FAQ</a>|
                     <a href="">orders and returns</a>|
-                    <a href="/account/login/index.html">Sign In</a>
+                    <a href="{{url('/customer/login')}}">Sign In</a>
                 </div>
             </div>
             <div class="nav_bar flex_row">
@@ -51,7 +51,8 @@
                             </div>
                         </div> --}}
                     </div>
-                    <div class="contact">
+                    
+                    <div class="about_us">
                         <a href="" >Accessories</a>
                     </div>
                 </div>
@@ -64,6 +65,21 @@
                 </div>
             </div>
         </div>
+        {{-- <div class="navi_ph flex_row">
+            <div class="logo">
+                Bravis
+            </div>
+            <i class="fa-solid fa-bars hamburger_menu open_menu"></i>
+            <i class="fa-solid fa-xmark close_menu"></i>
+        </div> --}}
+        {{-- <div class="overflow_menu">
+            <div class="menu_link flex_col">
+                <a href="{{url('/customer/hompage')}}">Home</a>
+                <a href="{{}}">Women</a>
+                <a href="">Men</a>
+                <a href="">Accessories</a>
+            </div>
+        </div> --}}
     </div>
     <div class="shopping_cart_box">
         <div class="flex_row">
@@ -72,9 +88,90 @@
         </div>
         <hr>    
     </div>
-    <!-- <div class="intro_session">
-        <img src=".././images/shirt-mockup-concept-with-plain-clothing (2).jpg" alt="">
-    </div> -->
+    <div class="intro_session flex_row">
+       Women Wear
+    </div>
+    <div class="filter">
+        <div class="link">
+            <a href="/index.html">Home</a>
+            {{-- <a href="../men/tee.html">Tees</a> --}}
+        </div>
+        <div class="flex_row">
+            <div class="search">
+                <input type="text" class="input" placeholder="Search..." name="search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+            <div class="sort_by flex_row">
+                <div>
+                    <span>Sort By:</span>
+                    <select name="" id="" class="input">
+                    <option value="low_to_high_price">Price, Low Price to High</option>
+                    <option value="high_to_low_price">Price, High Price to Low</option>
+                </select>
+                </div>
+                <!-- <img src=".././images/icons/icons8-sort-down-30.png" alt=""> -->
+                <div class="icon flex_row">
+                    <img src="/assets/icons/icons8-health-data-30.png" alt="">
+                    <i class="fa-solid fa-list-ul"></i>
+                </div>
+            </div>
+            
+
+        </div>
+    </div>
+    <div class="men_tee_list grid">
+        @foreach($women as $products)
+        <a href="{{url('/customer/product/details',$products->id)}}">
+            <div>
+    
+            <img src="{{asset('image/admin/products_info/'.$products->colorimage)}}" alt="photo of {{$products->name}}" width="35px" height="35px">
+            {{-- <img src="{{asset('image/admin/products_info/'.$productlist->colorimage)}}" alt="photo of {{$productlist->name}}" width="35px" height="35px"> --}}
+            <p>{{$products->name}}</p>
+            <p>{{$products->price}}</p>    
+            </div>
+        </a>
+        @endforeach
+        {{-- <div>
+            <img src="/images/indoor-cropped-image-muscular-young-man-red-t-shirt-jeans 1.png" alt="">
+            <p>V-neck Tee </p>
+            <p>17500MMK</p>
+            
+        </div>
+        <div>
+            <img src="/images/teenage-boy-white-tee-basic-youth-apparel-shoot 1.png" alt="">
+            <p> White Core Tee </p>
+            <p>20000MMK</p>
+            
+        </div>
+        <div>
+            <img src="/images/HIRO THE BEAR _FASHION ICON_ TEE - 957 (White, S) 1.png" alt="">
+            <p>The Bear "Fashion Icon" Tee</p>
+            <p>25000MMK</p>  
+        </div>
+        <div>
+            <img src="/images/25455801_fpx 1.png" alt="">
+            <div>
+                <p>Men's Striped Crew neck T-Shirt</p>
+                <p>25000MMK</p>
+            </div>
+        </div>
+        <div>
+            <img src="/images/ezgif 5.png" alt="">
+            <p>Men’s Lighthouse Graphic T-Shirt</p>
+            <p>27000MMK</p>
+        </div>
+        <div>
+            <img src="/images/Core Polo 135 (1) 1.png" alt="">
+            <p>Blue Polo Shirt </p>
+            <p>37000MMK</p>
+        </div>
+        <div>
+            <img src="/images/man-wearing-blank-shirt 2.png" alt="">
+            <p>Black Polo Shirt  (New Arrival)</p>
+            <p>45000MMK</p>
+        </div> --}}
+    </div>
+
     <div class="footer grid">
         <div class="flex_col">
             <h3>Product</h3>
@@ -87,10 +184,6 @@
         <div class="flex_col">
             <h3>Customer Support</h3>
             <ul>
-                <li>FAQ</li>
-                <li>Shipping</li>
-                <li>Track Order</li>
-                <li>Return & Exchange</li>
                 <li><a href="../../contact/index.html">Contact</a></li>
             </ul>
         </div>
@@ -98,20 +191,19 @@
             <h3>Company</h3>
             <ul>
                 <li>About Us</li>
-                <li>Privacy Policy</li>
-                <li>Terms & Condition</li>
             </ul>
         </div>
-        <div class="flex_col">
+        {{-- <div class="flex_col">
             <h3>Get Your Latest Update !</h3>
             <ul>
                 <li>Subscribe to get our latest news  about special discount</li>
                 <li><input type="email" placeholder="Enter your email"></li>
                 <li><button class="button1">Subscribe</button></li>
             </ul>
-        </div>
+        </div> --}}
     </div>
     <!-- script -->
     <script src="/js/add_to_card.js"></script>
+    <script src="/js/hamburger_menu.js"></script>
 
 @endsection
