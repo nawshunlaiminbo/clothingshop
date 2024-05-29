@@ -11,7 +11,7 @@
                 <div class="link">
                     <a href="">FAQ</a>|
                     <a href="">orders and returns</a>|
-                    <a href="/account/login/index.html">Sign In</a>
+                    <a href="{{url('/customer/login')}}">Sign In</a>
                 </div>
             </div>
             <div class="nav_bar flex_row">

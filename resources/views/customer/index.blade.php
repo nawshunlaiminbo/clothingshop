@@ -21,10 +21,10 @@
 
                 <div class="menu flex_row">
                     <div class="contact">
-                        <a href="" >Home</a>
+                        <a href="{{url('/customer/homepage')}}" >Home</a>
                     </div>
                     <div class="women drop_down">
-                        <a href="{{url('/cutomer/product/data')}}" >Women</a>
+                        <a href="{{url('/customer/product/women')}}" >Women</a>
                         {{-- <div class="women_drop_down_content">
                             <h3>Women Clothing</h3>
                             <div class="women_clothing_list flex_row">
@@ -39,7 +39,7 @@
                         </div> --}}
                     </div>
                     <div class="men drop_down">
-                        <a href="" >Men</a>
+                        <a href="{{url('/customer/product/men')}}" >Men</a>
                         {{-- <div class="men_drop_down_content">
                             <h3>Men Clothing</h3>
                             <div class="men_clothing_list flex_row">
@@ -75,10 +75,10 @@
         </div>
         <div class="overflow_menu">
             <div class="menu_link flex_col">
-                <a href="">Women</a>
-                <a href="">Men</a>
-                <a href="/pages/contact/index.html">Contact</a>
-                <a href="/pages/about/index.html">About</a>
+                <a href="{{url('/customer/homepage')}}">Home</a>
+                <a href="{{url('/customer/product/women')}}">Women</a>
+                <a href="{{url('/customer/product/men')}}">Men</a>
+                <a href="/pages/contact/index.html">Accessories</a>
             </div>
         </div>
         
@@ -92,7 +92,7 @@
                     Express Your Unique Style
                 </h1>
                 <p>Timeless Classics</p>
-                <a href="#shop_now"><button>Shop Now<i class="fa-solid fa-arrow-right-long"></i></button></a>
+                <a href="{{url('/cutomer/product/list')}}"><button>Shop Now<i class="fa-solid fa-arrow-right-long"></i></button></a>
             </div>
         </div>
     </div>
@@ -221,17 +221,14 @@
             <h1>Ready To Wear Perfection</h1>
             <div class="ready2Wear_item grid">
                 <div class="men">
-                    Men Clothing
+                    <a href="{{url('/customer/product/men')}}">Men Clothing</a>
                 </div>
                 <div class="women">
-                    Women Clothing
+                   <a href="{{url('/customer/product/women')}}">Women Clothing</a> 
                 </div>
                 <div class="accessories">
-                    Accessories
+                   <a href="">Accessories</a> 
                 </div>                
-                <div class="sport_wear">
-                    Sport Wear
-                </div>
             </div>
         </div>
         <div class="follow_us">
@@ -253,38 +250,16 @@
     </div>
     <div class="footer grid">
         <div class="flex_col">
-            <h3>Product</h3>
-            <ul>
-                <li>Clothing</li>
-                <li>Shoes</li>
-                <li>Accessories</li>
-            </ul>
+            <h3><a href="{{url('/customer/homepage')}}">Home</a></h3>
         </div>
         <div class="flex_col">
-            <h3>Customer Support</h3>
-            <ul>
-                <li>FAQ</li>
-                <li>Shipping</li>
-                <li>Track Order</li>
-                <li>Return & Exchange</li>
-                <li><a href="/pages/contact/index.html">Contact</a></li>
-            </ul>
+            <h3><a href="">About Us</a></h3>
         </div>
         <div class="flex_col">
-            <h3>Company</h3>
-            <ul>
-                <li>About Us</li>
-                <li>Privacy Policy</li>
-                <li>Terms & Condition</li>
-            </ul>
+            <h3><a href="">Contact Us</a></h3>
         </div>
         <div class="flex_col">
-            <h3>Get Your Latest Update !</h3>
-            <ul>
-                <li>Subscribe to get our latest news  about special discount</li>
-                <li><input type="email" placeholder="Enter your email"></li>
-                <li><button class="button1">Subscribe</button></li>
-            </ul>
+            <h3><a href="{{url('/cutomer/product/list')}}">All Products</a></h3>
         </div>
     </div>
     

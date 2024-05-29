@@ -1,6 +1,7 @@
 @extends('layouts.customerlayout')
-@section('title','Category')
+@section('title','MenProducts')
 @section('content')
+
     <div class="section1">
         <!-- navi -->
         <div class="navigation flex_col">
@@ -21,7 +22,7 @@
                 <div class="menu flex_row">
                     <div class="women drop_down">
                         <a href="" >Women</a>
-                        <div class="women_drop_down_content">
+                        {{-- <div class="women_drop_down_content">
                             <h3>Women Clothing</h3>
                             <div class="women_clothing_list flex_row">
                                 <div class="flex_col">
@@ -32,11 +33,11 @@
                                     <a href="../women/skirt.html">Women's Skirts</a>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
                     <div class="men drop_down">
                         <a href="" >Men</a>
-                        <div class="men_drop_down_content">
+                        {{-- <div class="men_drop_down_content">
                             <h3>Men Clothing</h3>
                             <div class="men_clothing_list flex_row">
                                 <div class="flex_col">
@@ -46,7 +47,7 @@
                                     <a href="../men/pant.html">Men’s Pants</a>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
                     <div class="contact">
                         <a href="../../contact/index.html" >Contact</a>
@@ -64,6 +65,21 @@
                 </div>
             </div>
         </div>
+        <div class="navi_ph flex_row">
+            <div class="logo">
+                Bravis
+            </div>
+            <i class="fa-solid fa-bars hamburger_menu open_menu"></i>
+            <i class="fa-solid fa-xmark close_menu"></i>
+        </div>
+        <div class="overflow_menu">
+            <div class="menu_link flex_col">
+                <a href="">Women</a>
+                <a href="">Men</a>
+                <a href="/pages/contact/index.html">Contact</a>
+                <a href="/pages/about/index.html">About</a>
+            </div>
+        </div>
     </div>
     <div class="shopping_cart_box">
         <div class="flex_row">
@@ -72,9 +88,60 @@
         </div>
         <hr>    
     </div>
-    <!-- <div class="intro_session">
-        <img src=".././images/shirt-mockup-concept-with-plain-clothing (2).jpg" alt="">
-    </div> -->
+    <div class="intro_session flex_row">
+        Men's Hoodies and Sweat shirts
+    </div>
+    <div class="filter">
+        <div class="link">
+            <a href="/index.html">Home</a>/
+            <a href="../men/hoodie.html">Hoodies and Sweat shirts</a>
+        </div>
+        <div class="flex_row">
+            <div class="search">
+                <input type="text" class="input" placeholder="Search...">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+            <div class="sort_by flex_row">
+                <div>
+                    <span>Sort By:</span>
+                    <select name="" id="" class="input">
+                    <option value="low_to_high_price">Price, Low Price to High</option>
+                    <option value="high_to_low_price">Price, High Price to Low</option>
+                </select>
+                </div>
+                <!-- <img src=".././images/icons/icons8-sort-down-30.png" alt=""> -->
+                <div class="icon flex_row">
+                    <img src="/assets/icons/icons8-health-data-30.png" alt="">
+                    <i class="fa-solid fa-list-ul"></i>
+                </div>
+            </div>
+            
+
+        </div>
+    </div>
+    <div class="men_hoodie_and_sweat_shirt_list grid">
+        <div>
+            <img src="/images/91_2_1_3_1000_1000 1.png" alt="">
+            <p>Men’s Black Dropped-shoulder Tee</p>
+            <p>35000MMK</p>    
+        </div>
+        <div>
+            <img src="/images/happy-young-man-laughing 1.png" alt="">
+            <p>Men’s Long sleeve  T-shirts</p>
+            <p>25000MMK</p>   
+        </div>
+        <div>
+            <img src="/images/ezgif 6.png" alt="">
+            <p>Men’s Brown Hoodie</p>
+            <p>35000MMK</p>    
+        </div>
+        <div>
+            <img src="/images/26040791_fpx 1.png" alt="">
+            <p>Men’s Black Bomber Jacket</p>
+            <p>40000MMK</p>
+        </div>
+    </div>
+
     <div class="footer grid">
         <div class="flex_col">
             <h3>Product</h3>
@@ -111,7 +178,9 @@
             </ul>
         </div>
     </div>
+
     <!-- script -->
     <script src="/js/add_to_card.js"></script>
+    <script src="/js/hamburger_menu.js"></script>
 
-@endsection
+    @endsection

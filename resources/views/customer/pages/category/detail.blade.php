@@ -1,5 +1,5 @@
 @extends('layouts.customerlayout')
-@section('title','Category')
+@section('title','ProductDetails')
 @section('content')
 
     <div class="section1">
@@ -12,7 +12,7 @@
                 <div class="link">
                     <a href="">FAQ</a>|
                     <a href="">orders and returns</a>|
-                    <a href="/account/login/index.html">Sign In</a>
+                    <a href="{{url('/customer/login')}}">Sign In</a>
                 </div>
             </div>
             <div class="nav_bar flex_row">
@@ -93,14 +93,16 @@
                 <img src="/images/09_2_1_3_1000_1000 1.png" alt="">
             </div>
             <div class="pick_detail">
-                <p>Men’s Neck Solid Color Short Sleeve Tee</p>
-                <p>12500MMK</p>
+    
+                <p>{{$product->name}}</p>
+                <p>{{$product->price}}</p>
                 <div class="flex_row">
                     <div class="add_or_remove_quantity grid">
                         <div class="minus">-</div>
                         <div class="number">1</div>
                         <div class="plus">+</div>
                     </div>
+              
                     <div class="remove_button">
                         Remove
                     </div>
@@ -122,7 +124,6 @@
                 <button class="S_button">S</button>
                 <button class="M_button">M</button>
                 <button class="L_button">L</button>
-                <button class="XL_button">XL</button>
             </div>
             {{-- <p>Color:</p>
             <div class="color_sample"></div>

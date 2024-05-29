@@ -8,7 +8,7 @@
     <script src="https://www.gstatic.com/charts/loader.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
     <script src="https://kit.fontawesome.com/a44b41dfdc.js" crossorigin="anonymous"></script>
-    {{-- <link rel="stylesheet" href="{{asset('css/customer/account/login.css')}}">
+     <link rel="stylesheet" href="{{asset('css/customer/account/login.css')}}"> 
     <link rel="stylesheet" href="{{asset('css/customer/account/signup.css')}}">
     <link rel="stylesheet" href="{{asset('css/customer/component/add_to_card.css')}}">
     <link rel="stylesheet" href="{{asset('css/customer/component/card_slider.css')}}">

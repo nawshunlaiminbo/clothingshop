@@ -85,7 +85,7 @@ Route::get('/customer/register',[CustomerController::class,'register'])->name('r
 Route::post('/customer/register/process',[CustomerController::class,'registerprocess'])->name('CustomerRegisterProcess');
 Route::get('/customer/login',[CustomerController::class,'login'])->name('CustomerLogin');
 Route::post('/customer/login/process',[LoginController::class,'loginprocess'])->name('CustomerLoginProcess');
-Route::get('/',[CustomerController::class,'home'])->name('CustomerHome');
+Route::get('/customer/homepage',[CustomerController::class,'home'])->name('CustomerHome');
 
 Route::middleware('customer')->group(function(){
 // Route::get('/customer/list',[CustomerController::class,'list'])->name('CustomerList')
@@ -97,6 +97,8 @@ Route::get('/customer/deleteprocess/{id}', [CustomerController::class, 'destroy'
 //Customer Page Product Start
 Route::get('/cutomer/product/list',[CustomerProductController::class,'showlist'])->name('CustomerProductList');
 Route::get('/customer/product/details/{id}',[CustomerProductController::class,'detail'])->name('CustomerProductDetail');
+Route::get('/customer/product/women',[CustomerProductController::class,'womenproductlist'])->name('CustomerWomenProductList');
+Route::get('/customer/product/men',[CustomerProductController::class,'menproductlist'])->name('CustomerMenProductList');
 //Customer Page Product End
 });
 //Customer End
