@@ -30,7 +30,7 @@ if(isset($productdata)){
                     <p class="nav_text">Category</p>
                 </div>
             </a>
-            <a href="{{url('/customer/list')}}" target="_self">
+            <a href="{{url('/admin/customer/list')}}" target="_self">
                 <div class="flex_row">
                     <i class="fa-solid fa-users"></i>
                     <p class="nav_text">Customer</p>
@@ -89,14 +89,22 @@ if(isset($productdata)){
                 <div class="edit_product_grid grid">
                     <div>Product Title/Name</div>
                     <input type="text" name="name" placeholder="Polo Brown" value="{{$updatestatus == true? $productdata->name: ''}}">
-
+                    @error('name')
+                    <span class="text-danger">{{$message}}</span>
+                @enderror
                     <div class="add_product_grid grid">
                         <div>Product Description</div>
                         <textarea placeholder="Product Description" name="description" > {{$updatestatus == true? $productdata->description: ''}}</textarea>
+                        @error('description')
+                        <span class="text-danger">{{$message}}</span>
+                    @enderror
                     </div>
                     <div class="add_product_grid grid">
                         <div>Product image</div>
                                 <input type="file" name="image" value="{{$updatestatus == true? $productdata->colorimage: ''}}">
+                                @error('image')
+                                <span class="text-danger">{{$message}}</span>
+                            @enderror
                         </div>
                         <div class="add_product_grid grid">
                               <label for="brand">Brand Name</label>
@@ -106,6 +114,9 @@ if(isset($productdata)){
                                     <option value="{{$updatestatus == true? $supplier->id: ''}}">{{$supplier->brand_name}}</option>
                                     @endforeach
                                  </select>
+                                 @error('brand')
+                                 <span class="text-danger">{{$message}}</span>
+                             @enderror
                         </div> 
                         <div class="add_product_grid grid">
                                 <label for="category">Category</label>
@@ -115,6 +126,9 @@ if(isset($productdata)){
                                             <option value="{{$updatestatus == true? $category->id: ''}}">{{$category->name}}</option>
                                          @endforeach
                                     </select>
+                                    @error('category')
+                                    <span class="text-danger">{{$message}}</span>
+                                @enderror
                          </div> 
             
                         <div class="add_product_grid grid">
@@ -125,11 +139,16 @@ if(isset($productdata)){
                                         <option value="female">Female</option>
                                         <option value="unisex">Unisex</</option>
                                     </select>
+                                    @error('gender')
+                                    <span class="text-danger">{{$message}}</span>
+                                @enderror
                         </div> 
                         <div class="add_product_grid grid">
                             <div>Product Price</div>
                                 <input type="number" name="price" placeholder="MMK" value="{{$updatestatus == true? $productdata->price: ''}}" >
-                         
+                                @error('price')
+                                <span class="text-danger">{{$message}}</span>
+                            @enderror
                         </div>
             
                         <div class="add_product_grid grid">
@@ -138,14 +157,23 @@ if(isset($productdata)){
                                <div>
                                 <label><b>S</b></label>
                                 <input type="number" name="s" value="{{$updatestatus == true? $productdata->small_qty: ''}}">
+                                @error('s')
+                                <span class="text-danger">{{$message}}</span>
+                            @enderror
                                </div>
                                <div>
                                 <label><b>M</b></label>
                                 <input type="number" name="m" value="{{$updatestatus == true? $productdata->medium_qty: ''}}">
+                                @error('m')
+                                <span class="text-danger">{{$message}}</span>
+                            @enderror
                                </div>
                                <div>
                                 <label><b>L</b></label>
                                 <input type="number" name="l" value="{{$updatestatus == true? $productdata->large_qty: ''}}">
+                                @error('l')
+                                <span class="text-danger">{{$message}}</span>
+                            @enderror
                                </div>
                             </div>
                         </div>

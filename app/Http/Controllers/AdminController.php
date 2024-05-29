@@ -27,8 +27,8 @@ class AdminController extends Controller
       'name' => 'required|string|max:255',
       'email' => 'required|max:255',
       'address'=>'required',
-      'password'=>'required|regex:/[a-z]/[A-Z]/[0-9]/|max:255',
-      'phone'=>'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:10',
+      'password'=>'required|regex:/^.*(?=.{3,})(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[\d\x])(?=.*[!$#%]).*$/|max:255',
+      'phone'=>'required|min:10',
       'role'=>'required',
       'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
   ], [
@@ -42,7 +42,7 @@ class AdminController extends Controller
       'password.regex'=> 'The password must contain at least one uppercase letter, one lowercase letter, and one digit.',
       'password.max' => 'Password may not be greater than 255 characters.',
       'phone.required' => 'Phone Number is required.',
-      'phone.regex' => 'Phone Number format is invalid',
+      // 'phone.regex' => 'Phone Number format is invalid',
       'phone.min' => 'Phone Number must be at least 10',
       'role.required'=>'Position is required.',
       'image.image' => 'The file must be an image.',
@@ -61,7 +61,7 @@ class AdminController extends Controller
      $admin->address =$request->address;
     //  $admin->role_id = auth('admin')->user()->role_id;
     //  $admin->role_id = $request->role_id;
-     $admin->password = $request->bcrypt('password');
+     $admin->password = bcrypt($request->password);
      $admin->phone =$request->phone;
      $admin->status = 'Active';
      $admin->image = $image;
@@ -96,7 +96,30 @@ class AdminController extends Controller
       
     }
     public function updateprocess(Request $request){
-      
+      $request->validate([
+        'name' => 'required|string|max:255',
+        'email' => 'required|max:255',
+        'address'=>'required',
+        'password'=>'required|regex:/^.*(?=.{3,})(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[\d\x])(?=.*[!$#%]).*$/|max:255',
+        'phone'=>'required|min:10',
+        'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+    ], [
+        'name.required' => 'The name field is required.',
+        'name.string' => 'The name must be a string.',
+        'name.max' => 'The name may not be greater than 255 characters.',
+        'email.required' => 'Email field is required.',
+        'email.max' => 'Email may not be greater than 255 characters.',
+        'address.required' => 'Address field is required.',
+        'password.required' => 'Password field is required.',
+        'password.regex'=> 'The password must contain at least one uppercase letter, one lowercase letter, and one digit.',
+        'password.max' => 'Password may not be greater than 255 characters.',
+        'phone.required' => 'Phone Number is required.',
+        // 'phone.regex' => 'Phone Number format is invalid',
+        'phone.min' => 'Phone Number must be at least 10',
+        'image.image' => 'The file must be an image.',
+        'image.mimes' => 'The image must be a file of type: jpeg, png, jpg, gif, svg.',
+        'image.max' => 'The image size must not exceed 500 KB.',
+    ]);
       // $stafflist = Admin::all();
       $staffdata = Admin::find($request->id);
       $uuid = Str::uuid()->toString();

@@ -87,22 +87,37 @@ if(isset($staffdata)){
                  <div class="group-col">
                     <div>Name</div>
                     <input type="text" name="name" value="{{$updatestatus == true? $staffdata->name: ''}}" placeholder="Name">
+                    @error('name')
+                    <span class="text-danger">{{$message}}</span>
+                @enderror
                 </div>
                 <div class="group-col">
                     <div>Email</div>
                     <input type="email" name="email" value="{{$updatestatus == true? $staffdata->email: ''}}" placeholder="Email">
+                    @error('email')
+                    <span class="text-danger">{{$message}}</span>
+                @enderror
                 </div>
                 <div class="group-col">
                     <div>Password</div>
                     <input type="password" name="password" value="{{$updatestatus == true? $staffdata->password: ''}}">
+                    @error('password')
+                    <span class="text-danger">{{$message}}</span>
+                @enderror
                 </div>
                 <div class="group-col">
                     <div>Phone Number</div>
                     <input type="text" name="phone" placeholder="Phone Number" value="{{$updatestatus == true? $staffdata->phone: ''}}">
+                    @error('phone')
+                    <span class="text-danger">{{$message}}</span>
+                @enderror
                 </div>
                 <div class="group-col">
                     <div>Address</div>
                     <input type="text" name="address" placeholder="Address" value="{{$updatestatus == true? $staffdata->address: ''}}">
+                    @error('address')
+                    <span class="text-danger">{{$message}}</span>
+                @enderror
                 </div>
                     <div class="group-col">
                         <div>Staff Position</div>
@@ -112,11 +127,16 @@ if(isset($staffdata)){
                             <option value="{{$value->id}}" >{{$value->name}}<option>
                             @endforeach
                         </select>
-            
+                        @error('role')
+                        <span class="text-danger">{{$message}}</span>
+                    @enderror
                     </div> 
                     <div class="group-col">
                         <div>Profile Photo</div>
                     <input type="file" name="image" placeholder="" value="{{$updatestatus == true? $staffdata->image: ''}}">
+                    @error('image')
+                    <span class="text-danger">{{$message}}</span>
+                @enderror
                     </div>       
                 <div class="group-submit">
                     <button class="can-btn" >Cancel</button>

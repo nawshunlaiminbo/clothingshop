@@ -105,6 +105,39 @@ class ProductController extends Controller
     }
     public function updateprocess(Request $request){
         // dd($request);
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'description' => 'required|string|min:10|max:500',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'brand'=>'required|string',
+            'category'=>'required',
+            'price'=>'required',
+            'gender'=>'required',
+            's'=>'required',
+            'm'=>'required',
+            'l'=>'required',
+        ], [
+            'name.required' => 'The name field is required.',
+            'name.string' => 'The name must be a string.',
+            'name.max' => 'The name may not be greater than 255 characters.',
+            'description.required' => 'Description field is required.',
+            'description.string' => 'Description must be a string.',
+            'descrption.min' => 'Description may not be less than 10 characters.',
+            'description.max' => 'Description may not be greater than 500 characters.',
+            'image.required'=> 'Image is required.',
+            'image.image' => 'The file must be an image.',
+            'image.mimes' => 'The image must be a file of type: jpeg, png, jpg, gif, svg.',
+            'image.max' => 'The image size must not exceed 500 KB.',
+            'brand.required' => 'Brand field is required.',
+            'brand.string'=>'Brand must be string',
+            'category.required' => 'Category field is required',
+            'price.required'=> 'Price field is required.',
+            'gender.required' => 'Gender field is required.',
+            's.required' => 'Small size field is required.',
+            'm.required' => 'Medium size field is required.',
+            'l.required' => 'Large size field is required.',
+        ]);
+
         $productdata = Product::find($request->id);
         $uuid = Str::uuid()->toString();
         $image= $uuid.'.'.$request->image->extension();
@@ -149,25 +182,31 @@ class ProductController extends Controller
 
     $data = [];
     if($request->name != null){
+        // dd("reach name");
         // $name = $productname;
         // $data = $request->name;
         $data[] = [$productname,'LIKE','%'.$request->name.'%'];
     }
     if($request->min_price != null){
+        dd("reach min");
         $data[]= [$productprice,'>=',$request->min_price];
     }
     if($request->max_price != null){
+        dd("reach max");
         $data[]= [$productprice,'<=',$request->max_price];
     }
-    if($request->max_price && $request->min_price)
+    if($request->max_price != null && $request->min_price !=null)
     {
+        dd("reach max and min");
         $data[] = [$productprice, '>=', $request->min_price];
         $data[] = [$productprice, '<=', $request->max_price];
     }
-    if($request->category){
+    if($request->category != null){
+        dd("reach Category");
         $data[] = [$productcategory,'=',$request->category];
     }
     // dd($data);
+    dd("reach Free");
         $productlist = DB::table('products')
         ->join('categories','categories.id','=','products.category_id')
         ->join('suppliers','suppliers.id','=','products.supplier_id')
@@ -177,7 +216,7 @@ class ProductController extends Controller
         ->select('products.*','categories.name as category_name','suppliers.brand_name as brand')
         ->orderBy('products.id','desc')
         ->paginate(3);
-        dd($productlist);
+        // dd($productlist);
         // return redirect()->route('ProductList',compact('categories','productlist'));
         return view('admin.pages.product.index',compact('productlist','categories'));
 

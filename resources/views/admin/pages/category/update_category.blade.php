@@ -45,7 +45,7 @@ if(isset($categorydata)){
                 </div>
               
             </a>
-            <a href="{{url('/customer/list/')}}" target="_self">
+            <a href="{{url('/admin/customer/list/')}}" target="_self">
                 <div class="nav_row">
                     <div class="nav-icon">
                         <i class="fa-solid fa-users"></i>
@@ -113,8 +113,8 @@ if(isset($categorydata)){
 
             <div class="main-col">
                 <div class="title-col">
-                    <h4><b>Add Category</b></h4>
-                    <p>Add your category necessary information here</p>
+                    <h4><b>Edit Category</b></h4>
+                    <p>Edit your category necessary information here</p>
     
                 </div>
                 
@@ -132,6 +132,9 @@ if(isset($categorydata)){
                             <div class="label-title">Category Name</div>
                             <div class="form-input">
                                 <input type="text" name="name" value="{{$updatestatus == true? $categorydata->name: ''}}" placeholder="Category Name">
+                                @error('name')
+                                <span class="text-danger">{{$message}}</span>
+                            @enderror
                             </div>
                             </div>
                     <div class="group-submit">

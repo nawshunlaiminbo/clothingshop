@@ -38,7 +38,7 @@
                 </div>
               
             </a>
-            <a href="{{url('/customer/list/')}}" target="_self">
+            <a href="{{url('/admin/customer/list/')}}" target="_self">
                 <div class="nav_row">
                     <div class="nav-icon">
                         <i class="fa-solid fa-users"></i>

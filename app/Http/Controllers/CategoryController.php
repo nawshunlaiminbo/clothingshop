@@ -53,6 +53,12 @@ class CategoryController extends Controller
         return view('admin.pages.category.update_category',compact('categorydata'));
     }
     public function updateprocess(Request $request){
+        $request->validate([
+            'name' => 'required|string|max:255|unique:categories,name',
+        ], [
+            'name.required' => 'The name field is required.',
+        ]);
+        
         $categorydata = Category::find($request->id);
         $uuid = Str::uuid()->toString();
         $categorydata->name = $request->name;
