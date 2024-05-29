@@ -1,4 +1,4 @@
-@extends('layouts.adminlayout')
+@extends('layouts.customerlayout')
 @section('title','CheckOut')
 @section('content')
     <div class="section1">

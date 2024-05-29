@@ -1,4 +1,4 @@
-@extends('layouts.adminlayout')
+@extends('layouts.customerlayout')
 @section('title','Contact')
 @section('content')
     <div class="section1">
