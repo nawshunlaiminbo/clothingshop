@@ -13,7 +13,15 @@ class CustomerController extends Controller
 {
     //
     public function home(){
-        return view ('customer.index');
+        $newarrival = DB::table('products')
+        ->where('products.status','=','Active')
+        // ->where('products.id')
+        // ->select('products*')
+        ->orderBy('products.id','desc')
+        ->get();
+        // dd($newarrival);
+        // return redirect()->route('CustomerHome',compact('newarrival'));
+        return view('customer.index',compact('newarrival'));
     }
     public function login(){
         return view ('customer.account.login.index');

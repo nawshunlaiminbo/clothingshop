@@ -93,7 +93,7 @@
     </div>
     <div class="filter">
         <div class="link">
-            <a href="/index.html">Home</a>
+            <a href="{{url('/customer/homepage')}}">Home</a>
             {{-- <a href="../men/tee.html">Tees</a> --}}
         </div>
         <div class="flex_row">
@@ -174,33 +174,17 @@
 
     <div class="footer grid">
         <div class="flex_col">
-            <h3>Product</h3>
-            <ul>
-                <li>Clothing</li>
-                <li>Shoes</li>
-                <li>Accessories</li>
-            </ul>
+            <h3><a href="{{url('/customer/homepage')}}">Home</a></h3>
         </div>
         <div class="flex_col">
-            <h3>Customer Support</h3>
-            <ul>
-                <li><a href="../../contact/index.html">Contact</a></li>
-            </ul>
+            <h3><a href="">About Us</a></h3>
         </div>
         <div class="flex_col">
-            <h3>Company</h3>
-            <ul>
-                <li>About Us</li>
-            </ul>
+            <h3><a href="">Contact Us</a></h3>
         </div>
-        {{-- <div class="flex_col">
-            <h3>Get Your Latest Update !</h3>
-            <ul>
-                <li>Subscribe to get our latest news  about special discount</li>
-                <li><input type="email" placeholder="Enter your email"></li>
-                <li><button class="button1">Subscribe</button></li>
-            </ul>
-        </div> --}}
+        <div class="flex_col">
+            <h3><a href="{{url('/cutomer/product/list')}}">All Products</a></h3>
+        </div>
     </div>
     <!-- script -->
     <script src="/js/add_to_card.js"></script>

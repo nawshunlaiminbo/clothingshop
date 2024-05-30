@@ -31,14 +31,25 @@ class CustomerProductController extends Controller
             //     $women = Product::all();
             //     return view('customer.pages.category.womenproducts',compact('women'));
             // }
-            // public function womenproductlist(){
-            //     $women = DB::table('products')
-            //     ->where('products.status','=','')
-            // }
+            public function womenproductlist(){
+                $women = DB::table('products')
+                ->join('categories','categories.id','=','products.category_id')
+                ->where('products.status','=','Active')
+                ->where('products.category_id','=',2)
+                ->select('products.*','categories.name as categoryname')
+                ->get();
+                return view('customer.pages.category.womenproducts',compact('women'));
+            }
             public function menproductlist(){
-                $men = Product::all();
+                $men = DB::table('products')
+                ->join('categories','categories.id','=','products.category_id')
+                ->where('products.status','=','Active')
+                ->where('products.category_id','=',1)
+                ->select('products.*','categories.name as categoryname')
+                ->get();
                 return view('customer.pages.category.menproducts',compact('men'));
             }
+           
             public function search(){
                 
                 return view('customer.pages.category.products');

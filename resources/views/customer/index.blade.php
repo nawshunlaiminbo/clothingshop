@@ -135,76 +135,20 @@
                 <div class="slider-wrapper">
                     <button id="prev_slide" class="slide-button"><i class="fa-solid fa-chevron-left"></i></button>
                     <div class="card-list grid">
-                        <div class="flex_col">
-                            <img src="images/comfortable-jogger-pants-gray-studio-apparel.jpg" alt="">
-                            <div>
-                                <p>Men’s Gray Jogger Pants</p>
-                                <p>40000MMK</p>
-                            </div>
-                        </div>
-                        <div class="flex_col">
-                            <img src="images/woman-green-hoodie-jacket-winter-apparel-shoot.jpg" alt="">
-                            <div>
-                                <p>Women’s Sweat Shirt</p>
-                                <p>35000MMK</p>
-                            </div>
-                        </div>
-                        <div class="flex_col">
-                            <img src="images/man-wearing-blank-shirt.jpg" alt="">
-                            <div>
-                                <p>Men’s Back Polo Shirt</p>
-                                <p>45000MMK</p>
-                            </div>
-                        </div>
-                        <div class="flex_col">
-                            <img src="images/shirt-3737407_1280.jpg" alt="">
-                            <div>
-                                <p>Men’s Gray Coat</p>
-                                <p>25000MMK</p>
-                            </div>
-                        </div>
-                        <div class="flex_col">
-                            <img src="images/comfortable-jogger-pants-gray-studio-apparel.jpg" alt="">
-                            <div>
-                                <p>Men’s Gray Jogger Pants</p>
-                                <p>40000MMK</p>
-                            </div>
-                        </div>
-                        <div class="flex_col">
-                            <img src="images/comfortable-jogger-pants-gray-studio-apparel.jpg" alt="">
-                            <div>
-                                <p>Men’s Gray Jogger Pants</p>
-                                <p>40000MMK</p>
-                            </div>
-                        </div>
-                        <div class="flex_col">
-                            <img src="images/comfortable-jogger-pants-gray-studio-apparel.jpg" alt="">
-                            <div>
-                                <p>Men’s Gray Jogger Pants</p>
-                                <p>40000MMK</p>
-                            </div>
-                        </div>
-                        <div class="flex_col">
-                            <img src="images/comfortable-jogger-pants-gray-studio-apparel.jpg" alt="">
-                            <div>
-                                <p>Men’s Gray Jogger Pants</p>
-                                <p>40000MMK</p>
-                            </div>
-                        </div>
-                        <div class="flex_col">
-                            <img src="images/comfortable-jogger-pants-gray-studio-apparel.jpg" alt="">
-                            <div>
-                                <p>Men’s Gray Jogger Pants</p>
-                                <p>40000MMK</p>
-                            </div>
-                        </div>
-                        <div class="flex_col">
-                            <img src="images/comfortable-jogger-pants-gray-studio-apparel.jpg" alt="">
-                            <div>
-                                <p>Men’s Gray Jogger Pants</p>
-                                <p>40000MMK</p>
-                            </div>
-                        </div>
+                            {{-- <img src="images/comfortable-jogger-pants-gray-studio-apparel.jpg" alt=""> --}}
+                           {{-- {{dd($newarrival)}}; --}}
+                            @foreach($newarrival as $newproduct)
+                            <a href="{{url('/customer/product/details/'.$newproduct->id)}}">
+                                <img src="{{asset('image/admin/products_info/'.$newproduct->colorimage)}}" alt="photo of {{$newproduct->name}}" width="35px" height="35px">
+                                <div>
+
+                                    <p>{{$newproduct->name}}</p>
+                                    <p>{{$newproduct->price}}</p>
+                                </div>
+                            </a>
+                          
+                            @endforeach
+                      
                     </div>
                     <button id="next_slide" class="slide-button"><i class="fa-solid fa-chevron-right"></i></button>
                 </div>
