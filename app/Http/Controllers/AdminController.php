@@ -27,11 +27,12 @@ class AdminController extends Controller
       'name' => 'required|string|max:255',
       'email' => 'required|max:255',
       'address'=>'required',
-      'password'=>'required|regex:/^.*(?=.{3,})(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[\d\x])(?=.*[!$#%]).*$/|max:255',
-      'phone'=>'required|min:10',
+      'password'=>'required',
+      'phone'=>'required',
       'role'=>'required',
-      'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-  ], [
+      // 'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+    ], 
+    [
       'name.required' => 'The name field is required.',
       'name.string' => 'The name must be a string.',
       'name.max' => 'The name may not be greater than 255 characters.',
@@ -39,20 +40,17 @@ class AdminController extends Controller
       'email.max' => 'Email may not be greater than 255 characters.',
       'address.required' => 'Address field is required.',
       'password.required' => 'Password field is required.',
-      'password.regex'=> 'The password must contain at least one uppercase letter, one lowercase letter, and one digit.',
-      'password.max' => 'Password may not be greater than 255 characters.',
       'phone.required' => 'Phone Number is required.',
       // 'phone.regex' => 'Phone Number format is invalid',
       'phone.min' => 'Phone Number must be at least 10',
       'role.required'=>'Position is required.',
-      'image.image' => 'The file must be an image.',
-      'image.mimes' => 'The image must be a file of type: jpeg, png, jpg, gif, svg.',
-      'image.max' => 'The image size must not exceed 500 KB.',
+      // 'image.image' => 'The file must be an image.',
+     
   ]);
    
      $uuid = Str::uuid()->toString();
-     $image= $uuid.'.'.$request->image->extension();
-     $request->image->move(public_path('image/admin'));
+    //  $image= $uuid.'.'.$request->image->extension();
+    //  $request->image->move(public_path('image/admin'));
      $role_id = $this->getRoleId();
      $admin = new Admin();
      $admin->uuid = $uuid;
@@ -61,20 +59,21 @@ class AdminController extends Controller
      $admin->address =$request->address;
     //  $admin->role_id = auth('admin')->user()->role_id;
     //  $admin->role_id = $request->role_id;
-     $admin->password = bcrypt($request->password);
-     $admin->phone =$request->phone;
+     $admin->password = $request[bcrypt('password')];
+     $admin->phone = $request->phone;
      $admin->status = 'Active';
-     $admin->image = $image;
+    //  $admin->image = $image;
     // $admin->uuid= 'nullable';
     $admin->role_id = $role_id;
      $admin->save();
+ 
      return redirect()->route('adminlist');
 
-
-     
       // dd($incomingFields);
       // return view('admin.pages.staff.add_staff',compact('role'));
     }
+
+    
     public function list(){
       $roles = DB::table('roles')
       ->select('id', 'name')
@@ -88,6 +87,9 @@ class AdminController extends Controller
       // dd($stafflist);
       return view('admin.pages.staff.index',compact('stafflist','roles'));
     }
+
+
+
     public function listedit($id){
       $role = DB::table('roles')
       ->select('id','name')->where('status','=','Active')->get();
@@ -95,6 +97,9 @@ class AdminController extends Controller
       return view('admin.pages.staff.update_staff',compact('role','staffdata'));
       
     }
+
+
+
     public function updateprocess(Request $request){
       $request->validate([
         'name' => 'required|string|max:255',

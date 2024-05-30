@@ -32,6 +32,33 @@
     
 }
 
+
+.form-input select{
+    width: 100%;
+    background-color: #F7FAFF;
+    padding: 10px; /* Padding inside the input */
+    margin: 8px 0; /* Margin outside the input */
+    display: inline-block; /* Default display */
+    border: 1px solid #ccc; /* Light gray border */
+    border-radius: 4px; /* Rounded corners */
+    box-sizing: border-box;
+    outline: none;
+    height: 40px;
+    
+}
+
+.form-input textarea{
+    width: 100%;
+    background-color: #F7FAFF;
+    padding: 10px; /* Padding inside the input */
+    margin: 8px 0;
+    border: 1px solid #ccc; /* Light gray border */
+    border-radius: 4px; /* Rounded corners */
+    box-sizing: border-box;
+    outline: none;
+    height: 80px;
+    
+}
 .group-submit{
     display: grid;
     grid-template-columns: 50% 50%;
