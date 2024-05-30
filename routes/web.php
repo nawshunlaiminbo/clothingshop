@@ -9,6 +9,7 @@ use App\Http\Controllers\CustomerProductController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SupplierController;
 
@@ -78,6 +79,12 @@ Route::middleware('admin')->group(function(){
       Route::get('/admin/customer/deleteprocess/{id}', [AdminCustomerController::class, 'destroy'])->name('AdminCustomerDestroy');
       Route::get('/admin/customer/filter',[AdminCustomerController::class,'filter'])->name('AdminCustomerFilter');
       //Customer List End
+
+      //Order Start
+      Route::get('/order/list',[OrderController::class,'list'])->name('OrderList');
+      Route::get('/order/listedit/{id}',[OrderController::class,'listedit'])->name('OrderListEdit');
+
+      //Order End
 
 });
 //Customer Start

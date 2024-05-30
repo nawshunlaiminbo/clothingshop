@@ -23,7 +23,7 @@
                 <p class="nav_text">Customer</p>
             </div>
         </a>
-        <a href="/pages/order/index.html" target="_self">
+        <a href="{{url('/order/list')}}" target="_self">
             <div class="flex_row">
                 <i class="fa-solid fa-cart-shopping"></i>
                 <p class="nav_text">Order</p>
@@ -54,7 +54,7 @@
     <!-- user Profile Info -->
     <div class="user_profile_info">
         <a href=""><i class="fa-solid fa-gear"></i>Edit Profile</a><br>
-        <a href="/{{url('/admin/logout')}}"><i class="fa-solid fa-arrow-right-from-bracket"></i>Log out</a>
+        <a href="{{url('/admin/logout')}}"><i class="fa-solid fa-arrow-right-from-bracket"></i>Log out</a>
  </div>
 
     <div class="main">

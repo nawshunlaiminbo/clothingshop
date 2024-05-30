@@ -48,7 +48,7 @@
                     </div>
                 </div>
             </a>
-            <a href="/pages/order/index.html" target="_self">
+            <a href="{{url('/order/list')}}" target="_self">
                 <div class="nav_row">
                     <div class="nav-icon">
                         <i class="fa-solid fa-cart-shopping"></i>
@@ -117,7 +117,8 @@
                         <select name="category" id="category">
                             <option value="category">Search By category name</option>
                              @foreach($categories as $value)
-                             <option value="{{$value->categoryid}}">{{$value->categoryname}}</option>
+                             <option value="{{ $value->categoryid }}" {{ request('category') == $value->categoryid ? 'selected' : '' }}>
+                                {{ $value->categoryname }}
                              @endforeach
                         </select>
                         <button type="submit">Search</button>

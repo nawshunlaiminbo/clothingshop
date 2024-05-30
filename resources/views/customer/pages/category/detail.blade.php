@@ -159,30 +159,6 @@
                 <p>The Bear "Fashion Icon" Tee</p>
                 <p>25000MMK</p> 
                 </div>
-            </a>
-            <a href="">
-                <div>
-                    <div>
-                        <img src="/images/ezgif 2.png" alt="">
-                            <p>Men’s Oxford Shirt</p>
-                            <p>45000MMK</p>
-                    </div>
-                </div>
-            </a>
-            <a href="">
-                <div>
-                    <img src="/images/26040791_fpx 1.png" alt="">
-                    <p>Men’s Black Bomber Jacket</p>
-                    <p>40000MMK</p>
-                </div>
-            </a>
-            <a href="">
-                <div>
-                    <img src="/images/ezgif 8.png" alt="">
-                    <p>Men's Straight Jean  Pants</p>
-                    <p>57000MMK</p>    
-                </div>
-            </a>
         </div>
     </div>
     <div class="footer grid">

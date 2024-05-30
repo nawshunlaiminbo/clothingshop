@@ -55,7 +55,7 @@ if(isset($categorydata)){
                     </div>
                 </div>
             </a>
-            <a href="/pages/order/index.html" target="_self">
+            <a href="{{url('/order/list')}}" target="_self">
                 <div class="nav_row">
                     <div class="nav-icon">
                         <i class="fa-solid fa-cart-shopping"></i>

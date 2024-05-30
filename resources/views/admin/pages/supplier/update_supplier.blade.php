@@ -36,7 +36,7 @@ if(isset($supplierdata)){
                     <p class="nav_text">Customer</p>
                 </div>
             </a>
-            <a href="" target="_self">
+            <a href="{{url('/order/list')}}" target="_self">
                 <div class="flex_row">
                     <i class="fa-solid fa-cart-shopping"></i>
                     <p class="nav_text">Order</p>
