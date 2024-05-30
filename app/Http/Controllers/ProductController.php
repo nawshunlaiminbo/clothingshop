@@ -142,7 +142,7 @@ class ProductController extends Controller
         $uuid = Str::uuid()->toString();
         $image= $uuid.'.'.$request->image->extension();
         // dd($image);
-        $request->image->move(public_path('image/admin'),$image);
+        $request->image->move(public_path('image/admin/products_info'),$image);
 
         $productdata->uuid = $uuid;
         $productdata->name = $request->name;

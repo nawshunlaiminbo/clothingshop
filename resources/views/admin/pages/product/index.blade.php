@@ -76,12 +76,21 @@
                 <div class="grid">
                     <input type="text" placeholder="Search By Product Name" name="name">
                    
-                    <select name="category" id="category">
+                    {{-- <select name="category" id="category">
                         <option value="category">Category</option>
                          @foreach($categories as $value)
                          <option value="{{$value->id}}">{{$value->name}}</option>
                          @endforeach
+                    </select> --}}
+                    <select name="category" id="category">
+                        <option value="">Select Category</option>
+                        @foreach($categories as $value)
+                            <option value="{{ $value->id }}" {{ request('category') == $value->id ? 'selected' : '' }}>
+                                {{ $value->name }}
+                            </option>
+                        @endforeach
                     </select>
+                    
                     <input type="text" name="min_price" placeholder="Min Price">
                     <input type="text" name="max_price" placeholder="Max Price">
                 </div>

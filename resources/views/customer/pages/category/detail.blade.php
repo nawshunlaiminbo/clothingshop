@@ -21,7 +21,7 @@
                 </div>
                 <div class="menu flex_row">
                     <div class="women drop_down">
-                        <a href="" >Women</a>
+                        <a href="{{url('/customer/product/women')}}" >Women</a>
                         {{-- <div class="women_drop_down_content">
                             <h3>Women Clothing</h3>
                             <div class="women_clothing_list flex_row">
@@ -36,7 +36,7 @@
                         </div> --}}
                     </div>
                     <div class="men drop_down">
-                        <a href="" >Men</a>
+                        <a href="{{url('/customer/product/men')}}" >Men</a>
                         {{-- <div class="men_drop_down_content">
                             <h3>Men Clothing</h3>
                             <div class="men_clothing_list flex_row">
@@ -65,7 +65,7 @@
                 </div>
             </div>
         </div>
-        <div class="navi_ph flex_row">
+        {{-- <div class="navi_ph flex_row">
             <div class="logo">
                 Bravis
             </div>
@@ -79,7 +79,7 @@
                 <a href="/pages/contact/index.html">Contact</a>
                 <a href="/pages/about/index.html">About</a>
             </div>
-        </div>
+        </div> --}}
     </div>
     
     <div class="img">
@@ -114,7 +114,7 @@
     {{-- @foreach($product as $products) --}}
     <div class="section2 flex_row">
         <div class="img">
-            <img src="/images/09_2_1_3_1000_1000 1.png" alt="">
+            <img src="{{asset('image/admin/products_info/'.$product->colorimage)}}" alt="photo of {{$product->name}}" width="35px" height="35px">
         </div>
         <div class="text">
             <p class="title">{{$product->name}}</p>
@@ -144,13 +144,13 @@
             </p>
             <div class="flex_row add_to_cart">
                 <button class="button2 pick_item">Add to cart</button>
-                <img src="/images/delivery-truck_2769339.png" alt="" style="width: 40px; height: 40px;">
+                <img src="/image/customer/delivery-truck_2769339.png" alt="" style="width: 40px; height: 40px;">
                 <p class="free_deli">Free delivery on orders over 5lakhs.</p>
             </div>
         </div>
     </div>
     
-    {{-- <div class="recommend">
+    <div class="recommend">
         <h1>You may also like</h1>
         <div class="recommend_list grid">
             <a href="">
@@ -184,28 +184,22 @@
                 </div>
             </a>
         </div>
-    </div> --}}
+    </div>
     <div class="footer grid">
         <div class="flex_col">
-            <h3>Product</h3>
-            <ul>
-                <li>Clothing</li>
-                <li>Shoes</li>
-                <li>Accessories</li>
-            </ul>
+            <h3><a href="{{url('/customer/homepage')}}">Home</a></h3>
         </div>
         <div class="flex_col">
-            <h3>Customer Support</h3>
-            <ul>
-                <li><a href="../../contact/index.html">Contact</a></li>
-            </ul>
+            <h3><a href="">About Us</a></h3>
         </div>
         <div class="flex_col">
-            <h3>Company</h3>
-            <ul>
-                <li>About Us</li>
-            </ul>
+            <h3><a href="">Contact Us</a></h3>
         </div>
+        <div class="flex_col">
+            <h3><a href="{{url('/cutomer/product/list')}}">All Products</a></h3>
+        </div>
+    </div>
+
         {{-- <div class="flex_col">
             <h3>Get Your Latest Update !</h3>
             <ul>

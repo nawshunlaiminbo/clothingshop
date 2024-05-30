@@ -35,7 +35,7 @@ class CustomerProductController extends Controller
                 $women = DB::table('products')
                 ->join('categories','categories.id','=','products.category_id')
                 ->where('products.status','=','Active')
-                ->where('products.category_id','=',2)
+                ->where('products.category_id','=','2')
                 ->select('products.*','categories.name as categoryname')
                 ->get();
                 return view('customer.pages.category.womenproducts',compact('women'));
