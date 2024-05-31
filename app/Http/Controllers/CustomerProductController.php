@@ -31,24 +31,25 @@ class CustomerProductController extends Controller
             //     $women = Product::all();
             //     return view('customer.pages.category.womenproducts',compact('women'));
             // }
-            public function womenproductlist(){
-                $women = DB::table('products')
+            public function productlist($id){
+                $productlist = DB::table('products')
                 ->join('categories','categories.id','=','products.category_id')
                 ->where('products.status','=','Active')
-                ->where('products.category_id','=','2')
+                ->where('products.category_id','=',$id)
                 ->select('products.*','categories.name as categoryname')
                 ->get();
-                return view('customer.pages.category.womenproducts',compact('women'));
+                $productid = $id;
+                return view('customer.pages.category.allproducts',compact('productlist', 'productid'));
             }
-            public function menproductlist(){
-                $men = DB::table('products')
-                ->join('categories','categories.id','=','products.category_id')
-                ->where('products.status','=','Active')
-                ->where('products.category_id','=',1)
-                ->select('products.*','categories.name as categoryname')
-                ->get();
-                return view('customer.pages.category.menproducts',compact('men'));
-            }
+            // public function menproductlist(){
+            //     $men = DB::table('products')
+            //     ->join('categories','categories.id','=','products.category_id')
+            //     ->where('products.status','=','Active')
+            //     ->where('products.category_id','=',1)
+            //     ->select('products.*','categories.name as categoryname')
+            //     ->get();
+            //     return view('customer.pages.category.menproducts',compact('men'));
+            // }
            
             public function search(){
                 

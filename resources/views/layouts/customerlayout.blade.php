@@ -36,12 +36,103 @@
                 <form action="" method="">
 
                 </form>
-                @yield('content')
+                {{-- @yield('content') --}}
+                <div class="section1">
+                    <!-- navi -->
+                    <div class="navigation flex_col">
+                        <div class="flash_sale_bar flex_row">
+                            <div class="flash_sale">
+                                Flash Sales : Sign in and Get Extra  25%  off on Selected Items
+                            </div>
+                            <div class="link">
+                                <a href="">FAQ</a>|
+                                <a href="">orders and returns</a>|
+                                <a href="{{url('/customer/login')}}">Sign In</a>
+                            </div>
+                        </div>
+                        <div class="nav_bar flex_row">
+                            <div class="logo">
+                                Bravis
+                            </div>
+                            <div class="menu flex_row">
+                                <div class="contact">
+                                    <a href="{{url('/customer/homepage')}}" >Home</a>
+                                </div>
+                                <div class="women drop_down">
+                                    <a href="{{url('/customer/product/1')}}" >Men</a>
+                            
+                                </div>
+                                <div class="men drop_down">
+                                    <a href="{{url('/customer/product/2')}}" >Women</a>
+                                    
+                                </div>
+                                
+                                <div class="about_us">
+                                    <a href="{{url('/customer/product/3')}}" >Accessories</a>
+                                </div>
+                            </div>
+                            <div class="extra_icon flex_row">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                                <div class="add_to_cart_icon">
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                    <span>0</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {{-- <div class="navi_ph flex_row">
+                        <div class="logo">
+                            Bravis
+                        </div>
+                        <i class="fa-solid fa-bars hamburger_menu open_menu"></i>
+                        <i class="fa-solid fa-xmark close_menu"></i>
+                    </div> --}}
+                    {{-- <div class="overflow_menu">
+                        <div class="menu_link flex_col">
+                            <a href="{{url('/customer/hompage')}}">Home</a>
+                            <a href="{{}}">Women</a>
+                            <a href="">Men</a>
+                            <a href="">Accessories</a>
+                        </div>
+                    </div> --}}
+                </div>
+                <div class="shopping_cart_box">
+                    <div class="flex_row">
+                        <h1>Cart</h1>
+                        <i class="fa-regular fa-circle-xmark close_button"></i>
+                    </div>
+                    <hr>    
+                </div>
+               
+                    {{-- <img src="/image/customer/shirt-mockup-concept-with-plain-clothing (2).jpg"> --}}
+                    @yield('content')
+                    
+                <!-- script -->
+                <script src="/js/add_to_card.js"></script>
+                <script src="/js/hamburger_menu.js"></script>
+            
+            
             </div>
         </main>
         <footer>
             <div class="footer">
-                @yield('footer')
+                <div class="footer grid">
+                    <div class="flex_col">
+                        <h3><a href="{{url('/customer/homepage')}}">Home</a></h3>
+                    </div>
+                    <div class="flex_col">
+                        <h3><a href="">About Us</a></h3>
+                    </div>
+                    <div class="flex_col">
+                        <h3><a href="">Contact Us</a></h3>
+                    </div>
+                    <div class="flex_col">
+                        <h3><a href="{{url('/cutomer/product/list')}}">All Products</a></h3>
+                    </div>
+                </div>
+           
+            
+           
             </div>
         </footer>
     </section>

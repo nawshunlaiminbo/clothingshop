@@ -105,8 +105,8 @@ Route::get('/customer/cart/add',[CustomerController::class,'addtocart'])->name('
 //Customer Page Product Start
 Route::get('/cutomer/product/list',[CustomerProductController::class,'showlist'])->name('CustomerProductList');
 Route::get('/customer/product/details/{id}',[CustomerProductController::class,'detail'])->name('CustomerProductDetail');
-Route::get('/customer/product/women',[CustomerProductController::class,'womenproductlist'])->name('CustomerWomenProductList');
-Route::get('/customer/product/men',[CustomerProductController::class,'menproductlist'])->name('CustomerMenProductList');
+Route::get('/customer/product/{id}',[CustomerProductController::class,'productlist'])->name('CustomerCategoryProductList');
+// Route::get('/customer/product/men/{id}',[CustomerProductController::class,'menproductlist'])->name('CustomerMenProductList');
 //Customer Page Product End
 
 });
