@@ -100,6 +100,7 @@ Route::middleware('customer')->group(function(){
 // Route::get('/customer/listedit/{id}',[CustomerController::class,'listedit'])->name('CustomerListEdit');
 Route::patch('/customer/register/update/process',[CustomerController::class,'updateprocess'])->name('CustomerRegisterUpdateProcess');
 Route::get('/customer/deleteprocess/{id}', [CustomerController::class, 'destroy'])->name('CustomerDestroy');
+Route::get('/customer/cart/add',[CustomerController::class,'addtocart'])->name('AddToCart');
 
 //Customer Page Product Start
 Route::get('/cutomer/product/list',[CustomerProductController::class,'showlist'])->name('CustomerProductList');
@@ -107,6 +108,7 @@ Route::get('/customer/product/details/{id}',[CustomerProductController::class,'d
 Route::get('/customer/product/women',[CustomerProductController::class,'womenproductlist'])->name('CustomerWomenProductList');
 Route::get('/customer/product/men',[CustomerProductController::class,'menproductlist'])->name('CustomerMenProductList');
 //Customer Page Product End
+
 });
 //Customer End
 // Auth::routes();

@@ -143,7 +143,7 @@
                 {{$product->description}}
             </p>
             <div class="flex_row add_to_cart">
-                <button class="button2 pick_item">Add to cart</button>
+                <button class="button2 pick_item" >Add to cart</button>
                 <img src="/image/customer/delivery-truck_2769339.png" alt="" style="width: 40px; height: 40px;">
                 <p class="free_deli">Free delivery on orders over 5lakhs.</p>
             </div>

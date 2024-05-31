@@ -33,6 +33,9 @@
         </header>
         <main>
             <div class="content">
+                <form action="" method="">
+
+                </form>
                 @yield('content')
             </div>
         </main>
