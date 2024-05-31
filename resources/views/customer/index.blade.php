@@ -2,85 +2,6 @@
 @section('title','Home')
 @section('content')
     <div class="section1">
-        <!-- navi -->
-        <div class="navigation flex_col">
-            <div class="flash_sale_bar flex_row">
-                <div class="flash_sale">
-                    Flash Sales : Sign in and Get Extra  25%  off on Selected Items
-                </div>
-                <div class="link">
-                    <a href="">FAQ</a>|
-                    <a href="">orders and returns</a>|
-                    <a href="{{url('/customer/login')}}">Sign In</a>
-                </div>
-            </div>
-            <div class="nav_bar flex_row">
-                <div class="logo">
-                    Bravis
-                </div>
-
-                <div class="menu flex_row">
-                    <div class="contact">
-                        <a href="{{url('/customer/homepage')}}" >Home</a>
-                    </div>
-                    <div class="women drop_down">
-                        <a href="{{url('/customer/product/women')}}" >Women</a>
-                        {{-- <div class="women_drop_down_content">
-                            <h3>Women Clothing</h3>
-                            <div class="women_clothing_list flex_row">
-                                <div class="flex_col">
-                                    <a href="pages/category/women/dress.html">Women's Dresses</a>
-                                    <a href="pages/category/women/blouse.html">Women's Tops, Tees & Blouses</a>
-                                    <a href="pages/category/women/hoodie.html">Women's Fashion Hoodies & Sweat shirts</a>
-                                    <a href="pages/category/women/pant.html">Women's Pants</a>
-                                    <a href="pages/category/women/skirt.html">Women's Skirts</a>
-                                </div>
-                            </div>
-                        </div> --}}
-                    </div>
-                    <div class="men drop_down">
-                        <a href="{{url('/customer/product/men')}}" >Men</a>
-                        {{-- <div class="men_drop_down_content">
-                            <h3>Men Clothing</h3>
-                            <div class="men_clothing_list flex_row">
-                                <div class="flex_col">
-                                    <a href="pages/category/men/tee.html">Men's Tee</a>
-                                    <a href="pages/category/men/men_t_shirt.html">Men's T-Shirts</a>
-                                    <a href="pages/category/men/hoodie.html">Men's Hoodies & Sweat Shirts</a>
-                                    <a href="pages/category/men/pant.html">Men’s Pants</a>
-                                </div>
-                            </div>
-                        </div> --}}
-                    </div>
-                   
-                    <div class="about_us">
-                        <a href="" >Accessories</a>
-                    </div>
-                </div>
-                <div class="extra_icon flex_row">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                    <div class="add_to_cart_icon">
-                        <i class="fa-solid fa-cart-shopping"></i>
-                        <span>0</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="navi_ph flex_row">
-            <div class="logo">
-                Bravis
-            </div>
-            <i class="fa-solid fa-bars hamburger_menu open_menu"></i>
-            <i class="fa-solid fa-xmark close_menu"></i>
-        </div>
-        <div class="overflow_menu">
-            <div class="menu_link flex_col">
-                <a href="{{url('/customer/homepage')}}">Home</a>
-                <a href="{{url('/customer/product/women')}}">Women</a>
-                <a href="{{url('/customer/product/men')}}">Men</a>
-                <a href="/pages/contact/index.html">Accessories</a>
-            </div>
-        </div>
         
         <!-- body -->
         <div class="body flex_row">
@@ -190,21 +111,6 @@
                 </div>  
             </div>
             <button class="button1">Follow Us</button>
-        </div>
-    </div>
-    
-    <div class="footer grid">
-        <div class="flex_col">
-            <h3><a href="{{url('/customer/homepage')}}">Home</a></h3>
-        </div>
-        <div class="flex_col">
-            <h3><a href="">About Us</a></h3>
-        </div>
-        <div class="flex_col">
-            <h3><a href="">Contact Us</a></h3>
-        </div>
-        <div class="flex_col">
-            <h3><a href="{{url('/cutomer/product/list')}}">All Products</a></h3>
         </div>
     </div>
     

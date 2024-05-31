@@ -20,8 +20,9 @@
         </div>
         <div class="flex_row">
             <div class="search">
-                <input type="text" class="input" placeholder="Search..." name="search">
-                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" class="input" placeholder="Search..." name="">
+               <i class="fa-solid fa-magnifying-glass"></i>
+               
             </div>
             <div class="sort_by flex_row">
                 <div>

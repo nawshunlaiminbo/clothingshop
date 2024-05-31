@@ -41,19 +41,66 @@ class CustomerProductController extends Controller
                 $productid = $id;
                 return view('customer.pages.category.allproducts',compact('productlist', 'productid'));
             }
-            // public function menproductlist(){
-            //     $men = DB::table('products')
-            //     ->join('categories','categories.id','=','products.category_id')
-            //     ->where('products.status','=','Active')
-            //     ->where('products.category_id','=',1)
-            //     ->select('products.*','categories.name as categoryname')
-            //     ->get();
-            //     return view('customer.pages.category.menproducts',compact('men'));
-            // }
            
-            public function search(){
+            // public function search(){
                 
-                return view('customer.pages.category.products');
+            //     return view('customer.pages.category.products');
+            // }
+
+            public function filter(Request $request){
+                // dd($request->all());
+            //     $columns = [
+            //       'products.name'=> 'Product Name',
+            //       'products.price' =>'Price',
+            //       'products.gender' => 'Gender',
+            //       'products.description' => 'Description',
+            //   ];
+            
+            //   $query = Product::query()->where('products.status','=', 'Active')->where('products.name', 'LIKE','%' .$request->search.'%')->get();
+            //   $query = DB::table('products')->where('status','=', 'Active' )->where('products.name', 'LIKE','%' .$request->search.'%')->get();
+            $namd = 'Hoodie';
+            $query = DB::table('products')
+            ->Orwhere('products.name', 'LIKE', '%'.$namd.'%')
+            ->orwhere('status','=', 'Active')
+
+            ->get();  
+            dd($query);
+              $name = 'products.name';
+              $price = 'products.price';
+              $gender = 'products.gender';
+              $description = 'products.description';
+              $data = array();
+              $data = [$name, $price, $gender,$description];
+            //   dd($data);
+            if(!empty($request->search)){
+                // for($i = 0; $i < count((array)$data); $i++){
+                    // dd($data[$i]);
+                   $query ->where('products.name', 'LIKE','%' .$request->search.'%');
+                    // dd($querydata);
+                   
+                // }
+                
+                //  $query->Where($querydata)->get();
             }
+            // dd($query->get()->toArray());
+             return view('customer.pages.category.products', compact('product'));
+
+            //   dd($query);
+            //   if (!empty($request->search)) {
+            //       $searchInput = $request->search;
+            //     //   dd($searchInput);
+            //       $query->where(function ($subQuery) use ($columns, $searchInput) {
+                    
+            //           foreach (array_keys($columns)as $column=>$label) {
+            //               $subQuery->Where($column, 'LIKE', '%' . $searchInput . '%');
+            //           }  
+                    
+            //       });
+            //     }
+              
+            //   $product = Product::all();
+                    
+              return view('customer.pages.category.products', compact('product'));
+              }
     }
 
