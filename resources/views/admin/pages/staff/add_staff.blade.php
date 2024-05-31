@@ -199,7 +199,7 @@
                          
                         </div>
                   
-            </div>  
+                        </div>  
                     </form>
                         {{-- <a href="{{route('/admin/register/')}}">Add</a> --}}
                     

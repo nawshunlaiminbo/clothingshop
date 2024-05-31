@@ -85,6 +85,27 @@
     color: red;
     font-size: 14px;
 }
+
+.size-col{
+    display: grid;
+    grid-template-columns: 32% 32% 32%;
+    gap: 2%;
+
+}
+
+.inner-size input{
+    width: 100%;
+    background-color: #F7FAFF;
+    padding: 10px; /* Padding inside the input */
+    margin: 8px 0; /* Margin outside the input */
+    display: inline-block; /* Default display */
+    border: 1px solid #ccc; /* Light gray border */
+    border-radius: 4px; /* Rounded corners */
+    box-sizing: border-box;
+    outline: none;
+    height: 40px;
+}
+
 @media (max-width:1440px) and (min-width:1200px){
     .group-col{
         display: grid;
@@ -92,6 +113,7 @@
        
     }
 }
+
 
 @media (max-width:1200px) and (min-width:1000px){
     .group-col{
