@@ -29,7 +29,34 @@
 <body>
     <section id="customermain">
         <header class="customernavbar">
-
+            <div class="shopping_cart_box">
+                <div class="flex_row">
+                    <h1>Cart</h1>
+                    <i class="fa-regular fa-circle-xmark close_button"></i>
+                </div>
+                <hr> 
+                <div class="tee1_pick flex_row">
+                        <img src="/images/09_2_1_3_1000_1000 1.png" alt="">
+                    </div>
+                    <div class="pick_detail">
+            
+                        <p>{{$product->name}}</p>
+                        <p>{{$product->price}}</p>
+                        <div class="flex_row">
+                            <div class="add_or_remove_quantity grid">
+                                <div class="minus">-</div>
+                                <div class="number">1</div>
+                                <div class="plus">+</div>
+                            </div>
+                      
+                            <div class="remove_button">
+                                Remove
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <a href="../../checkout/index.html" class="button2 checkout_button">Check out</a>  
+            </div>
         </header>
         <main>
             <div class="content">

@@ -65,9 +65,14 @@
                 {{$product->description}}
             </p>
             <div class="flex_row add_to_cart">
-                <button class="button2 pick_item" >Add to cart</button>
+                <form action="{{route('CartAdd',['id'=> $product->id])}}" method="POST">
+                    @csrf
+                <input type="hidden" name="product_id" value="{{ $product->id }}">
+
+                <button class="button2 pick_item" type="submit">Add to cart</button>
                 <img src="/image/customer/delivery-truck_2769339.png" alt="" style="width: 40px; height: 40px;">
                 <p class="free_deli">Free delivery on orders over 5lakhs.</p>
+                </form>
             </div>
         </div>
     </div>
@@ -94,9 +99,9 @@
         </div> --}}
     </div>
     <!-- script -->
-    <script src="/js/pick_item.js"></script>
-    <script src="/js/add_to_card.js"></script>
-    <script src="/js/pick_size.js"></script>
-    <script src="/js/hamburger_menu.js"></script>
+    <script src="/js/customer/pick_item.js"></script>
+    <script src="/js/customer/add_to_card.js"></script>
+    <script src="/js/customer/pick_size.js"></script>
+    <script src="/js/customer/hamburger_menu.js"></script>
 
     @endsection

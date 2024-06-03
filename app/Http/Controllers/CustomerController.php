@@ -31,6 +31,42 @@ class CustomerController extends Controller
         return view('customer.account.signup.index');
     }
     public function registerprocess(request $request){
+        $request->validate(
+            [
+                'firstname' => 'required|string|max:255',
+                'lastname' => 'required|string|max:255',
+                'email' => 'required|max:255',
+                'address' => 'required',
+                'state' => 'required',
+                'zipcode' => 'required',
+                'date_of_birth' => 'required',
+                'phone' => 'required',
+                'password' =>'required|regex:/^.*(?=.{3,})(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[\d\x])(?=.*[@!$#%]).*$/|max:255',
+                'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            ],
+            [
+                'firstname.required' => 'The name field is required.',
+                'firstname.string' => 'The name must be a string.',
+                'firstname.max' => 'The name may not be greater than 255 characters.',
+                'lastname.required' => 'The name field is required.',
+                'lastname.string' => 'The name must be a string.',
+                'lastname.max' => 'The name may not be greater than 255 characters.',
+                'email.required' => 'Email field is required.',
+                'email.max' => 'Email may not be greater than 255 characters.',
+                'address.required' => 'Address field is required.',
+                'state.required' => 'State field is required.',
+                'zipcode.required' => 'Zipcode is required.',
+                'date_of_birth.required' => 'Date of birth is required.',
+                'password.required' => 'Password field is required.',
+                'password.regex'=> 'The password must contain at least one uppercase letter, one lowercase letter, and one digit.',
+                'password.max' => 'Password may not be greater than 255 characters.',
+                'phone.required' => 'Phone Number is required.',
+                // 'phone.regex' => 'Phone Number format is invalid',
+                'phone.min' => 'Phone Number must be at least 10',
+                'image.image' => 'The file must be an image.',
+                'image.mimes' => 'The image must be a file of type: jpeg, png, jpg, gif, svg.',
+                'image.max' => 'The image size must not exceed 500 KB.',
+            ]);
         $customer = new Customer();
         $uuid = Str::uuid()->toString();
         $image = $uuid.'.'.$request->image->extension();
@@ -49,7 +85,7 @@ class CustomerController extends Controller
         $customer->address = $request->address;
         $customer->image = $image;
         $customer->save();
-        return view('customer.account.login.index');
+        return redirect()->route('CustomerLogin');
     
     }
 

@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AdminCustomerController;
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\CustomerProductController;
@@ -83,7 +84,8 @@ Route::middleware('admin')->group(function(){
       //Order Start
       Route::get('/order/list',[OrderController::class,'list'])->name('OrderList');
       Route::get('/order/listedit/{id}',[OrderController::class,'listedit'])->name('OrderListEdit');
-
+      // Route::post('/order/place', [OrderController::class, 'placeOrder'])->name('orderplace');
+      // Route::get('/orders', [OrderController::class, 'viewOrders'])->name('orderview');
       //Order End
 
 });
@@ -110,6 +112,13 @@ Route::post('/customer/product/filter',[CustomerProductController::class,'filter
 // Route::get('/customer/product/men/{id}',[CustomerProductController::class,'menproductlist'])->name('CustomerMenProductList');
 //Customer Page Product End
 
+//Add to cart start
+Route::get('/cart/{id}', [CartController::class, 'index'])->name('CartList');
+Route::post('/cart/add/{id}', [CartController::class, 'addToCart'])->name('CartAdd');
+
+
+//Add to cart end
+//
 });
 //Customer End
 // Auth::routes();

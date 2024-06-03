@@ -27,6 +27,8 @@ class CustomerProductController extends Controller
                 $product = Product::find($id);
                 return view('customer.pages.category.detail',compact('product'));
             }
+
+           
             // public function womenproductlist(){
             //     $women = Product::all();
             //     return view('customer.pages.category.womenproducts',compact('women'));
@@ -102,5 +104,7 @@ class CustomerProductController extends Controller
                     
               return view('customer.pages.category.products', compact('product'));
               }
+
+              
     }
 
