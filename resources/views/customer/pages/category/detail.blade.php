@@ -90,9 +90,9 @@
                 @foreach($relatedProducts as $product)
           
                 <div>
-                    <img src="/images/HIRO THE BEAR _FASHION ICON_ TEE - 957 (White, S) 1.png" alt="">
-                <p>{{$product->name}}</p>
-                <p>{{$product->price}}</p> 
+                    <img src="{{asset('image/admin/products_info/'.$product->colorimage)}}" alt="photo of {{$product->name}}" width="35px" height="35px">
+                    <p>{{$product->name}}</p>
+                    <p>{{$product->price}}</p> 
                 </div>
     
                 @endforeach
