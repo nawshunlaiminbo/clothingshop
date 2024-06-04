@@ -25,7 +25,17 @@ class CustomerProductController extends Controller
             }
             public function detail($id){
                 $product = Product::find($id);
-                return view('customer.pages.category.detail',compact('product'));
+              if(!$product){
+                return redirect()->route('CustomerProductList');
+              }
+                $productlist = DB::table('products')
+                ->join('categories','categories.id','=','products.category_id')
+                ->where('products.status','=','Active')
+                ->where('products.category_id','=',$id)
+                ->select('products.*','categories.name as categoryname')
+                ->get();
+                $productid = $id;
+                return view('customer.pages.category.detail',compact('product','productlist','productid'));
             }
 
            

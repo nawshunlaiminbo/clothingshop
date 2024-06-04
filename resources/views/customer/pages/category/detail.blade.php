@@ -14,28 +14,34 @@
         <div class="tee1_pick flex_row">
                 <img src="/images/09_2_1_3_1000_1000 1.png" alt="">
             </div>
-            <div class="pick_detail">
-    
-                <p>{{$product->name}}</p>
-                <p>{{$product->price}}</p>
+            {{-- <div class="pick_detail">
+                @if(!$cartProduct->isEmpty())
+                 @foreach($cartProduct as $Product)
+                <p>{{$Product->name}}</p>
+                <p>{{$Product->price}}</p>
                 <div class="flex_row">
                     <div class="add_or_remove_quantity grid">
                         <div class="minus">-</div>
                         <div class="number">1</div>
                         <div class="plus">+</div>
                     </div>
-              
+             
                     <div class="remove_button">
                         Remove
                     </div>
                 </div>
-            </div>
+                @endforeach
+                @else
+                <p>Your Cart is empty</p>
+                @endif
+            </div> --}}
         </div> 
         <a href="../../checkout/index.html" class="button2 checkout_button">Check out</a>  
     </div>
     {{-- @foreach($product as $products) --}}
     <div class="section2 flex_row">
         <div class="img">
+            {{-- {{dd("aavvvv")}} --}}
             <img src="{{asset('image/admin/products_info/'.$product->colorimage)}}" alt="photo of {{$product->name}}" width="35px" height="35px">
         </div>
         <div class="text">
@@ -80,12 +86,14 @@
     <div class="recommend">
         <h1>You may also like</h1>
         <div class="recommend_list grid">
-            <a href="">
+            @foreach($productlist as $product)
+            <a href="{url('/customer/product/details',$products->id)}}">
                 <div>
                     <img src="/images/HIRO THE BEAR _FASHION ICON_ TEE - 957 (White, S) 1.png" alt="">
-                <p>The Bear "Fashion Icon" Tee</p>
-                <p>25000MMK</p> 
+                <p>{{$product->name}}</p>
+                <p>{{$product->price}}</p> 
                 </div>
+            @endforeach
         </div>
     </div>
 
