@@ -86,17 +86,17 @@
     <div class="recommend">
         <h1>You may also like</h1>
         <div class="recommend_list grid">
-            <a>
-                @foreach($relatedProducts as $product)
-          
+           
+        @foreach($relatedProducts as $product)
+            <a href="{{url('/customer/product/details',$product->id)}}">
                 <div>
                     <img src="{{asset('image/admin/products_info/'.$product->colorimage)}}" alt="photo of {{$product->name}}" width="35px" height="35px">
                     <p>{{$product->name}}</p>
                     <p>{{$product->price}}</p> 
                 </div>
-    
-                @endforeach
-            </a>
+            </a>    
+        @endforeach
+          
         </div>
     </div>
 
