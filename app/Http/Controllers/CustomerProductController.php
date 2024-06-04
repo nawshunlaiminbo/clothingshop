@@ -52,10 +52,7 @@ class CustomerProductController extends Controller
                 return view('customer.pages.category.allproducts',compact('productlist', 'productid'));
             }
            
-            // public function search(){
-                
-            //     return view('customer.pages.category.products');
-            // }
+     
 
             public function filter(Request $request){
                 // dd($request->all());

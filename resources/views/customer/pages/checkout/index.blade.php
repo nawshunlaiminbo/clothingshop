@@ -83,6 +83,7 @@
                 <a href="../category/men/detail.html">Edit</a>
             </div>
             <div class="list flex_row">
+                
                 <div>
                     <div>1 item</div>
                     <div>Delivery Fees</div>
@@ -99,13 +100,15 @@
             <hr>
 
             <div class="item_detail flex_row">
+                @foreach($cartList as $list)
                 <img src="/images/09_2_1_3_1000_1000 1.png" alt="">
                 <div>
-                    <p><b>Men’s Neck Solid Color Short Sleeve Tee</b></p>
-                    <p>12500MMK</p>
-                    <p>Size: Small</p>
-                    <p>Quantity : 1 item</p>
+                    <p><b>{{$list->name}}</b></p>
+                    <p>{{$list->price}}</p>
+                    {{-- <p>Size: {{$list->size}}</p> --}}
+                    {{-- <p>Quantity : {{$list->quantity}}</p> --}}
                 </div>
+                @endforeach
             </div>
 
         </div>

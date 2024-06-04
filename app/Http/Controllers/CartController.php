@@ -24,7 +24,7 @@ class CartController extends Controller
     $cartData->status = 'Active';
     $cartData->save();
     // dd($cartData);
-    return view('customer.pages.checkout.index');
+    return view('customer.pages.category.products');
     }
     // public function showCart(){
     //     $cartProduct = DB::table('carts')->get();
@@ -36,4 +36,10 @@ class CartController extends Controller
     //     $product = Product::find($id);
     //     return view('customer.pages.checkout.index',compact('product'));
     // }
+  
+    public function checkoutlist($id){
+        $cartList = Cart::find($id);
+     
+        return view('customer.pages.checkout.index',compact('cartList'));
+       }
 }
