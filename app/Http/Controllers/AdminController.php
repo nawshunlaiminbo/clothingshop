@@ -6,6 +6,7 @@ use App\Models\Admin;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class AdminController extends Controller
 {
@@ -30,7 +31,7 @@ class AdminController extends Controller
       'password'=>'required',
       'phone'=>'required',
       'role'=>'required',
-      // 'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+      'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
     ], 
     [
       'name.required' => 'The name field is required.',
@@ -44,13 +45,16 @@ class AdminController extends Controller
       // 'phone.regex' => 'Phone Number format is invalid',
       'phone.min' => 'Phone Number must be at least 10',
       'role.required'=>'Position is required.',
-      // 'image.image' => 'The file must be an image.',
+      'image.required'=> 'Image is required.',
+      'image.image' => 'The file must be an image.',
+      'image.mimes' => 'The image must be a file of type: jpeg, png, jpg, gif, svg.',
+      'image.max' => 'The image size must not exceed 500 KB.',
      
   ]);
    
      $uuid = Str::uuid()->toString();
-    //  $image= $uuid.'.'.$request->image->extension();
-    //  $request->image->move(public_path('image/admin'));
+     $image= $uuid.'.'.$request->image->extension();
+     $request->image->move(public_path('image/admin/products_info'),$image);
      $role_id = $this->getRoleId();
      $admin = new Admin();
      $admin->uuid = $uuid;
@@ -59,11 +63,11 @@ class AdminController extends Controller
      $admin->address =$request->address;
     //  $admin->role_id = auth('admin')->user()->role_id;
     //  $admin->role_id = $request->role_id;
-     $admin->password = $request[bcrypt('password')];
+     $admin->password = Hash::make($request->password);
      $admin->phone = $request->phone;
      $admin->status = 'Active';
-    //  $admin->image = $image;
-    // $admin->uuid= 'nullable';
+     $admin->image = $image;
+    $admin->uuid= $uuid;
     $admin->role_id = $role_id;
      $admin->save();
  

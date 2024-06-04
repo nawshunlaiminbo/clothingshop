@@ -38,18 +38,19 @@ class ProductController extends Controller
     }
     public function registerprocess(Request $request){
 
-        $request->validate([
+        $request->validate(
+            [
             'name' => 'required|string|max:255',
-            'description' => 'required|string|min:10|max:500',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'brand'=>'required|string',
+            'description' => 'required|string|min:5|max:500',
+            'image' => 'required',
+            'brand'=>'required',
             'category'=>'required',
             'price'=>'required',
             'gender'=>'required',
             's'=>'required',
             'm'=>'required',
-            'l'=>'required',
-        ], [
+            'l'=>'required',], 
+        [
             'name.required' => 'The name field is required.',
             'name.string' => 'The name must be a string.',
             'name.max' => 'The name may not be greater than 255 characters.',
@@ -58,11 +59,10 @@ class ProductController extends Controller
             'descrption.min' => 'Description may not be less than 10 characters.',
             'description.max' => 'Description may not be greater than 500 characters.',
             'image.required'=> 'Image is required.',
-            'image.image' => 'The file must be an image.',
-            'image.mimes' => 'The image must be a file of type: jpeg, png, jpg, gif, svg.',
-            'image.max' => 'The image size must not exceed 500 KB.',
+            // 'image.image' => 'The file must be an image.',
+            // 'image.mimes' => 'The image must be a file of type: jpeg, png, jpg, gif, svg.',
+            // 'image.max' => 'The image size must not exceed 500 KB.',
             'brand.required' => 'Brand field is required.',
-            'brand.string'=>'Brand must be string',
             'category.required' => 'Category field is required',
             'price.required'=> 'Price field is required.',
             'gender.required' => 'Gender field is required.',
@@ -70,6 +70,7 @@ class ProductController extends Controller
             'm.required' => 'Medium size field is required.',
             'l.required' => 'Large size field is required.',
         ]);
+
         $uuid = Str::uuid()->toString();
         $image= $uuid.'.'.$request->image->extension();
         $request->image->move(public_path('image/admin/products_info'),$image);
@@ -88,7 +89,9 @@ class ProductController extends Controller
         $product->medium_qty = $request->m;
         $product->large_qty = $request->l;
         $product->save();
+    //    dd($product);
         return redirect()->route('ProductList');
+           // return view('admin.pages.product.index');
     }
     public function listedit($id){
         $suppliers = DB::table('suppliers')
@@ -143,7 +146,7 @@ class ProductController extends Controller
         $image= $uuid.'.'.$request->image->extension();
         // dd($image);
         $request->image->move(public_path('image/admin/products_info'),$image);
-
+        
         $productdata->uuid = $uuid;
         $productdata->name = $request->name;
         $productdata->description = $request->description;
@@ -158,6 +161,7 @@ class ProductController extends Controller
         $productdata->large_qty = $request->l;
         $productdata->update();
         return redirect()->route('ProductList');
+     
 
     }
     public function destroy($id){
@@ -189,12 +193,13 @@ class ProductController extends Controller
         $data[]= [$productprice,'>=',$request->min_price];
     }
     elseif($request->max_price != null){
-        // dd("reach max");
+        
         $data[]= [$productprice,'<=',$request->max_price];
+        // dd("reach max");
     }
-    elseif($request->max_price != null && $request->min_price !=null)
+    elseif($request->max_price !=null || $request->min_price !=null)
     {
-        // dd("reach max and min");
+        dd("reach max and min");
         $data[] = [$productprice, '>=', $request->min_price];
         $data[] = [$productprice, '<=', $request->max_price];
     }

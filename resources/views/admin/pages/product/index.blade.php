@@ -140,7 +140,7 @@
                                 <button class="filter_button" type="submit">Filter</button>
                             </div>
                            <div class="reset-col">
-                            <button class="reset_button"><a href="{{route('ProductList')}}">Reset</a></button>
+                            <a href="{{route('ProductList')}}"><button class="reset_button">Reset</button></a>
                            </div>
                         </div>
 

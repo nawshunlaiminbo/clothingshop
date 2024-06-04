@@ -103,8 +103,8 @@
 
         <div class="main-col">
             <div class="title-col">
-                <h4><b>Add staff</b></h4>
-                <p>Add your staff necessary information here</p>
+                <h4><b>Add Products</b></h4>
+                <p>Add your products necessary information here</p>
 
             </div>
             <div class="form-col">
@@ -137,6 +137,9 @@
                     <div class="label-title">Product image</div>
                     <div class="form-input">
                         <input type="file" name="image">
+                        @error('image')
+                        <span class="text-danger">{{$message}}</span>
+                    @enderror
                     </div>
                 </div>
 
@@ -156,7 +159,7 @@
                 </div> 
             
                 <div class="group-col">
-                    <div class="label-title">Category<</div>
+                    <div class="label-title">Category</div>
                     <div class="form-input">
                         <select name="category">
                             <option value="category" selected>Select Category...</option>
@@ -171,7 +174,7 @@
                  </div> 
     
                  <div class="group-col">
-                    <div class="label-title">Gender<</div>
+                    <div class="label-title">Gender</div>
                     <div class="form-input">
                         <select name="gender">
                             <option value="gender" selected>Select Gender...</option>
