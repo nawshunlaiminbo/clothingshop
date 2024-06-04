@@ -40,8 +40,8 @@
                     </div>
                     <div class="pick_detail">
             
-                        <p>{{$product->name}}</p>
-                        <p>{{$product->price}}</p>
+                        {{-- <p>{{$cartProduct->name}}</p>
+                        <p>{{$cartProduct->price}}</p> --}}
                         <div class="flex_row">
                             <div class="add_or_remove_quantity grid">
                                 <div class="minus">-</div>

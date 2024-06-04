@@ -115,6 +115,7 @@ Route::post('/customer/product/filter',[CustomerProductController::class,'filter
 //Add to cart start
 Route::get('/cart/{id}', [CartController::class, 'index'])->name('CartList');
 Route::post('/cart/add/{id}', [CartController::class, 'addToCart'])->name('CartAdd');
+Route::get('/show/cart',[CartController::class,'showCart'])->name('ShowCart');
 
 
 //Add to cart end
