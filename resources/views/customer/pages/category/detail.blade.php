@@ -86,14 +86,17 @@
     <div class="recommend">
         <h1>You may also like</h1>
         <div class="recommend_list grid">
-            @foreach($productlist as $product)
-            <a href="{url('/customer/product/details',$products->id)}}">
+            <a>
+                @foreach($relatedProducts as $product)
+          
                 <div>
                     <img src="/images/HIRO THE BEAR _FASHION ICON_ TEE - 957 (White, S) 1.png" alt="">
                 <p>{{$product->name}}</p>
                 <p>{{$product->price}}</p> 
                 </div>
-            @endforeach
+    
+                @endforeach
+            </a>
         </div>
     </div>
 

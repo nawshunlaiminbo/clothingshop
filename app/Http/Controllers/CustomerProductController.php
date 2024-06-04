@@ -28,14 +28,19 @@ class CustomerProductController extends Controller
               if(!$product){
                 return redirect()->route('CustomerProductList');
               }
-                $productlist = DB::table('products')
-                ->join('categories','categories.id','=','products.category_id')
-                ->where('products.status','=','Active')
-                ->where('products.category_id','=',$id)
-                ->select('products.*','categories.name as categoryname')
+                // $productlist = DB::table('products')
+                // ->join('categories','categories.id','=','products.category_id')
+                // ->where('products.status','=','Active')
+                // ->where('products.category_id','=',$id)
+                // ->select('products.*','categories.name as categoryname')
+                // ->get();
+                // $productid = $id;
+
+                $relatedProducts = Product::where('category_id', $product->category_id)
+                ->where('id','!=',$id)
+                ->limit(4)
                 ->get();
-                $productid = $id;
-                return view('customer.pages.category.detail',compact('product','productlist','productid'));
+                return view('customer.pages.category.detail',compact('product','relatedProducts'));
             }
 
            
