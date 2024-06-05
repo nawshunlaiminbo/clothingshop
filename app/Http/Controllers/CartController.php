@@ -24,11 +24,20 @@ class CartController extends Controller
     $cartData->status = 'Active';
     $cartData->save();
     // dd($cartData);
-    return view('customer.pages.category.products');
+   $cartList = DB::table('carts')
+        ->join('products','products.id','=','carts.product_id')
+        ->join('customers','customers.id','=','carts.customer_id')
+        ->where('carts.customer_id','=',auth('customer')->user()->id)
+        ->where('carts.status','=','Active')
+        
+        // ->select('carts.*','products.id as product_id','products.name as product_name')
+        ->get();
+        // dd($cartList);
+    return view('customer.pages.checkout.index',compact('cartList'));
     }
     // public function showCart(){
     //     $cartProduct = DB::table('carts')->get();
-    //     dd($cartProduct);
+       
     //     return view('customer.pages.category.detail',compact('cartProduct'));
     // }
 
@@ -37,9 +46,20 @@ class CartController extends Controller
     //     return view('customer.pages.checkout.index',compact('product'));
     // }
   
-    public function checkoutlist($id){
-        $cartList = Cart::find($id);
-     
+    public function checkoutlist(){
+        // $cartList = DB::table('carts')
+        // ->join('products','products.id','=','carts.product_id')
+        // ->where('carts.status','=','Active')
+        // ->where('products.id','=','carts.product_id')
+        // ->select('carts.*','products.id as product_id','products.name as product_name')
+        // ->get();
+
+       
+        // $cartList = Cart::find($id);
+        // dd($id);
+            $cartList = DB::table('carts')->get();
+           
+      
         return view('customer.pages.checkout.index',compact('cartList'));
        }
 }

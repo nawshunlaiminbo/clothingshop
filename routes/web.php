@@ -77,6 +77,8 @@ Route::middleware('admin')->group(function(){
       //Customer List Start
       Route::get('/admin/customer/list',[AdminCustomerController::class,'list'])->name('CustomerList');
     //   Route::get('/admin/customer/listedit/{id}',[AdminCustomerController::class,'listedit'])->name('CustomerListEdit');
+      // Route::get('/customer/deleteprocess/{id}', [CustomerController::class, 'destroy'])->name('CustomerDestroy');
+
       Route::get('/admin/customer/deleteprocess/{id}', [AdminCustomerController::class, 'destroy'])->name('AdminCustomerDestroy');
       Route::get('/admin/customer/filter',[AdminCustomerController::class,'filter'])->name('AdminCustomerFilter');
       //Customer List End
@@ -101,7 +103,13 @@ Route::middleware('customer')->group(function(){
 
 // Route::get('/customer/listedit/{id}',[CustomerController::class,'listedit'])->name('CustomerListEdit');
 Route::patch('/customer/register/update/process',[CustomerController::class,'updateprocess'])->name('CustomerRegisterUpdateProcess');
-Route::get('/customer/deleteprocess/{id}', [CustomerController::class, 'destroy'])->name('CustomerDestroy');
+//
+});
+//Customer End
+// Auth::routes();
+
+// Route::get('/home', [HomeController::class, 'index'])->name('home');
+
 Route::get('/customer/cart/add',[CustomerController::class,'addtocart'])->name('AddToCart');
 
 //Customer Page Product Start
@@ -120,9 +128,4 @@ Route::get('/show/cart',[CartController::class,'showCart'])->name('ShowCart');
 Route::get('/cart/checkout',[CartController::class,'checkoutlist'])->name('CartCheckout');
 
 //Add to cart end
-//
-});
-//Customer End
-// Auth::routes();
 
-// Route::get('/home', [HomeController::class, 'index'])->name('home');

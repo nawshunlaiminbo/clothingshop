@@ -98,61 +98,28 @@
             </div>
 
             <hr>
-
+          
             <div class="item_detail flex_row">
-                @foreach($cartList as $list)
-                <img src="/images/09_2_1_3_1000_1000 1.png" alt="">
+               
+                {{-- {{dd($cartList)}} --}}
+                @foreach($cartList as $list) 
+                <img src="{{asset('image/admin/products_info/'.$list->colorimage)}}" alt="photo of {{$list->name}}" width="35px" height="35px">
                 <div>
+                  
                     <p><b>{{$list->name}}</b></p>
-                    <p>{{$list->price}}</p>
+                    <p>{{$list->price}}</p> 
                     {{-- <p>Size: {{$list->size}}</p> --}}
                     {{-- <p>Quantity : {{$list->quantity}}</p> --}}
-                </div>
+                {{-- </div>
                 @endforeach
             </div>
 
         </div>
     </div>
 
-    <div class="footer grid">
-        <div class="flex_col">
-            <h3>Product</h3>
-            <ul>
-                <li>Clothing</li>
-                <li>Shoes</li>
-                <li>Accessories</li>
-            </ul>
-        </div>
-        <div class="flex_col">
-            <h3>Customer Support</h3>
-            <ul>
-                <li>FAQ</li>
-                <li>Shipping</li>
-                <li>Track Order</li>
-                <li>Return & Exchange</li>
-                <li><a href="../contact/index.html">Contact</a></li>
-            </ul>
-        </div>
-        <div class="flex_col">
-            <h3>Company</h3>
-            <ul>
-                <li>About Us</li>
-                <li>Privacy Policy</li>
-                <li>Terms & Condition</li>
-            </ul>
-        </div>
-        <div class="flex_col">
-            <h3>Get Your Latest Update !</h3>
-            <ul>
-                <li>Subscribe to get our latest news  about special discount</li>
-                <li><input type="email" placeholder="Enter your email"></li>
-                <li><button class="button1">Subscribe</button></li>
-            </ul>
-        </div>
-    </div>
 
     <!-- script -->
-    <script src="/js/add_to_card.js"></script>
-    <script src="/js/shipping_fee.js"></script>
+    <script src="/js/customer/add_to_card.js"></script>
+    <script src="/js/customer/shipping_fee.js"></script>
 
     @endsection

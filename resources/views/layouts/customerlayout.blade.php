@@ -39,9 +39,9 @@
                         <img src="/images/09_2_1_3_1000_1000 1.png" alt="">
                     </div>
                     <div class="pick_detail">
-            
-                        {{-- <p>{{$cartProduct->name}}</p>
-                        <p>{{$cartProduct->price}}</p> --}}
+            {{-- @foreach($cartProduct as $data)
+                        <p>{{$data->name}}</p>
+                        <p>{{$data->price}}</p>
                         <div class="flex_row">
                             <div class="add_or_remove_quantity grid">
                                 <div class="minus">-</div>
@@ -53,6 +53,7 @@
                                 Remove
                             </div>
                         </div>
+                        @endforeach --}}
                     </div>
                 </div> 
                 <a href="../../checkout/index.html" class="button2 checkout_button">Check out</a>  

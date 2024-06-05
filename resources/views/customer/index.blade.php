@@ -115,8 +115,8 @@
     </div>
     
     <!-- scripts -->
-    <script src="js/slide_show_button.js" defer></script>
-    <script src="js/add_to_card.js" defer></script>
-    <script src="js/hamburger_menu.js"></script>
+    <script src="/js/customer/slide_show_button.js" defer></script>
+    <script src="/js/customer/add_to_card.js" defer></script>
+    <script src="/js/customer/hamburger_menu.js"></script>
     
 @endsection
