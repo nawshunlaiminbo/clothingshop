@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "862385774f24d882bdf622763d31fc4a",
+    "content-hash": "ba62831d289de096963fe2d305e8fb37",
     "packages": [
         {
             "name": "brick/math",
@@ -3189,16 +3189,16 @@
         },
         {
             "name": "stripe/stripe-php",
-            "version": "v14.4.0",
+            "version": "v14.9.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/stripe/stripe-php.git",
-                "reference": "044f9dd190967b8fb7e55fd0ea25f11c625c00a4"
+                "reference": "7165f64ec1b19cb0ce288d553909cd68d8e6a3b1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/stripe/stripe-php/zipball/044f9dd190967b8fb7e55fd0ea25f11c625c00a4",
-                "reference": "044f9dd190967b8fb7e55fd0ea25f11c625c00a4",
+                "url": "https://api.github.com/repos/stripe/stripe-php/zipball/7165f64ec1b19cb0ce288d553909cd68d8e6a3b1",
+                "reference": "7165f64ec1b19cb0ce288d553909cd68d8e6a3b1",
                 "shasum": ""
             },
             "require": {
@@ -3242,9 +3242,9 @@
             ],
             "support": {
                 "issues": "https://github.com/stripe/stripe-php/issues",
-                "source": "https://github.com/stripe/stripe-php/tree/v14.4.0"
+                "source": "https://github.com/stripe/stripe-php/tree/v14.9.0"
             },
-            "time": "2024-04-25T20:38:24+00:00"
+            "time": "2024-05-30T20:12:41+00:00"
         },
         {
             "name": "symfony/clock",

@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use Stripe\Charge;
+use Stripe\Stripe;
 use App\Models\Cart;
 use App\Models\Product;
+use App\Models\Customer;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -32,9 +35,24 @@ class CartController extends Controller
         
         // ->select('carts.*','products.id as product_id','products.name as product_name')
         ->get();
-        // dd($cartList);
     return view('customer.pages.checkout.index',compact('cartList'));
     }
+    public function checkout(Request $request){
+        $logindata = Customer::find($request->id);
+        $uuid = Str::uuid()->toString();
+        $logindata->uuid = $uuid;
+        $logindata->firstname = $request->fname;
+        $logindata->lastname = $request->lname;
+        $logindata->email = $request->email;
+        $logindata->phone = $request->phone;
+        $logindata->address = $request->address;
+        $logindata->state = $request->state;
+        $logindata->zipcode = $request->zipcode;
+        $logindata->update();
+        return view('customer.pages.checkout.index');
+    }
+
+
     // public function showCart(){
     //     $cartProduct = DB::table('carts')->get();
        
@@ -62,4 +80,18 @@ class CartController extends Controller
       
         return view('customer.pages.checkout.index',compact('cartList'));
        }
+
+    //    public function stripe(){
+    //     return view('');
+    // }
+    // public function stripePost(Request $request){
+    //     Stripe::setApiKey(env('STRIPE_SECRET'));
+    //     Charge::create([
+    //         "amount"=> 10*100,
+    //         "currency"=> "usd",
+    //         "source"=> $request->stripeToken,
+    //         "description"=>"Test Payment From O-Tech"
+    //     ]);
+    //     return ;
+    // }
 }

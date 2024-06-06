@@ -22,29 +22,39 @@
         <hr>    
     </div>   
     <div class="section2 flex_row">
-        <div class="form">
+        @php
+        $loginstatus = false;
+        if(isset($logindata)){
+            $loginstatus = true;
+        }
+        @endphp
+
+        <form action="" method="POST" class="form">
+            @csrf
+            @if($loginstatus == true)
+            @method('PATCH')
             <div class="div1">
                 <div class="flex_row">
                     <h2>Contact</h2>
-                    <p>Have an account? <a href="/account/login/index.html">Log in</a>
+                    <p>Have an account? <a href="{{$loginstatus == true? url('/customer/login'):''}}">Log in</a>
                     </p>
                 </div>
-                <input type="email" placeholder="Email*" required class="input">
+                <input type="email" placeholder="Email*" required class="input" name="email" >
                 <br>
-                <input type="tel" name="" id="" placeholder="Phone Number*" required class="input">
+                <input type="tel" name="" id="" placeholder="Phone Number*" required class="input" name="phone">
                 <br>
             </div>
             <div class="div2">
                 <h2>Delivery</h2>
                 <input type="text" placeholder="Country/Region"  class="input">
                 <div class="name flex_row">
-                    <input type="text" name="" id="fname" placeholder="First Name*" required  class="input">
-                    <input type="text" name="" id="lname" placeholder="Last Name*" required  class="input">
+                    <input type="text" name="fname" id="fname" placeholder="First Name*" required  class="input">
+                    <input type="text" name="lname" id="lname" placeholder="Last Name*" required  class="input">
                 </div>
-                <textarea name="" id="" cols="30" rows="1" placeholder="Address*" required  class="input"></textarea>
+                <textarea name="address" id="" cols="30" rows="1" placeholder="Address*" required  class="input"></textarea>
                 <div class="address flex_row">
-                    <input type="text" name="" id="" placeholder="State/Region(Eg. Yangon)" required class="input">
-                    <input type="text" name="" id="" placeholder="Zip Code(Eg. 111)" required class="input">
+                    <input type="text" name="state" id="" placeholder="State/Region(Eg. Yangon)" required class="input">
+                    <input type="text" name="zipcode" id="" placeholder="Zip Code(Eg. 111)" required class="input">
                 </div>
             </div>
             <div class="div3">
@@ -57,26 +67,12 @@
                 <h2>Payment</h2>
                 <p>All transactions are secured and encrypted</p>
                 <div class="card">
-                    <div class="flex_row credit_card">
-                        <p>Credit Card</p>
-                        <img src="/images/credit-card_8813684.png" alt="">
-                    </div>
-                    <div class="card_info">
-                        <div class="parent">
-                            <input type="text" placeholder="Card Number" required  class="input">
-                        <i class="fa-solid fa-lock"></i>
-                        </div>
-                        <div class="flex_row">
-                            <input type="text" placeholder="Expiration Date(MM/YY)" required class="input">
-                            <input type="text" placeholder="Security Code" required  class="input">
-                        </div>
-                        <input type="text" placeholder="Name on card" required class="input">
-                    </div>
-                    <a href="../success/index.html" class="payNow button2">Pay Now</a>
+                    
+                    <button><a href="" class="payNow button2">Pay Now</a></button>
                 </div>
             </div>
 
-        </div>
+        </form>
         <div class="detail">
             <div class="flex_row">
                 <h2>Your Order</h2>

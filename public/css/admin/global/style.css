@@ -39,6 +39,9 @@ i,button{
 .grid{
     display: grid;
     grid-template-columns: 12% 78%;
+        /* grid-template-columns: 22% 58%;
+        border:1px solid red; */
+
 }
 
 /*  */
@@ -199,8 +202,26 @@ i,button{
 
 
 .reset_button{
-    background-color: #808080;
-    border-radius: 10px;
+    
+    /* border-radius: 10px; */
+    /* width: 88px; */
+    /* padding: 10px 8px; */
+
+    text-align: center;
+    background-color: #3B77EF;
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+    outline: none;
+    outline-color: initial;
+    outline-style: none;
+    outline-width: initial;
+    height: 40px;
+
 
 }
 
