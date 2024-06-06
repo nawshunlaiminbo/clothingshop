@@ -124,6 +124,7 @@
                                 @endforeach
                             </select>
                             <button type="submit">Search</button>
+                            <a href="{{route('adminlist')}}" class="reset_button" style="color:white">Reset</a>
                         </div>
                         </form>
                     </div>
