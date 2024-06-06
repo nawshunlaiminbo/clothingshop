@@ -19,7 +19,7 @@
         </a>
         <a href="{{url('/category/list')}}" target="_self">
             <div class="flex_row">
-                <i class="fa-solid fa-bag-shopping"></i>
+                <i class="fa-solid fa-border-all"></i>
                 <p class="nav_text">Category</p>
             </div>
         </a>

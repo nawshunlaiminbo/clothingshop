@@ -138,14 +138,14 @@ if(isset($productdata)){
                    <div class="group-col">
                        <div class="label-title"> Product image</div>
                        <div class="form-input">
-                        <input type="file" name="image" value="{{$updatestatus == true? $productdata->colorimage: ''}}">
+                        <input type="file" name="image" value="{{$updatestatus == true? asset('image/admin/products_info/'.$productdata->colorimage): ''}}">
                         @error('image')
                             <span class="text-danger">{{$message}}</span>
                         @enderror
                        </div>
                    </div>
                    <div class="group-col">
-                       <div class="label-title"> >Brand Name</div>
+                       <div class="label-title">Brand Name</div>
                        <div class="form-input">
                             <select name="brand">
                                 {{-- <option value="brand" selected>Select Brand Name...</option> --}}

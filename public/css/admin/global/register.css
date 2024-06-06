@@ -65,19 +65,30 @@
   
 }
 .can-btn{
-    width: 95%;
+    /* width: 95%;
     background-color: #999999;
     color: #fff;
     border: none;
     height: 30px;
-    border-radius: 6px;
+    border-radius: 6px; */
+
+    width: 100%;
+    background-color: #F7FAFF;
+    padding: 10px; /* Padding inside the input */
+    margin: 8px 0; /* Margin outside the input */
+    display: inline-block; /* Default display */
+    border: 1px solid #ccc; /* Light gray border */
+    border-radius: 4px; /* Rounded corners */
+    box-sizing: border-box;
+    outline: none;
+    height: 40px;
 }
 .sub-btn{
     width: 95%;
     background-color:#3B76EF;
     color: #fff;
     border: none;
-    height: 30px;
+    height: 40px;
     border-radius: 6px;
 }
 

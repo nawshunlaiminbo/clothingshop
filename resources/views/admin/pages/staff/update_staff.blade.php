@@ -106,8 +106,8 @@ if(isset($staffdata)){
             </div>
         <div class="main-col">
             <div class="title-col">
-                <h4><b>Add Category</b></h4>
-                <p>Add your category necessary information here</p>
+                <h4><b>Update Staff</b></h4>
+                <p>Update your staff necessary information here</p>
 
             </div>
             <div class="form-col">
@@ -184,7 +184,7 @@ if(isset($staffdata)){
                            <div class="label-title">Profile Photo</div>
                            <div class="form-input">
                                 <input type="file" name="image" placeholder="" value="{{$updatestatus == true? $staffdata->image: ''}}">
-                                @error('image')
+                            @error('image')
                                 <span class="text-danger">{{$message}}</span>
                             @enderror
                            </div>

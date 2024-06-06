@@ -185,6 +185,9 @@
                             </div>
                             <div class="form-input">
                                 <input type="file" class="image" name="image" id="image"> 
+                            @error('image')
+                                <span class="text-danger">{{$message}}</span>
+                            @enderror
                             </div>
                         </div>  
 

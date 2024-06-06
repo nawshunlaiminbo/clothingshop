@@ -16,7 +16,7 @@ class ProductController extends Controller
         ->join('admins','admins.id','=','products.admin_id')
         ->where('products.status','=','Active')
         ->select('products.*','categories.name as category_name','suppliers.brand_name as brand')
-        ->paginate(3);
+        ->paginate(6);
         // $products = Product::paginate(10);
         $categories = DB::table('categories')
         ->where('status','=','Active')
@@ -111,7 +111,7 @@ class ProductController extends Controller
         $request->validate([
             'name' => 'required|string|max:255',
             'description' => 'required|string|min:10|max:500',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'image' => 'required|image|max:2048',
             'brand'=>'required|string',
             'category'=>'required',
             'price'=>'required',
@@ -129,7 +129,7 @@ class ProductController extends Controller
             'description.max' => 'Description may not be greater than 500 characters.',
             'image.required'=> 'Image is required.',
             'image.image' => 'The file must be an image.',
-            'image.mimes' => 'The image must be a file of type: jpeg, png, jpg, gif, svg.',
+            // 'image.mimes' => 'The image must be a file of type: jpeg, png, jpg, gif, svg.',
             'image.max' => 'The image size must not exceed 500 KB.',
             'brand.required' => 'Brand field is required.',
             'brand.string'=>'Brand must be string',
@@ -144,7 +144,7 @@ class ProductController extends Controller
         $productdata = Product::find($request->id);
         $uuid = Str::uuid()->toString();
         $image= $uuid.'.'.$request->image->extension();
-        // dd($image);
+        dd($productdata);
         $request->image->move(public_path('image/admin/products_info'),$image);
         
         $productdata->uuid = $uuid;

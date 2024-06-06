@@ -31,7 +31,7 @@ class AdminController extends Controller
       'password'=>'required',
       'phone'=>'required',
       'role'=>'required',
-      'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+      'image' => 'required|image|max:2048',
     ], 
     [
       'name.required' => 'The name field is required.',
@@ -47,7 +47,7 @@ class AdminController extends Controller
       'role.required'=>'Position is required.',
       'image.required'=> 'Image is required.',
       'image.image' => 'The file must be an image.',
-      'image.mimes' => 'The image must be a file of type: jpeg, png, jpg, gif, svg.',
+      // 'image.mimes' => 'The image must be a file of type: jpeg, png, jpg, gif, svg.',
       'image.max' => 'The image size must not exceed 500 KB.',
      
   ]);
@@ -87,7 +87,7 @@ class AdminController extends Controller
       ->join('roles','roles.id','=','admins.role_id')
       ->where('admins.status','=','Active')
       ->select('admins.*','roles.name as role')
-      ->paginate(2);
+      ->paginate(4);
       // dd($stafflist);
       return view('admin.pages.staff.index',compact('stafflist','roles'));
     }
@@ -111,7 +111,7 @@ class AdminController extends Controller
         'address'=>'required',
         'password'=>'required|regex:/^.*(?=.{3,})(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[\d\x])(?=.*[!$#%]).*$/|max:255',
         'phone'=>'required|min:10',
-        'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        'image' => 'required|image|max:2048',
     ], [
         'name.required' => 'The name field is required.',
         'name.string' => 'The name must be a string.',
@@ -126,7 +126,7 @@ class AdminController extends Controller
         // 'phone.regex' => 'Phone Number format is invalid',
         'phone.min' => 'Phone Number must be at least 10',
         'image.image' => 'The file must be an image.',
-        'image.mimes' => 'The image must be a file of type: jpeg, png, jpg, gif, svg.',
+        // 'image.mimes' => 'The image must be a file of type: jpeg, png, jpg, gif, svg.',
         'image.max' => 'The image size must not exceed 500 KB.',
     ]);
       // $stafflist = Admin::all();
