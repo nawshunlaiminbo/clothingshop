@@ -25,6 +25,7 @@ class CartController extends Controller
     $cartData->quantity = 1;
     $cartData->totalprice = $product->price;
     $cartData->status = 'Active';
+    $cartData->paymentmethod = 'Null';
     $cartData->save();
     // dd($cartData);
    $cartList = DB::table('carts')
@@ -58,7 +59,7 @@ class CartController extends Controller
        
     //     return view('customer.pages.category.detail',compact('cartProduct'));
     // }
-
+    
     // public function index($id){
     //     $product = Product::find($id);
     //     return view('customer.pages.checkout.index',compact('product'));

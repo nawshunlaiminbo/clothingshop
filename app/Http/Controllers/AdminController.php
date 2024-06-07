@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Admin;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
@@ -63,7 +64,8 @@ class AdminController extends Controller
      $admin->address =$request->address;
     //  $admin->role_id = auth('admin')->user()->role_id;
     //  $admin->role_id = $request->role_id;
-     $admin->password = Hash::make($request->password);
+    //  $admin->password = $request[bcrypt('password')];
+    $admin->password = Hash::make($request->password);
      $admin->phone = $request->phone;
      $admin->status = 'Active';
      $admin->image = $image;

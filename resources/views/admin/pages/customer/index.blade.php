@@ -184,10 +184,8 @@
         </div>
    
     </div>
-    
+
     </div>
-
-
         <!-- script -->
         <script src="/js/user_profile_info_popup.js"></script>
 

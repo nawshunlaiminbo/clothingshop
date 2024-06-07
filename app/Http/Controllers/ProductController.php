@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\DB;
 
 class ProductController extends Controller
 {
-    public function list(){
+    public function list(Request $request){
         $productlist = DB::table('products')
         ->join('categories','categories.id','=','products.category_id')
         ->join('suppliers','suppliers.id','=','products.supplier_id')
@@ -22,6 +22,9 @@ class ProductController extends Controller
         ->where('status','=','Active')
         ->select('id','name')
         ->get();
+
+        // dd($request->session()->get("categories"));
+        // $request->session()->put("categories", $categories->toArray());
         return view('admin.pages.product.index',compact('productlist','categories'));
     }
    
@@ -41,9 +44,9 @@ class ProductController extends Controller
         $request->validate(
             [
             'name' => 'required|string|max:255',
-            'description' => 'required|string|min:5|max:500',
+            'description' => 'required|string|min:10|max:500',
             'image' => 'required',
-            'brand'=>'required',
+            'brand'=>'required|string',
             'category'=>'required',
             'price'=>'required',
             'gender'=>'required',
@@ -59,9 +62,8 @@ class ProductController extends Controller
             'descrption.min' => 'Description may not be less than 10 characters.',
             'description.max' => 'Description may not be greater than 500 characters.',
             'image.required'=> 'Image is required.',
-            // 'image.image' => 'The file must be an image.',
-            // 'image.mimes' => 'The image must be a file of type: jpeg, png, jpg, gif, svg.',
-            // 'image.max' => 'The image size must not exceed 500 KB.',
+            'image.mimes' => 'The image must be a file of type: jpeg, png, jpg, gif, svg.',
+            'image.max' => 'The image size must not exceed 500 KB.',
             'brand.required' => 'Brand field is required.',
             'category.required' => 'Category field is required',
             'price.required'=> 'Price field is required.',

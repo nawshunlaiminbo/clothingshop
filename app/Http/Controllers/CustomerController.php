@@ -41,8 +41,8 @@ class CustomerController extends Controller
                 'zipcode' => 'required',
                 'date_of_birth' => 'required',
                 'phone' => 'required',
-                'password' =>'required|regex:/^.*(?=.{3,})(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[\d\x])(?=.*[@!$#%]).*$/|max:255',
-                'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+                'password' =>'required',
+                'image' => 'required',
             ],
             [
                 'firstname.required' => 'The name field is required.',
@@ -58,14 +58,14 @@ class CustomerController extends Controller
                 'zipcode.required' => 'Zipcode is required.',
                 'date_of_birth.required' => 'Date of birth is required.',
                 'password.required' => 'Password field is required.',
-                'password.regex'=> 'The password must contain at least one uppercase letter, one lowercase letter, and one digit.',
-                'password.max' => 'Password may not be greater than 255 characters.',
+                // 'password.regex'=> 'The password must contain at least one uppercase letter, one lowercase letter, and one digit.',
+                // 'password.max' => 'Password may not be greater than 255 characters.',
                 'phone.required' => 'Phone Number is required.',
                 // 'phone.regex' => 'Phone Number format is invalid',
                 'phone.min' => 'Phone Number must be at least 10',
                 'image.image' => 'The file must be an image.',
-                'image.mimes' => 'The image must be a file of type: jpeg, png, jpg, gif, svg.',
-                'image.max' => 'The image size must not exceed 500 KB.',
+                // 'image.mimes' => 'The image must be a file of type: jpeg, png, jpg, gif, svg.',
+                // 'image.max' => 'The image size must not exceed 500 KB.',
             ]);
         $customer = new Customer();
         $uuid = Str::uuid()->toString();
