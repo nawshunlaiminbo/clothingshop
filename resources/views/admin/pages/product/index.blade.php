@@ -29,7 +29,7 @@
             
             <div class="nav_row">
                 <div class="nav-icon">
-                    <i class="fa-solid fa-bag-shopping"></i>
+                    <i class="fa-solid fa-border-all"></i>
                 </div>
                 <div class="nav-title">
                     <p class="nav_text">Category</p>
@@ -89,21 +89,20 @@
                     <i class="fa-regular fa-message" style="font-size:25px"></i>
                 </div>
                 <div class="user_profile">
-                    <p>Jhon Min</p>
+                    <p>{{auth('admin')->user()->name}}</p>
                     <div class="img-col">
-                        <img src="{{asset('image/admin/piano.jpg')}}" alt="userphoto">
+                        {{-- <img src="{{asset('image/admin/piano.jpg')}}" alt="userphoto"> --}}
+                        <img src="{{asset('image/admin/'.auth('admin')->user()->image)}}" width="50" height="60" style="object-fit:cover" alt="userphoto">
                     </div>
-                 
-                </div> 
+                 </div> 
                 
             </div>
         </div>
             <!-- user Profile Info -->
-        <div class="user_profile_info">
-            <a href=""><i class="fa-solid fa-gear"></i>Edit Profile</a><br>
-            <a href="/{{url('/admin/logout')}}">
-                <i class="fa-solid fa-arrow-right-from-bracket"></i>Log out</a>
-        </div>
+            <div class="user_profile_info">
+                <a href="{{url('/admin/listedit/'.auth('admin')->user()->id)}}"><i class="fa-solid fa-gear"></i>Edit Profile</a><br>
+                <a href="{{url('/admin/logout')}}"><i class="fa-solid fa-arrow-right-from-bracket"></i>Log out</a>
+         </div>
         <div class="main-col">
             <div class="inner-col">
                

@@ -48,7 +48,11 @@
             <i class="fa-regular fa-message" style="font-size:25px"></i>
         </div>
         <div class="user_profile">
-        </div>
+            <p>{{auth('admin')->user()->name}}</p>
+            <div class="img-col">
+                 <img src="{{asset('image/admin/'.auth('admin')->user()->image)}}" width="50" height="60" style="object-fit:cover" alt="userphoto">
+             </div>
+        </div>   
         
     </div>
     <!-- user Profile Info -->

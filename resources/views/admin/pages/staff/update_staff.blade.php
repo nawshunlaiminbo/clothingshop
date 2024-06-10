@@ -36,7 +36,7 @@ if(isset($staffdata)){
                 
                 <div class="nav_row">
                     <div class="nav-icon">
-                        <i class="fa-solid fa-bag-shopping"></i>
+                        <i class="fa-solid fa-border-all"></i>
                     </div>
                     <div class="nav-title">
                         <p class="nav_text">Category</p>
@@ -95,13 +95,11 @@ if(isset($staffdata)){
                         <i class="fa-regular fa-message" style="font-size:25px"></i>
                     </div>
                     <div class="user_profile">
-                        <p>Jhon Min</p>
+                        <p>{{auth('admin')->user()->name}}</p>
                         <div class="img-col">
-                            <img src="{{asset('image/admin/piano.jpg')}}" alt="userphoto">
-                        </div>
-                     
-                    </div> 
-                    
+                             <img src="{{asset('image/admin/'.auth('admin')->user()->image)}}" width="50" height="60" style="object-fit:cover" alt="userphoto">
+                         </div>
+                    </div>   
                 </div>
             </div>
         <div class="main-col">

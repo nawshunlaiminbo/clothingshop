@@ -54,7 +54,7 @@ class AdminController extends Controller
    
      $uuid = Str::uuid()->toString();
      $image= $uuid.'.'.$request->image->extension();
-     $request->image->move(public_path('image/admin/products_info'),$image);
+     $request->image->move(public_path('image/admin/'),$image);
      $role_id = $this->getRoleId();
      $admin = new Admin();
      $admin->uuid = $uuid;

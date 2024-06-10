@@ -88,21 +88,14 @@
                         <i class="fa-regular fa-bell" style="font-size:25px"></i><br>
                         <i class="fa-regular fa-message" style="font-size:25px"></i>
                     </div>
+                    
                     <div class="user_profile">
-                        <p>John Min</p>
-                        <div class="img-col">
-                            <img src="{{asset('image/admin/piano.jpg')}}" alt="userphoto">
-                        </div>
-                        </a>
+                        <p>{{auth('admin')->user()->name}}</p>
+                    <div class="img-col">
+                        {{-- <img src="{{asset('image/admin/piano.jpg')}}" alt="userphoto"> --}}
+                        <img src="{{asset('image/admin/'.auth('admin')->user()->image)}}" width="50" height="60" style="object-fit:cover" alt="userphoto">
+                    </div>
                     </div> 
-
-                    {{-- <div class="user_profile">
-                        <a href=""><i class="fa-solid fa-gear"></i>Edit Profile</a><br>
-                        <div class="img-col">
-                            <img src="{{asset('image/admin/'.$)}}" alt="photo of {{$}}" width="" height="">
-                        </div>
-                        <a href="{{url('/admin/logout')}}"><i class="fa-solid fa-arrow-right-from-bracket"></i>Log out</a>
-                    </div> --}}
                     
                 </div>
             </div>
@@ -125,7 +118,7 @@
                         <select name="category" id="category">
                             <option value="category">Search By category name</option>
                              @foreach($categories as $value)
-                             <option value="{{ $value->categoryid }}" {{ request('category') == $value->categoryid ? 'selected' : '' }}>
+                             <option value="{{$value->categoryid }}" {{ request('category') == $value->categoryid ? 'selected' : '' }}>
                                 {{ $value->categoryname }}
                              @endforeach
                         </select>

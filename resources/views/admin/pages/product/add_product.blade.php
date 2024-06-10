@@ -30,8 +30,7 @@
             
             <div class="nav_row">
                 <div class="nav-icon">
-                    <i class="fa-solid fa-bag-shopping"></i>
-                </div>
+                    <i class="fa-solid fa-border-all"></i>
                 <div class="nav-title">
                     <p class="nav_text">Category</p>
                 </div>
@@ -91,16 +90,14 @@
                     <i class="fa-regular fa-message" style="font-size:25px"></i>
                 </div>
                 <div class="user_profile">
-                    <p>Jhon Min</p>
+                    <p>{{auth('admin')->user()->name}}</p>
                     <div class="img-col">
-                        <img src="{{asset('image/admin/piano.jpg')}}" alt="userphoto">
-                    </div>
-                 
-                </div> 
-                
+                         <img src="{{asset('image/admin/'.auth('admin')->user()->image)}}" width="50" height="60" style="object-fit:cover" alt="userphoto">
+                     </div>
+                </div>   
             </div>
         </div>
-
+        
         <div class="main-col">
             <div class="title-col">
                 <h4><b>Add Products</b></h4>
