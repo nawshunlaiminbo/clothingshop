@@ -97,11 +97,10 @@
                         </div>   
                     </div>
                 </div>
-                    <!-- user Profile Info -->
+                  <!-- user Profile Info -->
                 <div class="user_profile_info">
-                    <a href=""><i class="fa-solid fa-gear"></i>Edit Profile</a><br>
-                    <a href="/{{url('/admin/logout')}}">
-                        <i class="fa-solid fa-arrow-right-from-bracket"></i>Log out</a>
+                    <a href="{{url('/admin/listedit/'.auth('admin')->user()->id)}}"><i class="fa-solid fa-gear"></i>Edit Profile</a><br>
+                    <a href="{{url('/admin/logout')}}"><i class="fa-solid fa-arrow-right-from-bracket"></i>Log out</a>
                 </div>
                 <div class="main-col">
                     <div class="inner-col">

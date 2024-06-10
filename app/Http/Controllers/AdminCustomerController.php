@@ -11,7 +11,7 @@ class AdminCustomerController extends Controller
     public function list(){
         
         $customerlist = DB::table('customers')->where('status','=','Active')
-        ->paginate(2);
+        ->paginate(5);
         // dd($customerlist);
         return view('admin.pages.customer.index',compact('customerlist'));
     }
