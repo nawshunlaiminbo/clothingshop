@@ -1,220 +1,331 @@
 /* laptop view */
+body{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    height: 100%;
+    overflow: hidden;
+}
 
-
-.section1 .body{
-    margin: 10px 100px;
+.wrapper{
+    display: block;
+    height: 99.7vh;
+    /* border: 1px solid red; */
+    background-color:#E2EAFC ;
+    width: 100%;
+    overflow-x: hidden;
 }
-.section1 .body .image,.section1 .body .text{
-    flex: 1;
-}
-.section1 .body .image{
-    flex-grow: 1;
-}
-.section1 .body .text{
-    flex-grow: 2;
-    padding-left: 30px;
-    align-self: center;
-}
-.section1 .body .text h1{
-    font-size: 60px;
+a {
+    color: blue;
+    text-decoration: none;
     font-weight: bold;
 }
-.section1 .body .text p{
-    font-size: 30px;
-}
-.section1 .body .text button{
-    padding: 20px;
-    font-size: 20px;
-    background-color: var(--secondary-color);
-    border: 1px solid var(--primary-color);
-    color: var(--primary-color);
-    transition: .2s;
-}
-.section1 .body .text button > i{
-    color: var(--primary-color);
-    padding-left: 10px;
-}
-.section1 .body .text button:hover{
-    border: 2px solid var(--primary-color);
+.main-header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color:#E2EAFC ;
+    z-index: 1000; /* Ensure the header is above other content */
+    /* border-bottom: 1px solid #ccc; */
 }
 
-/* section2 */
-.section2{
-    background-color: var(--third-color);
-}
-.section2 .fast_icons_list{
-    margin: 20px 100px;
-    gap: 10px;
-    justify-content: space-around;
-}
-.section2 .fast_icons{
-    justify-content: flex-start;
-}
-.section2 .fast_icons > img {
-    max-width: 100px;
-    max-height: 100px;
-    margin-right: 20px;
-}
-.section2 .new_arrival{
-    margin: 20px 100px;
-    padding: 30px 0px;
-}
-.section2 .new_arrival h1{
-    margin: 10px 0px;
-}
-.section2 .new_arrival .new_arrival_list{
-    gap: 20px;
-}
-/* add new arrival CSS */
-
-/* end of new arrival */
-.section2 .ready2Wear{
-    margin: 100px;
-}
-.section2 .ready2Wear h1{
-    margin: 10px 0px;
-}
-.section2 .ready2Wear .ready2Wear_item{
-    grid-template-columns: repeat(2,1fr);
-    gap: 10px;
-    font-size: 35px;
-    font-weight: bold;
-    color: var(--third-color);
-    justify-content: center;
-    align-content: center;
+.upper-header, .inner-header {
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    text-align: center;
+    padding: 10px 20px;
 }
-.section2 .ready2Wear .ready2Wear_item .men{
-    grid-row: span 2;
-    background-image: url(../images/portrait-young-handsome-male.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-    width: 100%;
-    height: 520px;
-}
-.section2 .ready2Wear .ready2Wear_item .women{
-    background-image: url(/images/woman-with-shopping-bags-isolated.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 250px;
-}
-.section2 .ready2Wear .ready2Wear_item .accessories{
-    background-image: url(/images/young-pretty-woman-walking-street-fashionable-outfit-holding-purse-wearing-black-leather-jacket-white-lace-dress-spring-autumn-style-warm-sunny-weather-romantic-look.jpg);
-    background-position: center;
-    background-repeat: no-repeat;   
-    height: 250px;
-}
-.section2 .ready2Wear .ready2Wear_item .sport_wear{
-    grid-column: span 2;
-    background-image: url(/images/low-angle-shot-athletic-team-walking-outdoors-after-joint-workout.jpg);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    width: 100%;
-    height: 500px;
-}
-/* ****** */
-.section2 .follow_us{
-    margin: 50px 100px;
-    text-align: center;
-}
-.section2 .follow_us >p{
-    font-size: 40px;
-    font-weight: bold;
-    margin-bottom: 50px;
-}
-.section2 .follow_us .image{
-    gap: 20px;
-}
-.section2 .follow_us .image >div{
+
+.main-body {
+    margin-top: 120px; /* Adjust based on header height */
+    overflow-y: auto;
+    overflow-x: hidden; /* Prevent horizontal scroll */
     flex: 1;
+    background-color: #EDF2FB;
 }
-.section2 .follow_us .image div > img{
+::-webkit-scrollbar {
+    display: none;
+}
+.header-link ul, .main-nav ul, .header-icon ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.header-link li, .main-nav li, .header-icon li {
+    margin-right: 15px;
+}
+
+.logo-title {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.header-icon li i {
+    font-size: 20px;
+}
+.main-container{
+    background-color: #EDF2FB;
+}
+
+
+.inner-col{
+    display: flex;
+    /* align-items: center;
+    justify-content: center; */
+    /* flex-direction: column; */
+    text-align: center;
+    align-items: center;
+}
+
+.img-col {
+    width: 100%; /* Adjust as needed */
+    height: auto; /* Adjust as needed */
+    max-width: 800px; /* Adjust based on design */
+    overflow: hidden; /* Hide any overflow */
+    padding-left: 50px;
+}
+
+.img-col img {
     width: 100%;
-    height: 80%;
+    height: auto; /* Maintain aspect ratio */
+    display: block;
+    object-fit: cover; /* Ensure the image covers the container */
 }
 
-/* ******************* */
-/* tablet view */
-@media (min-width:768px) and (max-width:1000px){
-    .section2 .fast_icons_list .fast_icons{
-        display: flex;
-        flex-direction: column;
-    }
-}
-/* *************** */
-
-
-/* phone view */
-@media (max-width:767px) and (min-width:320px)
-{
-    .section1 .body{
-        margin: 0px 50px;
-        padding: 0px;
-        padding-top: 50px;
-        display: flex;
-        flex-direction: column-reverse;
-    }
-    .section1 .body .text{
-        padding-bottom: 30px;
-        padding: 0px;
-        font-size: 16px;
-    }
-    .section1 .body .text > h1{
-        font-size: 35px;    
-    }
-    .section1 .body .text a > button{
-        padding: 5px;
-        margin: 10px 0px;
-    }
-    .section2 .fast_icons_list{
-        display: flex;
-        flex-direction: column;
-    }
-    .section2 .fast_icons_list .fast_icons{
-        display: flex;
-        flex-direction: column;
-    }
-    .section2 .new_arrival{
-        margin: 20px 0px;
-        padding: 30px 0px;
-    }
-    .section2 .new_arrival >h1{
-        padding-left: 50px;
-        font-size: 25px;
-    }
-    .section2 .ready2Wear{
-        margin: 20px 50px;
-    }
-    .section2 .ready2Wear >h1{
-        font-size: 25px;
-    }
-    .section2 .ready2Wear .ready2Wear_item{
-        display: flex;
-        flex-direction: column;
-    }
-    .section2 .ready2Wear .ready2Wear_item > div{
-        width: 100%;
-        background-size: auto;
-        font-size: 25px;
-    }
-    .section2 .ready2Wear .ready2Wear_item .men,.section2 .ready2Wear .ready2Wear_item .sport_wear{
-        height: 280px;
-    }
-    .section2 .follow_us{
-        margin: 50px 0px;
-        text-align: center;
-    }
-    .section2 .follow_us .image{
-        display: flex;
-        flex-direction: column;
-    }
-
-
+.info-col h1 {
+    font-size: 2em;
+    margin: 10px 0;
 }
 
-.content{
-    border:1px solid red;
+.info-col p {
+    font-size: 1.2em;
+    margin: 10px 0;
 }
-/* *************** */
+
+.info-col button {
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.info-col button i {
+    margin-left: 5px;
+}
+
+.detail-info{
+    background-color: #EDF2FB;
+    height: 20vh;
+    /* border: 1px solid red; */
+}
+
+.customer-service{
+    display: flex;
+    /* justify-content: center;  */
+    /* flex-direction: column; */
+    /* text-align: center; */
+    align-items: center;
+}
+
+.fast_icons{
+    display: flex;
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    /* text-align: center; */
+    align-items: center;
+    padding: 20px 50px;
+}
+
+.fast-icon{
+    width: 200px;
+}
+.fast_icons img {
+    width: 150px;
+  
+}
+
+.flex-title li {
+   list-style: none;
+   line-height: 30px;
+}
+
+.new-arrival-col{
+    /* background-color: #EDF2FB; */
+    /* margin-top: -20px; */
+    padding: 20px 50px;
+}
+
+.card-list{
+   display: flex;
+   gap: 15px;
+   width: 100%;
+
+}
+
+.arrival-img{
+    width: 18vw;
+    height: 20vh;
+   
+
+}
+
+.arrival-img img{
+ width: 100%;
+ height: 100%;
+}
+
+.arrival-detail p{
+    color:#000;
+
+}
+
+.img-collection {
+    width: 100%;
+    height: 105vh;
+    padding: 20px;
+    /* border: 1px solid blue; */
+}
+
+.img-row{
+
+  position: relative;
+  width:98%;
+  /* border: 1px solid rgb(255, 0, 238); */
+}
+
+.ready2Wear{
+position: relative;
+display: flex;
+height: 50vh;
+overflow-y: hidden;
+padding: 20px;
+gap: 10px;
+}
+
+.img-col {
+    width: 100%;
+    overflow: hidden;
+}
+
+.men {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 50vh;
+    align-items: center;
+    border: 1px solid  #a6a6a6;
+    overflow: hidden;
+    box-shadow: 7px 1px 29px -1px rgba(143,133,133,0.75);
+    -webkit-box-shadow: 7px 1px 29px -1px rgba(143,133,133,0.75);
+    -moz-box-shadow: 7px 1px 29px -1px rgba(143,133,133,0.75);
+    
+}
+
+a {
+    display: block;
+    margin-top: 10px;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+a:hover {
+    color: #007bff;
+}
+
+.two-col {
+    flex: 1;
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    height: 50vh;
+    row-gap: 10px;
+
+}
+
+
+.women ,.accessories   {
+    width: 95%;
+    height: 24.5vh;
+    border: 1px solid  #a6a6a6;
+    overflow: hidden;
+    box-shadow: 7px 1px 29px -1px rgba(143,133,133,0.75);
+    -webkit-box-shadow: 7px 1px 29px -1px rgba(143,133,133,0.75);
+    -moz-box-shadow: 7px 1px 29px -1px rgba(143,133,133,0.75);
+
+}
+
+.sport-ware{
+    padding: 20px;
+    width: 100%;
+}
+
+.inner-sport-ware{
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    width: 97%;
+    height: 40vh;
+    align-items: center;
+    border: 1px solid  #a6a6a6;
+    overflow: hidden;
+    box-shadow: 7px 1px 29px -1px rgba(143,133,133,0.75);
+    -webkit-box-shadow: 7px 1px 29px -1px rgba(143,133,133,0.75);
+    -moz-box-shadow: 7px 1px 29px -1px rgba(143,133,133,0.75);
+     
+}
+
+.follow-col{
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 49vh;
+   text-align: center;
+}
+
+.inner-follow h3,h1 {
+    text-align: center;
+}
+.follow-img-col{
+    display: flex;
+    gap: 10px;
+    padding: 10px 40px;
+}
+
+.inner-img-col{
+    width: 32.5%;
+    height: 30vh;
+    border: 1px solid  #a6a6a6;
+    overflow: hidden;
+    box-shadow: 7px 1px 29px -1px rgba(143,133,133,0.75);
+    -webkit-box-shadow: 7px 1px 29px -1px rgba(143,133,133,0.75);
+    -moz-box-shadow: 7px 1px 29px -1px rgba(143,133,133,0.75);
+    
+}
+
+.footer{
+    height: 30vh;
+    width: 100%;
+    background-color:#D4DCEC ;
+    margin-top: -20px;
+    padding-top: 30px;
+}
+
+.inner-footer ul{
+    display: grid;
+    grid-template-columns:1fr 1fr 1fr 1fr;
+    list-style: none;
+}
+

@@ -114,7 +114,7 @@
                                 <input type="text" name="name" placeholder="Supplier Name">
                                 @error('name')
                                 <div class="error">{{ $message }}</div>
-                            @enderror
+                                 @enderror
                             </div>
                         </div>
 
