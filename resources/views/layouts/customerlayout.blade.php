@@ -11,6 +11,7 @@
      <link rel="stylesheet" href="{{asset('css/customer/account/login.css')}}"> 
     <link rel="stylesheet" href="{{asset('css/customer/index.css')}}">
     <title>@yield('title')</title>
+    @yield('css')
 </head>
 <body>
     <section id="customermain">
