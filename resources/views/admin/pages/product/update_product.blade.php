@@ -162,7 +162,7 @@ if(isset($productdata)){
                        </div>
                    </div>
                    <div class="group-col">
-                       <div class="label-title"> Category</div>
+                       <div class="label-title">Category</div>
                        <div class="form-input">
                         <select name="category">
                             {{-- <option value="category" selected>Select Category...</option> --}}
@@ -232,7 +232,7 @@ if(isset($productdata)){
                    
                        <div class="group-submit">
                         <div class="can-col">
-                            <button class="can-btn">Cancel</button> 
+                            <a class="can-btn" href="{{url('/category/list')}}">Cancel</a> 
                         </div>
                         <div class="sub-col">
                        <button type="submit" class="sub-btn" name="login">{{$updatestatus == true? 'Update': 'Register'}}</button>

@@ -197,7 +197,7 @@
                         
                         <div class="group-submit">
                             <div class="can-col">
-                                <button class="can-btn">Cancel</button> 
+                                <a class="can-btn" href="{{url('/category/list')}}">Cancel</a> 
                             </div>
                             <div class="sub-col">
                                 <button type="submit" class="sub-btn" name="register">Add</button>

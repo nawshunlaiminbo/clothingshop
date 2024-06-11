@@ -82,6 +82,7 @@
     box-sizing: border-box;
     outline: none;
     height: 40px;
+    text-align:center;
 }
 .sub-btn{
     width: 95%;

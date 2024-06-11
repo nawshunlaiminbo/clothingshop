@@ -118,7 +118,7 @@ if(isset($supplierdata)){
                     <input type="text" name="brand_name" value="{{$updatestatus == true? $supplierdata->brand_name: ''}}" placeholder="Brand Name">
                 </div>
                 <div class="group-submit">
-                    <button class="can-btn" >Cancel</button>
+                    <a class="can-btn" href="{{url('/category/list')}}">Cancel</a> 
                     <button type="submit" class="btn" name="login">{{$updatestatus == true? 'Update': 'Add'}}</button>
                 </div>
             </form>
