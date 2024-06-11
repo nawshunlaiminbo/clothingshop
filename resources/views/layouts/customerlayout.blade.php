@@ -23,9 +23,9 @@
                         </div>
                         <div class="header-link">
                             <ul>
-                                <li>FQA |</li>
-                                <li>Order and returns |</li>
-                                <li>Sign In</li>
+                                <a href="">FQA |</a>
+                                <a href="">Order and returns |</a>
+                                <a href="{{url('/customer/login')}}">Sign In</a>
                             </ul>
                         </div>
                       
@@ -36,16 +36,16 @@
                         </div>
                         <div class="main-nav">
                             <ul>
-                                <li>Home</li>
-                                <li>Women</li>
-                                <li>Contact</li>
-                                <li>About Us</li>
+                                <a href="{{url('/customer/homepage')}}">Home</a>
+                                <a href="{{url('/customer/product'.$productlist->id)}}">Men</a>
+                                <a href="{{url('/customer/product'.$productlist->id)}}">Women</a>
+                                <a href="{{url('/customer/product'.$productlist->id)}}">Accessories</a>
                             </ul>
                         </div>
                         <div class="header-icon">
                             <ul>
-                                <li><i class="fa-solid fa-magnifying-glass"></i></li>
-                                <li><i class="fa-solid fa-cart-shopping"></i></li>
+                                <a><i class="fa-solid fa-magnifying-glass"></i></a>
+                                <a><i class="fa-solid fa-cart-shopping"></i></a>
                             </ul>
                         </div>
                     </div>
