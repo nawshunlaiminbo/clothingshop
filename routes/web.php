@@ -25,6 +25,8 @@ use App\Http\Controllers\SupplierController;
 Route::get('/' , function(){
     return view('admin.account.login.index');
 });
+
+
 // Route::get('/',function(){
 //     return view('home');
 // });

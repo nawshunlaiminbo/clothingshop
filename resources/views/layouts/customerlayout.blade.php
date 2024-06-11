@@ -13,7 +13,7 @@
     <title>@yield('title')</title>
 </head>
 <body>
-    <section id="customermain">
+    <section id="customermain">      
        <div class="wrapper">
             <div class="inner-wrapper">
                 <div class="main-header">
@@ -36,10 +36,10 @@
                         </div>
                         <div class="main-nav">
                             <ul>
-                                <a href="{{url('/customer/homepage')}}">Home</a>
+                                {{-- <a href="{{url('/customer/homepage')}}">Home</a>
                                 <a href="{{url('/customer/product'.$productlist->id)}}">Men</a>
                                 <a href="{{url('/customer/product'.$productlist->id)}}">Women</a>
-                                <a href="{{url('/customer/product'.$productlist->id)}}">Accessories</a>
+                                <a href="{{url('/customer/product'.$productlist->id)}}">Accessories</a> --}}
                             </ul>
                         </div>
                         <div class="header-icon">
