@@ -19,9 +19,23 @@ class CustomerProductController extends Controller
             // return view('customer.pages.category.products',compact('productlist'));
 
             //}
-            public function showlist(){
-                $product = Product::all();
-                return view('customer.pages.category.products',compact('product'));
+            public function showlist(Request $request){
+              // dd($request->all());
+              $productid = $request->productid;
+              if($productid != null){
+                $productlist = DB::table('products')
+                ->join('categories','categories.id','=','products.category_id')
+                ->where('products.status','=','Active')
+                ->where('products.category_id','=',$productid)
+                ->select('products.*','categories.name as categoryname')
+                ->get();
+               
+              }
+              else{
+                $productlist = Product::all();
+              }
+               
+                return view('customer.pages.category.allproducts',compact('productlist','productid'));
             }
             public function detail($id){
                 $product = Product::find($id);

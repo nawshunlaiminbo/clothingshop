@@ -8,8 +8,10 @@
         Men Wear
         @elseif($productid == 2)
         Women Wear
-        @else
+        @elseif($productid == 3)
         Accessories
+        @elseif($productid == null)
+        All Products
         @endif
        
     </div>

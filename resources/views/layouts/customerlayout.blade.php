@@ -37,9 +37,9 @@
                         <div class="main-nav">
                             <ul>
                                 <a href="{{url('/customer/homepage')}}">Home</a>
-                                <a href="{{url('/customer/product'.$productlist->id)}}">Men</a>
-                                <a href="{{url('/customer/product'.$productlist->id)}}">Women</a>
-                                <a href="{{url('/customer/product'.$productlist->id)}}">Accessories</a>
+                                <a href="{{route('CustomerProductList',['productid'=>'1'])}}">Men</a>
+                                <a href="{{route('CustomerProductList',['productid'=>'2'])}}">Women</a>
+                                <a href="{{route('CustomerProductList',['productid'=>'3'])}}">Accessories</a>
                             </ul>
                         </div>
                         <div class="header-icon">
