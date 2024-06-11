@@ -17,35 +17,37 @@
     grid-template-columns: repeat(4,1fr);
     gap: 10px;
     text-align: center;
-
 }
 .earnings{
     padding:10px;
     background-color: #3B76EF;
     border-radius: 10px;
-
+    height:60px;
 }
 .expenses{
     padding:10px;
     background-color: #63C7FF;
     border-radius: 10px;
+    height:60px;
 }
 .clients{
     padding:10px;
     background-color: #A66DD4;
     border-radius: 10px;
+    height:60px;
 }
 .visitors{
     padding:10px;
     background-color: #6DD4B1;
     border-radius: 10px;
+    height:60px;
 }
 .grid2{
     display: grid;
     grid-template-columns: repeat(2,1fr);
-    gap: 50px;
+    gap: 30px;
     text-align: center;
-    padding: 30px 2px;
+    padding: 20px 2px;
 }
 .box1{
     display:flex;
@@ -55,43 +57,50 @@
     padding-left:50px;
     padding-right: 50px;
     padding-top:20px;
+    height:60px;
     
 }
 .box-icon1{
+    display:flex;
+    justify-content: center;
+    align-items: center;
     width: 50px;
     height: 50px;
+    color:white;
     background-color: #3B76EF;
     border-radius: 50%;
-    padding-top:10px;
 }
-.box-icon1{
-    width: 50px;
-    height: 50px;
-    background-color: #3B76EF;
-    border-radius: 50%;
-    padding-top:10px;
-}
+
 .box-icon2{
+    display:flex;
+    justify-content: center;
+    align-items: center;
     width: 50px;
     height: 50px;
+    color:white;
     background-color: #F3D950;
     border-radius: 50%;
-    padding-top:10px;
 }
 
 .box-icon3{
+    display:flex;
+    justify-content: center;
+    align-items: center;
     width: 50px;
     height: 50px;
+    color:white;
     background-color: #63C7FF;
     border-radius: 50%;
-    padding-top:10px;
 }
 .box-icon4{
+    display:flex;
+    justify-content: center;
+    align-items: center;
     width: 50px;
     height: 50px;
+    color:white;
     background-color: #6DD4B1;
     border-radius: 50%;
-    padding-top:10px;
 }
 .box-text{
     text-align: center;
@@ -105,6 +114,7 @@
     padding-left:50px;
     padding-right: 50px;
     padding-top:20px;
+    height:60px;
     
 }
 .box3{
@@ -115,6 +125,7 @@
     padding-left:50px;
     padding-right: 50px;
     padding-top:20px;
+    height:60px;
     
 }
 .box4{
@@ -125,6 +136,7 @@
     padding-left:50px;
     padding-right: 50px;
     padding-top:20px;
+    height:60px;
     
 }
 .grid3{
@@ -134,7 +146,8 @@
     text-align: center;
 }
 .top_selling_products{
-    border-radius: 40px;
+    border-radius: 10px;
+   overflow: hidden;
 }
 .products{
     display:flex;
@@ -161,6 +174,10 @@
    
     background-color: #63C7FF;
     
+}
+.sale_statics{
+    border-radius: 10px;
+   overflow: hidden;
 }
 .statics{
     display:flex;

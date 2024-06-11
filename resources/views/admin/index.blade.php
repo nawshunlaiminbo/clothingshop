@@ -167,13 +167,13 @@
                                 <button class="toggle-btn">Accessories</button>
                             </div>
                         </div>
-                        <div id="piechart" style="width: 100% !important;height:160px;"></div>
+                        <div id="piechart" style="width: 100% !important;height:300px;"></div>
                     </div>
                     <div class="sale_statics">
                         <div class="statics">
                             <h2>Sale Statics</h2>
                         </div>
-                        <canvas id="myChart" style="width: 100% !important;height: 160px;"></canvas>
+                        <canvas id="myChart" style="width: 100% !important;height: 300px;"></canvas>
                     </div>
                 </div>
            </div>
