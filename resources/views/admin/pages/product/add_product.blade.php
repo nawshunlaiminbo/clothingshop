@@ -1,5 +1,5 @@
 @extends('layouts.adminlayout')
-@section('title','Home')
+@section('title','Add Product')
 @section('content')
 
 <div class="admin-session">
@@ -31,6 +31,7 @@
             <div class="nav_row">
                 <div class="nav-icon">
                     <i class="fa-solid fa-border-all"></i>
+                </div>
                 <div class="nav-title">
                     <p class="nav_text">Category</p>
                 </div>
