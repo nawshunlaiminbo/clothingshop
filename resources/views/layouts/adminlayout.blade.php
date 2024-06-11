@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="{{asset('css/admin/global/style.css')}}">
     <link rel="stylesheet" href="{{asset('css/admin/global/register.css')}}">
     <link rel="stylesheet" href="{{asset('css/admin/pages/staff/staff.css')}}">
+    <link rel="stylesheet" href="{{asset('css/admin/pages/dashboard/dashboard.css')}}">
     {{-- <link rel="stylesheet" href="{{asset('css/admin/pages/product/add_product.css')}}"> --}}
    {{-- <link rel="stylesheet" href="{{asset('css/admin/pages/customer/customer.css')}}"> --}}
     {{-- <link rel="stylesheet" href="{{asset('css/admin/pages/customer/edit_customer.css')}}">
@@ -34,7 +35,7 @@
         {{-- <header class="adminnavbar">
             
         </header> --}}
-        <div class="main-col">
+        <div class="main-contain">
             <div class="content">
                 @yield('content')
             </div>

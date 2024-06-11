@@ -6,7 +6,7 @@ use App\Models\Admin;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Hash;
+
 
 class AdminController extends Controller
 {

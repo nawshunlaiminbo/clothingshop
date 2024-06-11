@@ -18,10 +18,7 @@
     --table-bg-skyblue-color:#DFEAFD;
 }
 
-.main-col{
-    /* border: 1px solid red; */
-    padding-top: 5px;
-}
+
 .session_1{    
     /* justify-content: space-between; */
     background-color: var(--secondary-color);
