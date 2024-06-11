@@ -97,6 +97,7 @@ Route::post('/customer/register/process',[CustomerController::class,'registerpro
 Route::get('/customer/login',[CustomerController::class,'login'])->name('CustomerLogin');
 Route::post('/customer/login/process',[LoginController::class,'loginprocess'])->name('CustomerLoginProcess');
 Route::get('/customer/homepage',[CustomerController::class,'home'])->name('CustomerHome');
+Route::get('/customer/success',[CustomerController::class,'success'])->name('CustomerSuccess');
 
 Route::middleware('customer')->group(function(){
 // Route::get('/customer/list',[CustomerController::class,'list'])->name('CustomerList')

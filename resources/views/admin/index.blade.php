@@ -30,7 +30,7 @@
             
             <div class="nav_row">
                 <div class="nav-icon">
-                    <i class="fa-solid fa-bag-shopping"></i>
+                    <i class="fa-solid fa-border-all"></i>
                 </div>
                 <div class="nav-title">
                     <p class="nav_text">Category</p>
