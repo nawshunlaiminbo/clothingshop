@@ -107,7 +107,7 @@
                         <p>K 50000</p>
                     </div>
                     <div class="expenses">
-                        <small>Total Expenses</small>
+                        <small>Total Expense</small>
                         <p>K 100000</p>
                     </div>
                     <div class="clients">

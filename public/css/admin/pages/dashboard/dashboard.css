@@ -188,7 +188,73 @@
 
 
 /* Mobile View  */
-@media screen and (min-width: 700px) and (max-width: 1000px) {
-    
-
+@media (max-width:767px) and (min-width:500px) {
+    .earnings{
+        padding: 7px;
+        height: 67px;
+    }
+    .expenses{
+        padding: 7px;
+        height: 67px;
+    }
+    .grid2{
+        grid-template-columns: 1fr; 
+        grid-auto-rows: minmax(90px, auto); 
+        gap: 10px; 
+    }
+    .grid3{
+            grid-template-columns: 1fr; 
+            grid-auto-rows: minmax(90px, auto); 
+            gap: 20px; 
+        }
+        .top_selling_products{
+            /* width:100%;
+            height:400px; */
+        }
+        .sale_statics{
+            /* width:100%;
+            height:400px; */
+        }
 }
+@media (max-width:499px) and (min-width:320px){
+    .grid1{
+        grid-template-columns: 1fr; 
+        grid-auto-rows: minmax(90px, auto); 
+        gap: 10px; 
+    }
+    .grid2{
+        grid-template-columns: 1fr; 
+        grid-auto-rows: minmax(90px, auto); 
+        gap: 10px; 
+    }
+    .box1{
+        align-items: center;
+        padding-left:30px;
+        padding-right: 30px;
+        
+    }
+    .box2{
+        padding-left:30px;
+        padding-right: 30px;
+        padding-top:20px;
+        height:60px;
+    }
+    .box-icon1{
+       
+    }
+    .box-text{
+        padding-right:40px;
+    }
+    .box3{
+        padding-left:30px;
+        padding-right: 30px;
+        padding-top:0px;
+        height:60px;
+    }
+    .box4{
+        padding-left:30px;
+        padding-right: 30px;
+        padding-top:20px;
+        height:60px;
+    } 
+} 
