@@ -23,24 +23,28 @@
     background-color: #3B76EF;
     border-radius: 10px;
     height:60px;
+    color:white;
 }
 .expenses{
     padding:10px;
     background-color: #63C7FF;
     border-radius: 10px;
     height:60px;
+    color:white;
 }
 .clients{
     padding:10px;
     background-color: #A66DD4;
     border-radius: 10px;
     height:60px;
+    color:white;
 }
 .visitors{
     padding:10px;
     background-color: #6DD4B1;
     border-radius: 10px;
     height:60px;
+    color:white;
 }
 .grid2{
     display: grid;

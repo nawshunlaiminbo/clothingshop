@@ -79,7 +79,7 @@ class CartController extends Controller
             $cartList = DB::table('carts')->get();
            
       
-        return view('customer.pages.checkout.index',compact('cartList'));
+        return view('customer.pages.checkout.checkout',compact('cartList'));
        }
 
     //    public function stripe(){
