@@ -1,20 +1,25 @@
-
+@extends('layouts.customerlayout')
+@section('title','CheckOut')
+@section('content')
 <link rel="stylesheet" href="{{asset('css/customer/pages/checkout/checkout1.css')}}"> 
+<script src="https://kit.fontawesome.com/a44b41dfdc.js" crossorigin="anonymous"></script>
 
-<header class="header">
+<div class="main-container">
+{{-- <header class="header">
     <div class="header-content">
         <div class="logo">
             Bravis
-            <div class="checkout">CHECKOUT</div>
         </div>
         <div class="cart-icon">
             <i class="fa-solid fa-cart-shopping"></i>
         </div>
     </div>
-</header>
+</header> --}}
 
-<div class="conatiner">
-    <form action="" method="">
+<div >
+    <div class="checkout">CHECKOUT</div>
+  
+    <form action="" method="" class="container">
     <div class="section1">
         <div class="contact">
             <div class="contact-text">
@@ -56,7 +61,7 @@
                 <br><br>   
             </div>
             <div class="pay-now">
-                <button class="pay-now-button">Pay Now</button>
+                <button class="button">Pay Now</button>
             </div>
         </div>
     </div>
@@ -65,11 +70,11 @@
         <div class="order">
             <table>
                 <tr>
-                    <th>Your Order</th>
-                    <th><a href="">Edit</a></th>
+                    <th width="70%">Your Order</th>
+                    <th width="30%"><a href="">Edit</a></th>
                 </tr>
                 <tr>
-                    <td>1 item</td>
+                    <td >1 item</td>
                     <td>85000MMK</td>
                 </tr>
                 <tr>
@@ -77,7 +82,7 @@
                     <td>0MMk</td>
                 </tr>
                 <tr>
-                    <td>Discount(Availabel for registered user)</td>
+                    <td>Discount (Available for registered user)</td>
                     <td>0 MMK</td>
                 </tr>
                 <tr>
@@ -89,8 +94,9 @@
         <hr>
         <div class="item">
             <h2>Item Details</h2>
+            <div class="order-item">
             <div class="product-image">
-
+                <img src="/image/customer/09_2_1_3_1000_1000 1.png" alt="order-photo" height="100px">
             </div>
             <div class="order-list">
                 <h3>Pink Sport Wear Set</h3>
@@ -98,9 +104,13 @@
                 <p>Size: S</p>
                 <p>Quantity: 1 item</p>
             </div>
+           
+        </div>
+        <hr>
         </div>
     </div>
 </form>
 </div>
+</div>
 
-
+@endsection
