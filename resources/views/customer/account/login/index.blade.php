@@ -1,8 +1,9 @@
-@extends('layouts.customerlayout')
+@extends('layouts.customerlogin')
 @section('title','LogIn')
 @section('content')
 
-    <div class="container grid">
+    <div class="container">
+        
         <div class="text">
             <h1>Welcome Back!</h1>
             <p>Sign In and Get 25% on selected items</p>

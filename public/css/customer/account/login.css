@@ -1,44 +1,142 @@
-.container{
-    background-color: var(--secondary-color);
-    grid-template-columns: repeat(2,1fr);
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    gap: 20px; /* Space between columns */
+    justify-items: center;
+    justify-content: space-between;
+    align-items: center;
+    height: 99.7vh;
+    background-color: #dce2ef;
+}
+
+
+/* Image section styling */
+.image {
+    display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.image img {
+    max-width: 100%; /* Ensures the image fits within the container width */
+    height: 99vh; /* Maintains the aspect ratio */
+    display: block; /* Removes bottom margin/gap */
+}
+
+/* Text section styling */
+.text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50% ;
+    height: auto;
+    padding: 20px;
+}
+
+.text h1 {
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 30px;
+}
+
+.text p {
+    margin-bottom: 20px;
+    color: #0079FF;
     text-align: center;
 }
-.text>p,.text form p >a{
-    color: var(--button_blue_color);
+
+.flex_row {
+    display: flex;
+    flex-direction: column;
 }
-.text form p >a:hover{
-    text-decoration: underline;
-}
-.text .flex_row{
-    justify-content: center;
-}
-.text form{
-    background-color: var(--third-color);
-    padding: 20px 0px;
-    width: 400px;
+
+.flex_row{
     height: auto;
-    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-}
-.text form input{
-    height: 50px;
-    font-size: 20px;
-    padding-left: 30px;
-    margin: 10px 20px;
+    border: 1px solid #ffff;
+    background-color: #ffff;
+    padding: 20px;
     border-radius: 10px;
+    box-shadow: -1px 1px 15px 0px rgba(237,233,233,0.75);
+    -webkit-box-shadow: -1px 1px 15px 0px rgba(237,233,233,0.75);
+    -moz-box-shadow: -1px 1px 15px 0px rgba(237,233,233,0.75);
+}
+
+
+/* Form styling */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form input {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form button {
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
     border: none;
-    background-color: var(--fourth_color);
+    border-radius: 5px;
+    cursor: pointer;
 }
-.container .text form .login_button{
-    display: inline-block;
-    color: var(--third-color);
-    margin-top: 20px;
+
+form button:hover {
+    background-color: #0056b3;
 }
-.container .text form .login_button:hover{
-    color: var(--button_blue_color);
+
+@media (max-width:1300px) and (min-width:950px) {
+
+   /* Text section styling */
+.text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 65% ;
+    height: auto;
+    padding: 20px;
 }
-.image img{
-    width: 100%;
-    height: 100vh;
+
+
+}
+
+@media (max-width:950px) {
+     
+    .container {
+        grid-template-columns: 1fr; /* Retain the two columns */
+        grid-template-rows: auto; /* Single row layout */
+        grid-auto-flow: row-reverse; /* Reverse the order of rows */
+      }
+
+    .image{
+        grid-row: 1;
+    }
+    .text {
+        grid-row: 2;
+
+    }
+    
+    .text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 80% ;
+        height: auto;
+        padding: 20px;
+    }
+    
+    /* .container {
+        grid-auto-flow: row dense;
+        grid-auto-rows: 100px;
+        grid-template-columns: 1fr 2fr;
+      } */
 }
