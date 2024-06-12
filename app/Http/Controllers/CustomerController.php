@@ -13,6 +13,13 @@ class CustomerController extends Controller
 {
     //
     public function home(){
+        // $productlist = DB::table('products')
+        //         ->join('categories','categories.id','=','products.category_id')
+        //         ->where('products.status','=','Active')
+        //         ->where('products.category_id','=',$id)
+        //         ->select('products.*','categories.name as categoryname')
+        //         ->get();
+        //         $productid = $id;
         $newarrival = DB::table('products')
         ->where('products.status','=','Active')
         // ->where('products.id')

@@ -101,7 +101,81 @@
 
         <div class="main-col">
            <div class="dashbord-container">
-            <h1>Dashboard</h1>
+                <div class="grid1">
+                    <div class="earnings">
+                        <small>Total Earnings</small>
+                        <p>K 50000</p>
+                    </div>
+                    <div class="expenses">
+                        <small>Total Expenses</small>
+                        <p>K 100000</p>
+                    </div>
+                    <div class="clients">
+                        <small>Clients</small>
+                        <p>3000</p>
+                    </div>
+                    <div class="visitors">
+                        <small>Page Visitors</small>
+                        <p>135000</p>
+                    </div>
+                </div>
+                <div class="grid2">
+                    <div class="box1">
+                        <div class="box-icon1">
+                            <i class="fa-solid fa-box"></i>
+                        </div>
+                        <div class="box-text">
+                            <small>Total Order</small>
+                            <p>500</p>
+                        </div>
+                    </div>
+                    <div class="box2">
+                        <div class="box-icon2">
+                            <i class="fa-regular fa-clock"></i>
+                        </div>
+                        <div class="box-text">
+                        <small>Order Pending</small>
+                        <p>125</p>
+                        </div>
+                    </div>
+                    <div class="box3">
+                        <div class="box-icon3">
+                            <i class="fa-solid fa-file-invoice"></i>
+                        </div>
+                        <div class="box-text">
+                        <small>Order Processing</small>
+                        <p>65</p>
+                        </div>
+                    </div>
+                    <div class="box4">
+                        <div class="box-icon4">
+                            <i class="fa-solid fa-truck"></i>
+                        </div>
+                        <div class="box-text">
+                        <small>Order Delivered</small>
+                        <p>310</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid3">
+                    <div class="top_selling_products">
+                        <div class="products">
+                            <h2>Top Selling Products</h2>
+                            <div class="product_button">
+                                <button class="toggle-btn-active">Men</button>
+                                <button class="toggle-btn">Women</button>
+                                <button class="toggle-btn">Accessories</button>
+                            </div>
+                        </div>
+                        <div id="piechart" style="width: 100% !important;height:300px;"></div>
+                    </div>
+                    <div class="sale_statics">
+                        <div class="statics">
+                            <h2>Sale Statics</h2>
+                        </div>
+                        <canvas id="myChart" style="width: 100% !important;height: 300px;"></canvas>
+                    </div>
+                </div>
            </div>
 
         </div>
@@ -111,7 +185,7 @@
 
 
 <!-- script -->
-<script src="/js/user_profile_info_popup.js"></script>
-<script type="text/javascript" src="/js/pie_chart.js"></script>
-<script src="/js/bar_chart.js"></script>
+<script src="/js/admin/user_profile_info_popup.js"></script>
+<script type="text/javascript" src="/js/admin/pie_chart.js"></script>
+<script src="/js/admin/bar_chart.js"></script>
 @endsection
