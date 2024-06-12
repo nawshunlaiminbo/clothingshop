@@ -30,9 +30,9 @@
         @endphp
 
         <form action="" method="POST" class="form">
-            @csrf
+            {{-- @csrf
             @if($loginstatus == true)
-            @method('PATCH')
+            @method('PATCH') --}}
             <div class="div1">
                 <div class="flex_row">
                     <h2>Contact</h2>
@@ -98,16 +98,16 @@
             <div class="item_detail flex_row">
                
                 {{-- {{dd($cartList)}} --}}
-                @foreach($cartList as $list) 
+                {{-- @foreach($cartList as $list) 
                 <img src="{{asset('image/admin/products_info/'.$list->colorimage)}}" alt="photo of {{$list->name}}" width="35px" height="35px">
-                <div>
+                <div> --}}
                   
-                    <p><b>{{$list->name}}</b></p>
-                    <p>{{$list->price}}</p> 
+                    {{-- <p><b>{{$list->name}}</b></p>
+                    <p>{{$list->price}}</p>  --}}
                     {{-- <p>Size: {{$list->size}}</p> --}}
                     {{-- <p>Quantity : {{$list->quantity}}</p> --}}
                 {{-- </div>
-                @endforeach
+                
             </div>
 
         </div>

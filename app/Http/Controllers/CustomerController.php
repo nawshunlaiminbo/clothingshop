@@ -96,6 +96,9 @@ class CustomerController extends Controller
     
     }
 
+    public function success(){
+        return view('customer.success');
+    }
 
 
 }
