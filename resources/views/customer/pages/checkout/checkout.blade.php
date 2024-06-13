@@ -1,7 +1,7 @@
 @extends('layouts.customerlayout')
 @section('title','CheckOut')
 @section('content')
-<link rel="stylesheet" href="{{asset('css/customer/pages/checkout/checkout1.css')}}"> 
+<link rel="stylesheet" href="{{asset('css/customer/pages/checkout/checkout.css')}}"> 
 <script src="https://kit.fontawesome.com/a44b41dfdc.js" crossorigin="anonymous"></script>
 
 <div class="checkout">CHECKOUT</div>
@@ -21,7 +21,7 @@
         <div class="contact">
             <div class="contact-text">
                 <h2>Contact</h2>
-                <p>Have an account? <a href="">Log in</a></p>
+                <p>Have an account? <a href="/customer/login">Log in</a></p>
             </div>
             <div class="contact-form">
 

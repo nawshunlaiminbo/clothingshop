@@ -98,20 +98,20 @@
                     <div class="ready2Wear">
                         <div class="men">
                             <div class="left-img-col">
-                                {{-- <img src="/image/customer/man-black-sweater-black-bucket-hat-youth-apparel-shoot.png" alt=""> --}}
+                                <img src="/image/customer/man-black-sweater-black-bucket-hat-youth-apparel-shoot.png" alt="">
                             </div>
                             <a href="{{url('/customer/product/men')}}">Men Clothing</a>
                         </div>
                         <div class="two-col">
                             <div class="women">
                                 <div class="img-col">
-                                    {{-- <img src="/image/customer/woman-with-shopping-bags-isolated.jpg" alt=""> --}}
+                                    <img src="/image/customer/woman-with-shopping-bags-isolated.jpg" alt="">
                                 </div>
                                <a href="{{url('/customer/product/women')}}">Women Clothing</a> 
                             </div>
                             <div class="accessories">
                                 <div class="img-col">
-                                    {{-- <img src="/image/customer/woman-with-shopping-bags-isolated.jpg" alt=""> --}}
+                                    <img src="/image/customer/woman-with-shopping-bags-isolated.jpg" alt="">
                                 </div>
                                <a href="">Accessories</a> 
                             </div>  
@@ -131,13 +131,13 @@
 
                     <div class="follow-img-col">
                         <div class="inner-img-col">
-
+                            <img src="/image/customer/iam_os-9wM5SCjhsOM-unsplash (1) 1.png">
                         </div>
                         <div class="inner-img-col">
-                            
+                            <img src="/image/customer/trendy-fashionable-couple-posing (1) 1.png">
                         </div>
                         <div class="inner-img-col">
-                            
+                            <img src="/image/customer/portrait-stylish-lady-sunglasses-wide-brimmed-hat-cool-young-woman-black-jacket-pants-poses-smiles-isolated-background 1.png">
                         </div>
                     </div>
                 </div>
