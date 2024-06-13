@@ -2,49 +2,21 @@
 @section('title','ProductDetails')
 @section('content')
 
-
-    
     <div class="img">
     <div class="shopping_cart_box">
-        <div class="flex_row">
-            <h1>Cart</h1>
-            <i class="fa-regular fa-circle-xmark close_button"></i>
-        </div>
         <hr> 
         <div class="tee1_pick flex_row">
                 <img src="/images/09_2_1_3_1000_1000 1.png" alt="">
             </div>
-            {{-- <div class="pick_detail">
-                @if(!$cartProduct->isEmpty())
-                 @foreach($cartProduct as $Product)
-                <p>{{$Product->name}}</p>
-                <p>{{$Product->price}}</p>
-                <div class="flex_row">
-                    <div class="add_or_remove_quantity grid">
-                        <div class="minus">-</div>
-                        <div class="number">1</div>
-                        <div class="plus">+</div>
-                    </div>
-             
-                    <div class="remove_button">
-                        Remove
-                    </div>
-                </div>
-                @endforeach
-                @else
-                <p>Your Cart is empty</p>
-                @endif
-            </div> --}}
         </div> 
         <a href="../../checkout/index.html" class="button2 checkout_button">Check out</a>  
     </div>
-    {{-- @foreach($product as $products) --}}
     <div class="section2 flex_row">
         <div class="img">
-            {{-- {{dd("aavvvv")}} --}}
             <img src="{{asset('image/admin/products_info/'.$product->colorimage)}}" alt="photo of {{$product->name}}" width="35px" height="35px">
         </div>
-        <div class="text">
+        
+        {{-- <div class="text">
             <p class="title">{{$product->name}}</p>
             <p class="price">{{$product->price}}</p>
             <p>Size: </p>
@@ -53,19 +25,6 @@
                 <button class="M_button">M</button>
                 <button class="L_button">L</button>
             </div>
-            {{-- <p>Color:</p>
-            <div class="color_sample"></div>
-            <div class="review flex_row">
-                <div class="flex_row">
-                    <img src="/assets/icons/Star border.svg" alt="" style="width: 30px; height: 30px;">
-                    <img src="/assets/icons/Star border.svg" alt="" style="width: 30px; height: 30px;">
-                    <img src="/assets/icons/Star border.svg" alt="" style="width: 30px; height: 30px;">
-                    <img src="/assets/icons/Star border.svg" alt="" style="width: 30px; height: 30px;">
-                    <img src="/assets/icons/Star border.svg" alt="" style="width: 30px; height: 30px;">
-                </div> --}}
-                <div>
-                    <p class="reviewNumber">( 0 review )</p>
-                </div>
             </div>
             <p>
                 {{$product->description}}
@@ -80,7 +39,9 @@
                 <p class="free_deli">Free delivery on orders over 5lakhs.</p>
                 </form>
             </div>
-        </div>
+        </div> --}}
+
+
     </div>
     
     <div class="recommend">

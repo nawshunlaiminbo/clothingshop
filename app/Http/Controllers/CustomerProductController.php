@@ -39,7 +39,7 @@ class CustomerProductController extends Controller
             }
             public function detail($id){
                 $product = Product::find($id);
-              if(!$product){
+                if(!$product){
                 return redirect()->route('CustomerProductList');
               }
 
@@ -47,7 +47,7 @@ class CustomerProductController extends Controller
                 ->where('id','!=',$id)
                 ->limit(4)
                 ->get();
-                return view('customer.pages.category.detail',compact('product','relatedProducts'));
+                return view('customer.pages.category.productdetail',compact('product','relatedProducts'));
             }
 
            
