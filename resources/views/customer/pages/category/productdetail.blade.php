@@ -38,12 +38,12 @@
     </div>
 
     <div class="sec2">
-        <h2>You my also like</h2>
+       <div class="title"><h2>You my also like</h2></div> 
         <div class="related-data">
             @foreach($relatedProducts as $product)
             <a href="{{url('/customer/product/details',$product->id)}}">
                 <div class="item">
-                    <img src="{{asset('image/admin/products_info/'.$product->colorimage)}}" alt="photo of {{$product->name}}" width="35px" height="35px">
+                    <img src="{{asset('image/admin/products_info/'.$product->colorimage)}}" alt="photo of {{$product->name}}" width="80px" height="100px">
                     <p>{{$product->name}}</p>
                     <p>{{$product->price}}</p> 
                 </div>
