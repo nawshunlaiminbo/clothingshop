@@ -21,7 +21,7 @@
                     <div class="customer-service">
                         <div class="fast_icons flex_row">
                             <div class="fast-icon">
-                                <img src="/image/customer/credit-card_4021708 (1).png" alt="">
+                                <i class="fa-regular fa-credit-card"></i>
                             </div>
                            
                             <div class="flex-title">
@@ -34,7 +34,7 @@
                         </div>
                         <div class="fast_icons flex_row">
                             <div class="fast-icon">
-                                <img src="/image/customer/delivery-truck_2769339.png" alt="">
+                                <i class="fa-solid fa-truck"></i>
                             </div>
                             <div class="flex-title">
                                 <ul>
@@ -47,7 +47,7 @@
                         </div>
                         <div class="fast_icons flex_row">
                             <div class="fast-icon">
-                                <img src="/image/customer/headphones_1250595.png" alt="">
+                                <i class="fa-solid fa-headphones"></i>
                             </div>
 
                             <div class="flex-title">
@@ -75,7 +75,7 @@
                           
                             <a href="{{url('/customer/product/details/'.$newproduct->id)}}">
                                 <div class="arrival-img">
-                                    <img src="{{asset('image/admin/products_info/'.$newproduct->colorimage)}}" alt="photo of {{$newproduct->name}}" width="35px" height="35px">
+                                    <img src="{{asset('image/admin/products_info/'.$newproduct->colorimage)}}" alt="photo of {{$newproduct->name}}" width="200px" height="200px">
                                 </div>
                                
                                 <div class="arrival-detail">
@@ -119,14 +119,6 @@
                                     
                     </div>
 
-                    <div class="sport-ware">
-                        <div class="inner-sport-ware">
-                            <div class="img-col">
-                                {{-- <img src="/image/customer/woman-with-shopping-bags-isolated.jpg" alt=""> --}}
-                            </div>
-                           <a href="">Sport Ware</a> 
-                        </div>
-                    </div>
                     
                 </div>
             </div>
@@ -154,8 +146,8 @@
     </div>
     
     <!-- scripts -->
-    <script src="/js/customer/slide_show_button.js" defer></script>
-    <script src="/js/customer/add_to_card.js" defer></script>
+    <script src="/js/customer/slide_show_button.js" ></script>
+    <script src="/js/customer/add_to_card.js" ></script>
     <script src="/js/customer/hamburger_menu.js"></script>
     
 @endsection
