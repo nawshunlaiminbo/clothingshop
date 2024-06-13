@@ -4,7 +4,8 @@
 <link rel="stylesheet" href="{{asset('css/customer/pages/checkout/checkout1.css')}}"> 
 <script src="https://kit.fontawesome.com/a44b41dfdc.js" crossorigin="anonymous"></script>
 
-<div class="main-container">
+<div class="checkout">CHECKOUT</div>
+<form action="" method="" class="main-container">
 {{-- <header class="header">
     <div class="header-content">
         <div class="logo">
@@ -15,11 +16,7 @@
         </div>
     </div>
 </header> --}}
-
-<div >
-    <div class="checkout">CHECKOUT</div>
-  
-    <form action="" method="" class="container">
+   
     <div class="section1">
         <div class="contact">
             <div class="contact-text">
@@ -36,7 +33,7 @@
         </div>
         <div class="delivery">
             <h2>Delivery</h2>
-            
+            <br>
             <input type="address" placeholder="Address*" required class="input" name="address" >
             <br><br>
             <div class="name">
@@ -54,14 +51,27 @@
         </div>
         <div class="shipping-fees">
             <h2>Shipping Fees</h2>
+            <br>
             <div class="region">
-                <button  class="yangon" >Yangon <span>2500MMK</span></button>
+                {{-- <button  class="yangon" >Yangon <span>2500MMK</span></button>
                 <br><br>
                 <button  class="other-region">Other Region <span>3500MMK</span></button>
-                <br><br>   
+                <br><br>    --}}
+
+                <label class="yangon">
+                    <input type="radio" name="option" value="1">
+                    <span class="radio-mark"></span>
+                    Yangon(2500 MMK)
+                </label>
+                <label class="other-region">
+                    <input type="radio" name="option" value="2">
+                    <span class="radio-mark"></span>
+                   Other Region(3500 MMK)
+                </label>
             </div>
+            <br>
             <div class="pay-now">
-                <button class="button">Pay Now</button>
+                <button class="button1">Pay Now</button>
             </div>
         </div>
     </div>
@@ -90,8 +100,9 @@
                     <td>0 MMK</td>
                 </tr>
             </table>
+            <hr>
         </div>
-        <hr>
+        
         <div class="item">
             <h2>Item Details</h2>
             <div class="order-item">
@@ -99,7 +110,7 @@
                 <img src="/image/customer/09_2_1_3_1000_1000 1.png" alt="order-photo" height="100px">
             </div>
             <div class="order-list">
-                <h3>Pink Sport Wear Set</h3>
+                <h4>Pink Sport Wear Set</h4>
                 <p>Price: 85000</p>
                 <p>Size: S</p>
                 <p>Quantity: 1 item</p>
@@ -108,9 +119,9 @@
         </div>
         <hr>
         </div>
+    
     </div>
 </form>
-</div>
-</div>
+
 
 @endsection

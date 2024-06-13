@@ -1,50 +1,29 @@
 
 .main-container{
-    background-color: #D9E5FA;
-    padding-bottom:100px;
-}
-
-.header {
-    background-color: #e5e9f2;
-    padding: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-bottom: 1px solid #ccc;
-}
-
-.header-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 80%;
-    max-width: 1200px;
-}
-
-.logo {
     display:flex;
-    flex-direction: column;
-    font-size: 24px;
-    font-weight: bold;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: baseline;
+    background-color: #D9E5FA;
 }
 
 .checkout {
-    display:flex;
-    justify-content: center;
-    align-items: center;
+    text-align: center;
+    background-color: #D9E5FA; ;
     font-size: 15px;
-    color: #666;
-    padding: 20px;
+    padding-top:15px;
 }
-
-.cart-icon {
-    font-size:20px;
-}
-.container{
+.section1{
     display:flex;
-    /* padding-left: 100px; */
+    flex-direction: column;
+    padding:40px 100px;
+    justify-content: space-evenly;
 }
-
+.section2{
+    display:flex;
+    flex-direction: column;
+    padding:40px 100px;
+}
 .contact-text{
     display: flex;
     justify-content: space-between;
@@ -52,13 +31,13 @@
 .contact-text p{
     padding:10px 0;
 }
-.contact-form{
-    /* border: 1px solid red; */
-}
+
 .input{
     width: 400px;
     height: 40px;
+    padding:10px;
     border-radius: 6px;
+    background-color: transparent;
 }
 .name{
     display:flex;
@@ -85,7 +64,7 @@
     justify-content: center;
 
 }
-.button{
+.button1{
     display:flex;
     justify-content: center;
     align-items: center;
@@ -100,23 +79,22 @@
     color:white;
     background:#184db9;
 }
-.section2{
-    /* display:flex;
-    flex-direction: column;
-    justify-content: flex-end; */
-    padding-left: 100px;
-    padding-top:20px;
-}
   
 td{
     padding-top:20px;
     height:30px;
 }
+.order{
+    padding-bottom: 30px;
+}
 .order-item{
     display:flex;
     gap:20px;
-    
+    padding-top: 20px;
 }
 .product-image{
-    padding-top:25px;
+    padding:10px;
+}
+.order-list{
+    line-height:30px;
 }
