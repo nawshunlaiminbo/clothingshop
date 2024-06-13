@@ -7,6 +7,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <script src="https://www.gstatic.com/charts/loader.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <script src="/js/customer/add_to_card.js"></script>
     <script src="https://kit.fontawesome.com/a44b41dfdc.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="{{asset('css/customer/account/login.css')}}"> 
     <link rel="stylesheet" href="{{asset('css/customer/index.css')}}">
@@ -65,6 +66,35 @@
                         <div class="info-col">
     
                         </div> --}}
+
+                        <div class="shopping_cart_box">
+                            <div class="flex_row">
+                                <h1>Cart</h1>
+                                <i class="fa-regular fa-circle-xmark close_button"></i>
+                            </div>
+                            <hr> 
+                            <div class="tee1_pick flex_row">
+                                <div class="img">
+                                    <img src="/images/09_2_1_3_1000_1000 1.png" alt="">
+                                </div>
+                                <div class="pick_detail">
+                                    <p>Men’s Neck Solid Color Short Sleeve Tee</p>
+                                    <p>12500MMK</p>
+                                    <div class="flex_row">
+                                        <div class="add_or_remove_quantity grid">
+                                            <div class="minus">-</div>
+                                            <div class="number">1</div>
+                                            <div class="plus">+</div>
+                                        </div>
+                                        <div class="remove_button">
+                                            Remove
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> 
+                            <a href="../../checkout/index.html" class="button2 checkout_button">Check out</a>  
+                        </div>
+
                         @yield('content') 
                         
                        </div>
