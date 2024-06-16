@@ -37,7 +37,8 @@ class CustomerProductController extends Controller
                
                 return view('customer.pages.category.allproducts',compact('productlist','productid'));
             }
-            public function detail($id){
+            public function detail(Request $request, $id){
+                $cartarray = $request->session()->get('cartdata') ?? [];
                 $product = Product::find($id);
                 if(!$product){
                 return redirect()->route('CustomerProductList');

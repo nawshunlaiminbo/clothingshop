@@ -7,12 +7,13 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <script src="https://www.gstatic.com/charts/loader.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
-    <script src="/js/customer/add_to_card.js"></script>
+    <script src="{{asset('js/customer/add_to_card.js')}}"></script>
     <script src="https://kit.fontawesome.com/a44b41dfdc.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="{{asset('css/customer/account/login.css')}}"> 
     <link rel="stylesheet" href="{{asset('css/customer/index.css')}}">
     <title>@yield('title')</title>
     @yield('css')
+    @yield('js')
 </head>
 <body>
     <section id="customermain">      
@@ -50,8 +51,10 @@
                         </div>
                         <div class="header-icon">
                             <ul>
-                                <a><i class="fa-solid fa-magnifying-glass"></i></a>
+                                
                                 <a><i class="fa-solid fa-cart-shopping"></i></a>
+                                {{-- {{dd($cartarray)}} --}}
+                                {{-- <span>{{count($cartarray)}}</span> --}}
                             </ul>
                         </div>
                     </div>
@@ -66,34 +69,92 @@
                         <div class="info-col">
     
                         </div> --}}
-
-                        <div class="shopping_cart_box">
-                            <div class="flex_row">
-                                <h1>Cart</h1>
-                                <i class="fa-regular fa-circle-xmark close_button"></i>
+                        
+                        {{--cart--}}
+        @if(session()->has('cartdata'))
+        <div class="cart-box">
+            <form action="{{route('CartCheckout')}}" method="POST" enctype="multipart/form-data">
+                @csrf
+                <div class="">
+                    <h1>Cart</h1>
+                    <i class="fa-regular fa-circle-xmark close_button"></i>
+                </div>
+                <hr>
+                @php
+                    $array = [];
+                @endphp
+                <div class="">
+                    {{-- {{dd($product)}} --}}
+                    @forelse ($product as $item)
+                        <div class="">
+                            <div class="image" style="height:200px">
+                                <img src="{{asset('image/admin/products_info/'.$item['image'])}}" width="100%" height="100%">
                             </div>
-                            <hr> 
-                            <div class="tee1_pick flex_row">
-                                <div class="img">
-                                    <img src="/images/09_2_1_3_1000_1000 1.png" alt="">
-                                </div>
-                                <div class="pick_detail">
-                                    <p>Men’s Neck Solid Color Short Sleeve Tee</p>
-                                    <p>12500MMK</p>
-                                    <div class="flex_row">
-                                        <div class="add_or_remove_quantity grid">
-                                            <div class="minus">-</div>
-                                            <div class="number">1</div>
-                                            <div class="plus">+</div>
-                                        </div>
-                                        <div class="remove_button">
-                                            Remove
-                                        </div>
+                            <div class="">
+                                <p><b>{{$item['name']}}</p><span>({{$item['size']}})</span></b>
+                                <p>Price - {{$item['price']}}MMK</p>
+                                <div class="">
+                                    <div class="">
+                                        <form action="{{route(CartAdd)}}" method="post" class="">
+                                            @csrf
+                                            <input type="hidden" name="removeQty"  value="true">
+                                            <input type="hidden" name="addToCart"  value="{{true}}">
+                                            <input type="hidden" name="size"  value="{{$item['size']}}">  
+                                            <input type="hidden" name="product_id"  value="{{$item['product']}}">
+                                            <button formaction="{{route('CartAdd')}}" type="submit" class="">-</button>
+                                        </form>
+                                        <div class="number">{{$item['quantity']}}</div>
+                                        <form action="{{route('CartAdd')}}" method="POST" class="plus">
+                                            @csrf
+                                            {{-- @php
+                                                $addQty = true;
+                                            @endphp --}}
+                                            <input type="hidden" name="addQty" value="{{true}}">
+                                            <input type="hidden" name="addToCart" value="{{true}}">
+                                            <input type="hidden" name="product_id" value="{{$item['product']}}">
+                                            <input type="hidden" name="size"  value="{{$item['size']}}">
+                                            <button formaction="{{route('AddToCart.show')}}" type="submit">+</button>
+                                        </form>     
                                     </div>
+                                    <form action="{route('CartAdd')}" method="POST" class="remove_button">
+                                        @csrf
+                                        <input type="hidden" name="removeFromCart" id="" value="{{$item['product']}}">
+                                        
+                                        <input type="hidden" name="addToCart" value="{{true}}">
+                                        <input type="hidden" name="size" value="{{$item['size']}}">
+                                        <input type="hidden" name="product_id" value="{{$item['product']}}">
+                                        <button formaction="{{route('AddToCart.show')}}" type="submit"><i class="fa-regular fa-trash-can"></i></button>
+                                    </form>
                                 </div>
-                            </div> 
-                            <a href="../../checkout/index.html" class="button2 checkout_button">Check out</a>  
+                                <p class="total_price">Total Price - {{$item['price']*$item['quantity']}}MMK</p>
+                                @php
+                                    array_push($array,$item['price']*$item['quantity']);
+                                @endphp   
+
+                            </div>
                         </div>
+                    @empty
+                        
+                    @endforelse
+                </div>
+                @php
+                $totalItemPrice = array_reduce($array,function($a,$b){
+                    return $a+$b;
+                })
+            @endphp
+            <div class="totalItemPrice flex_row" style="align-items: center">
+                <h4>Total Item Price</h4>
+                <p>{{$totalItemPrice}}MMK</p>
+                <input type="hidden" name="total_price" value="{{$totalItemPrice}}">
+                <input type="hidden" name="total_items"  value="{{count($cartarray)}}">
+            </div>
+            <div class="checkout">
+                <button formaction="{{route('CheckOut')}}" type="submit" class="button2 checkout_button">Check out</button>
+            </div>
+        </div>
+        </form>
+        </div>
+        @endif
 
                         @yield('content') 
                         

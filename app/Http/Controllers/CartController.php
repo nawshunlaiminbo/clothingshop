@@ -13,31 +13,88 @@ use Illuminate\Support\Facades\DB;
 
 class CartController extends Controller
 {
-    public function addToCart(Request $request)
-    {
-    $product = Product::find($request->input('product_id'));
-    // dd( $product);
-    $uuid = Str::uuid()->toString();
-    $cartData = new Cart();
-    $cartData->uuid = $uuid;
-    $cartData->product_id  = $product->id;
-    $cartData->customer_id = auth('customer')->user()->id;
-    $cartData->quantity = 1;
-    $cartData->totalprice = $product->price;
-    $cartData->status = 'Active';
-    $cartData->paymentmethod = 'Null';
-    $cartData->save();
-    // dd($cartData);
-   $cartList = DB::table('carts')
-        ->join('products','products.id','=','carts.product_id')
-        ->join('customers','customers.id','=','carts.customer_id')
-        ->where('carts.customer_id','=',auth('customer')->user()->id)
-        ->where('carts.status','=','Active')
+//     public function addToCart(Request $request, $id)
+//     {
+//     $product = Product::find($request->input('product_id'));
+//     // dd( $product);
+//     $uuid = Str::uuid()->toString();
+//     $cartData = new Cart();
+//     $cartData->uuid = $uuid;
+//     $cartData->product_id  = $product->id;
+//     $cartData->customer_id = auth('customer')->user()->id;
+//     $cartData->quantity = 1;
+//     // $cartData->size = $request->size;
+//     $cartData->totalprice = $product->price;
+//     $cartData->status = 'Active';
+//     // $cartData->paymentmethod = null;
+//     $cartData->save();
+//     // dd($cartData);
+//    $cartList = DB::table('carts')
+//         ->join('products','products.id','=','carts.product_id')
+//         ->join('customers','customers.id','=','carts.customer_id')
+//         ->where('carts.customer_id','=',auth('customer')->user()->id)
+//         ->where('carts.status','=','Active')
         
-        // ->select('carts.*','products.id as product_id','products.name as product_name')
-        ->get();
-    return view('customer.pages.checkout.index',compact('cartList'));
+//         // ->select('carts.*','products.id as product_id','products.name as product_name')
+//         ->get();
+//     return view('customer.pages.category.productdetail',compact('cartList'));
+//     }
+
+//add to cart
+
+public function addToCart(Product $product,Request $request){
+    //    dd($request->sizes);
+        $size = $request->size;
+        $addToCart = $request->addToCart;
+        $product_id = $request->product_id;
+        $productdata = Product::find($product_id);
+        // dd($request->addQty);
+        $cartarray = [];
+        if($addToCart == true){
+            if ($request->session()->has('cartdata')) {
+                $cartarray = $request->session()->get('cartdata',[]);
+                $sameproduct = false;
+                foreach ($cartarray as $key => &$value) {
+                    var_dump($value);
+                     dd($request->all());
+                    if ($value['product'] == $product_id && $value['size'] == $size) {
+                        if($request->addQty){
+                            $value['quantity'] += 1;
+                        }
+                        elseif($request->removeQty == true && $value['quantity']>1){
+                            $value['quantity'] -= 1;
+                        }
+                        // elseif($request->removeQty == true && $value['quantity']<=1){
+                        //     unset($cartarray[$key]);
+                        // }
+                        elseif($request->removeFromCart){
+                            unset($cartarray[$key]);
+                        }
+                        $sameproduct = true;
+                        break;
+                    }
+                }
+                if(!$sameproduct && !$request->removeFromCart){
+                    $cartarray[] = ['product' => $product_id,'quantity'=>1,'size'=>$size,'name'=>$productdata->name,'image'=>$productdata->image, 'price' =>$productdata->price];
+                    // dd($cartarray);
+                }
+                $request->session()->put('cartdata',$cartarray);
+            }
+            else{
+                $request->session()->put('cartdata',['product'=>$product_id,'quantity'=>1,'size'=>$size,'name'=>$productdata->name,'image'=>$productdata->image, 'price' =>$productdata->price]);
+            }
+
+        }
+        $cartarray = $request->session()->get('cartdata')??[];
+        // dd($cartarray,$productdata);
+        $productGender = $productdata->gender;
+        $productByGender = Product::where('gender', '=', $productGender)    ->where('status','=','Active')->take(5)->get();
+        return view('customer.pages.category.productdetail',compact('productdata','cartarray','productByGender'));
+
+
+        
     }
+
     public function checkout(Request $request){
         $logindata = Customer::find($request->id);
         $uuid = Str::uuid()->toString();
