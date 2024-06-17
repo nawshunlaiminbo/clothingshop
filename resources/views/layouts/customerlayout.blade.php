@@ -70,8 +70,8 @@
     
                         </div> --}}
                         
-                        {{--cart--}}
-        @if(session()->has('cartdata'))
+                      {{--cart--}}
+        {{-- @if(session()->has('cartdata'))
         <div class="cart-box">
             <form action="{{route('CartCheckout')}}" method="POST" enctype="multipart/form-data">
                 @csrf
@@ -84,7 +84,7 @@
                     $array = [];
                 @endphp
                 <div class="">
-                    {{-- {{dd($product)}} --}}
+                  
                     @forelse ($product as $item)
                         <div class="">
                             <div class="image" style="height:200px">
@@ -106,14 +106,12 @@
                                         <div class="number">{{$item['quantity']}}</div>
                                         <form action="{{route('CartAdd')}}" method="POST" class="plus">
                                             @csrf
-                                            {{-- @php
-                                                $addQty = true;
-                                            @endphp --}}
+                                          
                                             <input type="hidden" name="addQty" value="{{true}}">
                                             <input type="hidden" name="addToCart" value="{{true}}">
                                             <input type="hidden" name="product_id" value="{{$item['product']}}">
                                             <input type="hidden" name="size"  value="{{$item['size']}}">
-                                            <button formaction="{{route('AddToCart.show')}}" type="submit">+</button>
+                                            <button formaction="{{route('CartAdd')}}" type="submit">+</button>
                                         </form>     
                                     </div>
                                     <form action="{route('CartAdd')}" method="POST" class="remove_button">
@@ -123,7 +121,7 @@
                                         <input type="hidden" name="addToCart" value="{{true}}">
                                         <input type="hidden" name="size" value="{{$item['size']}}">
                                         <input type="hidden" name="product_id" value="{{$item['product']}}">
-                                        <button formaction="{{route('AddToCart.show')}}" type="submit"><i class="fa-regular fa-trash-can"></i></button>
+                                        <button formaction="{{route('CartAdd')}}" type="submit"><i class="fa-regular fa-trash-can"></i></button>
                                     </form>
                                 </div>
                                 <p class="total_price">Total Price - {{$item['price']*$item['quantity']}}MMK</p>
@@ -154,7 +152,7 @@
         </div>
         </form>
         </div>
-        @endif
+        @endif --}}
 
                         @yield('content') 
                         

@@ -42,21 +42,23 @@ class CartController extends Controller
 
 //add to cart
 
-public function addToCart(Product $product,Request $request){
-    //    dd($request->sizes);
+public function addToCart(Request $request){
+    //    dd($request->all());
+        // $product = Product::find();
         $size = $request->size;
         $addToCart = $request->addToCart;
-        $product_id = $request->product_id;
+        $product_id = $request->product;
         $productdata = Product::find($product_id);
         // dd($request->addQty);
         $cartarray = [];
+        // dd(session()->get('cartdata'));
         if($addToCart == true){
             if ($request->session()->has('cartdata')) {
                 $cartarray = $request->session()->get('cartdata',[]);
                 $sameproduct = false;
                 foreach ($cartarray as $key => &$value) {
-                    var_dump($value);
-                     dd($request->all());
+                    // var_dump($value);
+                    //  dd($cartarray{});
                     if ($value['product'] == $product_id && $value['size'] == $size) {
                         if($request->addQty){
                             $value['quantity'] += 1;

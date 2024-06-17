@@ -5,9 +5,6 @@
 @endsection
 @section('content')
 
-@php
-View::share('product', $product);
-@endphp
 
 <div class="container">
     <div >

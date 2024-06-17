@@ -191,11 +191,10 @@ i,button{
 
 .max-search{
     display: grid;
-    grid-template-columns: 17% 17% 17% 17% 22% ;
+    grid-template-columns: repeat(5,1fr);
     gap:2%;
     padding: 15px 10px;
     height: auto;
-
     padding-bottom: 20px;
 
 }
