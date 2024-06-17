@@ -67,64 +67,45 @@ class CustomerProductController extends Controller
                 return view('customer.pages.category.allproducts',compact('productlist', 'productid'));
             }
            
-     
+      public function filter(Request $request){
+        $products = [
+          'products.name' => 'Product Name',
+          'products.price'=>'Product Price',
+          'products.gender'=>'Gender',
+          'products.description'=>'Description'
+        ];
+        $query = Product::query()->where('products.status','=','Active');
 
-            public function filter(Request $request){
-                // dd($request->all());
-            //     $columns = [
-            //       'products.name'=> 'Product Name',
-            //       'products.price' =>'Price',
-            //       'products.gender' => 'Gender',
-            //       'products.description' => 'Description',
-            //   ];
-            
-            //   $query = Product::query()->where('products.status','=', 'Active')->where('products.name', 'LIKE','%' .$request->search.'%')->get();
-            //   $query = DB::table('products')->where('status','=', 'Active' )->where('products.name', 'LIKE','%' .$request->search.'%')->get();
-            $namd = 'Hoodie';
-            $query = DB::table('products')
-            ->Orwhere('products.name', 'LIKE', '%'.$namd.'%')
-            ->orwhere('status','=', 'Active')
-
-            ->get();  
-            dd($query);
-              $name = 'products.name';
-              $price = 'products.price';
-              $gender = 'products.gender';
-              $description = 'products.description';
-              $data = array();
-              $data = [$name, $price, $gender,$description];
-            //   dd($data);
-            if(!empty($request->search)){
-                // for($i = 0; $i < count((array)$data); $i++){
-                    // dd($data[$i]);
-                   $query ->where('products.name', 'LIKE','%' .$request->search.'%');
-                    // dd($querydata);
-                   
-                // }
-                
-                //  $query->Where($querydata)->get();
-            }
-            // dd($query->get()->toArray());
-             return view('customer.pages.category.products', compact('product'));
-
-            //   dd($query);
-            //   if (!empty($request->search)) {
-            //       $searchInput = $request->search;
-            //     //   dd($searchInput);
-            //       $query->where(function ($subQuery) use ($columns, $searchInput) {
-                    
-            //           foreach (array_keys($columns)as $column=>$label) {
-            //               $subQuery->Where($column, 'LIKE', '%' . $searchInput . '%');
-            //           }  
-                    
-            //       });
-            //     }
-              
-            //   $product = Product::all();
-                    
-              return view('customer.pages.category.products', compact('product'));
+        if (!empty($request->search)) {
+          $searchInput = $request->search;
+           dd($request->all());
+          $query->where(function ($subQuery) use ($products, $searchInput) {
+              foreach (array_keys($products)as $product) {
+                  $subQuery->orWhere($product, 'LIKE', '%' . $searchInput . '%');
               }
+          });
+      }
+      $productlist = $query
+      ->where('products.status','=','Active')
+      ->select('products.*')
+      ->get();
 
-              
+      return view('customer.pages.category.allproducts', compact('products','searchTerm','productlist'));
     }
-
+  }
+//     public function filter(Request $request)
+//     {
+//         $searchTerm = $request->input('search');
+     
+//         $products = Product::query()
+//             ->where('name', 'like', '%' . $searchTerm . '%')
+//             ->orWhere('price', 'like', '%' . $searchTerm . '%')
+//             ->orWhere('gender', 'like', '%' . $searchTerm . '%')
+//             ->orWhere('description', 'like', '%' . $searchTerm . '%')
+//             ->get();
+          
+          
+            
+//             return view('customer.pages.category.allproducts', compact('products','searchTerm','productlist'));
+//     }
+// }

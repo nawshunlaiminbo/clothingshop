@@ -1,6 +1,7 @@
 @extends('layouts.customerlayout')
 @section('title','Customer Home')
 @section('content')
+
     <div class="main-container">
         <div class="inner-container">
             <div class="inner-col">

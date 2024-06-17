@@ -20,9 +20,9 @@
             <a href="{{url('/customer/homepage')}}">Home</a>
             {{-- <a href="../men/tee.html">Tees</a> --}}
         </div>
-        <div class="flex_row">
+        <form action="{{route('CustomerProductFilter')}}" method="GET" class="flex_row">
             <div class="search">
-                <input type="text" class="input" placeholder="Search..." name="">
+                <input type="text" class="input" placeholder="Search..." name="search">
                <i class="fa-solid fa-magnifying-glass"></i>
                
             </div>
@@ -34,15 +34,23 @@
                     <option value="high_to_low_price">Price, High Price to Low</option>
                 </select>
                 </div>
-                <!-- <img src=".././images/icons/icons8-sort-down-30.png" alt=""> -->
-                <div class="icon flex_row">
-                    <img src="/assets/icons/icons8-health-data-30.png" alt="">
-                    <i class="fa-solid fa-list-ul"></i>
+
+                <div class="filter-col">
+                    <div class="inner-fil-col">
+                        <button class="filter_button" type="submit">Filter</button>
+                        {{-- {{dd($products)}} --}}
+                    </div>
+                   <div class="reset-col">
+                  <a href="" class="reset_button" style="color:white" type="submit">Reset</a>
+                   </div>
                 </div>
+                <!-- <img src=".././images/icons/icons8-sort-down-30.png" alt=""> -->
+              
             </div>
             
 
-        </div>
+        </form>
+        
     </div>
     <div class="men_tee_list grid">
         @foreach($productlist as $products)
