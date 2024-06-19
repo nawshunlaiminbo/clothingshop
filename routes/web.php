@@ -119,7 +119,7 @@ Route::get('/customer/cart/add',[CustomerController::class,'addtocart'])->name('
 Route::get('/cutomer/product/list',[CustomerProductController::class,'showlist'])->name('CustomerProductList');
 Route::get('/customer/product/details/{id}',[CustomerProductController::class,'detail'])->name('CustomerProductDetail');
 Route::get('/customer/product/{id}',[CustomerProductController::class,'productlist'])->name('CustomerCategoryProductList');
-Route::post('/customer/product/filter',[CustomerProductController::class,'filter'])->name('CustomerProductFilter');
+Route::post('/customer/product/filter',[CustomerProductController::class,'productfilter'])->name('CustomerProductFilter');
 
 // Route::get('/customer/product/men/{id}',[CustomerProductController::class,'menproductlist'])->name('CustomerMenProductList');
 //Customer Page Product End

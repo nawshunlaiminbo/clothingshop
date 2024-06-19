@@ -69,7 +69,6 @@ public function filter(Request $request){
 
   if (!empty($request->search)) {
       $searchInput = $request->search;
-    //   dd($searchInput);
       $query->where(function ($subQuery) use ($columns, $searchInput) {
           foreach (array_keys($columns)as $column) {
               $subQuery->orWhere($column, 'LIKE', '%' . $searchInput . '%');
