@@ -10,6 +10,7 @@
     <script src="https://kit.fontawesome.com/a44b41dfdc.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="{{asset('css/customer/account/login.css')}}"> 
     <link rel="stylesheet" href="{{asset('css/customer/index.css')}}">
+    {{-- <link rel="stylesheet" href="{{asset('css/customer/pages/detail.css')}}"> --}}
     <title>@yield('title')</title>
     @yield('css')
 
