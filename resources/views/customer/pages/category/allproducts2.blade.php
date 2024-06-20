@@ -23,21 +23,23 @@
                         <p>Search....</p>
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </div>
-                    <div class="sort-by">
-                        <div>
-                            <span>Sort By:</span>
-                            <select name="order" id="order" class="input">
-                            <option value="asc"  >Price, Low Price to High</option>
-                            <option value="desc" >Price, High Price to Low</option>
-                        </select>
+                    <div class="sorting">
+                        <div class="sort-by">
+                            <div>
+                                <span>Sort By:</span>
+                                <select name="order" id="order" class="input">
+                                <option value="asc"  >Price, Low Price to High</option>
+                                <option value="desc" >Price, High Price to Low</option>
+                            </select>
+                            </div>
                         </div>
-                    </div>
-                    <div class="filter">
-                        <div class="filter-col">
-                            <button type="submit" >Filter</button>
-                        </div>
-                        <div class="reset-col">
-                            <a href="" class="reset-btn" type="submit">Reset</a>
+                        <div class="filter">
+                            <div class="filter-col">
+                                <button type="submit" >Filter</button>
+                            </div>
+                            <div class="reset-col">
+                                <a href="" class="reset-btn" type="submit">Reset</a>
+                            </div>
                         </div>
                     </div>
                 </div>
