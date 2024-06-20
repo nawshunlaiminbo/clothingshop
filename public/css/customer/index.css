@@ -124,6 +124,7 @@ a {
 }
 
 .detail-info{
+    padding:3rem 2rem;
     background-color: #EDF2FB;
     height: 20vh;
     /* border: 1px solid red; */
@@ -131,16 +132,14 @@ a {
 
 .customer-service{
     display: flex;
-    /* justify-content: center;  */
-    /* flex-direction: column; */
-    /* text-align: center; */
+   
     align-items: center;
 }
 
 .fast_icons{
     display: flex;
     width: 100%;
-    max-width: 600px;
+    /* max-width: 600px; */
     height: auto;
     /* text-align: center; */
     align-items: center;
@@ -148,12 +147,12 @@ a {
 }
 
 .fast-icon{
-    width: 200px;
+    width: 50%;
 }
-.fast_icons img {
+/* .fast_icons img {
     width: 150px;
   
-}
+} */
 
 .flex-title li {
    list-style: none;
@@ -163,7 +162,7 @@ a {
 .new-arrival-col{
     /* background-color: #EDF2FB; */
     /* margin-top: -20px; */
-    padding: 20px 50px;
+    padding: 5rem 2rem;
 }
 
 .card-list{
@@ -208,7 +207,7 @@ position: relative;
 display: flex;
 height: 80vh;
 overflow-y: hidden;
-padding: 20px;
+padding: 0px 10px;
 gap: 10px;
 }
 
@@ -224,11 +223,13 @@ gap: 10px;
     width: 50%;
     height: 80vh;
     align-items: center;
-    border: 1px solid  #a6a6a6;
+    background-image: url('/image/customer/Core Polo 135 (1).jpg');
+    background-repeat: no-repeat;
+    /* border: 1px solid  #a6a6a6;
     overflow: hidden;
     box-shadow: 7px 1px 29px -1px rgba(143,133,133,0.75);
     -webkit-box-shadow: 7px 1px 29px -1px rgba(143,133,133,0.75);
-    -moz-box-shadow: 7px 1px 29px -1px rgba(143,133,133,0.75);
+    -moz-box-shadow: 7px 1px 29px -1px rgba(143,133,133,0.75); */
     
 }
 
@@ -253,38 +254,57 @@ a:hover {
     row-gap: 10px;
 
 }
+.men a{
+    position: absolute;
+    top: 15rem;
+    left: 26%;
+    transform: translateX(-50%);
+    font-size: 24px;
+    /* background-color: rgba(0, 0, 0, 0.5); */
+    padding: 10px 20px;
 
+}
 
-.women ,.accessories   {
+.women   {
     width: 95%;
     height: 40vh;
     border: 1px solid  #a6a6a6;
-    overflow: hidden;
+    background-image: url('/image/customer/woman-with-shopping-bags-isolated.jpg');
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    /* overflow: hidden;
     box-shadow: 7px 1px 29px -1px rgba(143,133,133,0.75);
     -webkit-box-shadow: 7px 1px 29px -1px rgba(143,133,133,0.75);
-    -moz-box-shadow: 7px 1px 29px -1px rgba(143,133,133,0.75);
+    -moz-box-shadow: 7px 1px 29px -1px rgba(143,133,133,0.75); */
 
 }
-
-.sport-ware{
-    padding: 20px;
-    width: 100%;
+.women a{
+    position: absolute;
+    top: 8rem;
+    right: 10rem;
+    transform: translateX(50%);
+    font-size: 24px;
+    /* background-color: rgba(0, 0, 0, 0.5); */
+    padding: 10px 20px;
 }
-
-.inner-sport-ware{
-    flex: 2;
-    display: flex;
-    flex-direction: column;
-    width: 97%;
+.accessories{
+    width: 95%;
     height: 40vh;
-    align-items: center;
     border: 1px solid  #a6a6a6;
-    overflow: hidden;
-    box-shadow: 7px 1px 29px -1px rgba(143,133,133,0.75);
-    -webkit-box-shadow: 7px 1px 29px -1px rgba(143,133,133,0.75);
-    -moz-box-shadow: 7px 1px 29px -1px rgba(143,133,133,0.75);
-     
+    background-image: url('/image/customer/hmgoepprod.jpeg');
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
 }
+.accessories a{
+    position: absolute;
+    top: 25rem;
+    right: 17rem;
+    transform: translateX(50%);
+    font-size: 24px;
+    /* background-color: rgba(0, 0, 0, 0.5); */
+    padding: 10px 20px;
+}
+
 
 .follow-col{
     display: block;
@@ -295,9 +315,11 @@ a:hover {
 }
 .inner-follow{
     height: 70vh;
+    padding: 6rem 0rem;
 }
 .inner-follow h3,h1 {
     text-align: center;
+    padding-bottom: 30px;
 }
 .follow-img-col{
     display: flex;
@@ -306,13 +328,16 @@ a:hover {
 }
 
 .inner-img-col{
+    display: flex;
+    gap: 10px;
+    padding: 10px 40px;
     width: 32.5%;
-    height: 70vh;
-    border: 1px solid  #a6a6a6;
+    height: 50vh;
+    /* border: 1px solid  #a6a6a6;
     overflow: hidden;
     box-shadow: 7px 1px 29px -1px rgba(143,133,133,0.75);
     -webkit-box-shadow: 7px 1px 29px -1px rgba(143,133,133,0.75);
-    -moz-box-shadow: 7px 1px 29px -1px rgba(143,133,133,0.75);
+    -moz-box-shadow: 7px 1px 29px -1px rgba(143,133,133,0.75); */
     
 }
 

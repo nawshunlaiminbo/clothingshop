@@ -1,6 +1,9 @@
 @extends('layouts.customerlayout')
 @section('title','Customer Home')
+
+
 @section('content')
+
 
     <div class="main-container">
         <div class="inner-container">
@@ -20,9 +23,9 @@
             <div class="detail-info">
                 <div class="inner-info">
                     <div class="customer-service">
-                        <div class="fast_icons flex_row">
+                        <div class="fast_icons">
                             <div class="fast-icon">
-                                <i class="fa-regular fa-credit-card"></i>
+                                <i class="fa-regular fa-credit-card fa-5x"></i>
                             </div>
                            
                             <div class="flex-title">
@@ -33,9 +36,9 @@
                               
                             </div>
                         </div>
-                        <div class="fast_icons flex_row">
+                        <div class="fast_icons">
                             <div class="fast-icon">
-                                <i class="fa-solid fa-truck"></i>
+                                <i class="fa-solid fa-truck fa-5x"></i>
                             </div>
                             <div class="flex-title">
                                 <ul>
@@ -46,9 +49,9 @@
                             </div>
                            
                         </div>
-                        <div class="fast_icons flex_row">
+                        <div class="fast_icons">
                             <div class="fast-icon">
-                                <i class="fa-solid fa-headphones"></i>
+                                <i class="fa-solid fa-headphones fa-5x "></i>
                             </div>
 
                             <div class="flex-title">
@@ -98,22 +101,16 @@
                     <h1>Ready To Wear Perfection</h1>
                     <div class="ready2Wear">
                         <div class="men">
-                            <div class="left-img-col">
-                                <img src="/image/customer/man-black-sweater-black-bucket-hat-youth-apparel-shoot.png" alt="">
-                            </div>
                             <a href="{{url('/customer/product/men')}}">Men Clothing</a>
                         </div>
                         <div class="two-col">
                             <div class="women">
-                                <div class="img-col">
-                                    <img src="/image/customer/woman-with-shopping-bags-isolated.jpg" alt="">
-                                </div>
                                <a href="{{url('/customer/product/women')}}">Women Clothing</a> 
                             </div>
                             <div class="accessories">
-                                <div class="img-col">
-                                    <img src="/image/customer/woman-with-shopping-bags-isolated.jpg" alt="">
-                                </div>
+                                {{-- <div class="img-col">
+                                    <img src="/image/customer/hmgoepprod.jpeg" alt="">
+                                </div> --}}
                                <a href="">Accessories</a> 
                             </div>  
                         </div>
@@ -132,7 +129,7 @@
 
                     <div class="follow-img-col">
                         <div class="inner-img-col">
-                            <img src="/image/customer/iam_os-9wM5SCjhsOM-unsplash (1) 1.png">
+                            <img src="/image/customer/iam_os-9wM5SCjhsOM-unsplash (1) 1.png" style="width:5rem; height 5rem">
                         </div>
                         <div class="inner-img-col">
                             <img src="/image/customer/trendy-fashionable-couple-posing (1) 1.png">
@@ -147,7 +144,7 @@
     </div>
     
     <!-- scripts -->
-    <script src="/js/customer/slide_show_button.js" ></script>
+    <script src="js/customer/slide_show_button.js" ></script>
     <script src="/js/customer/add_to_card.js" ></script>
     <script src="/js/customer/hamburger_menu.js"></script>
     
