@@ -105,10 +105,10 @@
                 <div class="footer">
                     <div class="inner-footer">
                         <ul>
-                            <li>Home</li>
-                            <li>Women</li>
-                            <li>Contact</li>
-                            <li>About Us</li>
+                            <li><a>Home</a></li>
+                            <li><a>About Us</a></li>
+                            <li><a>Contact Us</a></li>
+                            <li><a>All Products</a></li>
                         </ul>
                     </div>
                 </div>

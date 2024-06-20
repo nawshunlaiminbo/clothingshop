@@ -355,16 +355,21 @@ a:hover {
 }
 
 .footer{
-    height: 30vh;
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 20vh;
     width: 100%;
     background-color:#D4DCEC ;
+    border: 1px solid black;
     margin-top: -20px;
-    padding-top: 30px;
 }
 
 .inner-footer ul{
     display: grid;
     grid-template-columns:1fr 1fr 1fr 1fr;
+    gap:100px;
+    cursor: pointer;
     list-style: none;
 }
 
