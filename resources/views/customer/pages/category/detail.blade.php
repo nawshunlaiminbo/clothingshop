@@ -5,6 +5,7 @@
     <div class="img">
     <div class="shopping_cart_box">
         <hr> 
+        <h1>Detail</h1>
         <div class="tee1_pick flex_row">
                 <img src="/images/09_2_1_3_1000_1000 1.png" alt="">
             </div>
