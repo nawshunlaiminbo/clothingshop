@@ -46,6 +46,7 @@
   }
   .sorting{
     display:flex;
+    justify-content: space-around;
     width:50%;
     gap:30px;
   }
