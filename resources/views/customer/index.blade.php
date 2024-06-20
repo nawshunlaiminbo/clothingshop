@@ -136,6 +136,7 @@
                             {{-- <img src="/image/customer/portrait-stylish-lady-sunglasses-wide-brimmed-hat-cool-young-woman-black-jacket-pants-poses-smiles-isolated-background 1.png"> --}}
                         </div>
                     </div>
+                    <div class="button"><button class="follow-us-btn">Follow us</button></div>
                 </div>
             </div>
         </div>

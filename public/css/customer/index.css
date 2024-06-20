@@ -340,6 +340,19 @@ a:hover {
     -moz-box-shadow: 7px 1px 29px -1px rgba(143,133,133,0.75);
     
 }
+.button{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 40px;
+}
+.follow-us-btn{
+    text-align: center;
+    width:100px;
+    height:40px;
+    background-color: #000;
+    color:white;
+}
 
 .footer{
     height: 30vh;
