@@ -51,7 +51,7 @@
             </div>
         </a>
         @endforeach
-        {{-- <div>
+        <div>
             <img src="/images/indoor-cropped-image-muscular-young-man-red-t-shirt-jeans 1.png" alt="">
             <p>V-neck Tee </p>
             <p>17500MMK</p>
@@ -89,7 +89,7 @@
             <img src="/images/man-wearing-blank-shirt 2.png" alt="">
             <p>Black Polo Shirt  (New Arrival)</p>
             <p>45000MMK</p>
-        </div> --}}
+        </div> 
     </div>
 
     <!-- script -->

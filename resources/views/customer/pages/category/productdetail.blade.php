@@ -1,7 +1,7 @@
 @extends('layouts.customerlayout')
 @section('title','ProductDetails')
 @section('css')
-<link rel="stylesheet" href="{{asset('css/customer/pages/category/productdetail.css')}}">
+<link rel="stylesheet" href="{{asset('css/customer/productdetail.css')}}">
 @endsection
 @section('content')
 

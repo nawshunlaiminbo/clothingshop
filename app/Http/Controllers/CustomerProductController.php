@@ -35,7 +35,7 @@ class CustomerProductController extends Controller
       $productlist = Product::where('status', '=', 'Active')->get();
     }
 
-    return view('customer.pages.category.allproducts', compact('productlist', 'productid'));
+    return view('customer.pages.category.allproducts2', compact('productlist', 'productid'));
   }
   public function detail(Request $request, $id)
   {

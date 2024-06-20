@@ -1,7 +1,5 @@
 @extends('layouts.customerlayout')
 @section('title','Customer Home')
-
-
 @section('content')
 
 
