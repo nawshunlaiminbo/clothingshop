@@ -1,11 +1,7 @@
 @extends('layouts.customerlayout')
 @section('title','ProductDetails')
 @section('css')
-<<<<<<< Updated upstream
-<link rel="stylesheet" href="{{asset('css/customer/productdetail.css')}}">
-=======
 <link rel="stylesheet" href="{{asset('css/customer/pages/detail.css')}}">
->>>>>>> Stashed changes
 @endsection
 @section('content')
 
