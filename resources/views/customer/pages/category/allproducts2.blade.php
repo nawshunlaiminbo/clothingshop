@@ -8,7 +8,15 @@
 <div class="main">
     <div class="sec1">
         <div class="image">
-            <h1>Men's Tee</h1>
+        @if($productid == 1)
+        Men Wear
+        @elseif($productid == 2)
+        Women Wear
+        @elseif($productid == 3)
+        Accessories
+        @elseif($productid == null)
+        All Products
+        @endif
         </div>
     </div>
 

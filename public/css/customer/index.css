@@ -10,6 +10,7 @@ body{
 .wrapper{
     display: block;
     height: 99.7vh;
+    position: relative;
     /* border: 1px solid red; */
     /* background-color:#E2EAFC ; */
     width: 100%;
@@ -124,9 +125,9 @@ a {
 }
 
 .detail-info{
-    padding: 4rem 2rem;
+    padding: 2rem 2rem;
     background-color: #EDF2FB;
-    height: 20vh;
+    height: 25vh;
     /* border: 1px solid red; */
 }
 
@@ -162,7 +163,7 @@ a {
 .new-arrival-col{
     /* background-color: #EDF2FB; */
     /* margin-top: -20px; */
-    padding: 7rem 4rem;
+    padding: 2rem 3rem;
 }
 
 .card-list{

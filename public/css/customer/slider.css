@@ -18,10 +18,14 @@ body {
   /* max-width: 1100px; */
   width: 100%;
   
-  position: relative;
+  position: absolute;
 }
+#Wrapper{
+  position:relative;
+}
+
 #Wrapper  i {
-  top: 22%;
+  top: 45%;
   height: 50px;
   width: 50px;
   cursor: pointer;
@@ -35,11 +39,11 @@ body {
   transform: translateY(-50%);
   transition: transform 0.1s linear;
 }
-.wrapper i:active{
+#wrapper i:active{
   transform: translateY(-50%) scale(0.85);
 }
 .wrapper i:first-child{
-  left: 0px;
+  left: -20px;
 }
 .wrapper i:last-child{
   right: 0px;

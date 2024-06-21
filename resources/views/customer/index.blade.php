@@ -64,11 +64,11 @@
                     </div>
                 </div>
             </div>
-
+{{-- class="wrapper"  --}}
             <div class="new-arrival-col">
                 <div class="inner-arrival-col">
                     <h1>New Arrival</h1>
-                    <div class="wrapper" id="Wrapper">
+                    <div id="Wrapper">
                         <i id="left" class="fa-solid fa-angle-left"></i>
                         <ul class="carousel">
                             @foreach($newarrival as $newproduct)

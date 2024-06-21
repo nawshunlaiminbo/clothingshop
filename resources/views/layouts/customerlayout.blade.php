@@ -108,10 +108,10 @@
                 <div class="footer">
                     <div class="inner-footer">
                         <ul>
-                            <li><a>Home</a></li>
-                            <li><a>About Us</a></li>
-                            <li><a>Contact Us</a></li>
-                            <li><a>All Products</a></li>
+                            <li><a href="{{url('/customer/homepage')}}">Home</a></li>
+                            <li><a href="{{url('')}}">About Us</a></li>
+                            <li><a href="">Contact Us</a></li>
+                            <li><a href="{{url('/cutomer/product/list')}}">All Products</a></li>
                         </ul>
                     </div>
                 </div>
