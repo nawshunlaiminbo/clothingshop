@@ -11,7 +11,7 @@ body{
     display: block;
     height: 99.7vh;
     /* border: 1px solid red; */
-    background-color:#E2EAFC ;
+    /* background-color:#E2EAFC ; */
     width: 100%;
     overflow-x: hidden;
 }
@@ -38,7 +38,7 @@ a {
 }
 
 .main-body {
-    margin-top: 120px; /* Adjust based on header height */
+    margin-top: 86px; /* Adjust based on header height */
     overflow-y: auto;
     overflow-x: hidden; /* Prevent horizontal scroll */
     flex: 1;
@@ -124,7 +124,7 @@ a {
 }
 
 .detail-info{
-    padding:3rem 2rem;
+    padding: 4rem 2rem;
     background-color: #EDF2FB;
     height: 20vh;
     /* border: 1px solid red; */
@@ -162,7 +162,7 @@ a {
 .new-arrival-col{
     /* background-color: #EDF2FB; */
     /* margin-top: -20px; */
-    padding: 5rem 2rem;
+    padding: 7rem 4rem;
 }
 
 .card-list{
@@ -372,5 +372,7 @@ a:hover {
     cursor: pointer;
     list-style: none;
 }
-
+.inner-footer ul li{
+    text-align: center;
+}
 

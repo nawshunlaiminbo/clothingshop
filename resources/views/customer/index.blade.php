@@ -68,28 +68,26 @@
             <div class="new-arrival-col">
                 <div class="inner-arrival-col">
                     <h1>New Arrival</h1>
-                    <div class="arrival-container">
-                        <div class="card-list">
-                            {{-- <img src="images/comfortable-jogger-pants-gray-studio-apparel.jpg" alt=""> --}}
-                           {{-- {{dd($newarrival)}}; --}}
-                           {{-- <button id="prev_slide" class="slide-button"><i class="fa-solid fa-chevron-left"></i></button> --}}
+                    <div class="wrapper" id="Wrapper">
+                        <i id="left" class="fa-solid fa-angle-left"></i>
+                        <ul class="carousel">
                             @foreach($newarrival as $newproduct)
-                          
-                            <a href="{{url('/customer/product/details/'.$newproduct->id)}}">
-                                <div class="arrival-img">
-                                    <img src="{{asset('image/admin/products_info/'.$newproduct->colorimage)}}" alt="photo of {{$newproduct->name}}" width="200px" height="200px">
-                                </div>
-                               
-                                <div class="arrival-detail">
+                                <li class="card">
+                                    <a href="{{url('/customer/product/details/'.$newproduct->id)}}">
+                                        <div class="img ">
+                                            <img src="{{asset('image/admin/products_info/'.$newproduct->colorimage)}}"  alt="photo of {{$newproduct->name}}" draggable="false">
+                                        </div>
+                                        <div class="arrival-detail">
 
-                                    <p>{{$newproduct->name}}</p>
-                                    <p>{{$newproduct->price}}</p>
-                                </div>
-                            </a>
-                          
+                                            <p>{{$newproduct->name}}</p>
+                                            <p>{{$newproduct->price}}</p>
+                                        </div>
+                                    </a>
+                                    
+                                </li>
                             @endforeach
-                            {{-- <button id="next_slide" class="slide-button"><i class="fa-solid fa-chevron-right"></i></button> --}}
-                    </div>
+                        </ul>
+                        <i id="right" class="fa-solid fa-angle-right"></i>
                     </div>
                 </div>
             </div>

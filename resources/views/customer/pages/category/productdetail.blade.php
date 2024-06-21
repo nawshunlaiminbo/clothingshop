@@ -16,7 +16,7 @@
                         <div class="detail-row">
                             <div class="img-info">
                                 {{-- {{dd("aavvvv")}} --}}
-                                <img src="{{asset('image/admin/products_info/'.$product->colorimage)}}" alt="photo of {{$product->name}}" >
+                                <img src="{{asset('image/admin/products_info/'.$product->colorimage)}}" alt="photo of {{$product->name}}" class="detail-img">
                             </div>
                             <div class="detail-text">
                             
@@ -75,22 +75,45 @@
                     </div>
                 </div>
              </form>
-            <div class="sec2">
-                <div class="title"><h2>You my also like</h2></div> 
+            {{-- <div class="section2">
+                <div class="title"><h2>You may also like</h2></div> 
                  <div class="related-data">
-                     @foreach($relatedProducts as $product)
-                     <a href="{{url('/customer/product/details',$product->id)}}">
-                         <div class="item">
-                             <img src="{{asset('image/admin/products_info/'.$product->colorimage)}}" alt="photo of {{$product->name}}" width="80px" height="100px">
-                             <p>{{$product->name}}</p>
-                             <p>{{$product->price}} MMK</p> 
-                         </div>
-                     </a>    
-                 @endforeach
+                    <div class="product-list">
+                        @foreach($relatedProducts as $product)
+                        <div class="item">
+                        <a href="{{url('/customer/product/details',$product->id)}}">
+                           
+                                <img src="{{asset('image/admin/products_info/'.$product->colorimage)}}" alt="photo of {{$product->name}}" width="80px" height="100px">
+                                <p>{{$product->name}}</p>
+                                <p>{{$product->price}} MMK</p> 
+                           
+                        </a>    
+                    </div>
+                    @endforeach
+                    </div>    
                     
                  </div>
              </div>
+         </div> --}}
+
+         {{--New--}}
+        <div class="sec2">
+         <div class="grid-item2">
+            @foreach($relatedProducts as $product)
+            <div class="product-list">
+                <a href="{{url('/customer/product/details',$product->id)}}">
+                <div class="product-image">
+                    <img src="{{asset('image/admin/products_info/'.$product->colorimage)}}" alt="photo of {{$product->name}}" class="related-image">
+                </div>
+                
+                <div >
+                    <p>{{$product->name}}</p>
+                    <p>{{$product->price}} MMK</p> 
+                </div>
+            </div>
+            @endforeach
         </div>
+    </div>
     </div>
 </div>
 

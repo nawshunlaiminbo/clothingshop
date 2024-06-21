@@ -132,3 +132,4 @@ Route::get('/cart/checkout',[CartController::class,'checkoutlist'])->name('CartC
 
 //Add to cart end
 
+Route::get('/slider/example',[CustomerController::class,'slider'])->name('slide');

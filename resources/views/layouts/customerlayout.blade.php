@@ -6,10 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <script src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="{{asset('js/customer/slider.js')}}" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
     <script src="https://kit.fontawesome.com/a44b41dfdc.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="{{asset('css/customer/account/login.css')}}"> 
     <link rel="stylesheet" href="{{asset('css/customer/index.css')}}">
+    <link rel="stylesheet" href="{{asset('css/customer/slider.css')}}">
     {{-- <link rel="stylesheet" href="{{asset('css/customer/pages/detail.css')}}"> --}}
     <title>@yield('title')</title>
     @yield('css')

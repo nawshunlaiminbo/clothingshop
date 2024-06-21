@@ -100,5 +100,8 @@ class CustomerController extends Controller
         return view('customer.success');
     }
 
+    public function slider(){
+        return view('customer.slider');
+    }
 
 }
