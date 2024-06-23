@@ -106,5 +106,8 @@ class CustomerController extends Controller
     public function contact(){
         return view ('customer.pages.contact.index');
     }
+    public function aboutus(){
+        return view('customer.pages.about.index');
+    }
 
 }

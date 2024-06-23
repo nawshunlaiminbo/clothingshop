@@ -1,163 +1,41 @@
 @extends('layouts.customerlayout')
 @section('title','About')
+@section('css')
+<link rel="stylesheet" href="{{asset('css/customer/aboutus.css')}}">
 @section('content')
 
-    <div class="section1">
-        <!-- navi -->
-        <div class="navigation flex_col">
-            <div class="flash_sale_bar flex_row">
-                <div class="flash_sale">
-                    Flash Sales : Sign in and Get Extra  25%  off on Selected Items
-                </div>
-                <div class="link">
-                    <a href="">FAQ</a>|
-                    <a href="">orders and returns</a>|
-                    <a href="/account/login/index.html">Sign In</a>
-                </div>
-            </div>
-            <div class="nav_bar flex_row">
-                <div class="logo">
-                    Bravis
-                </div>
-                <div class="menu flex_row">
-                    <div class="women drop_down">
-                        <a href="" >Women</a>
-                        <div class="women_drop_down_content">
-                            <h3>Women Clothing</h3>
-                            <div class="women_clothing_list flex_row">
-                                <div class="flex_col">
-                                    <a href="../category/women/dress.html">Women's Dresses</a>
-                                    <a href="../category/women/blouse.html">Women's Tops, Tees & Blouses</a>
-                                    <a href="../category/women/hoodie.html">Women's Fashion Hoodies & Sweat shirts</a>
-                                    <a href="../category/women/pant.html">Women's Pants</a>
-                                    <a href="../category/women/skirt.html">Women's Skirts</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="men drop_down">
-                        <a href="" >Men</a>
-                        <div class="men_drop_down_content">
-                            <h3>Men Clothing</h3>
-                            <div class="men_clothing_list flex_row">
-                                <div class="flex_col">
-                                    <a href="../category/men/tee.html">Men's Tee</a>
-                                    <a href="../category/men/men_t_shirt.html">Men's T-Shirts</a>
-                                    <a href="../category/men/hoodie.html">Men's Hoodies & Sweat Shirts</a>
-                                    <a href="../category/men/pant.html">Men’s Pants</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="contact">
-                        <a href="../contact/index.html" >Contact</a>
-                    </div>
-                    <div class="about_us">
-                        <a href="../about/index.html" >About Us</a>
-                    </div>
-                </div>
-                <div class="extra_icon flex_row">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                    <div class="add_to_cart_icon">
-                        <i class="fa-solid fa-cart-shopping"></i>
-                        <span>0</span>
-                    </div>
-                </div>
-            </div>
+<div class="conatiner">
+    <div class="sec1">
+        <div class="title">
+            <h1>About Us</h1>
         </div>
-        <div class="navi_ph flex_row">
-            <div class="logo">
-                Bravis
-            </div>
-            <i class="fa-solid fa-bars hamburger_menu open_menu"></i>
-            <i class="fa-solid fa-xmark close_menu"></i>
-        </div>
-        <div class="overflow_menu">
-            <div class="menu_link flex_col">
-                <a href="">Women</a>
-                <a href="">Men</a>
-                <a href="/pages/contact/index.html">Contact</a>
-                <a href="/pages/about/index.html">About</a>
-            </div>
-        </div>
+        
     </div>
-    <div class="shopping_cart_box">
-        <div class="flex_row">
-            <h1>Cart</h1>
-            <i class="fa-regular fa-circle-xmark close_button"></i>
-        </div>
-        <hr>    
+    <div class="section">
+        <h2>Our Story</h2>
+        <p>Bravis has launched in Myanmar since 2016.<br> And Bravis was established with a new retail format <br>that responds to the demand of a sector of young professionals <br>who are interested in & highly aware of new trends.</p>
+        <img src="/image/customer/7R9A5223-780x520 1.png" alt="Our Story Image">
     </div>
-    <div>
-        <div class="intro flex_row">About Us</div>
+    <div class="section">
+        <h2>Our Vision</h2>
+        <p>To create a local authentic brand, generating fashion nurturing confidence. <br>Our primary focus is empowering personal uniqueness while shaping our fashion <br> in a personalized,innovative, and sustainable energetic. <br>Our goal is to inspire and connect individuals through a curated collection <br>that celebrates diverse styles.</p>
+        <img src="/image/customer/side-view-woman-looking-clothes 1.png" alt="Our Vision Image">
     </div>
-    <div class="body body1 flex_row">
-        <div class="flex_col">
-            <h1>Our Story</h1>
-            <p>Bravis has launched in Myanmar since 2022. And Bravis was established with a new retail format that responds to the demand of a sector of young professionals who are interested in a highly aware of new trends.</p>
-            <img src="/images/7R9A5223-780x520 1.png" alt="">
-        </div>
+    <div class="section">
+        <h2>Our Mission</h2>
+        <p>Our mission is to empower individuals to express their unique style <br>with confidence through high-quality, trendsetting fashion.<br> We are committed to creating a diverse and sustainable collection <br>that caters to the dynamic tastes of our customers.</p>
+        <img src="/image/customer/people-analyzing-checking-finance-graphs-office 1.png" alt="Our Mission Image">
     </div>
-    <div class="body body2 flex_row">
-        <div class="flex_col">
-            <h1>Our Vision</h1>
-            <p>To create a lead authentic brand, generating fashion nurturing confidence for Myanmar people.we envision transforming online shopping for fashion into a personalized, innovative, and sustainable experience. Our goal is to inspire and connect individuals through a curated collection that celebrates diverse styles.</p>
-            <img src="/images/side-view-woman-looking-clothes 1.png" alt="">
-        </div>
+    <div class="section">
+        <h2>Our Development Team</h2>
+        <p>Our Development Team is dedicated to advancing the intersection of fashion and technology. <br>Our mission is to innovate and create fashion designs by exploring styles, <br>leveraging cutting-edge technology to ensure seamless, secure,<br> and visually captivating platforms. We are committed to staying ahead of industry trends,<br> embracing creativity, and fostering a collaborative environment where our team members thrive and <br> contribute to the continuous evolution of Bravis.</p>
+        {{-- <img src="/image/customer/people-analyzing-checking-finance-graphs-office 1.png" alt="Our Development Team Image"> --}}
     </div>
-    <div class="body body3 flex_row">
-        <div class="flex_col">
-            <h1>Our Mission</h1>
-            <p>Our mission is to empower individuals to express their unique style with confidence through high-quality, trendsetting fashion. We are committed to curating a diverse and sustainable collection that caters to the dynamic tastes of our customers.</p>
-            <img src="/images/people-analyzing-checking-finance-graphs-office 1.png" alt="">
-        </div>
-    </div>
-    <div class="body body4 flex_row">
-        <div class="flex_col">
-            <h1>Our Development Team</h1>
-            <p>Our Development Team is dedicated to advancing the intersection of fashion and technology. Our mission is to innovate and elevate the online shopping experience, leveraging cutting-edge technologies to ensure a seamless, secure, and visually captivating platform. We are committed to staying ahead of industry trends, embracing creativity, and fostering a collaborative environment where our team members thrive and contribute to the continuous evolution of <b>Bravis</b>.
-            </p>
-        </div>
-    </div>
-    <div class="footer grid">
-        <div class="flex_col">
-            <h3>Product</h3>
-            <ul>
-                <li>Clothing</li>
-                <li>Shoes</li>
-                <li>Accessories</li>
-            </ul>
-        </div>
-        <div class="flex_col">
-            <h3>Customer Support</h3>
-            <ul>
-                <li>FAQ</li>
-                <li>Shipping</li>
-                <li>Track Order</li>
-                <li>Return & Exchange</li>
-                <li><a href="/pages/contact/index.html">Contact</a></li>
-            </ul>
-        </div>
-        <div class="flex_col">
-            <h3>Company</h3>
-            <ul>
-                <li>About Us</li>
-                <li>Privacy Policy</li>
-                <li>Terms & Condition</li>
-            </ul>
-        </div>
-        <div class="flex_col">
-            <h3>Get Your Latest Update !</h3>
-            <ul>
-                <li>Subscribe to get our latest news  about special discount</li>
-                <li><input type="email" placeholder="Enter your email"></li>
-                <li><button class="button1">Subscribe</button></li>
-            </ul>
-        </div>
-    </div>
+</div>
+@endsection
 
+@section('js')
     <!-- script -->
     <script src="/js/add_to_card.js"></script>
     <script src="/js/hamburger_menu.js"></script>
-</body>
-</html>
+@endsection

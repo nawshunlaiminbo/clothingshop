@@ -1,0 +1,57 @@
+.container{
+    display:flex;
+    flex-direction: column;
+    height:100vh;
+}
+.sec1{
+    position: relative;
+    height: 70vh;
+    background-image: url('/image/customer/arrangement-different-traveling-elements 1.png');
+    background-size: cover;
+    background-position: center;
+}
+.title{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:white;
+}
+
+.section {
+    text-align: center;
+    padding: 40px 0;
+    border-bottom: 1px solid #dddddd;
+}
+
+.section:last-child {
+    border-bottom: none;
+}
+
+.section h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.section p {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 20px;
+    line-height: 1.6;
+    
+}
+
+.section img {
+    width: 50%;
+    height: auto;
+    border-radius: 10px;
+}

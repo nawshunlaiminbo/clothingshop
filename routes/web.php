@@ -101,6 +101,7 @@ Route::post('/customer/login/process',[LoginController::class,'loginprocess'])->
 Route::get('/customer/homepage',[CustomerController::class,'home'])->name('CustomerHome');
 Route::get('/customer/success',[CustomerController::class,'success'])->name('CustomerSuccess');
 Route::get('/customer/contact',[CustomerController::class,'contact'])->name('CustomerContact');
+Route::get('/customer/aboutus',[CustomerController::class,'aboutus'])->name('CustomerAboutUs');
 
 Route::middleware('customer')->group(function(){
 // Route::get('/customer/list',[CustomerController::class,'list'])->name('CustomerList')
