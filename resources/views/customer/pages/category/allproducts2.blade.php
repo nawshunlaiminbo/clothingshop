@@ -23,12 +23,15 @@
     <div class="sec2">
             <div class="grid-item1">
                 <div>
-                    <p>Home</p>
+                    <a href="{{url('/customer/homepage')}}">Home</a>
                 </div>
                 
-                <div class="search">
+                <form action="{{route('CustomerProductFilter')}}" method="post" class="search">
+                    @csrf
+                    <input type="hidden" name="productid" value="{{$productid}}" />
                     <div class="search-bar">
-                        <p>Search....</p>
+                        {{-- <p>Search....</p> --}}
+                        <input type="text" placeholder="Search..." name="search" id="search-bar">
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </div>
                     <div class="sorting">
@@ -50,9 +53,25 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </form>
             </div>
             <div class="grid-item2">
+                @foreach($productlist as $products)
+                <a href="{{url('/customer/product/details',$products->id)}}">
+                <div class="product-list">
+                    <div class="product-image">
+                        <img src="{{asset('image/admin/products_info/'.$products->colorimage)}}" alt="photo of {{$products->name}}">
+                    </div>
+                    
+                    <div >
+                        <p>{{$products->name}}</p>
+                        <p>{{$products->price}}</p>
+                    </div>
+                </div>
+               @endforeach
+            </div>
+            
+            {{-- <div class="grid-item3">
                 <div class="product-list">
                     <div class="product-image">
                         <img src="">
@@ -90,46 +109,7 @@
                         <p>15000 MMK</p>
                     </div>
                 </div>
-            </div>
-            <div class="grid-item3">
-                <div class="product-list">
-                    <div class="product-image">
-                        <img src="">
-                    </div>
-                    
-                    <div >
-                        <p>Neck Solid T shirt</p>
-                        <p>15000 MMK</p>
-                    </div>
-                </div>
-                <div class="product-list">
-                    <div class="product-image">
-                        <img src="">
-                    </div>
-                    <div>
-                        <p>V-neck Tee</p>
-                        <p>15000 MMK</p>
-                    </div>
-                </div>
-                <div class="product-list">
-                    <div class="product-image">
-                        <img src="">
-                    </div>
-                    <div>
-                        <p>White T shirt</p>
-                        <p>15000 MMK</p>
-                    </div>
-                </div>
-                <div class="product-list">
-                    <div class="product-image">
-                        <img src="">
-                    </div>
-                    <div >
-                        <p>The Bear Fashion</p>
-                        <p>15000 MMK</p>
-                    </div>
-                </div>
-            </div>
+            </div> --}}
 
             </div>  
     </div>
