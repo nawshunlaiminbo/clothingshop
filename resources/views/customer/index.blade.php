@@ -125,13 +125,13 @@
 
                     <div class="follow-img-col">
                         <div class="inner-img-col">
-                            {{-- <img src="/image/customer/iam_os-9wM5SCjhsOM-unsplash (1) 1.png" style="width:5rem; height 5rem"> --}}
+                            <img src="/image/customer/iam_os-9wM5SCjhsOM-unsplash (1) 1.png">
                         </div>
                         <div class="inner-img-col">
-                            {{-- <img src="/image/customer/trendy-fashionable-couple-posing (1) 1.png"> --}}
+                            <img src="/image/customer/trendy-fashionable-couple-posing (1) 1.png">
                         </div>
                         <div class="inner-img-col">
-                            {{-- <img src="/image/customer/portrait-stylish-lady-sunglasses-wide-brimmed-hat-cool-young-woman-black-jacket-pants-poses-smiles-isolated-background 1.png"> --}}
+                            <img src="/image/customer/portrait-stylish-lady-sunglasses-wide-brimmed-hat-cool-young-woman-black-jacket-pants-poses-smiles-isolated-background 1.png">
                         </div>
                     </div>
                     <div class="button"><button class="follow-us-btn">Follow us</button></div>

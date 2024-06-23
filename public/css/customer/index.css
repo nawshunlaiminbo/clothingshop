@@ -221,11 +221,11 @@ gap: 10px;
     flex: 1;
     display: flex;
     flex-direction: column;
-    width: 50%;
-    height: 80vh;
     align-items: center;
     background-image: url('/image/customer/Core Polo 135 (1).jpg');
     background-repeat: no-repeat;
+    width: 50%;
+    height: 80vh;
     /* border: 1px solid  #a6a6a6;
     overflow: hidden;
     box-shadow: 7px 1px 29px -1px rgba(143,133,133,0.75);
@@ -340,6 +340,10 @@ a:hover {
     -webkit-box-shadow: 7px 1px 29px -1px rgba(143,133,133,0.75);
     -moz-box-shadow: 7px 1px 29px -1px rgba(143,133,133,0.75);
     
+}
+.inner-img-col img{
+    width: 300px;
+    height: 450px;
 }
 .button{
     display:flex;
