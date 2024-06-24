@@ -79,7 +79,7 @@
                                         </div>
                                         <div class="arrival-detail">
 
-                                            <p>{{$newproduct->name}}</p>
+                                            <p class="arrival-product-name">{{$newproduct->name}}</p>
                                             <p>{{$newproduct->price}}</p>
                                         </div>
                                     </a>

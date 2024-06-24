@@ -1,5 +1,5 @@
 /* laptop view */
-body{
+body {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -7,7 +7,7 @@ body{
     overflow: hidden;
 }
 
-.wrapper{
+.wrapper {
     display: block;
     height: 99.7vh;
     position: relative;
@@ -16,22 +16,26 @@ body{
     width: 100%;
     overflow-x: hidden;
 }
+
 a {
     color: blue;
     text-decoration: none;
     font-weight: bold;
 }
-.main-header{
+
+.main-header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    background-color:#E2EAFC ;
-    z-index: 1000; /* Ensure the header is above other content */
+    background-color: #E2EAFC;
+    z-index: 1000;
+    /* Ensure the header is above other content */
     /* border-bottom: 1px solid #ccc; */
 }
 
-.upper-header, .inner-header {
+.upper-header,
+.inner-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -39,23 +43,31 @@ a {
 }
 
 .main-body {
-    margin-top: 86px; /* Adjust based on header height */
+    margin-top: 86px;
+    /* Adjust based on header height */
     overflow-y: auto;
-    overflow-x: hidden; /* Prevent horizontal scroll */
+    overflow-x: hidden;
+    /* Prevent horizontal scroll */
     flex: 1;
     background-color: #EDF2FB;
 }
+
 ::-webkit-scrollbar {
     display: none;
 }
-.header-link ul, .main-nav ul, .header-icon ul {
+
+.header-link ul,
+.main-nav ul,
+.header-icon ul {
     list-style: none;
     display: flex;
     margin: 0;
     padding: 0;
 }
 
-.header-link a, .main-nav a, .header-icon a {
+.header-link a,
+.main-nav a,
+.header-icon a {
     margin-right: 15px;
 }
 
@@ -67,33 +79,40 @@ a {
 .header-icon li i {
     font-size: 20px;
 }
-.main-container{
+
+.main-container {
     background-color: #EDF2FB;
 }
 
 
-.inner-col{
+.inner-col {
     display: flex;
     /* align-items: center;
     justify-content: center; */
     /* flex-direction: column; */
-    text-align: center;
+    /* text-align: center; */
     align-items: center;
 }
 
 .img-col {
-    width: 100%; /* Adjust as needed */
-    height: auto; /* Adjust as needed */
-    max-width: 800px; /* Adjust based on design */
-    overflow: hidden; /* Hide any overflow */
+    width: 100%;
+    /* Adjust as needed */
+    height: auto;
+    /* Adjust as needed */
+    max-width: 800px;
+    /* Adjust based on design */
+    overflow: hidden;
+    /* Hide any overflow */
     padding-left: 50px;
 }
 
 .img-col img {
     width: 100%;
-    height: auto; /* Maintain aspect ratio */
+    height: auto;
+    /* Maintain aspect ratio */
     display: block;
-    object-fit: cover; /* Ensure the image covers the container */
+    object-fit: cover;
+    /* Ensure the image covers the container */
 }
 
 .info-col h1 {
@@ -124,20 +143,20 @@ a {
     margin-left: 5px;
 }
 
-.detail-info{
+.detail-info {
     padding: 2rem 2rem;
     background-color: #EDF2FB;
     height: 25vh;
     /* border: 1px solid red; */
 }
 
-.customer-service{
+.customer-service {
     display: flex;
-   
+
     align-items: center;
 }
 
-.fast_icons{
+.fast_icons {
     display: flex;
     width: 100%;
     /* max-width: 600px; */
@@ -147,69 +166,77 @@ a {
     padding: 20px 50px;
 }
 
-.fast-icon{
+.fast-icon {
     width: 50%;
 }
+
 /* .fast_icons img {
     width: 150px;
   
 } */
 
 .flex-title li {
-   list-style: none;
-   line-height: 30px;
+    list-style: none;
+    line-height: 30px;
 }
 
-.new-arrival-col{
+.new-arrival-col {
     /* background-color: #EDF2FB; */
     /* margin-top: -20px; */
     padding: 2rem 3rem;
 }
 
-.card-list{
-   display: flex;
-   gap: 15px;
-   width: 100%;
+.card-list {
+    display: flex;
+    gap: 15px;
+    width: 100%;
 
 }
 
-.arrival-img{
+.arrival-img {
     width: 15vw;
     height: 40vh;
 
 }
 
-.arrival-img img{
- width: 100%;
- height: 100%;
+.arrival-img img {
+    width: 100%;
+    height: 100%;
 }
 
-.arrival-detail p{
-    color:#000;
+.arrival-detail p {
+    color: #000;
 
+}
+
+.arrival-product-name {
+    width: 200px;
+    text-align: justify;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .img-collection {
     width: 100%;
-    height: 89vh;
+    height: 95vh;
     padding: 20px;
     /* border: 1px solid blue; */
 }
 
-.img-row{
+.img-row {
 
-  position: relative;
-  width:98%;
-  /* border: 1px solid rgb(255, 0, 238); */
+    position: relative;
+    width: 98%;
+    /* border: 1px solid rgb(255, 0, 238); */
 }
 
-.ready2Wear{
-position: relative;
-display: flex;
-height: 80vh;
-overflow-y: hidden;
-padding: 0px 10px;
-gap: 10px;
+.ready2Wear {
+    position: relative;
+    display: flex;
+    height: 80vh;
+    overflow-y: hidden;
+    padding: 0px 10px;
 }
 
 .img-col {
@@ -223,6 +250,7 @@ gap: 10px;
     flex-direction: column;
     align-items: center;
     background-image: url('/image/customer/Core Polo 135 (1).jpg');
+    background-size: contain;
     background-repeat: no-repeat;
     width: 50%;
     height: 80vh;
@@ -231,7 +259,7 @@ gap: 10px;
     box-shadow: 7px 1px 29px -1px rgba(143,133,133,0.75);
     -webkit-box-shadow: 7px 1px 29px -1px rgba(143,133,133,0.75);
     -moz-box-shadow: 7px 1px 29px -1px rgba(143,133,133,0.75); */
-    
+
 }
 
 a {
@@ -249,13 +277,14 @@ a:hover {
 .two-col {
     flex: 1;
     display: flex;
-    flex-direction:column;
+    flex-direction: column;
     align-items: center;
     height: 80vh;
     row-gap: 10px;
 
 }
-.men a{
+
+.men a {
     position: absolute;
     top: 15rem;
     left: 26%;
@@ -266,11 +295,12 @@ a:hover {
 
 }
 
-.women   {
+.women {
     width: 95%;
     height: 40vh;
-    border: 1px solid  #a6a6a6;
+    border: 1px solid #a6a6a6;
     background-image: url('/image/customer/woman-with-shopping-bags-isolated.jpg');
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: 50% 50%;
     /* overflow: hidden;
@@ -279,7 +309,8 @@ a:hover {
     -moz-box-shadow: 7px 1px 29px -1px rgba(143,133,133,0.75); */
 
 }
-.women a{
+
+.women a {
     position: absolute;
     top: 8rem;
     right: 10rem;
@@ -288,15 +319,18 @@ a:hover {
     /* background-color: rgba(0, 0, 0, 0.5); */
     padding: 10px 20px;
 }
-.accessories{
+
+.accessories {
     width: 95%;
     height: 40vh;
-    border: 1px solid  #a6a6a6;
+    border: 1px solid #a6a6a6;
     background-image: url('/image/customer/hmgoepprod.jpeg');
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: 50% 50%;
 }
-.accessories a{
+
+.accessories a {
     position: absolute;
     top: 25rem;
     right: 17rem;
@@ -307,75 +341,84 @@ a:hover {
 }
 
 
-.follow-col{
+.follow-col {
     display: block;
     position: relative;
     width: 100%;
     text-align: center;
 }
-.inner-follow{
+
+.inner-follow {
     /* height: vh; */
-    padding: 6rem 0rem;
+    padding-bottom: 2rem;
+    padding-top: 4rem;
 }
-.inner-follow h3,h1 {
+
+.inner-follow h3,
+h1 {
     text-align: center;
     padding-bottom: 30px;
 }
-.follow-img-col{
-    display:flex;
+
+.follow-img-col {
+    display: flex;
     justify-content: center;
-    border-radius:5px;
+    border-radius: 5px;
     /* width:100%; */
-    gap:20px;
+    gap: 20px;
 }
 
-.inner-img-col{
+.inner-img-col {
     background-color: rgb(205, 200, 198);
     border-radius: 5px;
-    width:300px;
-    height:450px;
-    border: 1px solid  #a6a6a6;
+    width: 300px;
+    height: 450px;
+    border: 1px solid #a6a6a6;
     overflow: hidden;
-    box-shadow: 7px 1px 29px -1px rgba(143,133,133,0.75);
-    -webkit-box-shadow: 7px 1px 29px -1px rgba(143,133,133,0.75);
-    -moz-box-shadow: 7px 1px 29px -1px rgba(143,133,133,0.75);
-    
+    box-shadow: 7px 1px 29px -1px rgba(143, 133, 133, 0.75);
+    -webkit-box-shadow: 7px 1px 29px -1px rgba(143, 133, 133, 0.75);
+    -moz-box-shadow: 7px 1px 29px -1px rgba(143, 133, 133, 0.75);
+
 }
-.inner-img-col img{
+
+.inner-img-col img {
     width: 300px;
     height: 450px;
 }
-.button{
-    display:flex;
+
+.button {
+    display: flex;
     justify-content: center;
     align-items: center;
     padding-top: 40px;
 }
-.follow-us-btn{
+
+.follow-us-btn {
     text-align: center;
-    width:100px;
-    height:40px;
+    width: 100px;
+    height: 40px;
     background-color: #000;
-    color:white;
+    color: white;
 }
 
 .footer {
-    background-color: #E2EAFC; 
+    background-color: #E2EAFC;
     padding: 20px;
     /* position: fixed; */
     bottom: 0;
     width: 100%;
-    text-align: center; 
+    text-align: center;
 }
 
-.inner-footer{
+.inner-footer {
     display: flex;
     justify-content: center;
     gap: 20px;
 }
+
 .footer-content a {
     text-decoration: none;
-    color: #000; 
+    color: #000;
     font-weight: bold;
 }
 
