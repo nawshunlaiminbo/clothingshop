@@ -107,12 +107,12 @@
              
                 <div class="footer">
                     <div class="inner-footer">
-                        <ul>
-                            <li><a href="{{url('/customer/homepage')}}">Home</a></li>
-                            <li><a href="{{url('')}}">About Us</a></li>
-                            <li><a href="{{url('/customer/contact')}}">Contact Us</a></li>
-                            <li><a href="{{url('/cutomer/product/list')}}">All Products</a></li>
-                        </ul>
+                       
+                            <a href="{{url('/customer/homepage')}}">Home</a>
+                            <a href="{{url('')}}">About Us</a>
+                            <a href="{{url('/customer/contact')}}">Contact Us</a>
+                           <a href="{{url('/cutomer/product/list')}}">All Products</a>
+                       
                     </div>
                 </div>
             </div>

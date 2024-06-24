@@ -97,17 +97,17 @@
                     <h1>Ready To Wear Perfection</h1>
                     <div class="ready2Wear">
                         <div class="men">
-                            <a href="{{url('/customer/product/men')}}">Men Clothing</a>
+                            <a href="{{url('/customer/allproducts2')}}">Men Clothing</a>
                         </div>
                         <div class="two-col">
                             <div class="women">
-                               <a href="{{url('/customer/product/women')}}">Women Clothing</a> 
+                               <a href="{{url('/customer/allproducts2')}}">Women Clothing</a> 
                             </div>
                             <div class="accessories">
                                 {{-- <div class="img-col">
                                     <img src="/image/customer/hmgoepprod.jpeg" alt="">
                                 </div> --}}
-                               <a href="">Accessories</a> 
+                               <a href="{{url('/customer/allproducts2')}}">Accessories</a> 
                             </div>  
                         </div>
                                     
