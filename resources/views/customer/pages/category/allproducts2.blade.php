@@ -27,7 +27,7 @@
     <div class="sec2">
             <div class="grid-item1">
                 <div>
-                    <a href="{{url('/customer/homepage')}}">Home</a>
+                    <a href="{{url('/customer/homepage')}}" class="home">Home</a>
                 </div>
                 
                 <form action="{{route('CustomerProductFilter')}}" method="post" class="search">

@@ -98,6 +98,7 @@
 
          {{--New--}}
         <div class="sec2">
+            <div class="title"><h2>You may also like</h2></div> 
          <div class="grid-item2">
             @foreach($relatedProducts as $product)
             <div class="product-list">
@@ -106,7 +107,7 @@
                     <img src="{{asset('image/admin/products_info/'.$product->colorimage)}}" alt="photo of {{$product->name}}" class="related-image">
                 </div>
                 
-                <div >
+                <div class="productdetail">
                     <p>{{$product->name}}</p>
                     <p>{{$product->price}} MMK</p> 
                 </div>

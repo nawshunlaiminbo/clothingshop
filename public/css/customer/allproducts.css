@@ -22,7 +22,9 @@
   position:absolute;
   font-size: 40px;
 }
-
+.home{
+  margin-top:20px;
+}
 .image h1 {
   font-size: 60px;
 }
