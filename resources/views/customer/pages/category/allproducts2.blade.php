@@ -29,15 +29,19 @@
                 <form action="{{route('CustomerProductFilter')}}" method="post" class="search">
                     @csrf
                     <input type="hidden" name="productid" value="{{$productid}}" />
-                    <div class="search-bar">
+                    <div class="search-bar-main">
                         {{-- <p>Search....</p> --}}
                         <input type="text" placeholder="Search..." name="search" id="search-bar">
-                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <i class="fa-solid fa-magnifying-glass searchicon"></i>
                     </div>
                     <div class="sorting">
+                        <div >
+                            <p><span>Sort By:</span></p>
+                        </div>
+                        
                         <div class="sort-by">
                             <div>
-                                <span>Sort By:</span>
+                                
                                 <select name="order" id="order" class="input">
                                 <option value="asc"  >Price, Low Price to High</option>
                                 <option value="desc" >Price, High Price to Low</option>

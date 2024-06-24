@@ -10,7 +10,7 @@
     display: flex;
     flex-direction: column;
     width: 50%;
-    height: 80vh;
+    height: 67vh;
     align-items: center;
     background-image: url('/image/customer/shirt-mockup-concept-with-plain-clothing (2) 1.png');
 }
@@ -30,36 +30,45 @@
     gap:20px;
   }
   .search{
-    display:flex;
+    display:grid;
+    grid-template-columns: 1fr 1fr;
     gap:40px;
+    align-items: end;
   }
-  .search-bar{
+  .search-bar-main{
+  
     display:flex;
     justify-content: space-between;
     align-items: center;
     width:50%;
     height:30px;
-    padding:0px 10px;
-    border: 1px solid black;
-    border-radius: 8px;
-    background-color: #FFFFFF;
+    /* padding:0px 10px; */
+  
   }
   #search-bar{
+   position:relative;
     display:flex;
     justify-content: space-between;
     align-items: center;
-    width:50%;
-    height:30px;
+    margin-bottom: 0px;
     padding:0px 10px;
-    border: 1px solid black;
+    width:100%;
+    height:30px;
+     border: 1px solid black;
     border-radius: 8px;
     background-color: #FFFFFF;
   }
+  .searchicon{
+    /* top: -5px; */
+    left: -30px;
+    position: relative;
+  }
   .sorting{
-    display:flex;
-    justify-content: space-around;
-    width:50%;
-    gap:30px;
+    display:grid;
+    grid-template-columns: auto auto 1fr;
+    gap:10px;
+    align-items: baseline;
+    margin-left: auto;
   }
  
   .sort-by .input{
@@ -92,10 +101,15 @@
   }
 
   .grid-item2{
-    display:flex;
+    /* display:flex;
     justify-content: space-around;
     padding: 20px;
-    text-align: center;
+    text-align: center; */
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap: 20px;
+    justify-items: center;
+    /* grid-template-rows: auto; */
   }
   .product-list{
     display:flex;
