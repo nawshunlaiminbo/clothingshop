@@ -72,6 +72,7 @@
     background-color: var(--secondary-color);
     border-radius: 10px;
     align-items: center;
+    padding:0px 10px;
     /* justify-content:space-around; */
 }
 
@@ -113,7 +114,31 @@
     padding: 5px 10px;
     color: var(--secondary-color);
 }
+.session4{
+    grid-template-columns: repeat(2,1fr);
+    gap: 10px;
+}
+.session4 div{
+    display:grid;
+    align-items: end;
+    background-color: var(--secondary-color);
+    border-radius: 10px;
+    
+    padding:0px 10px;
+    /* justify-content:space-around; */
+}
 
+.session4 .flex_row >img{
+    padding: 20px;
+
+}
+.session4 .flex_row div>p:first-child{
+    font-size: 14px;
+}
+.session4 .flex_row div>p:last-child{
+    font-size: 20px;
+    font-weight: bold;
+}
 .inner-col{
     height:auto;
     /* background-color: #fff; */

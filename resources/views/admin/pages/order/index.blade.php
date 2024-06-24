@@ -106,10 +106,10 @@
         <div class="main-col">
             <div class="inner-col">
                
-                <div class="session2">
+                <div class="session4">
                     <form action="{{route('ProductFilter')}}" method="GET" >
                     @csrf
-                    <div class="max-search">
+                    <div class="max-search-order">
                         <div class="">
                              <label>Order Start Date</label>
                             <input type="date" name="start-date">
@@ -177,7 +177,7 @@
                    
                 </div>
                 <div class="Pagination">
-
+                    {{-- {{$orderlistlist->links('pagination::bootstrap-4')}} --}}
                 </div>
           
         </div>

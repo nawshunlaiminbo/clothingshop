@@ -113,7 +113,7 @@
                 <div class="session2">
                     <form action="{{route('ProductFilter')}}" method="GET" >
                     @csrf
-                    <div class="max-search">
+                    <div class="max-search-product">
                         <input type="text" placeholder="Search By Product Name" name="name">
                        
                         {{-- <select name="category" id="category">

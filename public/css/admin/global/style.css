@@ -188,10 +188,42 @@ i,button{
     grid-template-columns: 45% 45%; 
     gap: 10%;
 }
-
-.max-search{
+.max-search-product{
     display: grid;
     grid-template-columns: repeat(5,1fr);
+    gap:10px;
+}
+.max-search-product input,select,button{
+    width: 100%;
+    /* background-color: #F7FAFF; */
+    padding: 10px; /* Padding inside the input */
+    margin: 8px 0; /* Margin outside the input */
+    display: inline-block; /* Default display */
+    border: 1px solid #ccc; /* Light gray border */
+    height:40px;
+    border-radius: 6px;
+    box-sizing: border-box;
+    outline: none;
+}
+.max-search-order{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap:10px;
+}
+.max-search-order input,select,button{
+    width: 100%;
+    /* background-color: #F7FAFF; */
+    padding: 10px; /* Padding inside the input */
+    margin: 8px 0; /* Margin outside the input */
+    display: inline-block; /* Default display */
+    border: 1px solid #ccc; /* Light gray border */
+    height:40px;
+    border-radius: 6px;
+    box-sizing: border-box;
+    outline: none;
+}
+.max-search{
+    display: grid;
     gap:2%;
     padding: 15px 10px;
     height: auto;
@@ -201,7 +233,7 @@ i,button{
 
 .max-search input,select,button{
     width: 100%;
-    background-color: #F7FAFF;
+    /* background-color: #F7FAFF; */
     padding: 10px; /* Padding inside the input */
     margin: 8px 0; /* Margin outside the input */
     display: inline-block; /* Default display */
@@ -244,12 +276,19 @@ i,button{
 
 }
 
-
+.searching{
+    display:grid;
+    grid-template-columns: repeat(2,1fr);
+    background: white;
+}
 .grid1{
     grid-template-columns: repeat(4,1fr);
 }
 
-
+.pagination{
+    border:1px solid red;
+    
+}
 @media (max-width:1500px) and (min-width:1300px) {
 
    

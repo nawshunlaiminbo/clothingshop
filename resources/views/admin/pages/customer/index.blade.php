@@ -112,7 +112,7 @@
                 </div>
                 <div class="session2">
                    
-                    <form action="{{route('AdminCustomerFilter')}}" method="GET" >
+                    <form action="{{route('AdminCustomerFilter')}}" method="GET"  class="searching">
                         @csrf
                         <div class="max-search">
                             <input type="text" placeholder="Search By ID/Name/Email/Phone Number" name="search">
