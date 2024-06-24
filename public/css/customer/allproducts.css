@@ -1,139 +1,168 @@
-.main{
-    display:flex;
-    flex-direction: column;
+.main {
+  display: flex;
+  flex-direction: column;
 }
-.sec1{
-    display:flex;
-}
-.image{
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    width: 50%;
-    height: 67vh;
-    align-items: center;
-    background-image: url('/image/customer/shirt-mockup-concept-with-plain-clothing (2) 1.png');
-}
-.image h1{
-    font-size:60px;
-}
-.sec2{
-    display: grid;
-    grid-template-columns: repeat(1fr,3);
-    padding: 10px;
-    background-color:#F7FAFF;
-}
-.grid-item1{
-    display:flex;
-    flex-direction: column;
-    padding: 20px 37px;
-    gap:20px;
-  }
-  .search{
-    display:grid;
-    grid-template-columns: 1fr 1fr;
-    gap:40px;
-    align-items: end;
-  }
-  .search-bar-main{
-  
-    display:flex;
-    justify-content: space-between;
-    align-items: center;
-    width:50%;
-    height:30px;
-    /* padding:0px 10px; */
-  
-  }
-  #search-bar{
-   position:relative;
-    display:flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 0px;
-    padding:0px 10px;
-    width:100%;
-    height:30px;
-     border: 1px solid black;
-    border-radius: 8px;
-    background-color: #FFFFFF;
-  }
-  .searchicon{
-    /* top: -5px; */
-    left: -30px;
-    position: relative;
-  }
-  .sorting{
-    display:grid;
-    grid-template-columns: auto auto 1fr;
-    gap:10px;
-    align-items: baseline;
-    margin-left: auto;
-  }
- 
-  .sort-by .input{
-    width: 230px;
-    height: 30px;
-    border-radius: 8px;
-    background-color: #FFFFFF;
-  }
-  .filter{
-    display:flex;
-    gap:30px;
-  }
-  .filter-col button{
-    display:inline-block;
-    width:80px;
-    height:30px;
-    text-align:center;
-    border-radius:5px;
-    background-color: #D9D9D9;
-  }
-   .reset-btn{
-    display:inline-block;
-    border:1px solid black;
-    width: 80px;
-    height:30px;
-    padding-top:5px;
-    border-radius:5px;
-    text-align:center;
-    background-color: #D9D9D9;
-  }
 
-  .grid-item2{
-    /* display:flex;
+.sec1 {
+  display: flex;
+}
+
+.image {
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  height: 67vh;
+
+  align-items: center;
+  /* background-image: url('/image/customer/shirt-mockup-concept-with-plain-clothing (2) 1.png'); */
+}
+.title-main{
+  position:absolute;
+}
+
+.image h1 {
+  font-size: 60px;
+}
+
+.sec2 {
+  display: grid;
+  grid-template-columns: repeat(1fr, 3);
+  padding: 10px;
+  background-color: #F7FAFF;
+}
+
+.grid-item1 {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 37px;
+  gap: 20px;
+}
+
+.search {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: end;
+}
+
+.search-bar-main {
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 50%;
+  height: 30px;
+  /* padding:0px 10px; */
+
+}
+
+#search-bar {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0px;
+  padding: 0px 10px;
+  width: 100%;
+  height: 30px;
+  border: 1px solid black;
+  border-radius: 8px;
+  background-color: #FFFFFF;
+}
+
+.searchicon {
+  /* top: -5px; */
+  left: -30px;
+  position: relative;
+}
+
+.sorting {
+  display: grid;
+  grid-template-columns: auto auto 1fr;
+  gap: 10px;
+  align-items: baseline;
+  margin-left: auto;
+}
+
+.productname {
+  width: 200px;
+  text-align: justify;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.sort-by .input {
+  width: 230px;
+  height: 30px;
+  border-radius: 8px;
+  background-color: #FFFFFF;
+}
+
+.filter {
+  display: flex;
+  gap: 30px;
+}
+
+.filter-col button {
+  display: inline-block;
+  width: 80px;
+  height: 30px;
+  text-align: center;
+  border-radius: 5px;
+  background-color: #D9D9D9;
+}
+
+.reset-btn {
+  display: inline-block;
+  border: 1px solid black;
+  width: 80px;
+  height: 30px;
+  padding-top: 5px;
+  border-radius: 5px;
+  text-align: center;
+  background-color: #D9D9D9;
+}
+
+.grid-item2 {
+  /* display:flex;
     justify-content: space-around;
     padding: 20px;
     text-align: center; */
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap: 20px;
-    justify-items: center;
-    /* grid-template-rows: auto; */
-  }
-  .product-list{
-    display:flex;
-    /* border:1px solid red; */
-    border-radius:5px;
-    width:250px;
-    /* height:300px; */
-    flex-direction:column;
-  }
-  .product-image{
-    background-color: rgb(205, 200, 198);
-    box-shadow: gray;
-    border-radius: 5px;
-    width:250px;
-    height:300px;
-  }
-  .product-image img{
-    border-radius: 5px;
-    width:250px;
-    height:300px;
-  }
-  .grid-item3{
-    display:flex;
-    justify-content: space-around;
-    padding: 20px;
-    text-align: center;
-  }
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  justify-items: center;
+  /* grid-template-rows: auto; */
+}
+
+.product-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-radius: 5px;
+  width: 250px;
+}
+
+.product-image {
+  background-color: rgb(205, 200, 198);
+  box-shadow: gray;
+  border-radius: 5px;
+  width: 250px;
+  height: 300px;
+}
+
+.product-image img {
+  border-radius: 5px;
+  width: 250px;
+  height: 300px;
+}
+
+.grid-item3 {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+  text-align: center;
+}

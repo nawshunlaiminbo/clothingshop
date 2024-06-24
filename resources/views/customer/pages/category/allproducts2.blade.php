@@ -9,13 +9,17 @@
     <div class="sec1">
         <div class="image">
         @if($productid == 1)
-        Men Wear
+        <img src="{{asset('/image/customer/shirt-mockup-concept-with-plain-clothing (2) 1.png')}}" />
+        <div class="title-main">Men Wear</div>
         @elseif($productid == 2)
-        Women Wear
+        <img src="{{asset('/image/customer/shirt-mockup-concept-with-plain-clothing (2) 1.png')}}" />
+        <div class="title-main"> Women Wear</div>
         @elseif($productid == 3)
-        Accessories
+        <img src="{{asset('/image/customer/shirt-mockup-concept-with-plain-clothing (2) 1.png')}}" />
+        <div class="title-main">Accessories</div>
         @elseif($productid == null)
-        All Products
+        <img src="{{asset('/image/customer/shirt-mockup-concept-with-plain-clothing (2) 1.png')}}" />
+        <div class="title-main">All Products</div>
         @endif
         </div>
     </div>
@@ -67,8 +71,8 @@
                         <img src="{{asset('image/admin/products_info/'.$products->colorimage)}}" alt="photo of {{$products->name}}">
                     </div>
                     
-                    <div >
-                        <p>{{$products->name}}</p>
+                    <div>
+                        <p class="productname">{{$products->name}}</p>
                         <p>{{$products->price}}</p>
                     </div>
                 </div>

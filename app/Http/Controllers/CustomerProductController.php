@@ -34,7 +34,13 @@ class CustomerProductController extends Controller
     } else {
       $productlist = Product::where('status', '=', 'Active')->get();
     }
-
+    // $productimage = DB::table('products')
+    // ->join('categories', 'categories.id', '=', 'products.category_id')
+    // ->where('products.status', '=', 'Active')
+    // ->where('products.category_id', '=', $productid)
+    // ->select('products.*')
+    // ->limit(1)->get();
+    // dd($productimage[0]->colorimage);
     return view('customer.pages.category.allproducts2', compact('productlist', 'productid'));
   }
   public function detail(Request $request, $id)
@@ -66,8 +72,8 @@ class CustomerProductController extends Controller
       ->select('products.*', 'categories.name as categoryname')
       ->get();
     $productid = $id;
-
-    return view('customer.pages.category.allproducts', compact('productlist', 'productid'));
+    
+    return view('customer.pages.category.allproducts2', compact('productlist', 'productid'));
   }
 
   public function productfilter(Request $request)
@@ -100,21 +106,21 @@ class CustomerProductController extends Controller
           ->select('products.*')
           ->get();
         // dd($productlist);
-        return view('customer.pages.category.allproducts', compact('productid', 'productlist'));
+        return view('customer.pages.category.allproducts2', compact('productid', 'productlist'));
       } elseif ($request->order == "asc") {
         $query->orderBy('price', $order);
         $productlist = $query
           ->where('status', '=', 'Active')
           ->select('products.*')
           ->get();
-        return view('customer.pages.category.allproducts', compact('productid', 'productlist'));
+        return view('customer.pages.category.allproducts2', compact('productid', 'productlist'));
       } elseif ($request->order == "desc") {
         $query->orderBy('price', $order);
         $productlist = $query
           ->where('status', '=', 'Active')
           ->select('products.*')
           ->get();
-        return view('customer.pages.category.allproducts', compact('productid', 'productlist'));
+        return view('customer.pages.category.allproducts2', compact('productid', 'productlist'));
       }
     } else {
       
@@ -136,7 +142,7 @@ class CustomerProductController extends Controller
           ->get();
           // $productid = null;
         // dd($productlist);
-        return view('customer.pages.category.allproducts', compact('productid', 'productlist'));
+        return view('customer.pages.category.allproducts2', compact('productid', 'productlist'));
       } elseif ($request->order == "asc") {
         $query->orderBy('price', $order);
         $productlist = $query
@@ -144,7 +150,7 @@ class CustomerProductController extends Controller
           ->select('products.*')
           ->get();
           // $productid = null;
-        return view('customer.pages.category.allproducts', compact('productid', 'productlist'));
+        return view('customer.pages.category.allproducts2', compact('productid', 'productlist'));
       } elseif ($request->order == "desc") {
         $query->orderBy('price', $order);
         $productlist = $query
@@ -153,7 +159,7 @@ class CustomerProductController extends Controller
           ->get();
           // $productid = null;
 
-        return view('customer.pages.category.allproducts', compact('productid', 'productlist'));
+        return view('customer.pages.category.allproducts2', compact('productid', 'productlist'));
       }
     }
   }
