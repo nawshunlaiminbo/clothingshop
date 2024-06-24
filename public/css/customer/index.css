@@ -250,9 +250,8 @@ a {
     flex-direction: column;
     align-items: center;
     background-image: url('/image/customer/Core Polo 135 (1).jpg');
-    background-size: contain;
+    background-size:cover;
     background-repeat: no-repeat;
-    width: 50%;
     height: 80vh;
     /* border: 1px solid  #a6a6a6;
     overflow: hidden;
