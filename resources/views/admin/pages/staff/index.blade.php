@@ -136,6 +136,7 @@
                                 <th>Phone Number</th>
                                 <th>Role</th>
                                 <th class="last_title">Action</th>
+
                             </tr>
                             <tr>
                                 @foreach ($stafflist as $value)
@@ -149,16 +150,13 @@
                                     <a href="{{url('/admin/deleteprocess/'.$value->id)}}"><i class="fa-regular fa-trash-can"></i></a>
                                 </td>
                             </tr>
-                            
-                            
-                            
                             @endforeach
                            
                         </table>
                     </div>
                 </div>
                 <div class="Pagination">
-                    {{$stafflist->links('pagination::bootstrap-4')}}
+                    {{$stafflist->links()}}
                 </div>
             </div>
        

@@ -5,81 +5,83 @@
 <div class="admin-session">
     <div class="nav-col flex_col">
         <h1 class="nav_text">Bravis</h1>
-        <a href="{{url('/admin/dashboard/')}}" target="_self">
-         
-            <div class="nav_row">
-                <div class="nav-icon">
-                    <i class="fa-solid fa-house"></i>
-                </div>
-                <div class="nav-title">
-                    <p class="nav_text">Dashboard</p>
-                </div>
-            </div>
-        </a>    
-        <a href="{{url('/product/list/')}}" target="_self">
-            <div class="nav_row">
-                <div class="nav-icon">
-                    <i class="fa-solid fa-bag-shopping"></i>
-                </div>
-                <div class="nav-title">
-                    <p class="nav_text">Product</p>
-                </div>
-            </div>
-        </a>
-        <a href="{{url('/category/list/')}}" target="_self">
+        <div class="side-menu-main">
+            <a href="{{url('/admin/dashboard/')}}" target="_self">
             
-            <div class="nav_row">
-                <div class="nav-icon">
-                    <i class="fa-solid fa-border-all"></i>
+                <div class="nav_row">
+                    <div class="nav-icon">
+                        <i class="fa-solid fa-house"></i>
+                    </div>
+                    <div class="nav-title">
+                        <p class="nav_text">Dashboard</p>
+                    </div>
                 </div>
-                <div class="nav-title">
-                    <p class="nav_text">Category</p>
+            </a>    
+            <a href="{{url('/product/list/')}}" target="_self">
+                <div class="nav_row">
+                    <div class="nav-icon">
+                        <i class="fa-solid fa-bag-shopping"></i>
+                    </div>
+                    <div class="nav-title">
+                        <p class="nav_text">Product</p>
+                    </div>
                 </div>
-            </div>
-          
-        </a>
-        <a href="{{url('/admin/customer/list/')}}" target="_self">
-            <div class="nav_row">
-                <div class="nav-icon">
-                    <i class="fa-solid fa-users"></i>
+            </a>
+            <a href="{{url('/category/list/')}}" target="_self">
+                
+                <div class="nav_row">
+                    <div class="nav-icon">
+                        <i class="fa-solid fa-border-all"></i>
+                    </div>
+                    <div class="nav-title">
+                        <p class="nav_text">Category</p>
+                    </div>
                 </div>
-                <div class="nav-title">
-                    <p class="nav_text">Customer</p>
+            
+            </a>
+            <a href="{{url('/admin/customer/list/')}}" target="_self">
+                <div class="nav_row">
+                    <div class="nav-icon">
+                        <i class="fa-solid fa-users"></i>
+                    </div>
+                    <div class="nav-title">
+                        <p class="nav_text">Customer</p>
+                    </div>
                 </div>
-            </div>
-        </a>
-        <a href="{{url('/order/list')}}" target="_self">
-            <div class="nav_row">
-                <div class="nav-icon">
-                    <i class="fa-solid fa-cart-shopping"></i>
+            </a>
+            <a href="{{url('/order/list')}}" target="_self">
+                <div class="nav_row">
+                    <div class="nav-icon">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                    </div>
+                    <div class="nav-title">
+                        <p class="nav_text">Order</p>
+                    </div>
+                
+                
                 </div>
-                <div class="nav-title">
-                    <p class="nav_text">Order</p>
+            </a>
+            <a href="{{url('/admin/list/')}}" target="_self">
+                <div class="nav_row">
+                    <div class="nav-icon">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+                    <div class="nav-title">
+                        <p class="nav_text">Staff</p>
+                    </div>
                 </div>
-               
-             
-            </div>
-        </a>
-        <a href="{{url('/admin/list/')}}" target="_self">
-            <div class="nav_row">
-                <div class="nav-icon">
-                    <i class="fa-solid fa-user"></i>
+            </a>
+            <a href="{{url('/supplier/list/')}}" target="_self">
+                <div class="nav_row">
+                    <div class="nav-icon">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+                    <div class="nav-title">
+                        <p class="nav_text">Supplier</p>
+                    </div>
                 </div>
-                <div class="nav-title">
-                    <p class="nav_text">Staff</p>
-                </div>
-            </div>
-        </a>
-        <a href="{{url('/supplier/list/')}}" target="_self">
-            <div class="nav_row">
-                <div class="nav-icon">
-                    <i class="fa-solid fa-user"></i>
-                </div>
-                <div class="nav-title">
-                    <p class="nav_text">Supplier</p>
-                </div>
-            </div>
-        </a>
+            </a>
+        </div>
     </div>
     <div class="main-container">
         <div class="col-con">

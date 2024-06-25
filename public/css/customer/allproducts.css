@@ -115,20 +115,27 @@
   height: 30px;
   text-align: center;
   border-radius: 5px;
+  color:black;
   background-color: #D9D9D9;
 }
-
+.filter-col button:hover{
+  background-color: black;
+  color:white;
+}
 .reset-btn {
   display: inline-block;
-  border: 1px solid black;
   width: 80px;
   height: 30px;
   padding-top: 5px;
   border-radius: 5px;
   text-align: center;
+  font-weight:100px;
   background-color: #D9D9D9;
 }
-
+.reset-btn:hover{
+  background-color: black;
+  color:white;
+}
 .grid-item2 {
   /* display:flex;
     justify-content: space-around;

@@ -5,7 +5,7 @@
 @endsection
 @section('content')
 
-<div class="main">
+<div class="main">http://127.0.0.1:8000/image/customer/watches.jpg
     <div class="sec1">
         <div class="image">
         @if($productid == 1)

@@ -165,7 +165,7 @@
                         </div>
                     </div>
                     <div class="Pagination">
-                        {{$supplierlist->links('pagination::bootstrap-4')}}
+                        {{$supplierlist->links('pagination::bootstrap-5')}}
                     </div>
                 </div>
             </div>

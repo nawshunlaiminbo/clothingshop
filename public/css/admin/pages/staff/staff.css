@@ -32,12 +32,13 @@
 }
 
 .session_1 >a{
+    text-align: center;
     background-color: var(--box-blue-color);
     color: var(--secondary-color);
     padding:10px;
     border-radius: 6px;
-    float: right;
-    width: 80%;
+    /* float: right; */
+    width: 90%;
 }
 .session2{
     padding-top: 10px;
