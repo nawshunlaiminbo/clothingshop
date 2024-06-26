@@ -107,7 +107,7 @@ a {
 }
 
 .img-col img {
-    width: 100%;
+    width: 59%;
     height: auto;
     /* Maintain aspect ratio */
     display: block;
@@ -241,7 +241,7 @@ a {
 }
 
 .img-col {
-    width: 100%;
+    width: 50%;
     overflow: hidden;
 }
 .info-col{
