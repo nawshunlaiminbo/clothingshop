@@ -9,6 +9,7 @@
     <script src="{{asset('js/customer/slider.js')}}" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
     <script src="https://kit.fontawesome.com/a44b41dfdc.js" crossorigin="anonymous"></script>
+    <script src="{{asset('js/customer/user_profile_info_popup.js')}}"></script>
     <link rel="stylesheet" href="{{asset('css/customer/account/login.css')}}"> 
     <link rel="stylesheet" href="{{asset('css/customer/index.css')}}">
     <link rel="stylesheet" href="{{asset('css/customer/slider.css')}}">
@@ -32,10 +33,20 @@
                             <ul>
                                 <a href="">FQA |</a>
                                 <a href="">Order and returns |</a>
+                                @if (auth('customer')->user() != null)
+                              
+                                <a> {{auth('customer')->user()->firstname}} {{auth('customer')->user()->lastname}} </a>
+                                @else
                                 <a href="{{url('/customer/login')}}">Sign In</a>
+                                @endif
+                                
+                                @if (auth('customer')->user() != null)
+                                <div class="user_profile_info">
+                                    <a href="{{url('/customer/logout')}}"><i class="fa-solid fa-arrow-right-from-bracket"></i>Log out</a>
+                                </div>
+                                @endif
                             </ul>
                         </div>
-                      
                     </div>
                     <div class="inner-header">
                         <div class="logo-title">

@@ -98,6 +98,7 @@ Route::get('/customer/register',[CustomerController::class,'register'])->name('r
 Route::post('/customer/register/process',[CustomerController::class,'registerprocess'])->name('CustomerRegisterProcess');
 Route::get('/customer/login',[CustomerController::class,'login'])->name('CustomerLogin');
 Route::post('/customer/login/process',[LoginController::class,'loginprocess'])->name('CustomerLoginProcess');
+Route::get('/customer/logout',[LoginController::class,'CustomerLogout'])->name('CustomerLogout');
 Route::get('/customer/homepage',[CustomerController::class,'home'])->name('CustomerHome');
 Route::get('/customer/success',[CustomerController::class,'success'])->name('CustomerSuccess');
 Route::get('/customer/contact',[CustomerController::class,'contact'])->name('CustomerContact');
