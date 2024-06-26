@@ -118,6 +118,7 @@ a {
 .info-col h1 {
     font-size: 2em;
     margin: 10px 0;
+    padding-bottom: 0px;
 }
 
 .info-col p {
@@ -243,7 +244,10 @@ a {
     width: 100%;
     overflow: hidden;
 }
-
+.info-col{
+    display:flex;
+    flex-direction: column;
+}
 .men {
     flex: 1;
     display: flex;
