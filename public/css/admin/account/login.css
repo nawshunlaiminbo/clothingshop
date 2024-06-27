@@ -28,8 +28,11 @@
     color: var(--secondary-color);
 }
 .background_image div form .login_form{
+    display: flex;
+    flex-direction: column;
     padding: 50px 0px;
     width: 90%;
+    gap: 10px
 }
 .background_image div form .login_form div >img {
     position: relative;
@@ -37,18 +40,30 @@
     right: 10px;
 }
 .background_image div form .login_form div >input{
-    border: none;
-    border-radius: 6px;
-    /* border-bottom-color:1px solid var(--primary-color); */
-    background-color: #fefefe4d;
+    padding-left: 20px;
+    border: 3px solid rgb(231, 231, 231);
+    border-right: none;
+    border-left: none;
+    border-top: none;
+    background-color: #fefefe00;
     height: 30px;
-    padding-left: 20px ;
-    /* color: var(--secondary-color); */
+    width:90%;
+}
+.background_image div form .login_form div >input:hover{
+    padding-left: 20px;
+    border: 3px solid rgb(230, 181, 181);
+    border-right: none;
+    border-left: none;
+    border-top: none;
+    background-color: #fefefe00;
+    height: 30px;
+   
 }
 .login_btn{
     /* margin: 50px 0px; */
     /* margin-bottom: 100px; */
     border-radius: 10px;
+    width:100px;
     padding: 5px 15px;
     font-weight: bold;
     color: var(--login-form-color) !important;

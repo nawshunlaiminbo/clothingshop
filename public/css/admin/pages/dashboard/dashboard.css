@@ -60,7 +60,7 @@
     justify-content: space-between;
     padding-left:50px;
     padding-right: 50px;
-    padding-top:20px;
+    padding-top:5px;
     height:60px;
     
 }
@@ -117,7 +117,7 @@
     justify-content: space-between;
     padding-left:50px;
     padding-right: 50px;
-    padding-top:20px;
+    padding-top:5px;
     height:60px;
     
 }
@@ -128,7 +128,7 @@
     justify-content: space-between;
     padding-left:50px;
     padding-right: 50px;
-    padding-top:20px;
+    padding-top:5px;
     height:60px;
     
 }
@@ -139,7 +139,7 @@
     justify-content: space-between;
     padding-left:50px;
     padding-right: 50px;
-    padding-top:20px;
+    padding-top:5px;
     height:60px;
     
 }
@@ -157,12 +157,14 @@
     display:flex;
     justify-content: space-between;
     padding-left:20px;
+    height:47px;
     background-color: #3B76EF;
     color:white;
 }
 .product_button{
     display:flex;
     justify-content: end;
+    align-items: center;
 }
 .toggle-btn{
     background-color: #3B76EF;
@@ -175,7 +177,7 @@
     gap:10px;
 }
 .toggle-btn-active {
-   
+    padding-bottom: 10px;
     background-color: #63C7FF;
     
 }
@@ -189,8 +191,12 @@
     background-color: #3B76EF;
     color:white;
 }
-
-
+.products h2{
+    margin:5px;
+}
+.statics h2{
+    margin:5px;
+}
 /* Mobile View  */
 @media (max-width:767px) and (min-width:500px) {
     .earnings{

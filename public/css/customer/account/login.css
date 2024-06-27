@@ -6,12 +6,11 @@
 
 .container {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Two equal columns */
-    gap: 20px; /* Space between columns */
+    grid-template-columns: 1fr;
+    gap: 20px;
     justify-items: center;
-    justify-content: space-between;
-    align-items: center;
-    height: 99.7vh;
+    padding: 20px 0px;
+    border: 1px solid red;
     background-color: #dce2ef;
 }
 
@@ -57,7 +56,9 @@
 }
 
 .flex_row{
+    display:flex;
     height: auto;
+    width:45%;
     border: 1px solid #ffff;
     background-color: #ffff;
     padding: 20px;
@@ -66,7 +67,9 @@
     -webkit-box-shadow: -1px 1px 15px 0px rgba(237,233,233,0.75);
     -moz-box-shadow: -1px 1px 15px 0px rgba(237,233,233,0.75);
 }
-
+/* .signup-form{
+    display:flex;
+} */
 
 /* Form styling */
 form {

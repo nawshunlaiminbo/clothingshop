@@ -1,5 +1,8 @@
 @extends('layouts.adminlayout')
 @section('title','Home')
+@section('js')
+<script src="{{asset('js/admin/show_hide_password.js')}}"></script>
+@endsection
 @section('content')
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">

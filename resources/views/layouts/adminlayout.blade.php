@@ -37,6 +37,7 @@
             background-color:#DFEAFD;
         } */
     </style>
+     @yield('js')
 </head>
 <body>
     <section id="adminmain">

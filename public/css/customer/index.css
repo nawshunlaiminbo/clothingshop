@@ -96,13 +96,9 @@ a {
 
 .img-col {
     width: 100%;
-    /* Adjust as needed */
     height: auto;
-    /* Adjust as needed */
     max-width: 800px;
-    /* Adjust based on design */
     overflow: hidden;
-    /* Hide any overflow */
     padding-left: 50px;
 }
 

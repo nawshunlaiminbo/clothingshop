@@ -1,5 +1,7 @@
 @extends('layouts.app')
-
+@section('js')
+<script src="{{asset('js/customer/show_hide_password.js')}}"></script>
+@endsection
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
