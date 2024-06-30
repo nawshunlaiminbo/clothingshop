@@ -2,14 +2,14 @@
 @section('title','SignUp')
 @section('content')
 
-    <div class="container">
-        <h1>Create Account</h1>
-        <div class="flex_row">
+    <div class="container-signup">
+       <div><h1>Create Account</h1></div> 
+        <div class="signup-form">
             <form action="{{route('CustomerRegisterProcess')}}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <input type="hidden" name="id">
                 <label for="name">Full Name</label>
-                <div class="flex_row">
+                <div class="flex_row_name">
                     <input type="text" id="fname" placeholder="First Name"  name="firstname">
                     @error('firstname')
                     <span class="text-danger">{{$message}}</span>
@@ -49,7 +49,7 @@
                 @error('address')
                 <span class="text-danger">{{$message}}</span>
                 @enderror
-                <div class="flex_row">
+                <div class="flex_row_name">
                     
                     <input type="text" placeholder="State/Region" name="state">
                     @error('state')
@@ -69,7 +69,7 @@
                 <br>
                 <div class="sign_up flex_row">
                     <button type="submit" name="register">Sign Up</button>
-    
+                </div>
             </form>
         </div>
     </div>
