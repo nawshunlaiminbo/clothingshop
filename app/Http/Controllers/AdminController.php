@@ -80,6 +80,7 @@ class AdminController extends Controller
 
     
     public function list(){
+
       $roles = DB::table('roles')
       ->select('id', 'name')
       ->where('status', '=', 'Active')
