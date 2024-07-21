@@ -424,3 +424,109 @@ h1 {
 .footer-content a:hover {
     text-decoration: underline;
 }
+
+/*add to cart*/
+
+.shopping_cart_box {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 400px;
+    height: 100%;
+    background: white;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    overflow-y: auto;
+    transition: transform 0.3s ease-in-out;
+}
+
+.cart_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: #f4f4f4;
+    border-bottom: 1px solid #ddd;
+}
+
+.cart_header h2 {
+    margin: 0;
+}
+
+.close_button {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #333;
+}
+
+.cart_body {
+    padding: 20px;
+}
+
+.cart_item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+
+.cart_details {
+    flex: 1;
+}
+
+.cart_details p {
+    margin: 0;
+    font-weight: bold;
+}
+
+.cart_details span {
+    display: block;
+    margin: 10px 0;
+}
+
+.quantity_control {
+    display: flex;
+    align-items: center;
+}
+
+.quantity_control button {
+    background: none;
+    border: 1px solid #ddd;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.quantity_control input {
+    width: 40px;
+    text-align: center;
+    border: 1px solid #ddd;
+    margin: 0 5px;
+}
+
+.remove_item {
+    display: block;
+    margin-top: 10px;
+    color: red;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.cart_footer {
+    padding: 20px;
+    background: #f4f4f4;
+    border-top: 1px solid #ddd;
+    text-align: center;
+}
+
+.checkout_button {
+    background: rgb(69, 124, 224);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+}

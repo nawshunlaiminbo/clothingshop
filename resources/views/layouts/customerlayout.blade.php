@@ -13,11 +13,10 @@
     <link rel="stylesheet" href="{{asset('css/customer/account/login.css')}}"> 
     <link rel="stylesheet" href="{{asset('css/customer/index.css')}}">
     <link rel="stylesheet" href="{{asset('css/customer/slider.css')}}">
-    {{-- <link rel="stylesheet" href="{{asset('css/customer/pages/detail.css')}}"> --}}
     <title>@yield('title')</title>
     @yield('css')
 
-    <script src="{{asset('js/customer/add_to_card.js')}}"></script>
+    <script src="{{asset('js/customer/add_to_card.js')}}" defer></script>
     @yield('js')
 </head>
 <body>
@@ -27,15 +26,14 @@
                 <div class="main-header">
                     <div class="upper-header">
                         <div class="upper-header-title">
-                            <p>Flash Sales : Singn in and Get Extra 25% off on Selected Items
+                            <p>Flash Sales : Sign in and Get Extra 25% off on Selected Items</p>
                         </div>
                         <div class="header-link">
                             <ul>
-                                <a href="">FQA |</a>
+                                <a href="">FAQ |</a>
                                 <a href="">Order and returns |</a>
                                 @if (auth('customer')->user() != null)
-                              
-                                <a> {{auth('customer')->user()->firstname}} {{auth('customer')->user()->lastname}} </a>
+                                <a>{{auth('customer')->user()->firstname}} {{auth('customer')->user()->lastname}}</a>
                                 @else
                                 <a href="{{url('/customer/login')}}">Sign In</a>
                                 @endif
@@ -54,76 +52,55 @@
                         </div>
                         <div class="main-nav">
                             <ul>
-                                {{-- <a href="{{url('/customer/homepage')}}">Home</a>
-                                <a href="{{url('/customer/product'.$productlist->id)}}">Men</a>
-                                <a href="{{url('/customer/product'.$productlist->id)}}">Women</a>
-                                <a href="{{url('/customer/product'.$productlist->id)}}">Accessories</a> --}}
                                 <a href="{{url('/customer/homepage')}}">Home</a>
                                 <a href="{{route('CustomerProductList',['productid'=>'1'])}}">Men</a>
                                 <a href="{{route('CustomerProductList',['productid'=>'2'])}}">Women</a>
                                 <a href="{{route('CustomerProductList',['productid'=>'3'])}}">Accessories</a>
                             </ul>
                         </div>
-                        <div class="header-icon">
-                            <ul>
-                                
-                                <a><i class="fa-solid fa-cart-shopping"></i></a>
-                                {{-- {{dd($cartarray)}} --}}
-                                {{-- <span>{{count($cartarray)}}</span> --}}
-                            </ul>
+                        <div class="add_to_cart_icon">
+                            
+                            <i class="fa-solid fa-cart-shopping"></i>
                         </div>
                     </div>
                 </div>
-
+                    
                 <main>
                     <div class="main-body">
                        <div class="main-logo">
-                        {{-- <div class="img-col">
-                            <img src="{{ asset('image/customer/09_2_1_3_1000_1000 1.png') }}" alt="Customer Image">
-                        </div>
-                        <div class="info-col">
-    
-                        </div> --}}
-                        
-
-        {{-- {{'cart'}} --}}
-        {{-- @if(session('cart'))
-             @foreach(session('cart') as $id=>$product )
-             @php
-             $sub_total = $product['price'] * $product['quantity'];
-             $total += $sub_total;
-             @endphp
-                        <div class="container">
-                            <h1 class="text">Cart</h1>
-                            <div class="item">
-                                <div class="order-item">
-                                <div class="product-image">
-                                    <img src="" alt="order-photo" height="100px">
-                                </div>
-                                <div class="order-list">
-                                    <h4>Pink Sport Wear Set</h4>
-                                    <p>Price: 85000</p>
-                                    <p>Size: S</p>
-                                    <p>Quantity: 1 item</p>
+                        <div class="shopping_cart_box">
+                            <div class="cart_header">
+                                <h2>Cart</h2>
+                                <button class="close_button">&times;</button>
                             </div>
-                               
-                        </div> --}}
-
+                            <div class="cart_body">
+                                <p>Tee Shirt</p>
+                                <p>15000 MMK</p>
+                                <p>Total Price</p>
+                            <div class="quantity_control">
+                                <button class="decrease_quantity">-</button>
+                                <input type="number" value="1">
+                                <button class="increase_quantity">+</button>
+                            </div>
+                            <a href="" class="remove_item">Remove</a>
+                            </div>
+                            <div class="cart_footer">
+                                <button class="checkout_button">Check Out</button>
+                            </div>
+                        </div>
+                       
                         @yield('content') 
                         
                        </div>
                     </div>
-                  <!-- This is where child views will inject their content -->
                 </main>
              
                 <div class="footer">
                     <div class="inner-footer">
-                       
                             <a href="{{url('/customer/homepage')}}">Home</a>
                             <a href="{{url('')}}">About Us</a>
                             <a href="{{url('/customer/contact')}}">Contact Us</a>
                            <a href="{{url('/cutomer/product/list')}}">All Products</a>
-                       
                     </div>
                 </div>
             </div>

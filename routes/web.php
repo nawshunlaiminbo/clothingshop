@@ -116,7 +116,7 @@ Route::patch('/customer/register/update/process',[CustomerController::class,'upd
 
 // Route::get('/home', [HomeController::class, 'index'])->name('home');
 
-Route::get('/customer/cart/add',[CustomerController::class,'addtocart'])->name('AddToCart');
+// Route::get('/customer/cart/add',[CustomerController::class,'addToCart'])->name('AddToCart');
 
 //Customer Page Product Start
 Route::get('/cutomer/product/list',[CustomerProductController::class,'showlist'])->name('CustomerProductList');
@@ -129,7 +129,7 @@ Route::post('/customer/product/filter',[CustomerProductController::class,'produc
 
 //Add to cart start
 // Route::get('/cart/{id}', [CartController::class, 'index'])->name('CartList');
-Route::post('/cart/add', [CartController::class, 'addToCart'])->name('CartAdd');
+Route::get('/cart/add', [CartController::class, 'addToCart'])->name('CartAdd');
 Route::get('/show/cart',[CartController::class,'showCart'])->name('ShowCart');
 Route::get('/cart/checkout',[CartController::class,'checkoutlist'])->name('CartCheckout');
 
